@@ -1,0 +1,1834 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Gem::Indexer</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/rubygems/indexer_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rubygems/indexer.rb">lib/rubygems/indexer.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-abbreviate">#abbreviate</a></li>
+					
+					<li><a href="#method-i-build_indicies">#build_indicies</a></li>
+					
+					<li><a href="#method-i-build_legacy_indicies">#build_legacy_indicies</a></li>
+					
+					<li><a href="#method-i-build_marshal_gemspecs">#build_marshal_gemspecs</a></li>
+					
+					<li><a href="#method-i-build_modern_index">#build_modern_index</a></li>
+					
+					<li><a href="#method-i-build_modern_indicies">#build_modern_indicies</a></li>
+					
+					<li><a href="#method-i-build_rss">#build_rss</a></li>
+					
+					<li><a href="#method-i-collect_specs">#collect_specs</a></li>
+					
+					<li><a href="#method-i-compact_specs">#compact_specs</a></li>
+					
+					<li><a href="#method-i-compress">#compress</a></li>
+					
+					<li><a href="#method-i-compress_indicies">#compress_indicies</a></li>
+					
+					<li><a href="#method-i-gem_file_list">#gem_file_list</a></li>
+					
+					<li><a href="#method-i-generate_index">#generate_index</a></li>
+					
+					<li><a href="#method-i-gzip">#gzip</a></li>
+					
+					<li><a href="#method-i-install_indicies">#install_indicies</a></li>
+					
+					<li><a href="#method-i-make_temp_directories">#make_temp_directories</a></li>
+					
+					<li><a href="#method-i-paranoid">#paranoid</a></li>
+					
+					<li><a href="#method-i-sanitize">#sanitize</a></li>
+					
+					<li><a href="#method-i-sanitize_string">#sanitize_string</a></li>
+					
+					<li><a href="#method-i-update_index">#update_index</a></li>
+					
+					<li><a href="#method-i-update_specs_index">#update_specs_index</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="UserInteraction.html">Gem::UserInteraction</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../GPL_txt.html">GPL.txt</a></li>
+				
+					<li class="file"><a href="../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../UPGRADING_rdoc.html">UPGRADING.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Gem.html">Gem</a></li>
+				
+					<li><a href="../Gem/Builder.html">Gem::Builder</a></li>
+				
+					<li><a href="../Gem/Command.html">Gem::Command</a></li>
+				
+					<li><a href="../Gem/CommandLineError.html">Gem::CommandLineError</a></li>
+				
+					<li><a href="../Gem/CommandManager.html">Gem::CommandManager</a></li>
+				
+					<li><a href="../Gem/Commands.html">Gem::Commands</a></li>
+				
+					<li><a href="../Gem/Commands/BuildCommand.html">Gem::Commands::BuildCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CertCommand.html">Gem::Commands::CertCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CheckCommand.html">Gem::Commands::CheckCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CleanupCommand.html">Gem::Commands::CleanupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ContentsCommand.html">Gem::Commands::ContentsCommand</a></li>
+				
+					<li><a href="../Gem/Commands/DependencyCommand.html">Gem::Commands::DependencyCommand</a></li>
+				
+					<li><a href="../Gem/Commands/EnvironmentCommand.html">Gem::Commands::EnvironmentCommand</a></li>
+				
+					<li><a href="../Gem/Commands/FetchCommand.html">Gem::Commands::FetchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/GenerateIndexCommand.html">Gem::Commands::GenerateIndexCommand</a></li>
+				
+					<li><a href="../Gem/Commands/HelpCommand.html">Gem::Commands::HelpCommand</a></li>
+				
+					<li><a href="../Gem/Commands/InstallCommand.html">Gem::Commands::InstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ListCommand.html">Gem::Commands::ListCommand</a></li>
+				
+					<li><a href="../Gem/Commands/LockCommand.html">Gem::Commands::LockCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OutdatedCommand.html">Gem::Commands::OutdatedCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OwnerCommand.html">Gem::Commands::OwnerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PristineCommand.html">Gem::Commands::PristineCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PushCommand.html">Gem::Commands::PushCommand</a></li>
+				
+					<li><a href="../Gem/Commands/QueryCommand.html">Gem::Commands::QueryCommand</a></li>
+				
+					<li><a href="../Gem/Commands/RdocCommand.html">Gem::Commands::RdocCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SearchCommand.html">Gem::Commands::SearchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ServerCommand.html">Gem::Commands::ServerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SetupCommand.html">Gem::Commands::SetupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SourcesCommand.html">Gem::Commands::SourcesCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SpecificationCommand.html">Gem::Commands::SpecificationCommand</a></li>
+				
+					<li><a href="../Gem/Commands/StaleCommand.html">Gem::Commands::StaleCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UninstallCommand.html">Gem::Commands::UninstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UnpackCommand.html">Gem::Commands::UnpackCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UpdateCommand.html">Gem::Commands::UpdateCommand</a></li>
+				
+					<li><a href="../Gem/Commands/WhichCommand.html">Gem::Commands::WhichCommand</a></li>
+				
+					<li><a href="../Gem/ConfigFile.html">Gem::ConfigFile</a></li>
+				
+					<li><a href="../Gem/ConsoleUI.html">Gem::ConsoleUI</a></li>
+				
+					<li><a href="../Gem/DefaultUserInteraction.html">Gem::DefaultUserInteraction</a></li>
+				
+					<li><a href="../Gem/Dependency.html">Gem::Dependency</a></li>
+				
+					<li><a href="../Gem/DependencyError.html">Gem::DependencyError</a></li>
+				
+					<li><a href="../Gem/DependencyInstaller.html">Gem::DependencyInstaller</a></li>
+				
+					<li><a href="../Gem/DependencyList.html">Gem::DependencyList</a></li>
+				
+					<li><a href="../Gem/DependencyRemovalException.html">Gem::DependencyRemovalException</a></li>
+				
+					<li><a href="../Gem/DocManager.html">Gem::DocManager</a></li>
+				
+					<li><a href="../Gem/DocumentError.html">Gem::DocumentError</a></li>
+				
+					<li><a href="../Gem/EndOfYAMLException.html">Gem::EndOfYAMLException</a></li>
+				
+					<li><a href="../Gem/ErrorReason.html">Gem::ErrorReason</a></li>
+				
+					<li><a href="../Gem/Exception.html">Gem::Exception</a></li>
+				
+					<li><a href="../Gem/Ext.html">Gem::Ext</a></li>
+				
+					<li><a href="../Gem/Ext/Builder.html">Gem::Ext::Builder</a></li>
+				
+					<li><a href="../Gem/Ext/ConfigureBuilder.html">Gem::Ext::ConfigureBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/ExtConfBuilder.html">Gem::Ext::ExtConfBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/RakeBuilder.html">Gem::Ext::RakeBuilder</a></li>
+				
+					<li><a href="../Gem/FakeFetcher.html">Gem::FakeFetcher</a></li>
+				
+					<li><a href="../Gem/FileOperations.html">Gem::FileOperations</a></li>
+				
+					<li><a href="../Gem/FilePermissionError.html">Gem::FilePermissionError</a></li>
+				
+					<li><a href="../Gem/Format.html">Gem::Format</a></li>
+				
+					<li><a href="../Gem/FormatException.html">Gem::FormatException</a></li>
+				
+					<li><a href="../Gem/GemNotFoundException.html">Gem::GemNotFoundException</a></li>
+				
+					<li><a href="../Gem/GemNotInHomeException.html">Gem::GemNotInHomeException</a></li>
+				
+					<li><a href="../Gem/GemPathSearcher.html">Gem::GemPathSearcher</a></li>
+				
+					<li><a href="../Gem/GemRunner.html">Gem::GemRunner</a></li>
+				
+					<li><a href="../Gem/GemcutterUtilities.html">Gem::GemcutterUtilities</a></li>
+				
+					<li><a href="../Gem/Indexer.html">Gem::Indexer</a></li>
+				
+					<li><a href="../Gem/InstallError.html">Gem::InstallError</a></li>
+				
+					<li><a href="../Gem/InstallUpdateOptions.html">Gem::InstallUpdateOptions</a></li>
+				
+					<li><a href="../Gem/Installer.html">Gem::Installer</a></li>
+				
+					<li><a href="../Gem/Installer/ExtensionBuildError.html">Gem::Installer::ExtensionBuildError</a></li>
+				
+					<li><a href="../Gem/InstallerTestCase.html">Gem::InstallerTestCase</a></li>
+				
+					<li><a href="../Gem/InvalidSpecificationException.html">Gem::InvalidSpecificationException</a></li>
+				
+					<li><a href="../Gem/LoadError.html">Gem::LoadError</a></li>
+				
+					<li><a href="../Gem/LocalRemoteOptions.html">Gem::LocalRemoteOptions</a></li>
+				
+					<li><a href="../Gem/MockGemUi.html">Gem::MockGemUi</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TTY.html">Gem::MockGemUi::TTY</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TermError.html">Gem::MockGemUi::TermError</a></li>
+				
+					<li><a href="../Gem/OldFormat.html">Gem::OldFormat</a></li>
+				
+					<li><a href="../Gem/OperationNotSupportedError.html">Gem::OperationNotSupportedError</a></li>
+				
+					<li><a href="../Gem/Package.html">Gem::Package</a></li>
+				
+					<li><a href="../Gem/Package/BadCheckSum.html">Gem::Package::BadCheckSum</a></li>
+				
+					<li><a href="../Gem/Package/ClosedIO.html">Gem::Package::ClosedIO</a></li>
+				
+					<li><a href="../Gem/Package/Error.html">Gem::Package::Error</a></li>
+				
+					<li><a href="../Gem/Package/FSyncDir.html">Gem::Package::FSyncDir</a></li>
+				
+					<li><a href="../Gem/Package/FormatError.html">Gem::Package::FormatError</a></li>
+				
+					<li><a href="../Gem/Package/NonSeekableIO.html">Gem::Package::NonSeekableIO</a></li>
+				
+					<li><a href="../Gem/Package/TarHeader.html">Gem::Package::TarHeader</a></li>
+				
+					<li><a href="../Gem/Package/TarInput.html">Gem::Package::TarInput</a></li>
+				
+					<li><a href="../Gem/Package/TarInvalidError.html">Gem::Package::TarInvalidError</a></li>
+				
+					<li><a href="../Gem/Package/TarOutput.html">Gem::Package::TarOutput</a></li>
+				
+					<li><a href="../Gem/Package/TarReader.html">Gem::Package::TarReader</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/Entry.html">Gem::Package::TarReader::Entry</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/UnexpectedEOF.html">Gem::Package::TarReader::UnexpectedEOF</a></li>
+				
+					<li><a href="../Gem/Package/TarTestCase.html">Gem::Package::TarTestCase</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter.html">Gem::Package::TarWriter</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/BoundedStream.html">Gem::Package::TarWriter::BoundedStream</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/FileOverflow.html">Gem::Package::TarWriter::FileOverflow</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/RestrictedStream.html">Gem::Package::TarWriter::RestrictedStream</a></li>
+				
+					<li><a href="../Gem/Package/TooLongFileName.html">Gem::Package::TooLongFileName</a></li>
+				
+					<li><a href="../Gem/PackageTask.html">Gem::PackageTask</a></li>
+				
+					<li><a href="../Gem/Platform.html">Gem::Platform</a></li>
+				
+					<li><a href="../Gem/PlatformMismatch.html">Gem::PlatformMismatch</a></li>
+				
+					<li><a href="../Gem/RemoteError.html">Gem::RemoteError</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher.html">Gem::RemoteFetcher</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher/FetchError.html">Gem::RemoteFetcher::FetchError</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationCancelled.html">Gem::RemoteInstallationCancelled</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationSkipped.html">Gem::RemoteInstallationSkipped</a></li>
+				
+					<li><a href="../Gem/RemoteSourceException.html">Gem::RemoteSourceException</a></li>
+				
+					<li><a href="../Gem/RequirePathsBuilder.html">Gem::RequirePathsBuilder</a></li>
+				
+					<li><a href="../Gem/Requirement.html">Gem::Requirement</a></li>
+				
+					<li><a href="../Gem/Security/Exception.html">Gem::Security::Exception</a></li>
+				
+					<li><a href="../Gem/Security/Signer.html">Gem::Security::Signer</a></li>
+				
+					<li><a href="../Gem/Server.html">Gem::Server</a></li>
+				
+					<li><a href="../Gem/SilentUI.html">Gem::SilentUI</a></li>
+				
+					<li><a href="../Gem/SourceIndex.html">Gem::SourceIndex</a></li>
+				
+					<li><a href="../Gem/SpecFetcher.html">Gem::SpecFetcher</a></li>
+				
+					<li><a href="../Gem/Specification.html">Gem::Specification</a></li>
+				
+					<li><a href="../Gem/StreamUI.html">Gem::StreamUI</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentDownloadReporter.html">Gem::StreamUI::SilentDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentProgressReporter.html">Gem::StreamUI::SilentProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SimpleProgressReporter.html">Gem::StreamUI::SimpleProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseDownloadReporter.html">Gem::StreamUI::VerboseDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseProgressReporter.html">Gem::StreamUI::VerboseProgressReporter</a></li>
+				
+					<li><a href="../Gem/SystemExitException.html">Gem::SystemExitException</a></li>
+				
+					<li><a href="../Gem/TestCase.html">Gem::TestCase</a></li>
+				
+					<li><a href="../Gem/Text.html">Gem::Text</a></li>
+				
+					<li><a href="../Gem/Uninstaller.html">Gem::Uninstaller</a></li>
+				
+					<li><a href="../Gem/UserInteraction.html">Gem::UserInteraction</a></li>
+				
+					<li><a href="../Gem/Validator.html">Gem::Validator</a></li>
+				
+					<li><a href="../Gem/VerificationError.html">Gem::VerificationError</a></li>
+				
+					<li><a href="../Gem/Version.html">Gem::Version</a></li>
+				
+					<li><a href="../Gem/VersionOption.html">Gem::VersionOption</a></li>
+				
+					<li><a href="../OpenSSL.html">OpenSSL</a></li>
+				
+					<li><a href="../OpenSSL/X509.html">OpenSSL::X509</a></li>
+				
+					<li><a href="../GemGauntlet.html">GemGauntlet</a></li>
+				
+					<li><a href="../Kernel.html">Kernel</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+					<li><a href="../TempIO.html">TempIO</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Gem::Indexer</h1>
+
+		<div id="description">
+			<p>
+Top level class for building the gem repository index.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="build-legacy-attribute-method" class="method-detail">
+				<a name="build_legacy"></a>
+				
+				<a name="build_legacy="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">build_legacy</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Build indexes for RubyGems older than 1.2.0 when true
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="build-modern-attribute-method" class="method-detail">
+				<a name="build_modern"></a>
+				
+				<a name="build_modern="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">build_modern</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Build indexes for RubyGems 1.2.0 and newer when true
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="dest-directory-attribute-method" class="method-detail">
+				<a name="dest_directory"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">dest_directory</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Index install location
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="dest-specs-index-attribute-method" class="method-detail">
+				<a name="dest_specs_index"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">dest_specs_index</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Specs index install location
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="dest-latest-specs-index-attribute-method" class="method-detail">
+				<a name="dest_latest_specs_index"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">dest_latest_specs_index</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Latest specs index install location
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="dest-prerelease-specs-index-attribute-method" class="method-detail">
+				<a name="dest_prerelease_specs_index"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">dest_prerelease_specs_index</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Prerelease specs index install location
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="directory-attribute-method" class="method-detail">
+				<a name="directory"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">directory</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Index build directory
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(directory, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Create an indexer that will index the gems in <tt>directory</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 55</span>
+ 55:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">directory</span>, <span class="ruby-identifier">options</span> = {})
+ 56:     <span class="ruby-identifier">require</span> <span class="ruby-value str">'fileutils'</span>
+ 57:     <span class="ruby-identifier">require</span> <span class="ruby-value str">'tmpdir'</span>
+ 58:     <span class="ruby-identifier">require</span> <span class="ruby-value str">'zlib'</span>
+ 59: 
+ 60:     <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">Builder</span><span class="ruby-operator">::</span><span class="ruby-constant">XChar</span>) <span class="ruby-keyword kw">then</span>
+ 61:       <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Gem::Indexer requires that the XML Builder library be installed:&quot;</span>             <span class="ruby-value str">&quot;\n\tgem install builder&quot;</span>
+ 62:     <span class="ruby-keyword kw">end</span>
+ 63: 
+ 64:     <span class="ruby-identifier">options</span> = { <span class="ruby-value">:build_legacy</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>, <span class="ruby-value">:build_modern</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span> }.<span class="ruby-identifier">merge</span> <span class="ruby-identifier">options</span>
+ 65: 
+ 66:     <span class="ruby-ivar">@build_legacy</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:build_legacy</span>]
+ 67:     <span class="ruby-ivar">@build_modern</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:build_modern</span>]
+ 68: 
+ 69:     <span class="ruby-ivar">@rss_title</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:rss_title</span>]
+ 70:     <span class="ruby-ivar">@rss_host</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:rss_host</span>]
+ 71:     <span class="ruby-ivar">@rss_gems_host</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:rss_gems_host</span>]
+ 72: 
+ 73:     <span class="ruby-ivar">@dest_directory</span> = <span class="ruby-identifier">directory</span>
+ 74:     <span class="ruby-ivar">@directory</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">tmpdir</span>, <span class="ruby-node">&quot;gem_generate_index_#{$$}&quot;</span>
+ 75: 
+ 76:     <span class="ruby-identifier">marshal_name</span> = <span class="ruby-node">&quot;Marshal.#{Gem.marshal_version}&quot;</span>
+ 77: 
+ 78:     <span class="ruby-ivar">@master_index</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@directory</span>, <span class="ruby-value str">'yaml'</span>
+ 79:     <span class="ruby-ivar">@marshal_index</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@directory</span>, <span class="ruby-identifier">marshal_name</span>
+ 80: 
+ 81:     <span class="ruby-ivar">@quick_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@directory</span>, <span class="ruby-value str">'quick'</span>
+ 82: 
+ 83:     <span class="ruby-ivar">@quick_marshal_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@quick_dir</span>, <span class="ruby-identifier">marshal_name</span>
+ 84: 
+ 85:     <span class="ruby-ivar">@quick_index</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@quick_dir</span>, <span class="ruby-value str">'index'</span>
+ 86:     <span class="ruby-ivar">@latest_index</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@quick_dir</span>, <span class="ruby-value str">'latest_index'</span>
+ 87: 
+ 88:     <span class="ruby-ivar">@specs_index</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@directory</span>, <span class="ruby-node">&quot;specs.#{Gem.marshal_version}&quot;</span>
+ 89:     <span class="ruby-ivar">@latest_specs_index</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@directory</span>,
+ 90:                                     <span class="ruby-node">&quot;latest_specs.#{Gem.marshal_version}&quot;</span>
+ 91:     <span class="ruby-ivar">@prerelease_specs_index</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@directory</span>,
+ 92:                                         <span class="ruby-node">&quot;prerelease_specs.#{Gem.marshal_version}&quot;</span>)
+ 93: 
+ 94:     <span class="ruby-ivar">@dest_specs_index</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@dest_directory</span>,
+ 95:                                   <span class="ruby-node">&quot;specs.#{Gem.marshal_version}&quot;</span>
+ 96:     <span class="ruby-ivar">@dest_latest_specs_index</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@dest_directory</span>,
+ 97:                                          <span class="ruby-node">&quot;latest_specs.#{Gem.marshal_version}&quot;</span>
+ 98:     <span class="ruby-ivar">@dest_prerelease_specs_index</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@dest_directory</span>,
+ 99:                                             <span class="ruby-node">&quot;prerelease_specs.#{Gem.marshal_version}&quot;</span>
+100: 
+101:     <span class="ruby-ivar">@rss_index</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@directory</span>, <span class="ruby-value str">'index.rss'</span>
+102: 
+103:     <span class="ruby-ivar">@files</span> = []
+104:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="abbreviate-method" class="method-detail ">
+				<a name="method-i-abbreviate"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">abbreviate</span><span
+						class="method-args">(spec)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Abbreviate the spec for downloading.  Abbreviated specs are only used for
+searching, downloading and related activities and do not need deployment
+specific information (e.g. list of files).  So we abbreviate the spec,
+making it much smaller for quicker downloads.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="abbreviate-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 113</span>
+113:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">abbreviate</span>(<span class="ruby-identifier">spec</span>)
+114:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">files</span> = []
+115:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">test_files</span> = []
+116:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">rdoc_options</span> = []
+117:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">extra_rdoc_files</span> = []
+118:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">cert_chain</span> = []
+119:     <span class="ruby-identifier">spec</span>
+120:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-indicies-method" class="method-detail ">
+				<a name="method-i-build_indicies"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_indicies</span><span
+						class="method-args">(index)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Build various indicies
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="build-indicies-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 125</span>
+125:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_indicies</span>(<span class="ruby-identifier">index</span>)
+126:     <span class="ruby-comment cmt"># Marshal gemspecs are used by both modern and legacy RubyGems</span>
+127:     <span class="ruby-identifier">build_marshal_gemspecs</span> <span class="ruby-identifier">index</span>
+128:     <span class="ruby-identifier">build_legacy_indicies</span> <span class="ruby-identifier">index</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@build_legacy</span>
+129:     <span class="ruby-identifier">build_modern_indicies</span> <span class="ruby-identifier">index</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@build_modern</span>
+130:     <span class="ruby-identifier">build_rss</span> <span class="ruby-identifier">index</span>
+131: 
+132:     <span class="ruby-identifier">compress_indicies</span>
+133:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-legacy-indicies-method" class="method-detail ">
+				<a name="method-i-build_legacy_indicies"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_legacy_indicies</span><span
+						class="method-args">(index)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Builds indicies for RubyGems older than 1.2.x
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="build-legacy-indicies-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 138</span>
+138:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_legacy_indicies</span>(<span class="ruby-identifier">index</span>)
+139:     <span class="ruby-identifier">say</span> <span class="ruby-value str">&quot;Generating Marshal master index&quot;</span>
+140: 
+141:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">time</span> <span class="ruby-value str">'Generated Marshal master index'</span> <span class="ruby-keyword kw">do</span>
+142:       <span class="ruby-identifier">open</span> <span class="ruby-ivar">@marshal_index</span>, <span class="ruby-value str">'wb'</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+143:         <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">index</span>.<span class="ruby-identifier">dump</span>
+144:       <span class="ruby-keyword kw">end</span>
+145:     <span class="ruby-keyword kw">end</span>
+146: 
+147:     <span class="ruby-ivar">@files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@marshal_index</span>
+148:     <span class="ruby-ivar">@files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{@marshal_index}.Z&quot;</span>
+149:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-marshal-gemspecs-method" class="method-detail ">
+				<a name="method-i-build_marshal_gemspecs"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_marshal_gemspecs</span><span
+						class="method-args">(index)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Builds Marshal quick index gemspecs.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="build-marshal-gemspecs-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 154</span>
+154:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_marshal_gemspecs</span>(<span class="ruby-identifier">index</span>)
+155:     <span class="ruby-identifier">progress</span> = <span class="ruby-identifier">ui</span>.<span class="ruby-identifier">progress_reporter</span> <span class="ruby-identifier">index</span>.<span class="ruby-identifier">size</span>,
+156:                                     <span class="ruby-node">&quot;Generating Marshal quick index gemspecs for #{index.size} gems&quot;</span>,
+157:                                     <span class="ruby-value str">&quot;Complete&quot;</span>
+158: 
+159:     <span class="ruby-identifier">files</span> = []
+160: 
+161:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">time</span> <span class="ruby-value str">'Generated Marshal quick index gemspecs'</span> <span class="ruby-keyword kw">do</span>
+162:       <span class="ruby-identifier">index</span>.<span class="ruby-identifier">gems</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">original_name</span>, <span class="ruby-identifier">spec</span><span class="ruby-operator">|</span>
+163:         <span class="ruby-identifier">spec_file_name</span> = <span class="ruby-node">&quot;#{original_name}.gemspec.rz&quot;</span>
+164:         <span class="ruby-identifier">marshal_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@quick_marshal_dir</span>, <span class="ruby-identifier">spec_file_name</span>
+165: 
+166:         <span class="ruby-identifier">marshal_zipped</span> = <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">deflate</span> <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-identifier">spec</span>)
+167:         <span class="ruby-identifier">open</span> <span class="ruby-identifier">marshal_name</span>, <span class="ruby-value str">'wb'</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">marshal_zipped</span> <span class="ruby-keyword kw">end</span>
+168: 
+169:         <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">marshal_name</span>
+170: 
+171:         <span class="ruby-identifier">progress</span>.<span class="ruby-identifier">updated</span> <span class="ruby-identifier">original_name</span>
+172:       <span class="ruby-keyword kw">end</span>
+173: 
+174:       <span class="ruby-identifier">progress</span>.<span class="ruby-identifier">done</span>
+175:     <span class="ruby-keyword kw">end</span>
+176: 
+177:     <span class="ruby-ivar">@files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@quick_marshal_dir</span>
+178: 
+179:     <span class="ruby-identifier">files</span>
+180:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-modern-index-method" class="method-detail ">
+				<a name="method-i-build_modern_index"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_modern_index</span><span
+						class="method-args">(index, file, name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Build a single index for RubyGems 1.2 and newer
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="build-modern-index-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 185</span>
+185:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_modern_index</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">name</span>)
+186:     <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Generating #{name} index&quot;</span>
+187: 
+188:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">time</span> <span class="ruby-node">&quot;Generated #{name} index&quot;</span> <span class="ruby-keyword kw">do</span>
+189:       <span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>, <span class="ruby-value str">'wb'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+190:         <span class="ruby-identifier">specs</span> = <span class="ruby-identifier">index</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>*<span class="ruby-identifier">spec</span><span class="ruby-operator">|</span>
+191:           <span class="ruby-comment cmt"># We have to splat here because latest_specs is an array,</span>
+192:           <span class="ruby-comment cmt"># while the others are hashes. See the TODO in source_index.rb</span>
+193:           <span class="ruby-identifier">spec</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">last</span>
+194:           <span class="ruby-identifier">platform</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">original_platform</span>
+195: 
+196:           <span class="ruby-comment cmt"># win32-api-1.0.4-x86-mswin32-60</span>
+197:           <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">platform</span> <span class="ruby-keyword kw">then</span>
+198:             <span class="ruby-identifier">alert_warning</span> <span class="ruby-node">&quot;Skipping invalid platform in gem: #{spec.full_name}&quot;</span>
+199:             <span class="ruby-keyword kw">next</span>
+200:           <span class="ruby-keyword kw">end</span>
+201: 
+202:           <span class="ruby-identifier">platform</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span><span class="ruby-operator">::</span><span class="ruby-constant">RUBY</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">platform</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">platform</span>.<span class="ruby-identifier">empty?</span>
+203:           [<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">version</span>, <span class="ruby-identifier">platform</span>]
+204:         <span class="ruby-keyword kw">end</span>
+205: 
+206:         <span class="ruby-identifier">specs</span> = <span class="ruby-identifier">compact_specs</span>(<span class="ruby-identifier">specs</span>)
+207:         <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-identifier">specs</span>, <span class="ruby-identifier">io</span>)
+208:       <span class="ruby-keyword kw">end</span>
+209:     <span class="ruby-keyword kw">end</span>
+210:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-modern-indicies-method" class="method-detail ">
+				<a name="method-i-build_modern_indicies"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_modern_indicies</span><span
+						class="method-args">(index)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Builds indicies for RubyGems 1.2 and newer. Handles full, latest,
+prerelease
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="build-modern-indicies-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 215</span>
+215:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_modern_indicies</span>(<span class="ruby-identifier">index</span>)
+216:     <span class="ruby-identifier">build_modern_index</span>(<span class="ruby-identifier">index</span>.<span class="ruby-identifier">released_specs</span>.<span class="ruby-identifier">sort</span>, <span class="ruby-ivar">@specs_index</span>, <span class="ruby-value str">'specs'</span>)
+217:     <span class="ruby-identifier">build_modern_index</span>(<span class="ruby-identifier">index</span>.<span class="ruby-identifier">latest_specs</span>.<span class="ruby-identifier">sort</span>,
+218:                        <span class="ruby-ivar">@latest_specs_index</span>,
+219:                        <span class="ruby-value str">'latest specs'</span>)
+220:     <span class="ruby-identifier">build_modern_index</span>(<span class="ruby-identifier">index</span>.<span class="ruby-identifier">prerelease_specs</span>.<span class="ruby-identifier">sort</span>,
+221:                        <span class="ruby-ivar">@prerelease_specs_index</span>,
+222:                        <span class="ruby-value str">'prerelease specs'</span>)
+223: 
+224:     <span class="ruby-ivar">@files</span> <span class="ruby-operator">+=</span> [<span class="ruby-ivar">@specs_index</span>,
+225:                <span class="ruby-node">&quot;#{@specs_index}.gz&quot;</span>,
+226:                <span class="ruby-ivar">@latest_specs_index</span>,
+227:                <span class="ruby-node">&quot;#{@latest_specs_index}.gz&quot;</span>,
+228:                <span class="ruby-ivar">@prerelease_specs_index</span>,
+229:                <span class="ruby-node">&quot;#{@prerelease_specs_index}.gz&quot;</span>]
+230:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-rss-method" class="method-detail ">
+				<a name="method-i-build_rss"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_rss</span><span
+						class="method-args">(index)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Builds an RSS feed for past two days gem releases according to the
+gem&#8217;s date.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="build-rss-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 236</span>
+236:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_rss</span>(<span class="ruby-identifier">index</span>)
+237:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@rss_host</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-ivar">@rss_gems_host</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">then</span>
+238:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">really_verbose</span> <span class="ruby-keyword kw">then</span>
+239:         <span class="ruby-identifier">alert_warning</span> <span class="ruby-value str">&quot;no --rss-host or --rss-gems-host, RSS generation disabled&quot;</span>
+240:       <span class="ruby-keyword kw">end</span>
+241:       <span class="ruby-keyword kw">return</span>
+242:     <span class="ruby-keyword kw">end</span>
+243: 
+244:     <span class="ruby-identifier">require</span> <span class="ruby-value str">'cgi'</span>
+245:     <span class="ruby-identifier">require</span> <span class="ruby-value str">'rubygems/text'</span>
+246: 
+247:     <span class="ruby-identifier">extend</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Text</span>
+248: 
+249:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">time</span> <span class="ruby-value str">'Generated rss'</span> <span class="ruby-keyword kw">do</span>
+250:       <span class="ruby-identifier">open</span> <span class="ruby-ivar">@rss_index</span>, <span class="ruby-value str">'wb'</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+251:         <span class="ruby-identifier">rss_host</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">escapeHTML</span> <span class="ruby-ivar">@rss_host</span>
+252:         <span class="ruby-identifier">rss_title</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">escapeHTML</span>(<span class="ruby-ivar">@rss_title</span> <span class="ruby-operator">||</span> <span class="ruby-value str">'gems'</span>)
+253: 
+254:         <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">&lt;?xml version=&quot;1.0&quot;?&gt;&lt;rss version=&quot;2.0&quot;&gt;  &lt;channel&gt;    &lt;title&gt;#{rss_title}&lt;/title&gt;    &lt;link&gt;http://#{rss_host}&lt;/link&gt;    &lt;description&gt;Recently released gems from http://#{rss_host}&lt;/description&gt;    &lt;generator&gt;RubyGems v#{Gem::VERSION}&lt;/generator&gt;    &lt;docs&gt;http://cyber.law.harvard.edu/rss/rss.html&lt;/docs&gt;</span>
+255: 
+256:         <span class="ruby-identifier">today</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span><span class="ruby-operator">::</span><span class="ruby-constant">TODAY</span>
+257:         <span class="ruby-identifier">yesterday</span> = <span class="ruby-identifier">today</span> <span class="ruby-operator">-</span> <span class="ruby-value">86400</span>
+258: 
+259:         <span class="ruby-identifier">index</span> = <span class="ruby-identifier">index</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">spec</span><span class="ruby-operator">|</span>
+260:           <span class="ruby-identifier">spec_date</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">date</span>
+261: 
+262:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">spec_date</span>
+263:           <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Date</span>
+264:             <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">spec_date</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">yesterday</span>
+265:           <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Time</span>
+266:             <span class="ruby-identifier">spec_date</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">yesterday</span>
+267:           <span class="ruby-keyword kw">end</span>
+268:         <span class="ruby-keyword kw">end</span>
+269: 
+270:         <span class="ruby-identifier">index</span> = <span class="ruby-identifier">index</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">spec</span><span class="ruby-operator">|</span>
+271:           <span class="ruby-identifier">spec_date</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">date</span>
+272: 
+273:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">spec_date</span>
+274:           <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Date</span>
+275:             <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">spec_date</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">today</span>
+276:           <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Time</span>
+277:             <span class="ruby-identifier">spec_date</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">today</span>
+278:           <span class="ruby-keyword kw">end</span>
+279:         <span class="ruby-keyword kw">end</span>
+280: 
+281:         <span class="ruby-identifier">index</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">spec</span><span class="ruby-operator">|</span> [<span class="ruby-operator">-</span><span class="ruby-identifier">spec</span>.<span class="ruby-identifier">date</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">spec</span>] }.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">spec</span><span class="ruby-operator">|</span>
+282:           <span class="ruby-identifier">gem_path</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">escapeHTML</span> <span class="ruby-node">&quot;http://#{@rss_gems_host}/gems/#{spec.file_name}&quot;</span>
+283:           <span class="ruby-identifier">size</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">loaded_from</span>).<span class="ruby-identifier">size</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">next</span>
+284: 
+285:           <span class="ruby-identifier">description</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">description</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">summary</span> <span class="ruby-operator">||</span> <span class="ruby-value str">''</span>
+286:           <span class="ruby-identifier">authors</span> = <span class="ruby-constant">Array</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">authors</span>
+287:           <span class="ruby-identifier">emails</span> = <span class="ruby-constant">Array</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">email</span>
+288:           <span class="ruby-identifier">authors</span> = <span class="ruby-identifier">emails</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">authors</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">email</span>, <span class="ruby-identifier">author</span><span class="ruby-operator">|</span>
+289:             <span class="ruby-identifier">email</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; (#{author})&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">author</span> <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">author</span>.<span class="ruby-identifier">empty?</span>
+290:           <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span> <span class="ruby-value str">', '</span>
+291: 
+292:           <span class="ruby-identifier">description</span> = <span class="ruby-identifier">description</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\n\n+/</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">chunk</span><span class="ruby-operator">|</span>
+293:             <span class="ruby-identifier">format_text</span> <span class="ruby-identifier">chunk</span>, <span class="ruby-value">78</span>
+294:           <span class="ruby-keyword kw">end</span>
+295: 
+296:           <span class="ruby-identifier">description</span> = <span class="ruby-identifier">description</span>.<span class="ruby-identifier">join</span> <span class="ruby-value str">&quot;\n\n&quot;</span>
+297: 
+298:           <span class="ruby-identifier">item</span> = <span class="ruby-value str">''</span>
+299: 
+300:           <span class="ruby-identifier">item</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">    &lt;item&gt;      &lt;title&gt;#{CGI.escapeHTML spec.full_name}&lt;/title&gt;      &lt;description&gt;&amp;lt;pre&amp;gt;#{CGI.escapeHTML description.chomp}&amp;lt;/pre&amp;gt;      &lt;/description&gt;      &lt;author&gt;#{CGI.escapeHTML authors}&lt;/author&gt;      &lt;guid&gt;#{CGI.escapeHTML spec.full_name}&lt;/guid&gt;      &lt;enclosure url=\&quot;#{gem_path}\&quot;                 length=\&quot;#{size}\&quot; type=\&quot;application/octet-stream\&quot; /&gt;      &lt;pubDate&gt;#{spec.date.rfc2822}&lt;/pubDate&gt;</span>
+301: 
+302:           <span class="ruby-identifier">item</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">      &lt;link&gt;#{CGI.escapeHTML spec.homepage}&lt;/link&gt;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">homepage</span>
+303: 
+304:           <span class="ruby-identifier">item</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">    &lt;/item&gt;</span>
+305: 
+306:           <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">item</span>
+307:         <span class="ruby-keyword kw">end</span>
+308: 
+309:         <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">  &lt;/channel&gt;&lt;/rss&gt;</span>
+310:       <span class="ruby-keyword kw">end</span>
+311:     <span class="ruby-keyword kw">end</span>
+312: 
+313:     <span class="ruby-ivar">@files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@rss_index</span>
+314:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="collect-specs-method" class="method-detail ">
+				<a name="method-i-collect_specs"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">collect_specs</span><span
+						class="method-args">(gems = gem_file_list)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Collect specifications from .gem files from the gem directory.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="collect-specs-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 346</span>
+346:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">collect_specs</span>(<span class="ruby-identifier">gems</span> = <span class="ruby-identifier">gem_file_list</span>)
+347:     <span class="ruby-identifier">index</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">SourceIndex</span>.<span class="ruby-identifier">new</span>
+348: 
+349:     <span class="ruby-identifier">progress</span> = <span class="ruby-identifier">ui</span>.<span class="ruby-identifier">progress_reporter</span> <span class="ruby-identifier">gems</span>.<span class="ruby-identifier">size</span>,
+350:                                     <span class="ruby-node">&quot;Loading #{gems.size} gems from #{@dest_directory}&quot;</span>,
+351:                                     <span class="ruby-value str">&quot;Loaded all gems&quot;</span>
+352: 
+353:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">time</span> <span class="ruby-value str">'loaded'</span> <span class="ruby-keyword kw">do</span>
+354:       <span class="ruby-identifier">gems</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">gemfile</span><span class="ruby-operator">|</span>
+355:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">size</span>(<span class="ruby-identifier">gemfile</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">then</span>
+356:           <span class="ruby-identifier">alert_warning</span> <span class="ruby-node">&quot;Skipping zero-length gem: #{gemfile}&quot;</span>
+357:           <span class="ruby-keyword kw">next</span>
+358:         <span class="ruby-keyword kw">end</span>
+359: 
+360:         <span class="ruby-keyword kw">begin</span>
+361:           <span class="ruby-identifier">spec</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Format</span>.<span class="ruby-identifier">from_file_by_path</span>(<span class="ruby-identifier">gemfile</span>).<span class="ruby-identifier">spec</span>
+362:           <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">loaded_from</span> = <span class="ruby-identifier">gemfile</span>
+363: 
+364:           <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">gemfile</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/\/#{Regexp.escape spec.original_name}.*\.gem\z/</span> <span class="ruby-keyword kw">then</span>
+365:             <span class="ruby-identifier">expected_name</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">full_name</span>
+366:             <span class="ruby-identifier">expected_name</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; (#{spec.original_name})&quot;</span> <span class="ruby-keyword kw">if</span>
+367:               <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">original_name</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">full_name</span>
+368:             <span class="ruby-identifier">alert_warning</span> <span class="ruby-node">&quot;Skipping misnamed gem: #{gemfile} should be named #{expected_name}&quot;</span>
+369:             <span class="ruby-keyword kw">next</span>
+370:           <span class="ruby-keyword kw">end</span>
+371: 
+372:           <span class="ruby-identifier">abbreviate</span> <span class="ruby-identifier">spec</span>
+373:           <span class="ruby-identifier">sanitize</span> <span class="ruby-identifier">spec</span>
+374: 
+375:           <span class="ruby-identifier">index</span>.<span class="ruby-identifier">add_spec</span> <span class="ruby-identifier">spec</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">original_name</span>
+376: 
+377:           <span class="ruby-identifier">progress</span>.<span class="ruby-identifier">updated</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">original_name</span>
+378: 
+379:         <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">SignalException</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+380:           <span class="ruby-identifier">alert_error</span> <span class="ruby-value str">&quot;Received signal, exiting&quot;</span>
+381:           <span class="ruby-identifier">raise</span>
+382:         <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+383:           <span class="ruby-identifier">alert_error</span> <span class="ruby-node">&quot;Unable to process #{gemfile}\n#{e.message} (#{e.class})\n\t#{e.backtrace.join &quot;\n\t&quot;}&quot;</span>
+384:         <span class="ruby-keyword kw">end</span>
+385:       <span class="ruby-keyword kw">end</span>
+386: 
+387:       <span class="ruby-identifier">progress</span>.<span class="ruby-identifier">done</span>
+388:     <span class="ruby-keyword kw">end</span>
+389: 
+390:     <span class="ruby-identifier">index</span>
+391:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="compact-specs-method" class="method-detail ">
+				<a name="method-i-compact_specs"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">compact_specs</span><span
+						class="method-args">(specs)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Compacts Marshal output for the specs index data source by using identical
+objects as much as possible.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="compact-specs-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 419</span>
+419:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compact_specs</span>(<span class="ruby-identifier">specs</span>)
+420:     <span class="ruby-identifier">names</span> = {}
+421:     <span class="ruby-identifier">versions</span> = {}
+422:     <span class="ruby-identifier">platforms</span> = {}
+423: 
+424:     <span class="ruby-identifier">specs</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span>, <span class="ruby-identifier">platform</span>)<span class="ruby-operator">|</span>
+425:       <span class="ruby-identifier">names</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">name</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">names</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">name</span>
+426:       <span class="ruby-identifier">versions</span>[<span class="ruby-identifier">version</span>] = <span class="ruby-identifier">version</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">versions</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">version</span>
+427:       <span class="ruby-identifier">platforms</span>[<span class="ruby-identifier">platform</span>] = <span class="ruby-identifier">platform</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">platforms</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">platform</span>
+428: 
+429:       [<span class="ruby-identifier">names</span>[<span class="ruby-identifier">name</span>], <span class="ruby-identifier">versions</span>[<span class="ruby-identifier">version</span>], <span class="ruby-identifier">platforms</span>[<span class="ruby-identifier">platform</span>]]
+430:     <span class="ruby-keyword kw">end</span>
+431:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="compress-method" class="method-detail ">
+				<a name="method-i-compress"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">compress</span><span
+						class="method-args">(filename, extension)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Compress <tt>filename</tt> with <tt>extension</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="compress-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 436</span>
+436:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compress</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">extension</span>)
+437:     <span class="ruby-identifier">data</span> = <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">read_binary</span> <span class="ruby-identifier">filename</span>
+438: 
+439:     <span class="ruby-identifier">zipped</span> = <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">deflate</span> <span class="ruby-identifier">data</span>
+440: 
+441:     <span class="ruby-identifier">open</span> <span class="ruby-node">&quot;#{filename}.#{extension}&quot;</span>, <span class="ruby-value str">'wb'</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+442:       <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">zipped</span>
+443:     <span class="ruby-keyword kw">end</span>
+444:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="compress-indicies-method" class="method-detail ">
+				<a name="method-i-compress_indicies"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">compress_indicies</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Compresses indicies on disk
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="compress-indicies-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 398</span>
+398:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compress_indicies</span>
+399:     <span class="ruby-identifier">say</span> <span class="ruby-value str">&quot;Compressing indicies&quot;</span>
+400: 
+401:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">time</span> <span class="ruby-value str">'Compressed indicies'</span> <span class="ruby-keyword kw">do</span>
+402:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@build_legacy</span> <span class="ruby-keyword kw">then</span>
+403:         <span class="ruby-identifier">compress</span> <span class="ruby-ivar">@marshal_index</span>, <span class="ruby-value str">'Z'</span>
+404:         <span class="ruby-identifier">paranoid</span> <span class="ruby-ivar">@marshal_index</span>, <span class="ruby-value str">'Z'</span>
+405:       <span class="ruby-keyword kw">end</span>
+406: 
+407:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@build_modern</span> <span class="ruby-keyword kw">then</span>
+408:         <span class="ruby-identifier">gzip</span> <span class="ruby-ivar">@specs_index</span>
+409:         <span class="ruby-identifier">gzip</span> <span class="ruby-ivar">@latest_specs_index</span>
+410:         <span class="ruby-identifier">gzip</span> <span class="ruby-ivar">@prerelease_specs_index</span>
+411:       <span class="ruby-keyword kw">end</span>
+412:     <span class="ruby-keyword kw">end</span>
+413:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="gem-file-list-method" class="method-detail ">
+				<a name="method-i-gem_file_list"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">gem_file_list</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+List of gem file names to index.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="gem-file-list-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 449</span>
+449:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gem_file_list</span>
+450:     <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@dest_directory</span>, <span class="ruby-value str">&quot;gems&quot;</span>, <span class="ruby-value str">&quot;*.gem&quot;</span>))
+451:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="generate-index-method" class="method-detail ">
+				<a name="method-i-generate_index"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">generate_index</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Builds and installs indicies.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="generate-index-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 456</span>
+456:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">generate_index</span>
+457:     <span class="ruby-identifier">make_temp_directories</span>
+458:     <span class="ruby-identifier">index</span> = <span class="ruby-identifier">collect_specs</span>
+459:     <span class="ruby-identifier">build_indicies</span> <span class="ruby-identifier">index</span>
+460:     <span class="ruby-identifier">install_indicies</span>
+461:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">SignalException</span>
+462:   <span class="ruby-keyword kw">ensure</span>
+463:     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-ivar">@directory</span>
+464:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="gzip-method" class="method-detail ">
+				<a name="method-i-gzip"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">gzip</span><span
+						class="method-args">(filename)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Zlib::GzipWriter wrapper that gzips <tt>filename</tt> on disk.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="gzip-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 469</span>
+469:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gzip</span>(<span class="ruby-identifier">filename</span>)
+470:     <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">GzipWriter</span>.<span class="ruby-identifier">open</span> <span class="ruby-node">&quot;#{filename}.gz&quot;</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+471:       <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">read_binary</span>(<span class="ruby-identifier">filename</span>)
+472:     <span class="ruby-keyword kw">end</span>
+473:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="install-indicies-method" class="method-detail ">
+				<a name="method-i-install_indicies"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">install_indicies</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Install generated indicies into the destination directory.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="install-indicies-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 478</span>
+478:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_indicies</span>
+479:     <span class="ruby-identifier">verbose</span> = <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">really_verbose</span>
+480: 
+481:     <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Moving index into production dir #{@dest_directory}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verbose</span>
+482: 
+483:     <span class="ruby-identifier">files</span> = <span class="ruby-ivar">@files</span>.<span class="ruby-identifier">dup</span>
+484:     <span class="ruby-identifier">files</span>.<span class="ruby-identifier">delete</span> <span class="ruby-ivar">@quick_marshal_dir</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">files</span>.<span class="ruby-identifier">include?</span> <span class="ruby-ivar">@quick_dir</span>
+485: 
+486:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">files</span>.<span class="ruby-identifier">include?</span> <span class="ruby-ivar">@quick_marshal_dir</span> <span class="ruby-keyword kw">and</span>
+487:        <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">files</span>.<span class="ruby-identifier">include?</span> <span class="ruby-ivar">@quick_dir</span> <span class="ruby-keyword kw">then</span>
+488:       <span class="ruby-identifier">files</span>.<span class="ruby-identifier">delete</span> <span class="ruby-ivar">@quick_marshal_dir</span>
+489:       <span class="ruby-identifier">quick_marshal_dir</span> = <span class="ruby-ivar">@quick_marshal_dir</span>.<span class="ruby-identifier">sub</span> <span class="ruby-ivar">@directory</span>, <span class="ruby-value str">''</span>
+490: 
+491:       <span class="ruby-identifier">dst_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@dest_directory</span>, <span class="ruby-identifier">quick_marshal_dir</span>
+492: 
+493:       <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">dst_name</span>), <span class="ruby-value">:verbose</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">verbose</span>
+494:       <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">dst_name</span>, <span class="ruby-value">:verbose</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">verbose</span>
+495:       <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mv</span> <span class="ruby-ivar">@quick_marshal_dir</span>, <span class="ruby-identifier">dst_name</span>, <span class="ruby-value">:verbose</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">verbose</span>,
+496:                    <span class="ruby-value">:force</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>
+497:     <span class="ruby-keyword kw">end</span>
+498: 
+499:     <span class="ruby-identifier">files</span> = <span class="ruby-identifier">files</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+500:       <span class="ruby-identifier">path</span>.<span class="ruby-identifier">sub</span> <span class="ruby-ivar">@directory</span>, <span class="ruby-value str">''</span>
+501:     <span class="ruby-keyword kw">end</span>
+502: 
+503:     <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+504:       <span class="ruby-identifier">src_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@directory</span>, <span class="ruby-identifier">file</span>
+505:       <span class="ruby-identifier">dst_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@dest_directory</span>, <span class="ruby-identifier">file</span>
+506: 
+507:       <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">dst_name</span>, <span class="ruby-value">:verbose</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">verbose</span>
+508:       <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mv</span> <span class="ruby-identifier">src_name</span>, <span class="ruby-ivar">@dest_directory</span>, <span class="ruby-value">:verbose</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">verbose</span>,
+509:                    <span class="ruby-value">:force</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>
+510:     <span class="ruby-keyword kw">end</span>
+511:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="make-temp-directories-method" class="method-detail ">
+				<a name="method-i-make_temp_directories"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">make_temp_directories</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Make directories for index generation
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="make-temp-directories-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 516</span>
+516:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">make_temp_directories</span>
+517:     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-ivar">@directory</span>
+518:     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-ivar">@directory</span>, <span class="ruby-value">:mode</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0700</span>
+519:     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-ivar">@quick_marshal_dir</span>
+520:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="paranoid-method" class="method-detail ">
+				<a name="method-i-paranoid"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">paranoid</span><span
+						class="method-args">(path, extension)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Ensure <tt>path</tt> and path with <tt>extension</tt> are identical.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="paranoid-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 525</span>
+525:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">paranoid</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">extension</span>)
+526:     <span class="ruby-identifier">data</span> = <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">read_binary</span> <span class="ruby-identifier">path</span>
+527:     <span class="ruby-identifier">compressed_data</span> = <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">read_binary</span> <span class="ruby-node">&quot;#{path}.#{extension}&quot;</span>
+528: 
+529:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">data</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">inflate</span>(<span class="ruby-identifier">compressed_data</span>) <span class="ruby-keyword kw">then</span>
+530:       <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Compressed file #{compressed_path} does not match uncompressed file #{path}&quot;</span>
+531:     <span class="ruby-keyword kw">end</span>
+532:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="sanitize-method" class="method-detail ">
+				<a name="method-i-sanitize"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sanitize</span><span
+						class="method-args">(spec)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sanitize the descriptive fields in the spec.  Sometimes non-ASCII
+characters will garble the site index.  Non-ASCII characters will be
+replaced by their XML entity equivalent.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="sanitize-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 539</span>
+539:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">spec</span>)
+540:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">summary</span> = <span class="ruby-identifier">sanitize_string</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">summary</span>)
+541:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">description</span> = <span class="ruby-identifier">sanitize_string</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">description</span>)
+542:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">post_install_message</span> = <span class="ruby-identifier">sanitize_string</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">post_install_message</span>)
+543:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">authors</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">authors</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sanitize_string</span>(<span class="ruby-identifier">a</span>) }
+544: 
+545:     <span class="ruby-identifier">spec</span>
+546:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="sanitize-string-method" class="method-detail ">
+				<a name="method-i-sanitize_string"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sanitize_string</span><span
+						class="method-args">(string)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sanitize a single string.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="sanitize-string-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 551</span>
+551:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sanitize_string</span>(<span class="ruby-identifier">string</span>)
+552:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">string</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">string</span>
+553: 
+554:     <span class="ruby-comment cmt"># HACK the #to_s is in here because RSpec has an Array of Arrays of</span>
+555:     <span class="ruby-comment cmt"># Strings for authors.  Need a way to disallow bad values on gemspec</span>
+556:     <span class="ruby-comment cmt"># generation.  (Probably won't happen.)</span>
+557:     <span class="ruby-identifier">string</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>
+558: 
+559:     <span class="ruby-keyword kw">begin</span>
+560:       <span class="ruby-constant">Builder</span><span class="ruby-operator">::</span><span class="ruby-constant">XChar</span>.<span class="ruby-identifier">encode</span> <span class="ruby-identifier">string</span>
+561:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">NameError</span>, <span class="ruby-constant">NoMethodError</span>
+562:       <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_xs</span>
+563:     <span class="ruby-keyword kw">end</span>
+564:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="update-index-method" class="method-detail ">
+				<a name="method-i-update_index"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">update_index</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Perform an in-place update of the repository from newly added gems.  Only
+works for modern indicies, and sets # to false when run.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="update-index-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 570</span>
+570:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_index</span>
+571:     <span class="ruby-ivar">@build_legacy</span> = <span class="ruby-keyword kw">false</span>
+572: 
+573:     <span class="ruby-identifier">make_temp_directories</span>
+574: 
+575:     <span class="ruby-identifier">specs_mtime</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-ivar">@dest_specs_index</span>).<span class="ruby-identifier">mtime</span>
+576:     <span class="ruby-identifier">newest_mtime</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span> <span class="ruby-value">0</span>
+577: 
+578:     <span class="ruby-identifier">updated_gems</span> = <span class="ruby-identifier">gem_file_list</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">gem</span><span class="ruby-operator">|</span>
+579:       <span class="ruby-identifier">gem_mtime</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">gem</span>).<span class="ruby-identifier">mtime</span>
+580:       <span class="ruby-identifier">newest_mtime</span> = <span class="ruby-identifier">gem_mtime</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">gem_mtime</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">newest_mtime</span>
+581:       <span class="ruby-identifier">gem_mtime</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">specs_mtime</span>
+582:     <span class="ruby-keyword kw">end</span>
+583: 
+584:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">updated_gems</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+585:       <span class="ruby-identifier">say</span> <span class="ruby-value str">'No new gems'</span>
+586:       <span class="ruby-identifier">terminate_interaction</span> <span class="ruby-value">0</span>
+587:     <span class="ruby-keyword kw">end</span>
+588: 
+589:     <span class="ruby-identifier">index</span> = <span class="ruby-identifier">collect_specs</span> <span class="ruby-identifier">updated_gems</span>
+590: 
+591:     <span class="ruby-identifier">files</span> = <span class="ruby-identifier">build_marshal_gemspecs</span> <span class="ruby-identifier">index</span>
+592: 
+593:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">time</span> <span class="ruby-value str">'Updated indexes'</span> <span class="ruby-keyword kw">do</span>
+594:       <span class="ruby-identifier">update_specs_index</span> <span class="ruby-identifier">index</span>.<span class="ruby-identifier">released_gems</span>, <span class="ruby-ivar">@dest_specs_index</span>, <span class="ruby-ivar">@specs_index</span>
+595:       <span class="ruby-identifier">update_specs_index</span> <span class="ruby-identifier">index</span>.<span class="ruby-identifier">released_gems</span>, <span class="ruby-ivar">@dest_latest_specs_index</span>, <span class="ruby-ivar">@latest_specs_index</span>
+596:       <span class="ruby-identifier">update_specs_index</span>(<span class="ruby-identifier">index</span>.<span class="ruby-identifier">prerelease_gems</span>, <span class="ruby-ivar">@dest_prerelease_specs_index</span>,
+597:                          <span class="ruby-ivar">@prerelease_specs_index</span>)
+598:     <span class="ruby-keyword kw">end</span>
+599: 
+600:     <span class="ruby-identifier">compress_indicies</span>
+601: 
+602:     <span class="ruby-identifier">verbose</span> = <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">really_verbose</span>
+603: 
+604:     <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Updating production dir #{@dest_directory}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verbose</span>
+605: 
+606:     <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@specs_index</span>
+607:     <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{@specs_index}.gz&quot;</span>
+608:     <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@latest_specs_index</span>
+609:     <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{@latest_specs_index}.gz&quot;</span>
+610:     <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@prerelease_specs_index</span>
+611:     <span class="ruby-identifier">files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{@prerelease_specs_index}.gz&quot;</span>
+612: 
+613:     <span class="ruby-identifier">files</span> = <span class="ruby-identifier">files</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+614:       <span class="ruby-identifier">path</span>.<span class="ruby-identifier">sub</span> <span class="ruby-ivar">@directory</span>, <span class="ruby-value str">''</span>
+615:     <span class="ruby-keyword kw">end</span>
+616: 
+617:     <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+618:       <span class="ruby-identifier">src_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@directory</span>, <span class="ruby-identifier">file</span>
+619:       <span class="ruby-identifier">dst_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@dest_directory</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">file</span>)
+620: 
+621:       <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mv</span> <span class="ruby-identifier">src_name</span>, <span class="ruby-identifier">dst_name</span>, <span class="ruby-value">:verbose</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">verbose</span>,
+622:                    <span class="ruby-value">:force</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">true</span>
+623: 
+624:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">utime</span> <span class="ruby-identifier">newest_mtime</span>, <span class="ruby-identifier">newest_mtime</span>, <span class="ruby-identifier">dst_name</span>
+625:     <span class="ruby-keyword kw">end</span>
+626:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="update-specs-index-method" class="method-detail ">
+				<a name="method-i-update_specs_index"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">update_specs_index</span><span
+						class="method-args">(index, source, dest)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Combines specs in <tt>index</tt> and <tt>source</tt> then writes out a new
+copy to <tt>dest</tt>.  For a latest index, does not ensure the new file is
+minimal.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="update-specs-index-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/indexer.rb, line 632</span>
+632:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_specs_index</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">dest</span>)
+633:     <span class="ruby-identifier">specs_index</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">read_binary</span>(<span class="ruby-identifier">source</span>)
+634: 
+635:     <span class="ruby-identifier">index</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">spec</span><span class="ruby-operator">|</span>
+636:       <span class="ruby-identifier">platform</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">original_platform</span>
+637:       <span class="ruby-identifier">platform</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span><span class="ruby-operator">::</span><span class="ruby-constant">RUBY</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">platform</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">platform</span>.<span class="ruby-identifier">empty?</span>
+638:       <span class="ruby-identifier">specs_index</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">version</span>, <span class="ruby-identifier">platform</span>]
+639:     <span class="ruby-keyword kw">end</span>
+640: 
+641:     <span class="ruby-identifier">specs_index</span> = <span class="ruby-identifier">compact_specs</span> <span class="ruby-identifier">specs_index</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">sort</span>
+642: 
+643:     <span class="ruby-identifier">open</span> <span class="ruby-identifier">dest</span>, <span class="ruby-value str">'wb'</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+644:       <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span> <span class="ruby-identifier">specs_index</span>, <span class="ruby-identifier">io</span>
+645:     <span class="ruby-keyword kw">end</span>
+646:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

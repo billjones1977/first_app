@@ -1,0 +1,1594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: ActionDispatch::Routing::Mapper::Scoping</title>
+
+	<link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../../lib/action_dispatch/routing/mapper_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_dispatch/routing/mapper.rb">lib/action_dispatch/routing/mapper.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-constraints">#constraints</a></li>
+					
+					<li><a href="#method-i-controller">#controller</a></li>
+					
+					<li><a href="#method-i-defaults">#defaults</a></li>
+					
+					<li><a href="#method-i-merge_as_scope">#merge_as_scope</a></li>
+					
+					<li><a href="#method-i-merge_blocks_scope">#merge_blocks_scope</a></li>
+					
+					<li><a href="#method-i-merge_constraints_scope">#merge_constraints_scope</a></li>
+					
+					<li><a href="#method-i-merge_controller_scope">#merge_controller_scope</a></li>
+					
+					<li><a href="#method-i-merge_defaults_scope">#merge_defaults_scope</a></li>
+					
+					<li><a href="#method-i-merge_module_scope">#merge_module_scope</a></li>
+					
+					<li><a href="#method-i-merge_options_scope">#merge_options_scope</a></li>
+					
+					<li><a href="#method-i-merge_path_names_scope">#merge_path_names_scope</a></li>
+					
+					<li><a href="#method-i-merge_path_scope">#merge_path_scope</a></li>
+					
+					<li><a href="#method-i-merge_shallow_path_scope">#merge_shallow_path_scope</a></li>
+					
+					<li><a href="#method-i-merge_shallow_prefix_scope">#merge_shallow_prefix_scope</a></li>
+					
+					<li><a href="#method-i-merge_shallow_scope">#merge_shallow_scope</a></li>
+					
+					<li><a href="#method-i-namespace">#namespace</a></li>
+					
+					<li><a href="#method-i-override_keys">#override_keys</a></li>
+					
+					<li><a href="#method-i-scope">#scope</a></li>
+					
+					<li><a href="#method-i-scope_options">#scope_options</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../../ActionDispatch/Assertions.html">ActionDispatch::Assertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Assertions/DomAssertions.html">ActionDispatch::Assertions::DomAssertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Assertions/ResponseAssertions.html">ActionDispatch::Assertions::ResponseAssertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Assertions/RoutingAssertions.html">ActionDispatch::Assertions::RoutingAssertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Assertions/SelectorAssertions.html">ActionDispatch::Assertions::SelectorAssertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Assertions/TagAssertions.html">ActionDispatch::Assertions::TagAssertions</a></li>
+				
+					<li><a href="../../../ActionDispatch/BestStandardsSupport.html">ActionDispatch::BestStandardsSupport</a></li>
+				
+					<li><a href="../../../ActionDispatch/Callbacks.html">ActionDispatch::Callbacks</a></li>
+				
+					<li><a href="../../../ActionDispatch/Cookies.html">ActionDispatch::Cookies</a></li>
+				
+					<li><a href="../../../ActionDispatch/Cookies/CookieOverflow.html">ActionDispatch::Cookies::CookieOverflow</a></li>
+				
+					<li><a href="../../../ActionDispatch/Flash.html">ActionDispatch::Flash</a></li>
+				
+					<li><a href="../../../ActionDispatch/Flash/FlashHash.html">ActionDispatch::Flash::FlashHash</a></li>
+				
+					<li><a href="../../../ActionDispatch/Head.html">ActionDispatch::Head</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http.html">ActionDispatch::Http</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Cache.html">ActionDispatch::Http::Cache</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Cache/Request.html">ActionDispatch::Http::Cache::Request</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Cache/Response.html">ActionDispatch::Http::Cache::Response</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/FilterParameters.html">ActionDispatch::Http::FilterParameters</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Headers.html">ActionDispatch::Http::Headers</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/MimeNegotiation.html">ActionDispatch::Http::MimeNegotiation</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/ParameterFilter.html">ActionDispatch::Http::ParameterFilter</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Parameters.html">ActionDispatch::Http::Parameters</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/URL.html">ActionDispatch::Http::URL</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/Upload.html">ActionDispatch::Http::Upload</a></li>
+				
+					<li><a href="../../../ActionDispatch/Http/UploadedFile.html">ActionDispatch::Http::UploadedFile</a></li>
+				
+					<li><a href="../../../ActionDispatch/Integration/RequestHelpers.html">ActionDispatch::Integration::RequestHelpers</a></li>
+				
+					<li><a href="../../../ActionDispatch/Integration/Runner.html">ActionDispatch::Integration::Runner</a></li>
+				
+					<li><a href="../../../ActionDispatch/Integration/Session.html">ActionDispatch::Integration::Session</a></li>
+				
+					<li><a href="../../../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a></li>
+				
+					<li><a href="../../../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a></li>
+				
+					<li><a href="../../../ActionDispatch/MiddlewareStack.html">ActionDispatch::MiddlewareStack</a></li>
+				
+					<li><a href="../../../ActionDispatch/MiddlewareStack/Middleware.html">ActionDispatch::MiddlewareStack::Middleware</a></li>
+				
+					<li><a href="../../../ActionDispatch/ParamsParser.html">ActionDispatch::ParamsParser</a></li>
+				
+					<li><a href="../../../ActionDispatch/PerformanceTest.html">ActionDispatch::PerformanceTest</a></li>
+				
+					<li><a href="../../../ActionDispatch/PerformanceTest.html">ActionDispatch::PerformanceTest</a></li>
+				
+					<li><a href="../../../ActionDispatch/Railtie.html">ActionDispatch::Railtie</a></li>
+				
+					<li><a href="../../../ActionDispatch/RemoteIp.html">ActionDispatch::RemoteIp</a></li>
+				
+					<li><a href="../../../ActionDispatch/RemoteIp/IpSpoofAttackError.html">ActionDispatch::RemoteIp::IpSpoofAttackError</a></li>
+				
+					<li><a href="../../../ActionDispatch/RemoteIp/RemoteIpGetter.html">ActionDispatch::RemoteIp::RemoteIpGetter</a></li>
+				
+					<li><a href="../../../ActionDispatch/Request.html">ActionDispatch::Request</a></li>
+				
+					<li><a href="../../../ActionDispatch/Rescue.html">ActionDispatch::Rescue</a></li>
+				
+					<li><a href="../../../ActionDispatch/Response.html">ActionDispatch::Response</a></li>
+				
+					<li><a href="../../../ActionDispatch/Response/Setup.html">ActionDispatch::Response::Setup</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing.html">ActionDispatch::Routing</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing.html">ActionDispatch::Routing</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper.html">ActionDispatch::Routing::Mapper</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper/Base.html">ActionDispatch::Routing::Mapper::Base</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper/HttpHelpers.html">ActionDispatch::Routing::Mapper::HttpHelpers</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper/Resources.html">ActionDispatch::Routing::Mapper::Resources</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper/Scoping.html">ActionDispatch::Routing::Mapper::Scoping</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/Mapper/Shorthand.html">ActionDispatch::Routing::Mapper::Shorthand</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/PolymorphicRoutes.html">ActionDispatch::Routing::PolymorphicRoutes</a></li>
+				
+					<li><a href="../../../ActionDispatch/Routing/UrlFor.html">ActionDispatch::Routing::UrlFor</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session.html">ActionDispatch::Session</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session/AbstractStore.html">ActionDispatch::Session::AbstractStore</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session/AbstractStore/OptionsHash.html">ActionDispatch::Session::AbstractStore::OptionsHash</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session/AbstractStore/SessionHash.html">ActionDispatch::Session::AbstractStore::SessionHash</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session/CookieStore.html">ActionDispatch::Session::CookieStore</a></li>
+				
+					<li><a href="../../../ActionDispatch/Session/MemCacheStore.html">ActionDispatch::Session::MemCacheStore</a></li>
+				
+					<li><a href="../../../ActionDispatch/ShowExceptions.html">ActionDispatch::ShowExceptions</a></li>
+				
+					<li><a href="../../../ActionDispatch/Static.html">ActionDispatch::Static</a></li>
+				
+					<li><a href="../../../ActionDispatch/TestProcess.html">ActionDispatch::TestProcess</a></li>
+				
+					<li><a href="../../../ActionDispatch/TestRequest.html">ActionDispatch::TestRequest</a></li>
+				
+					<li><a href="../../../ActionDispatch/TestResponse.html">ActionDispatch::TestResponse</a></li>
+				
+					<li><a href="../../../ActionDispatch/TestResponse/DeprecatedHelpers.html">ActionDispatch::TestResponse::DeprecatedHelpers</a></li>
+				
+					<li><a href="../../../ActionController/Base.html">ActionController::Base</a></li>
+				
+					<li><a href="../../../ActionController/Caching.html">ActionController::Caching</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Actions.html">ActionController::Caching::Actions</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Actions/ActionCachePath.html">ActionController::Caching::Actions::ActionCachePath</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Actions/ClassMethods.html">ActionController::Caching::Actions::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Pages.html">ActionController::Caching::Pages</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Pages/ClassMethods.html">ActionController::Caching::Pages::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/Caching/Sweeping.html">ActionController::Caching::Sweeping</a></li>
+				
+					<li><a href="../../../ActionController/Compatibility.html">ActionController::Compatibility</a></li>
+				
+					<li><a href="../../../ActionController/Compatibility/ClassMethods.html">ActionController::Compatibility::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/ConditionalGet.html">ActionController::ConditionalGet</a></li>
+				
+					<li><a href="../../../ActionController/Cookies.html">ActionController::Cookies</a></li>
+				
+					<li><a href="../../../ActionController/Dispatcher.html">ActionController::Dispatcher</a></li>
+				
+					<li><a href="../../../ActionController/Flash.html">ActionController::Flash</a></li>
+				
+					<li><a href="../../../ActionController/Head.html">ActionController::Head</a></li>
+				
+					<li><a href="../../../ActionController/Helpers.html">ActionController::Helpers</a></li>
+				
+					<li><a href="../../../ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/HideActions.html">ActionController::HideActions</a></li>
+				
+					<li><a href="../../../ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a></li>
+				
+					<li><a href="../../../ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a></li>
+				
+					<li><a href="../../../ActionController/ImplicitRender.html">ActionController::ImplicitRender</a></li>
+				
+					<li><a href="../../../ActionController/Instrumentation.html">ActionController::Instrumentation</a></li>
+				
+					<li><a href="../../../ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/LogSubscriber.html">ActionController::LogSubscriber</a></li>
+				
+					<li><a href="../../../ActionController/Metal.html">ActionController::Metal</a></li>
+				
+					<li><a href="../../../ActionController/Middleware.html">ActionController::Middleware</a></li>
+				
+					<li><a href="../../../ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a></li>
+				
+					<li><a href="../../../ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/RackDelegation.html">ActionController::RackDelegation</a></li>
+				
+					<li><a href="../../../ActionController/Railtie.html">ActionController::Railtie</a></li>
+				
+					<li><a href="../../../ActionController/Redirecting.html">ActionController::Redirecting</a></li>
+				
+					<li><a href="../../../ActionController/Renderers.html">ActionController::Renderers</a></li>
+				
+					<li><a href="../../../ActionController/Renderers/All.html">ActionController::Renderers::All</a></li>
+				
+					<li><a href="../../../ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/Rendering.html">ActionController::Rendering</a></li>
+				
+					<li><a href="../../../ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a></li>
+				
+					<li><a href="../../../ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/Rescue.html">ActionController::Rescue</a></li>
+				
+					<li><a href="../../../ActionController/Responder.html">ActionController::Responder</a></li>
+				
+					<li><a href="../../../ActionController/SessionManagement/ClassMethods.html">ActionController::SessionManagement::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/Streaming.html">ActionController::Streaming</a></li>
+				
+					<li><a href="../../../ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a></li>
+				
+					<li><a href="../../../ActionController/TestCase.html">ActionController::TestCase</a></li>
+				
+					<li><a href="../../../ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a></li>
+				
+					<li><a href="../../../ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a></li>
+				
+					<li><a href="../../../ActionController/TestResponse.html">ActionController::TestResponse</a></li>
+				
+					<li><a href="../../../ActionController/Testing.html">ActionController::Testing</a></li>
+				
+					<li><a href="../../../ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/UrlFor.html">ActionController::UrlFor</a></li>
+				
+					<li><a href="../../../ActionController/UrlFor/ClassMethods.html">ActionController::UrlFor::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionController/UrlRewriter.html">ActionController::UrlRewriter</a></li>
+				
+					<li><a href="../../../ActionController/UrlWriter.html">ActionController::UrlWriter</a></li>
+				
+					<li><a href="../../../ActionView/Base.html">ActionView::Base</a></li>
+				
+					<li><a href="../../../ActionView/Context.html">ActionView::Context</a></li>
+				
+					<li><a href="../../../ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a></li>
+				
+					<li><a href="../../../ActionView/FixtureResolver.html">ActionView::FixtureResolver</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/ActiveModelFormBuilder.html">ActionView::Helpers::ActiveModelFormBuilder</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/AtomFeedHelper/AtomBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomBuilder</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/FormBuilder.html">ActionView::Helpers::FormBuilder</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/InstanceTagMethods/ClassMethods.html">ActionView::Helpers::InstanceTagMethods::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/PrototypeHelper.html">ActionView::Helpers::PrototypeHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html">ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/RawOutputHelper.html">ActionView::Helpers::RawOutputHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/TextHelper.html">ActionView::Helpers::TextHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a></li>
+				
+					<li><a href="../../../ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a></li>
+				
+					<li><a href="../../../ActionView/LogSubscriber.html">ActionView::LogSubscriber</a></li>
+				
+					<li><a href="../../../ActionView/LookupContext/Details.html">ActionView::LookupContext::Details</a></li>
+				
+					<li><a href="../../../ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a></li>
+				
+					<li><a href="../../../ActionView/NullResolver.html">ActionView::NullResolver</a></li>
+				
+					<li><a href="../../../ActionView/OutputBuffer.html">ActionView::OutputBuffer</a></li>
+				
+					<li><a href="../../../ActionView/PathResolver.html">ActionView::PathResolver</a></li>
+				
+					<li><a href="../../../ActionView/Railtie.html">ActionView::Railtie</a></li>
+				
+					<li><a href="../../../ActionView/Rendering.html">ActionView::Rendering</a></li>
+				
+					<li><a href="../../../ActionView/Resolver.html">ActionView::Resolver</a></li>
+				
+					<li><a href="../../../ActionView/Template.html">ActionView::Template</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handler.html">ActionView::Template::Handler</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/Compilable.html">ActionView::Template::Handlers::Compilable</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/Compilable/ClassMethods.html">ActionView::Template::Handlers::Compilable::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a></li>
+				
+					<li><a href="../../../ActionView/Template/Handlers/RJS.html">ActionView::Template::Handlers::RJS</a></li>
+				
+					<li><a href="../../../ActionView/TestCase.html">ActionView::TestCase</a></li>
+				
+					<li><a href="../../../ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a></li>
+				
+					<li><a href="../../../ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../../ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a></li>
+				
+					<li><a href="../../../ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a></li>
+				
+					<li><a href="../../../AbstractController.html">AbstractController</a></li>
+				
+					<li><a href="../../../AbstractController/ActionNotFound.html">AbstractController::ActionNotFound</a></li>
+				
+					<li><a href="../../../AbstractController/AssetPaths.html">AbstractController::AssetPaths</a></li>
+				
+					<li><a href="../../../AbstractController/Base.html">AbstractController::Base</a></li>
+				
+					<li><a href="../../../AbstractController/Callbacks.html">AbstractController::Callbacks</a></li>
+				
+					<li><a href="../../../AbstractController/Callbacks/ClassMethods.html">AbstractController::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../../AbstractController/Collector.html">AbstractController::Collector</a></li>
+				
+					<li><a href="../../../AbstractController/DoubleRenderError.html">AbstractController::DoubleRenderError</a></li>
+				
+					<li><a href="../../../AbstractController/Error.html">AbstractController::Error</a></li>
+				
+					<li><a href="../../../AbstractController/Helpers.html">AbstractController::Helpers</a></li>
+				
+					<li><a href="../../../AbstractController/Helpers/ClassMethods.html">AbstractController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../../../AbstractController/Logger.html">AbstractController::Logger</a></li>
+				
+					<li><a href="../../../AbstractController/Rendering.html">AbstractController::Rendering</a></li>
+				
+					<li><a href="../../../AbstractController/Rendering/ClassMethods.html">AbstractController::Rendering::ClassMethods</a></li>
+				
+					<li><a href="../../../AbstractController/Translation.html">AbstractController::Translation</a></li>
+				
+					<li><a href="../../../AbstractController/ViewPaths.html">AbstractController::ViewPaths</a></li>
+				
+					<li><a href="../../../AbstractController/ViewPaths/ClassMethods.html">AbstractController::ViewPaths::ClassMethods</a></li>
+				
+					<li><a href="../../../HTML/FullSanitizer.html">HTML::FullSanitizer</a></li>
+				
+					<li><a href="../../../HTML/LinkSanitizer.html">HTML::LinkSanitizer</a></li>
+				
+					<li><a href="../../../HTML/Sanitizer.html">HTML::Sanitizer</a></li>
+				
+					<li><a href="../../../HTML/Selector.html">HTML::Selector</a></li>
+				
+					<li><a href="../../../HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a></li>
+				
+					<li><a href="../../../Mime.html">Mime</a></li>
+				
+					<li><a href="../../../Mime/Mimes.html">Mime::Mimes</a></li>
+				
+					<li><a href="../../../Mime/Type.html">Mime::Type</a></li>
+				
+					<li><a href="../../../ActionPack.html">ActionPack</a></li>
+				
+					<li><a href="../../../Rack.html">Rack</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">ActionDispatch::Routing::Mapper::Scoping</h1>
+
+		<div id="description">
+			<p>
+You may wish to organize groups of controllers under a namespace. Most
+commonly, you might group a number of administrative controllers under an
+<tt>admin</tt> namespace. You would place these controllers under the
+app/controllers/admin directory, and you can group them together in your
+router:
+</p>
+<pre>
+  namespace &quot;admin&quot; do
+    resources :posts, :comments
+  end
+</pre>
+<p>
+This will create a number of routes for each of the posts and comments
+controller. For Admin::PostsController, Rails will create:
+</p>
+<pre>
+  GET       /admin/photos
+  GET       /admin/photos/new
+  POST    /admin/photos
+  GET       /admin/photos/1
+  GET       /admin/photos/1/edit
+  PUT       /admin/photos/1
+  DELETE  /admin/photos/1
+</pre>
+<p>
+If you want to route /photos (without the prefix /admin) to
+Admin::PostsController, you could use
+</p>
+<pre>
+  scope :module =&gt; &quot;admin&quot; do
+    resources :posts, :comments
+  end
+</pre>
+<p>
+or, for a single case
+</p>
+<pre>
+  resources :posts, :module =&gt; &quot;admin&quot;
+</pre>
+<p>
+If you want to route /admin/photos to PostsController
+</p>
+<table>
+<tr><td valign="top">(without the Admin</td><td><p>
+module prefix), you could use
+</p>
+</td></tr>
+</table>
+<pre>
+  scope &quot;/admin&quot; do
+    resources :posts, :comments
+  end
+</pre>
+<p>
+or, for a single case
+</p>
+<pre>
+  resources :posts, :path =&gt; &quot;/admin&quot;
+</pre>
+<p>
+In each of these cases, the named routes remain the same as if you did not
+use scope. In the last case, the following paths map to PostsController:
+</p>
+<pre>
+  GET       /admin/photos
+  GET       /admin/photos/new
+  POST    /admin/photos
+  GET       /admin/photos/1
+  GET       /admin/photos/1/edit
+  PUT       /admin/photos/1
+  DELETE  /admin/photos/1</pre>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="constraints-method" class="method-detail ">
+				<a name="method-i-constraints"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">constraints</span><span
+						class="method-args">(constraints = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<h3>Parameter Restriction</h3>
+<p>
+Allows you to constrain the nested routes based on a set of rules. For
+instance, in order to change the routes to allow for a dot character in the
+<tt>id</tt> parameter:
+</p>
+<pre>
+  constraints(:id =&gt; /\d+\.\d+) do
+    resources :posts
+  end
+</pre>
+<p>
+Now routes such as <tt>/posts/1</tt> will no longer be valid, but
+<tt>/posts/1.1</tt> will be. The <tt>id</tt> parameter must match the
+constraint passed in for this example.
+</p>
+<p>
+You may use this to also resrict other parameters:
+</p>
+<pre>
+  resources :posts do
+    constraints(:post_id =&gt; /\d+\.\d+) do
+      resources :comments
+    end
+</pre>
+<h3>Restricting based on IP</h3>
+<p>
+Routes can also be constrained to an IP or a certain range of IP addresses:
+</p>
+<pre>
+  constraints(:ip =&gt; /192.168.\d+.\d+/) do
+    resources :posts
+  end
+</pre>
+<p>
+Any user connecting from the 192.168.* range will be able to see this
+resource, where as any user connecting outside of this range will be told
+there is no such route.
+</p>
+<h3>Dynamic request matching</h3>
+<p>
+Requests to routes can be constrained based on specific critera:
+</p>
+<pre>
+   constraints(lambda { |req| req.env[&quot;HTTP_USER_AGENT&quot;] =~ /iPhone/ }) do
+     resources :iphones
+   end
+</pre>
+<p>
+You are able to move this logic out into a class if it is too complex for
+routes. This class must have a <tt>matches?</tt> method defined on it which
+either returns <tt>true</tt> if the user should be given access to that
+route, or <tt>false</tt> if the user should not.
+</p>
+<pre>
+   class Iphone
+     def self.matches(request)
+       request.env[&quot;HTTP_USER_AGENT&quot;] =~ /iPhone/
+     end
+   end
+</pre>
+<p>
+An expected place for this code would be <tt>lib/constraints</tt>.
+</p>
+<p>
+This class is then used like this:
+</p>
+<pre>
+   constraints(Iphone) do
+     resources :iphones
+   end</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="constraints-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 677</span>
+677:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">constraints</span>(<span class="ruby-identifier">constraints</span> = {})
+678:           <span class="ruby-identifier">scope</span>(<span class="ruby-value">:constraints</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">constraints</span>) { <span class="ruby-keyword kw">yield</span> }
+679:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="controller-method" class="method-detail ">
+				<a name="method-i-controller"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">controller</span><span
+						class="method-args">(controller, options={})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Scopes routes to a specific controller
+</p>
+<p>
+Example:
+</p>
+<pre>
+  controller &quot;food&quot; do
+    match &quot;bacon&quot;, :action =&gt; &quot;bacon&quot;
+  end</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="controller-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 559</span>
+559:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">controller</span>(<span class="ruby-identifier">controller</span>, <span class="ruby-identifier">options</span>={})
+560:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:controller</span>] = <span class="ruby-identifier">controller</span>
+561:           <span class="ruby-identifier">scope</span>(<span class="ruby-identifier">options</span>) { <span class="ruby-keyword kw">yield</span> }
+562:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="defaults-method" class="method-detail ">
+				<a name="method-i-defaults"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">defaults</span><span
+						class="method-args">(defaults = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Allows you to set default parameters for a route, such as this: defaults
+:id => &#8216;home&#8217; do
+</p>
+<pre>
+  match 'scoped_pages/(:id)', :to =&gt; 'pages#show'
+</pre>
+<p>
+end Using this, the <tt>:id</tt> parameter here will default to
+&#8216;home&#8217;.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="defaults-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 686</span>
+686:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">defaults</span>(<span class="ruby-identifier">defaults</span> = {})
+687:           <span class="ruby-identifier">scope</span>(<span class="ruby-value">:defaults</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">defaults</span>) { <span class="ruby-keyword kw">yield</span> }
+688:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="namespace-method" class="method-detail ">
+				<a name="method-i-namespace"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">namespace</span><span
+						class="method-args">(path, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Scopes routes to a specific namespace. For example:
+</p>
+<pre>
+  namespace :admin do
+    resources :posts
+  end
+</pre>
+<p>
+This generates the following routes:
+</p>
+<pre>
+      admin_posts GET    /admin/posts(.:format)          {:action=&gt;&quot;index&quot;, :controller=&gt;&quot;admin/posts&quot;}
+      admin_posts POST   /admin/posts(.:format)          {:action=&gt;&quot;create&quot;, :controller=&gt;&quot;admin/posts&quot;}
+   new_admin_post GET    /admin/posts/new(.:format)      {:action=&gt;&quot;new&quot;, :controller=&gt;&quot;admin/posts&quot;}
+  edit_admin_post GET    /admin/posts/:id/edit(.:format) {:action=&gt;&quot;edit&quot;, :controller=&gt;&quot;admin/posts&quot;}
+       admin_post GET    /admin/posts/:id(.:format)      {:action=&gt;&quot;show&quot;, :controller=&gt;&quot;admin/posts&quot;}
+       admin_post PUT    /admin/posts/:id(.:format)      {:action=&gt;&quot;update&quot;, :controller=&gt;&quot;admin/posts&quot;}
+       admin_post DELETE /admin/posts/:id(.:format)      {:action=&gt;&quot;destroy&quot;, :controller=&gt;&quot;admin/posts&quot;}
+</pre>
+<h3>Supported options</h3>
+<p>
+The <tt>:path</tt>, <tt>:as</tt>, <tt>:module</tt>, <tt>:shallow_path</tt>
+and <tt>:shallow_prefix</tt> options all default to the name of the
+namespace.
+</p>
+<dl>
+<dt>:path</dt><dd><p>
+The path prefix for the routes.
+</p>
+<pre>
+  namespace :admin, :path =&gt; &quot;sekret&quot; do
+    resources :posts
+  end
+</pre>
+<p>
+All routes for the above <tt>resources</tt> will be accessible through
+<tt>/sekret/posts</tt>, rather than <tt>/admin/posts</tt>
+</p>
+</dd>
+<dt>:module</dt><dd><p>
+The namespace for the controllers.
+</p>
+<pre>
+  namespace :admin, :module =&gt; &quot;sekret&quot; do
+    resources :posts
+  end
+</pre>
+<p>
+The <tt>PostsController</tt> here should go in the <tt>Sekret</tt>
+namespace and so it should be defined like this:
+</p>
+<pre>
+  class Sekret::PostsController &lt; ApplicationController
+    # code go here
+  end
+</pre>
+</dd>
+<dt>:as</dt><dd><p>
+Changes the name used in routing helpers for this namespace.
+</p>
+<pre>
+  namespace :admin, :as =&gt; &quot;sekret&quot; do
+    resources :posts
+  end
+</pre>
+</dd>
+</dl>
+<p>
+<a href="../../Routing.html">Routing</a> helpers such as
+<tt>admin_posts_path</tt> will now be <tt>sekret_posts_path</tt>.
+</p>
+<dl>
+<dt>:shallow_path</dt><dd><p>
+See the <tt>scope</tt> method.
+</p>
+</dd>
+</dl>
+					
+
+					
+					<div class="method-source-code"
+						id="namespace-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 616</span>
+616:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">namespace</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {})
+617:           <span class="ruby-identifier">path</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>
+618:           <span class="ruby-identifier">options</span> = { <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>, <span class="ruby-value">:as</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>, <span class="ruby-value">:module</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>,
+619:                       <span class="ruby-value">:shallow_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>, <span class="ruby-value">:shallow_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span> }.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>)
+620:           <span class="ruby-identifier">scope</span>(<span class="ruby-identifier">options</span>) { <span class="ruby-keyword kw">yield</span> }
+621:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="scope-method" class="method-detail ">
+				<a name="method-i-scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">scope</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Used to scope a set of routes to particular constraints.
+</p>
+<p>
+Take the following route definition as an example:
+</p>
+<pre>
+  scope :path =&gt; &quot;:account_id&quot;, :as =&gt; &quot;account&quot; do
+    resources :projects
+  end
+</pre>
+<p>
+This generates helpers such as <tt>account_projects_path</tt>, just like
+<tt>resources</tt> does. The difference here being that the routes
+generated are like /rails/projects/2, rather than
+/accounts/rails/projects/2.
+</p>
+<h3>Supported options</h3>
+<dl>
+<dt>:module</dt><dd><p>
+If you want to route /posts (without the prefix /admin) to
+Admin::PostsController, you could use
+</p>
+<pre>
+  scope :module =&gt; &quot;admin&quot; do
+    resources :posts
+  end
+</pre>
+</dd>
+<dt>:path</dt><dd><p>
+If you want to prefix the route, you could use
+</p>
+<pre>
+  scope :path =&gt; &quot;/admin&quot; do
+    resources :posts
+  end
+</pre>
+<p>
+This will prefix all of the <tt>posts</tt> resource&#8217;s requests with
+&#8217;/admin&#8217;
+</p>
+</dd>
+<dt>:as</dt><dd><p>
+Prefixes the routing helpers in this scope with the specified label.
+</p>
+<pre>
+  scope :as =&gt; &quot;sekret&quot; do
+    resources :posts
+  end
+</pre>
+</dd>
+</dl>
+<p>
+Helpers such as <tt>posts_path</tt> will now be <tt>sekret_posts_path</tt>
+</p>
+<dl>
+<dt>:shallow_path</dt><dd></dd>
+</dl>
+<pre>
+  Prefixes nested shallow routes with the specified path.
+
+  scope :shallow_path =&gt; &quot;sekret&quot; do
+    resources :posts do
+      resources :comments, :shallow =&gt; true
+    end
+
+  The +comments+ resource here will have the following routes generated for it:
+
+    post_comments    GET    /sekret/posts/:post_id/comments(.:format)
+    post_comments    POST   /sekret/posts/:post_id/comments(.:format)
+    new_post_comment GET    /sekret/posts/:post_id/comments/new(.:format)
+    edit_comment     GET    /sekret/comments/:id/edit(.:format)
+    comment          GET    /sekret/comments/:id(.:format)
+    comment          PUT    /sekret/comments/:id(.:format)
+    comment          DELETE /sekret/comments/:id(.:format)</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 512</span>
+512:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scope</span>(*<span class="ruby-identifier">args</span>)
+513:           <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">extract_options!</span>
+514:           <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">dup</span>
+515: 
+516:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name_prefix</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:name_prefix</span>)
+517:             <span class="ruby-identifier">options</span>[<span class="ruby-value">:as</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">name_prefix</span>
+518:             <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">warn</span> <span class="ruby-value str">&quot;:name_prefix was deprecated in the new router syntax. Use :as instead.&quot;</span>, <span class="ruby-identifier">caller</span>
+519:           <span class="ruby-keyword kw">end</span>
+520: 
+521:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:path</span>] = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+522:           <span class="ruby-identifier">recover</span> = {}
+523: 
+524:           <span class="ruby-identifier">options</span>[<span class="ruby-value">:constraints</span>] <span class="ruby-operator">||=</span> {}
+525:           <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:constraints</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+526:             <span class="ruby-identifier">block</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:constraints</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:constraints</span>], {}
+527:           <span class="ruby-keyword kw">end</span>
+528: 
+529:           <span class="ruby-identifier">scope_options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">option</span><span class="ruby-operator">|</span>
+530:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">option</span>)
+531:               <span class="ruby-identifier">recover</span>[<span class="ruby-identifier">option</span>] = <span class="ruby-ivar">@scope</span>[<span class="ruby-identifier">option</span>]
+532:               <span class="ruby-ivar">@scope</span>[<span class="ruby-identifier">option</span>]  = <span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;merge_#{option}_scope&quot;</span>, <span class="ruby-ivar">@scope</span>[<span class="ruby-identifier">option</span>], <span class="ruby-identifier">value</span>)
+533:             <span class="ruby-keyword kw">end</span>
+534:           <span class="ruby-keyword kw">end</span>
+535: 
+536:           <span class="ruby-identifier">recover</span>[<span class="ruby-value">:block</span>] = <span class="ruby-ivar">@scope</span>[<span class="ruby-value">:blocks</span>]
+537:           <span class="ruby-ivar">@scope</span>[<span class="ruby-value">:blocks</span>] = <span class="ruby-identifier">merge_blocks_scope</span>(<span class="ruby-ivar">@scope</span>[<span class="ruby-value">:blocks</span>], <span class="ruby-identifier">block</span>)
+538: 
+539:           <span class="ruby-identifier">recover</span>[<span class="ruby-value">:options</span>] = <span class="ruby-ivar">@scope</span>[<span class="ruby-value">:options</span>]
+540:           <span class="ruby-ivar">@scope</span>[<span class="ruby-value">:options</span>]  = <span class="ruby-identifier">merge_options_scope</span>(<span class="ruby-ivar">@scope</span>[<span class="ruby-value">:options</span>], <span class="ruby-identifier">options</span>)
+541: 
+542:           <span class="ruby-keyword kw">yield</span>
+543:           <span class="ruby-keyword kw">self</span>
+544:         <span class="ruby-keyword kw">ensure</span>
+545:           <span class="ruby-identifier">scope_options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">option</span><span class="ruby-operator">|</span>
+546:             <span class="ruby-ivar">@scope</span>[<span class="ruby-identifier">option</span>] = <span class="ruby-identifier">recover</span>[<span class="ruby-identifier">option</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">recover</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">option</span>)
+547:           <span class="ruby-keyword kw">end</span>
+548: 
+549:           <span class="ruby-ivar">@scope</span>[<span class="ruby-value">:options</span>] = <span class="ruby-identifier">recover</span>[<span class="ruby-value">:options</span>]
+550:           <span class="ruby-ivar">@scope</span>[<span class="ruby-value">:blocks</span>]  = <span class="ruby-identifier">recover</span>[<span class="ruby-value">:block</span>]
+551:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="merge-as-scope-method" class="method-detail ">
+				<a name="method-i-merge_as_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_as_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-as-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 703</span>
+703:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_as_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+704:             <span class="ruby-identifier">parent</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{parent}_#{child}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">child</span>
+705:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-blocks-scope-method" class="method-detail ">
+				<a name="method-i-merge_blocks_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_blocks_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-blocks-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 731</span>
+731:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_blocks_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+732:             <span class="ruby-identifier">merged</span> = <span class="ruby-identifier">parent</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">dup</span> <span class="ruby-operator">:</span> []
+733:             <span class="ruby-identifier">merged</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">child</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">child</span>
+734:             <span class="ruby-identifier">merged</span>
+735:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-constraints-scope-method" class="method-detail ">
+				<a name="method-i-merge_constraints_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_constraints_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-constraints-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 723</span>
+723:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_constraints_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+724:             <span class="ruby-identifier">merge_options_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+725:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-controller-scope-method" class="method-detail ">
+				<a name="method-i-merge_controller_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_controller_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-controller-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 715</span>
+715:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_controller_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+716:             <span class="ruby-identifier">child</span>
+717:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-defaults-scope-method" class="method-detail ">
+				<a name="method-i-merge_defaults_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_defaults_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-defaults-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 727</span>
+727:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_defaults_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+728:             <span class="ruby-identifier">merge_options_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+729:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-module-scope-method" class="method-detail ">
+				<a name="method-i-merge_module_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_module_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-module-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 711</span>
+711:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_module_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+712:             <span class="ruby-identifier">parent</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{parent}/#{child}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">child</span>
+713:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-options-scope-method" class="method-detail ">
+				<a name="method-i-merge_options_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_options_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-options-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 737</span>
+737:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_options_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+738:             (<span class="ruby-identifier">parent</span> <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">except</span>(*<span class="ruby-identifier">override_keys</span>(<span class="ruby-identifier">child</span>)).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">child</span>)
+739:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-path-names-scope-method" class="method-detail ">
+				<a name="method-i-merge_path_names_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_path_names_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-path-names-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 719</span>
+719:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_path_names_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+720:             <span class="ruby-identifier">merge_options_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+721:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-path-scope-method" class="method-detail ">
+				<a name="method-i-merge_path_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_path_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-path-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 695</span>
+695:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_path_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+696:             <span class="ruby-constant">Mapper</span>.<span class="ruby-identifier">normalize_path</span>(<span class="ruby-node">&quot;#{parent}/#{child}&quot;</span>)
+697:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-shallow-path-scope-method" class="method-detail ">
+				<a name="method-i-merge_shallow_path_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_shallow_path_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-shallow-path-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 699</span>
+699:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_shallow_path_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+700:             <span class="ruby-constant">Mapper</span>.<span class="ruby-identifier">normalize_path</span>(<span class="ruby-node">&quot;#{parent}/#{child}&quot;</span>)
+701:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-shallow-prefix-scope-method" class="method-detail ">
+				<a name="method-i-merge_shallow_prefix_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_shallow_prefix_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-shallow-prefix-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 707</span>
+707:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_shallow_prefix_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+708:             <span class="ruby-identifier">parent</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{parent}_#{child}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">child</span>
+709:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-shallow-scope-method" class="method-detail ">
+				<a name="method-i-merge_shallow_scope"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_shallow_scope</span><span
+						class="method-args">(parent, child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="merge-shallow-scope-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 741</span>
+741:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_shallow_scope</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">child</span>)
+742:             <span class="ruby-identifier">child</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">false</span>
+743:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="override-keys-method" class="method-detail ">
+				<a name="method-i-override_keys"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">override_keys</span><span
+						class="method-args">(child)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="override-keys-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 745</span>
+745:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">override_keys</span>(<span class="ruby-identifier">child</span>)
+746:             <span class="ruby-identifier">child</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:only</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:except</span>) <span class="ruby-operator">?</span> [<span class="ruby-value">:only</span>, <span class="ruby-value">:except</span>] <span class="ruby-operator">:</span> []
+747:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="scope-options-method" class="method-detail ">
+				<a name="method-i-scope_options"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">scope_options</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="scope-options-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_dispatch/routing/mapper.rb, line 691</span>
+691:           <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scope_options</span>
+692:             <span class="ruby-ivar">@scope_options</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">private_methods</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp re">/^merge_(.+)_scope$/</span>) { <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_sym</span> }
+693:           <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

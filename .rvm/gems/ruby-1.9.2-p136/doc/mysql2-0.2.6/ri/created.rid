@@ -1,0 +1,19 @@
+Fri, 25 Feb 2011 11:05:48 -0500
+lib/arel/engines/sql/compilers/mysql2_compiler.rb	Fri, 25 Feb 2011 11:05:43 -0500
+lib/mysql2.rb	Fri, 25 Feb 2011 11:05:43 -0500
+lib/mysql2/em.rb	Fri, 25 Feb 2011 11:05:43 -0500
+lib/mysql2/client.rb	Fri, 25 Feb 2011 11:05:43 -0500
+lib/mysql2/result.rb	Fri, 25 Feb 2011 11:05:43 -0500
+lib/mysql2/error.rb	Fri, 25 Feb 2011 11:05:43 -0500
+lib/active_record/fiber_patches.rb	Fri, 25 Feb 2011 11:05:43 -0500
+lib/active_record/connection_adapters/mysql2_adapter.rb	Fri, 25 Feb 2011 11:05:43 -0500
+lib/active_record/connection_adapters/em_mysql2_adapter.rb	Fri, 25 Feb 2011 11:05:43 -0500
+ext/mysql2/mysql2_ext.h	Fri, 25 Feb 2011 11:05:43 -0500
+ext/mysql2/result.c	Fri, 25 Feb 2011 11:05:43 -0500
+ext/mysql2/client.h	Fri, 25 Feb 2011 11:05:43 -0500
+ext/mysql2/mysql2_ext.c	Fri, 25 Feb 2011 11:05:43 -0500
+ext/mysql2/client.c	Fri, 25 Feb 2011 11:05:43 -0500
+ext/mysql2/Makefile	Fri, 25 Feb 2011 11:05:47 -0500
+ext/mysql2/extconf.rb	Fri, 25 Feb 2011 11:05:43 -0500
+ext/mysql2/result.h	Fri, 25 Feb 2011 11:05:43 -0500
+README.rdoc	Fri, 25 Feb 2011 11:05:43 -0500

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="windowmanager" mtime="1298477681" type="string">
+		<stringvalue>metacity</stringvalue>
+	</entry>
+</gconf>

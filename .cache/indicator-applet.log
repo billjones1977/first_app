@@ -1,0 +1,33 @@
+Looking at Module: libmessaging.so
+new_application_item ("Set Up Chat...")
+id_prop_update: assertion `priv->root != NULL' failed
+id_prop_update: assertion `priv->root != NULL' failed
+id_prop_update: assertion `priv->root != NULL' failed
+id_prop_update: assertion `priv->root != NULL' failed
+id_prop_update: assertion `priv->root != NULL' failed
+Connected to Application Indicator Service.
+about to connect to the signals
+scrub-widget::property_update for prop visible
+scrub-widget::property_update for prop x-canonical-ido-volume-level
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+Building new application entry: :1.23  with icon: gtk-dialog-authentication
+Signal: Entry Removed
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0
+signal caught - sink input while muted with value 0

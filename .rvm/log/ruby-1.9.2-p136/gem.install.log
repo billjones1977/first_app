@@ -1,0 +1,40 @@
+[2011-02-22 10:02:21] GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136'  gem install rake   
+ERROR:  Loading command: install (LoadError)
+    no such file to load -- zlib
+ERROR:  While executing gem ... (NameError)
+    uninitialized constant Gem::Commands::InstallCommand
+[2011-02-22 10:02:22] GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global'  gem install rake   
+ERROR:  Loading command: install (LoadError)
+    no such file to load -- zlib
+ERROR:  While executing gem ... (NameError)
+    uninitialized constant Gem::Commands::InstallCommand
+[2011-02-22 11:28:12] GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136'  gem install rake   
+ERROR:  Loading command: install (LoadError)
+    no such file to load -- zlib
+ERROR:  While executing gem ... (NameError)
+    uninitialized constant Gem::Commands::InstallCommand
+[2011-02-22 11:28:12] GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global'  gem install rake   
+ERROR:  Loading command: install (LoadError)
+    no such file to load -- zlib
+ERROR:  While executing gem ... (NameError)
+    uninitialized constant Gem::Commands::InstallCommand
+[2011-02-22 13:28:29] GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136'  gem install rake   
+Successfully installed rake-0.8.7
+1 gem installed
+Installing ri documentation for rake-0.8.7...
+Installing RDoc documentation for rake-0.8.7...
+[2011-02-22 13:28:41] GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global'  gem install rake   
+Successfully installed rake-0.8.7
+1 gem installed
+Installing ri documentation for rake-0.8.7...
+Installing RDoc documentation for rake-0.8.7...
+[2011-02-23 16:10:41] GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136'  gem install rake   
+Successfully installed rake-0.8.7
+1 gem installed
+Installing ri documentation for rake-0.8.7...
+Installing RDoc documentation for rake-0.8.7...
+[2011-02-23 16:10:51] GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global'  gem install rake   
+Successfully installed rake-0.8.7
+1 gem installed
+Installing ri documentation for rake-0.8.7...
+Installing RDoc documentation for rake-0.8.7...

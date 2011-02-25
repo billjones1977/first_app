@@ -1,0 +1,20 @@
+[2011-02-22 11:25:26] /usr/bin/make install
+cp libz.a /home/billones1977/.rvm/usr/lib
+cp libz.so.1.2.5 /home/billones1977/.rvm/usr/lib
+cd /home/billones1977/.rvm/usr/lib; chmod u=rw,go=r libz.a
+cp zlib.3 /home/billones1977/.rvm/usr/share/man/man3
+chmod 644 /home/billones1977/.rvm/usr/share/man/man3/zlib.3
+cp zlib.pc /home/billones1977/.rvm/usr/lib/pkgconfig
+chmod 644 /home/billones1977/.rvm/usr/lib/pkgconfig/zlib.pc
+cp zlib.h zconf.h /home/billones1977/.rvm/usr/include
+chmod 644 /home/billones1977/.rvm/usr/include/zlib.h /home/billones1977/.rvm/usr/include/zconf.h
+[2011-02-22 13:14:29] /usr/bin/make install
+cp libz.a /home/billones1977/.rvm/usr/lib
+cp libz.so.1.2.5 /home/billones1977/.rvm/usr/lib
+cd /home/billones1977/.rvm/usr/lib; chmod u=rw,go=r libz.a
+cp zlib.3 /home/billones1977/.rvm/usr/share/man/man3
+chmod 644 /home/billones1977/.rvm/usr/share/man/man3/zlib.3
+cp zlib.pc /home/billones1977/.rvm/usr/lib/pkgconfig
+chmod 644 /home/billones1977/.rvm/usr/lib/pkgconfig/zlib.pc
+cp zlib.h zconf.h /home/billones1977/.rvm/usr/include
+chmod 644 /home/billones1977/.rvm/usr/include/zlib.h /home/billones1977/.rvm/usr/include/zconf.h

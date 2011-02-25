@@ -1,0 +1,181 @@
+#!/usr/bin/env bash
+
+source "$rvm_path/scripts/base"
+
+result=0
+
+__rvm_become
+
+
+rubygems_remove()
+{
+  "$rvm_path/scripts/log" "info" \
+    "Removing old Rubygems files..."
+
+  rubygems_dir="$(ruby -rrbconfig -e "puts Config::CONFIG.values_at('sitelibdir','vendorlibdir').detect {|path| File.directory?(File.join(path, 'rubygems')) }.to_s")"
+
+  if [[ -n "$rubygems_dir" && -d "$rubygems_dir" ]] ; then
+
+    # Remove common files installed by ruby gems.
+    \rm -rf "${rubygems_dir}/ubygems.rb" "${rubygems_dir}/rubygems.rb" \
+      "${rubygems_dir}/rubygems" "${rubygems_dir}/gauntlet_rubygems.rb"
+
+  fi
+
+  "$rvm_path/scripts/log" "info" \
+    "Installing rubygems dedicated to ${rvm_ruby_string}..."
+}
+
+rubygems_setup()
+{
+  __rvm_warn_on_rubyopt
+
+  unset RUBYOPT
+
+  if [[ ! -z "$(echo $ruby_ruby_interpreter | awk '/^goruy/')" ]] ; then
+    install=0
+  elif [[ "$rvm_ruby_string" = "ruby-head" ]] ; then
+    install=0
+  elif [[ -n "$(echo "$rvm_ruby_string" | awk '/^rbx|jruby|rubinius/')" ]]; then
+    install=0
+  else
+    install=1
+  fi
+
+  if [[ "$install" -eq 0 ]] ; then
+
+    "$rvm_path/scripts/log" "error" \
+      "Cannot switch to ${version} for this interpreter."
+
+    exit 1
+
+  else
+
+    rubygems_remove
+
+    rvm_rubygems_version="$version"
+    rvm_gem_package_name="rubygems-${rvm_rubygems_version}"
+    rvm_rubygems_url=$(__rvm_db "rubygems_${rvm_rubygems_version}_url")
+    rvm_gem_url="${rvm_rubygems_url}/${rvm_gem_package_name}.tgz"
+
+    # Sanity check... If setup.rb is missing from the rubygems source path,
+    # something went wrong. Cleanup, aisle 3!
+    if [[ ! -f "${rvm_src_path:-"$rvm_path/src"}/$rvm_gem_package_name/setup.rb" ]]; then
+      \rm -rf "${rvm_src_path:-"$rvm_path/src"}/$rvm_gem_package_name"
+    fi
+
+    if [[ ! -d "${rvm_src_path:-"$rvm_path/src"}/${rvm_gem_package_name}" ]] ; then
+
+      "$rvm_path/scripts/log" "info" \
+        "Retrieving $rvm_gem_package_name"
+
+      "$rvm_path/scripts/fetch" "$rvm_gem_url" ; result=$?
+
+      if [[ "$result" -gt 0 ]] ; then
+
+        "$rvm_path/scripts/log" "error" \
+          "There has been an error while trying to fetch the source. Aborting the installation."
+
+        return $result
+
+      fi
+
+      if [[ ! -d "${rvm_src_path:-"$rvm_path/src"}/$rvm_gem_package_name" ]] ; then
+        \mkdir -p "${rvm_src_path:-"$rvm_path/src"}/$rvm_gem_package_name"
+      fi
+
+      __rvm_run "rubygems.extract" \
+        "gunzip < ${rvm_archives_path:-"$rvm_path/archives"}/$rvm_gem_package_name.tgz | tar xf - -C ${rvm_src_path:-"$rvm_path/src"}" \
+        "Extracting $rvm_gem_package_name ..."
+    fi
+
+    builtin cd "${rvm_src_path:-"$rvm_path/src"}/$rvm_gem_package_name"
+
+    __rvm_run "rubygems.install" \
+      "GEM_PATH=\"$rvm_ruby_gem_path:$rvm_ruby_global_gems_path\" GEM_HOME=\"$rvm_ruby_gem_home\" \"$rvm_ruby_home/bin/ruby\" \"${rvm_src_path:-"$rvm_path/src"}/$rvm_gem_package_name/setup.rb\"" \
+      "Installing rubygems for $rvm_ruby_home/bin/ruby"
+    result=$?
+
+    if [[ "$result" == 0 ]] ; then
+
+      "$rvm_path/scripts/log" "info" \
+        "Installation of rubygems completed successfully."
+
+    else
+
+      "$rvm_path/scripts/log" "warning" \
+        "Installation of rubygems did not complete successfully."
+
+    fi
+
+    if [[ ! -z "$rvm_ruby_major_version" ]] ; then
+      ruby_lib_gem_path="$rvm_ruby_home/lib/ruby/gems/${rvm_ruby_release_version}.${rvm_ruby_major_version}"
+    else
+      ruby_lib_gem_path="$rvm_ruby_home/lib/ruby/gems/$interpreter"
+    fi
+  fi
+
+  # Add ruby's gem path to ruby's lib direcotry.
+  \mkdir -p "$(dirname $ruby_lib_gem_path)"
+
+  if [[ -d "$ruby_lib_gem_path" ]] ; then \rm -rf "$ruby_lib_gem_path" ; fi
+
+  ln -nfs "$rvm_ruby_gem_home" "$ruby_lib_gem_path"
+
+  unset ruby_lib_gem_path
+}
+
+if ! command -v ruby > /dev/null ; then
+
+  "$rvm_path/scripts/log" "error" \
+    "'ruby' was not found, cannot install rubygems unless ruby is present (Do you have an RVM ruby installed & selected?)"
+
+  exit 1
+
+fi
+
+#
+# rvm rubygems use X
+#
+args=($*)
+version="${args[0]}"
+args="$(echo ${args[@]:1}) " # Strip trailing / leading / extra spacing.
+
+if [[ -z "$version" ]] ; then
+
+  "$rvm_path/scripts/log" "error" \
+    "Usage: rvm rubygems [version#|current|remove]"
+
+  exit 1
+
+fi
+
+if ! command -v ruby | grep -q "rvm" ; then
+
+  "$rvm_path/scripts/log" "error" \
+    "Rubygems version may only be set for an RVM MRI based Ruby, please select one and rerun."
+
+  exit 1
+
+fi
+
+case "$version" in
+
+  remove)
+    rubygems_remove
+    ;;
+
+  current)
+    # Install current known latest version of rubygems.
+    version="$(__rvm_db "${rvm_ruby_interpreter}_rubygems_version")"
+    version="${rvm_rubygems_version:-"$(__rvm_db "rubygems_version")"}"
+    rubygems_setup
+    ;;
+
+  *)
+    rubygems_setup
+    ;;
+
+esac
+
+exit $result

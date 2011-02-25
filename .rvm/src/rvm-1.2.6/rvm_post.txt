@@ -1,0 +1,245 @@
+# RVM: More than Ruby 1.9 and Rails 3
+
+Primary discussion points:
+- Gemsets, gemset hierarchy.
+- Bundler and Gemsets - how they both work together
+- Switching (avoid having to deal with suffixes)
+- Easily updating rubies (rvm upgrade)
+- Libedit issues with OSX / Readline
+- .rvmrc files / details.
+- User local, installed into your home directory.
+
+TODO: Add reference to the rvm docs.
+
+## Introduction
+
+RVM is best known as a tool to help developers upgrade their applications to newer versions
+of Ruby and Rails (3 specificially). That said, for ruby developers, it has many features
+which help to make their workflow far simpler. Whilst some have shown with effort and rigorous
+manual process you can achieve much of what RVM offers, the following is a look into some
+less often discussed areas of RVM that make it my most favoured tool when it comes to development.
+
+## Gemsets and the Gemset Hierarchy
+
+Whilst Bundler solves most of the problems related to isolating gems for me
+personally, on most projects I develop for there are things that make rvm's
+implementation of gemsets (especially when used along with bundler) invaluable to me as a
+ruby developer.
+
+### Isolating Gems
+
+A major strength of RVM is the ability to isolate gems at the system level.
+This keeps them safely partitioned from any other gems unrelated to my project.
+The way bundler isolates gems is for the most part at run time -
+It changes the way rubygems works to solve it's problem and either installs all gems to a user specified path or to your gem directory.
+
+If you are using the usr specified path option, you must to remember that your custom rubygems bin directory is not contained in your PATH.
+This means that you must either manually add it to the PATH,
+or your need to manually prefix each command with bundle exec,
+or alternatively you can generate the binaries into your applications bin directory and each command with ./bin/
+
+If you take the opposite approach and install your gems into your gem home, you then need to be
+aware of the fact that each next install will overwrite any previous binaries - the canonical example being Rails
+2 and Rails 3. The way that rubygems generates binaries lets you run `gem-binary-name _version_ something`
+to call the binary loaded from a specified gem version. Unfortunately, in Rails 3, the rails binary was
+moved from the rails gem into the railties gem which just so happens to break this feature of rubygems.
+You can try this for yourself on a new rvm gemset, install rails 2.3.8 and rails 3.0.0 and then try `rails _2.3.8_ -v`.
+If you are using the simple solution of installing to gem home, even though you are using bundler it will still overwrite the binary.
+One common suggestion is to just create a wrapper binary manually (e.g. rails2) or always prefix your commands with bundle exec.
+
+In contrast RVM's isolation works by explicitely setting rubygems home and path to directories isolated under RVM.
+RVM takes this even further using gemsets (think subdirectories) to handle more fine grain isolation.
+For example, I personally use 1 gemset per application, thus avoiding the issues described above as for each application I will have only a single version of rails installed.
+Even better, switching is shell-local and only persists for a single shell instance.
+This means that I can have two different applications with two completely different versions of Rails running at the same time in different terminal sessions without issue.
+
+As an added bonus, because RVM isolates at the rubygems system level (using environment variables),
+your application doesn't actually need to know or care about conflicts from gems that the application does not use.
+
+Combining RVM and Bundler yields a great deal of flexibility and consisency.
+This affords you the 'best of both worlds', system level isolation with the ability to install gems from
+git repositories, and in application gem loading based on application environment.
+
+For more information RVM's gemsets, check out the [Gemset's section](http://rvm.beginrescueend.com/gemsets/)
+on the rvm site. For more information on Bundler, check out [Bundler's documentation](http://gembundler.com/).
+
+### Gemset Hierarchy
+
+The second feature I use often is the global gemset.
+Each ruby interpreter installation comes with two gemsets out of the box -
+the default (blank) gemset (e.g. `ree-1.8.7-2010.02`) and
+the global gemset (e.g. `ree-1.8.7-2010.02@global`).
+When you use any gemset, rvm not only sets the gem home to a uniq directory for the given gemset
+(ensuring gems are installed in the correct place) but it also sets `GEM_PATH`.
+
+Much like `PATH`, `GEM_PATH` is a colon seperated list of directories that rubygems
+uses to look up gems when requiring them. By installing a gem to the global gemset for any ruby,
+e.g. `ree-1.8.7-2010.02@global`, it will automatically be made available (including it's binaries)
+inside both the default gemset and any user-defined gemsets. E.g.,
+
+- `ree-1.8.7-2010.02`
+- `ree-1.8.7-2010.02@bighelpmob`
+- `ree-1.8.7-2010.02@tedxperth`
+
+Will all have access to gems installed in `ree-1.8.7-2010.02@global`.
+
+This comes in super handy for things like `awesome_print`, `wirble`, `bundler`,
+`git-up`, `homesick` - Namely, gems you want available in every environment.
+
+Unfortunately, bundler currently does not support multiple items in the path.
+We have hope it will be added in the future but for now gems you
+want shared between apps using bundler, you'll get some duplication.
+
+### Default Global Gemset Contents
+
+As an added bonus along side the global gemsets, rvm provides a way to declare
+a file which tells it what gems to install initially. To do this, it uses a ruby
+string-based directory hierarchy (see the link below) to look for a global.gems
+file that rvm then imports - For example, my `~/.rvm/gemsets/global.gems` (that
+is imported into the global gemset of all ruby interpreter installs)
+contains the following simple list:
+
+    rake
+    rdoc
+    awesome_print
+    bundler
+    git-up
+    ghost
+    homesick
+    wirble
+
+For more information on this feature, be sure to read the
+[Automatic Gemset Initialization](http://rvm.beginrescueend.com/gemsets/initial/)
+page on the RVM site.
+
+## Set operations
+
+If you are writing gems, one of the most important things you can do as a Ruby developer
+these days is to ensure they work on all of the major implementations.
+At the moment, for most gem developers you should generally be testing your code against:
+
+- REE / 1.8.7
+- 1.9.2
+- Rubinius
+- Jruby
+
+And optionally, MagLev and Macruby.
+RVM provides tools makeing it simple to run code and commands against multiple rubies.
+This includes but is not limited to runnign Rake tasks and tests / specs.
+The idea being to make it as frictionless as possible to test your gem against all of the
+above interpreters. As an example, you can run:
+
+    rvm rake test
+
+Which will run `rake test` against all of your installed ruby interpreters (using default gemset for each).
+You may need to do some manual setup (e.g. installing test gem dependencies) but rvm tries to make it all as
+simple as possible and more importantly, heavily integrated into your normal work flow whilst staying out of the way.
+
+Along side rake, rvm also provides wrappers for many common binaries (e.g. ruby, spec
+and the like) plus the `--json` and `--yaml` flags which make it simple to get a summarised
+view of the program results. Using `rvm exec`, you can even perform set operations against
+any arbitrary command.
+
+There is a whole lot more set operations can do and I suggest anyone using or considering
+using rvm read the [set's section](http://rvm.beginrescueend.com/set/) on the rvm site.
+Go forth and have sets!
+
+## Tools for easing dependency-related pains
+
+One of the most commonly encountered problems (since for most people, the ruby
+interpreter you'd normally use is distributed as a binary install) are related to
+external dependencies - Namely, things like readline, iconv and openssl.
+
+In an attempt to make life easier (and in particular, work around common problems
+like a neutered libedit instead of readline on OSX), rvm provides the `rvm package`
+set of commands that make it easy to install sandboxed versions of these in
+the ~/.rvm/usr directory.
+
+As an example, to work around the libedit vs. readline issue on OSX, you can build your ruby
+against readline 6.0 by running:
+
+    rvm package install readline
+    rvm install <ruby> --with-readline-dir=$HOME/.rvm/usr
+
+And, as an added bonus, to automatically patch older versions of ree and 1.8.7 to respond
+to Control-C immediately (for example, in irb) instead of when you press enter, you can replace
+the `rvm install` command above with:
+
+    rvm install <ruby> --with-readline-dir=$HOME/.rvm/usr --patch readline-fix
+
+## Simple Ruby Upgrades
+
+Say, for example, a new version of 1.9.2 comes out in the next few weeks and you want
+to automatically update your rubies to match it correctly. As of approximately rvm 1.0.0,
+we added an `rvm upgrade` command that automatically handles doing the following:
+
+- Installing the new ruby
+- Moving across gemsets
+- Updating wrapper scripts and aliases
+
+The only thing you typically have to update are references in your .rvmrc's and your passenger
+configuration. But, with a little forethought (e.g. creating an alias using `rvm alias create`),
+it's entirely possible to make it so the entire upgrade is automatic.
+
+I have personally used this feature to move from the 1.9.2 release candidate to the final patchlevel 0 release -
+I used `rvm upgrade` to simplify the process of updating each time it was bumped.
+
+This is currently undocumented on the rvm site but documentation will be added -
+for the moment, in your rvm install, run `rvm help upgrade` and/or `rvm upgrade help`.
+
+## Location Matters
+
+One of the underlying decisions related to rvm's architecture is where it installs
+your rubies - In most cases, rvm will install your rubies into `~/.rvm/rubies`
+and gems into `~/.rvm/gems`. This means that you should almost never have to use
+sudo for commands (there are a few exceptions, most notably passenger which relies
+on root permission in order to bind to port 80).
+
+This approach is simple on the scale of things but also brings a lot of freedom - for one,
+it means you are free to experiment with a Ruby / RVM setup, wiping it away when you're done
+with a simple `rm -rf ~/.rvm && mv .rvm-original .rvm`.
+
+## .rvmrc files
+
+All of this is fine and dandy, but when you still have to manually switch ruby interpreters
+and rubies each time you do something, it can become mildy annoying rather fast.
+For this exact reason RVM offers project-specific .rvmrc files - If you haven't encountered
+them before, project .rvmrc's are files that are automatically sourced into the current shell
+when you change (cd) into a directory containing one.
+These files can contain anything that is valid shell script
+(and to prevent RVM automatically running code you don't want, it defaults
+to asking you to trust it the first time it is run) making things like project
+bootstrapping and configuration simple and mostly automatic after a quick setup
+in the project root directory:
+
+    rvm --rvmrc --create <ruby>@<gemset>
+
+In my own projects, I use these to automatically install the Ruby if not present,
+create and use a project-specific gemset and then do the minimum possible required to bootstrap
+the new environment - in most cases, this is simply a matter of installing a few gems
+(e.g. for me, I install bundler via `rvm gemset import`).
+
+In some cases, I even automatically run `bundle install` (with 1.0, if you have the gems
+already installed, this is very fast) hence the first time I cd into a project it essentially
+bootstraps the entire environment for me automatically.
+
+Ultimately, this approach means that the Ruby interpreter and gemset switching are completely
+transparent to me - No matter which project I'm using, ruby and irb are available and
+point to the correct executable for the current project I am in. When integrated with some code
+I wrote for ruby summer of code, it's even possible to have passenger automatically use
+this .rvmrc file to automatically change your application's gemset at run time.
+
+For more information on .rvmrc files, check out the [rvmrc page](http://rvm.beginrescueend.com/workflow/rvmrc/)
+and the [Project Workflow page](http://rvm.beginrescueend.com/workflow/projects/) on the rvm site.
+See [RVM's passenger integration page](http://rvm.beginrescueend.com/integration/passenger/) page
+for more details on gemsets with passenger.
+
+## Conclusion
+
+I hope that you have found at least one new or useful thing about RVM.
+RVM has been invaluable to me as a developer on multiple open source projects over the last several months.
+It makes it simple for me to do things that are otherwise harder or less flexible and generally stays out of my way.
+
+
+
+

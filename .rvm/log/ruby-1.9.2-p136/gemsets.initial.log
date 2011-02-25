@@ -1,0 +1,84 @@
+[2011-02-22 10:02:20] '/home/billones1977/.rvm/scripts/gemsets' initial # under ruby-1.9.2-p136
+Importing initial gemsets for ruby-1.9.2-p136.
+paths: /home/billones1977/.rvm/gemsets /home/billones1977/.rvm/gemsets/ruby /home/billones1977/.rvm/gemsets/ruby/1.9.2 /home/billones1977/.rvm/gemsets/ruby/1.9.2/p136
+
+Installing gems listed in /home/billones1977/.rvm/gemsets/default.gems file...
+
+installing rake ...
+Error running 'GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136'  gem install rake   ', please read /home/billones1977/.rvm/log/ruby-1.9.2-p136/gem.install.log
+rake  failed to install ( output logged to: /home/billones1977/.rvm/log/ruby-1.9.2-p136/gem.install.log )
+
+Processing of /home/billones1977/.rvm/gemsets/default.gems is complete.
+
+
+Installing gems listed in /home/billones1977/.rvm/gemsets/global.gems file...
+
+installing rake ...
+Error running 'GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global'  gem install rake   ', please read /home/billones1977/.rvm/log/ruby-1.9.2-p136/gem.install.log
+rake  failed to install ( output logged to: /home/billones1977/.rvm/log/ruby-1.9.2-p136/gem.install.log )
+
+Processing of /home/billones1977/.rvm/gemsets/global.gems is complete.
+
+Installation of gems for ruby-1.9.2-p136 is complete.
+[2011-02-22 11:28:11] '/home/billones1977/.rvm/scripts/gemsets' initial # under ruby-1.9.2-p136
+Importing initial gemsets for ruby-1.9.2-p136.
+paths: /home/billones1977/.rvm/gemsets /home/billones1977/.rvm/gemsets/ruby /home/billones1977/.rvm/gemsets/ruby/1.9.2 /home/billones1977/.rvm/gemsets/ruby/1.9.2/p136
+
+Installing gems listed in /home/billones1977/.rvm/gemsets/default.gems file...
+
+installing rake ...
+Error running 'GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136'  gem install rake   ', please read /home/billones1977/.rvm/log/ruby-1.9.2-p136/gem.install.log
+rake  failed to install ( output logged to: /home/billones1977/.rvm/log/ruby-1.9.2-p136/gem.install.log )
+
+Processing of /home/billones1977/.rvm/gemsets/default.gems is complete.
+
+
+Installing gems listed in /home/billones1977/.rvm/gemsets/global.gems file...
+
+installing rake ...
+Error running 'GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global' GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global'  gem install rake   ', please read /home/billones1977/.rvm/log/ruby-1.9.2-p136/gem.install.log
+rake  failed to install ( output logged to: /home/billones1977/.rvm/log/ruby-1.9.2-p136/gem.install.log )
+
+Processing of /home/billones1977/.rvm/gemsets/global.gems is complete.
+
+Installation of gems for ruby-1.9.2-p136 is complete.
+[2011-02-22 13:28:28] '/home/billones1977/.rvm/scripts/gemsets' initial # under ruby-1.9.2-p136
+Importing initial gemsets for ruby-1.9.2-p136.
+paths: /home/billones1977/.rvm/gemsets /home/billones1977/.rvm/gemsets/ruby /home/billones1977/.rvm/gemsets/ruby/1.9.2 /home/billones1977/.rvm/gemsets/ruby/1.9.2/p136
+
+Installing gems listed in /home/billones1977/.rvm/gemsets/default.gems file...
+
+installing rake ...
+rake  installed.
+
+Processing of /home/billones1977/.rvm/gemsets/default.gems is complete.
+
+
+Installing gems listed in /home/billones1977/.rvm/gemsets/global.gems file...
+
+installing rake ...
+rake  installed.
+
+Processing of /home/billones1977/.rvm/gemsets/global.gems is complete.
+
+Installation of gems for ruby-1.9.2-p136 is complete.
+[2011-02-23 16:10:40] '/home/billones1977/.rvm/scripts/gemsets' initial # under ruby-1.9.2-p136
+Importing initial gemsets for ruby-1.9.2-p136.
+paths: /home/billones1977/.rvm/gemsets /home/billones1977/.rvm/gemsets/ruby /home/billones1977/.rvm/gemsets/ruby/1.9.2 /home/billones1977/.rvm/gemsets/ruby/1.9.2/p136
+
+Installing gems listed in /home/billones1977/.rvm/gemsets/default.gems file...
+
+installing rake ...
+rake  installed.
+
+Processing of /home/billones1977/.rvm/gemsets/default.gems is complete.
+
+
+Installing gems listed in /home/billones1977/.rvm/gemsets/global.gems file...
+
+installing rake ...
+rake  installed.
+
+Processing of /home/billones1977/.rvm/gemsets/global.gems is complete.
+
+Installation of gems for ruby-1.9.2-p136 is complete.

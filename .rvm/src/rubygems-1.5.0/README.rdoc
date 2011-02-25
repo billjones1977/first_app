@@ -1,0 +1,52 @@
+= RubyGems
+
+* http://rubygems.org
+* http://docs.rubygems.org
+* http://help.rubygems.org
+* http://github.com/rubygems
+* http://rubyforge.org/projects/rubygems
+
+== DESCRIPTION
+
+RubyGems is a package management framework for Ruby.
+
+This gem is an update for the RubyGems software. You must have an
+installation of RubyGems before this update can be applied.
+
+See Gem for information on RubyGems (or `ri Gem`)
+
+To upgrade to the latest RubyGems, run:
+
+  $ gem update --system  # you might need to be an administrator or root
+
+See UPGRADING.rdoc for more details and alternative instructions.
+
+-----
+
+NOTE: Ruby 1.9 ships with rubygems and contains a very buggy
+"gem-prelude". It is a gem loading system that can interfere with
+updating rubygems itself. We do NOT recommend you update to rubygems
+1.4 if you're running ruby 1.9.x until we get that sorted out in a
+future ruby release.
+
+If you absolutely hate kittens and you _must_ upgrade, you're going to
+have to do something really hokey like:
+
+% alias ruby19="ruby19 --disable-gems"
+% alias gem19="ruby19 --disable-gems -S gem"
+
+Even deleting the stock rubygems in 1.9 doesn't fix this situation.
+
+-----
+
+If you don't have any RubyGems install, there is still the pre-gem approach to
+getting software, doing it manually:
+
+* Download from: https://rubygems.org/pages/download
+* Unpack into a directory and cd there
+* Install with: ruby setup.rb  # you may need admin/root privilege
+
+For more details and other options, see:
+
+  ruby setup.rb --help
+

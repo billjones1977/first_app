@@ -1,0 +1,181 @@
+/etc/gdm/Xsession: Beginning session setup...
+Setting IM through im-switch for locale=en_US.
+Start IM through /etc/X11/xinit/xinput.d/all_ALL linked to /etc/X11/xinit/xinput.d/default.
+GNOME_KEYRING_CONTROL=/tmp/keyring-PakTuZ
+GNOME_KEYRING_CONTROL=/tmp/keyring-PakTuZ
+SSH_AUTH_SOCK=/tmp/keyring-PakTuZ/ssh
+GNOME_KEYRING_CONTROL=/tmp/keyring-PakTuZ
+SSH_AUTH_SOCK=/tmp/keyring-PakTuZ/ssh
+
+(polkit-gnome-authentication-agent-1:1416): GLib-GObject-WARNING **: cannot register existing type `_PolkitError'
+
+(polkit-gnome-authentication-agent-1:1416): GLib-CRITICAL **: g_once_init_leave: assertion `initialization_value != 0' failed
+** Message: applet now removed from the notification area
+Unable to find a synaptics device.
+Initializing nautilus-gdu extension
+
+(nautilus:1411): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+** Message: applet now embedded in the notification area
+** (update-notifier:1681): DEBUG: aptdaemon on bus: 0
+** (update-notifier:1681): DEBUG: Skipping reboot required
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+/usr/lib/python2.6/dist-packages/UpdateManager/SimpleGtkbuilderApp.py:35: GtkWarning: Ignoring the separator setting
+  self.builder.add_from_file(path)
+WARNING:root:timeout reached, exiting
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+
+(evolution-alarm-notify:1409): evolution-alarm-notify-WARNING **: alarm.c:253: Requested removal of nonexistent alarm!
+** (update-notifier:1681): DEBUG: --security-updates-unattended: 0
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x2a00003 (Authentica)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x2a00003 (Authentica)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+debconf: DbDriver "passwords" warning: could not open /var/cache/debconf/passwords.dat: Permission denied
+** (update-notifier:1681): DEBUG: aptdaemon on bus: 1
+** (update-notifier:1681): DEBUG: Skipping reboot required
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+(gedit:29712): Gtk-DEBUG: No tracker backend available
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'
+Traceback (most recent call last):
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 201, in on_tab_added
+    self.update()
+  File "/usr/lib/gedit-2/plugins/snippets/WindowHelper.py", line 181, in update
+    view = self.window.get_active_view()
+AttributeError: 'NoneType' object has no attribute 'get_active_view'

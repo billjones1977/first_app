@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rss xmlns:cms="http://cosmos.bcst.yahoo.com/v1/cms_mrss" xmlns:yahoo="http://www.yahooapis.com/v1/base.rng" version="2.0" xmlns:media="http://search.yahoo.com/mrss" xml:lang="en-US" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<atom:id>tag:yahoo.com,0000:mdb:4543756</atom:id>
+		<title>POPS - Videos by collection id '4543756'</title>
+		<link>http://www.yahoo.com</link>
+		<description>Videos 0 to 19 by collection id '4543756'</description>
+		<ttl>0</ttl>
+		<media:title><![CDATA[Sports]]></media:title>
+		<media:description><![CDATA[]]></media:description>
+		<media:count>1730</media:count>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24236185</atom:id>
+			<title><![CDATA[Raw Video: Goodell, Smith arrive for talks]]></title>
+			<description><![CDATA[NFL Commissioner Roger Goodell and union head DeMaurice Smith arrived Friday for the first negotiating session involving a federal mediator. Goodell and Smith declined comment on their way into the meeting. (Feb. 18)]]></description>
+			<media:keywords><![CDATA[]]></media:keywords>
+			<media:pubStart><![CDATA[02/18/2011 05:29:35 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/20/2011 05:25:12 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002GXMXAA4]]></media:lmsId>
+			<media:spaceId><![CDATA[2144950602]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121256847.jpg" name="SMALLTHUMB" height="69" width="92"/>
+			<media:content medium="image" url="http://l.yimg.com/a/i/us/nws/p/ap_logo_vid_338.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121256848.jpg" name="LARGETHUMB" fileSize="23" height="300" width="400"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ unknown license (a0770000002GXMXAA4) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24231159</atom:id>
+			<title><![CDATA[Melbourne Victory fans violent]]></title>
+			<description><![CDATA[Melbourne's A-League team, the Victory, will meet with soccer officials and police on Monday to discuss their violent fans.]]></description>
+			<media:keywords><![CDATA[]]></media:keywords>
+			<media:pubStart><![CDATA[02/18/2011 06:26:13 AM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[02/17/2012 01:00:00 PM PST]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[Copyright © 2009 Seven Network (Operations) Ltd]]></media:copyright>
+			<media:lmsId><![CDATA[a097000000ANgCAAA1]]></media:lmsId>
+			<media:spaceId><![CDATA[2144949346]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://d.yimg.com/hd/ch7news/7_national_news/7_national_top/0218_1630_nat_melbvictory_sml_16ls485-16ls486.jpg?a=ch7news&amp;c=6fe03845e8e7329874efdbee9d61969f&amp;mr=0&amp;ns=width&amp;s=8d5691d844d08a5cbb3cbb2764dac396" name="SMALLTHUMB" height="90" width="120"/>
+			<media:content medium="image" url="http://d.yimg.com/hd/ch7news/7_national_news/7_national_top/0218_1630_nat_melbvictory_lrg_16ls485-16ls486.jpg?a=ch7news&amp;c=c1619c4faa751acbb142554430aa9014&amp;mr=0&amp;ns=width&amp;s=91b790af8b5bcd040138e870d98b69ca" name="LARGETHUMB" fileSize="0" height="354" width="630"/>
+			<media:content medium="image" url="http://au.i1.yimg.com/au.yimg.com/i/vid/news/7news_338x87.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ capability "embed" is not supported (a097000000ANgCAAA1) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24230104</atom:id>
+			<title><![CDATA[Big battle in Big East]]></title>
+			<description><![CDATA[Greg Anthony will be watching the thrilling fight for the Big East crown, but don't forget about a couple of non-Big Six races.]]></description>
+			<media:keywords><![CDATA[]]></media:keywords>
+			<media:pubStart><![CDATA[02/17/2011 07:00:00 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[06/15/2011 04:00:00 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:spaceId><![CDATA[2144949056]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/yahoosports/17705/121238082.jpg" name="SMALLTHUMB" height="90" width="120"/>
+			<media:content medium="image" url="http://l.yimg.com/a/i/us/sp/b/sptstrm/ncaab_no_spnsr.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/yahoosports/17705/121238083.jpg" name="MEDIUMTHUMB" fileSize="21" height="132" width="236"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/yahoosports/17705/121238084.jpg" name="LARGETHUMB" fileSize="37" height="324" width="576"/>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24228983</atom:id>
+			<title><![CDATA[Racing in a down economy]]></title>
+			<description><![CDATA[NASCAR races into the 2011 season with a new swagger in a down economy. The AP's Robert Ray reports from Daytona International Speedway. (Feb. 17)]]></description>
+			<media:keywords><![CDATA[[Location: DAYTONA, BEACH FL- Feb 17,2011] [Source: AP]   [NATSOT: DAYTONA INTERNATIONAL SPEEDWAY---Feb 17, 2011]  [VOICE-OVER] THE RV'S ARE GETTING SET AND THE INFIELD AT THE DAYTONA MOTOR SPEEDWAY IS STARTING TO LOOK AND FEEL LIKE A BIG NASCAR RACE..  [NATSOT: DAYTONA INTERNATIONAL SPEEDWAY---Feb 17, 2011]]]></media:keywords>
+			<media:pubStart><![CDATA[02/18/2011 04:13:05 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/20/2011 01:50:03 AM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002GXMXAA4]]></media:lmsId>
+			<media:spaceId><![CDATA[2144948809]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121254890.jpg" name="SMALLTHUMB" height="69" width="92"/>
+			<media:content medium="image" url="http://l.yimg.com/a/i/us/nws/p/ap_logo_vid_338.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121254892.jpg" name="LARGETHUMB" fileSize="32" height="300" width="400"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ unknown license (a0770000002GXMXAA4) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24228581</atom:id>
+			<title><![CDATA[Top seeds sorting out]]></title>
+			<description><![CDATA[Greg Anthony looks at the teams who are likely to seal No. 1 seeds in the NCAA Tournament.]]></description>
+			<media:keywords><![CDATA[]]></media:keywords>
+			<media:pubStart><![CDATA[02/17/2011 07:00:00 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[06/15/2011 04:00:00 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:spaceId><![CDATA[2144948648]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/yahoosports/17705/121234452.jpg" name="SMALLTHUMB" height="90" width="120"/>
+			<media:content medium="image" url="http://l.yimg.com/a/i/us/sp/b/sptstrm/ncaab_no_spnsr.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/yahoosports/17705/121234453.jpg" name="MEDIUMTHUMB" fileSize="23" height="132" width="236"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/yahoosports/17705/121234454.jpg" name="LARGETHUMB" fileSize="40" height="324" width="576"/>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24226187</atom:id>
+			<title><![CDATA[Cabrera arrested on DUI charge]]></title>
+			<description><![CDATA[Detroit Tigers slugger Miguel Cabrera has been charged with DUI in Florida, just days before he's scheduled to report to spring training. It's the second major incident in less than two years involving the 27-year-old slugger's drinking habits. (Feb. 17)]]></description>
+			<media:keywords><![CDATA[Police in Florida say Detroit Tigers slugger Miguel Cabrera was arrested late Wednesday on drunken driving charges.  It marks the latest episode for the 27-year-old ballplayer who has struggled with a drinking problem.  Cabrera was spotted by a deputy in a car with a smoking engine alongside a road in Fort Pie]]></media:keywords>
+			<media:pubStart><![CDATA[02/17/2011 09:14:07 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/19/2011 09:11:31 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002GXMXAA4]]></media:lmsId>
+			<media:spaceId><![CDATA[2144947969]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121227524.jpg" name="SMALLTHUMB" height="69" width="92"/>
+			<media:content medium="image" url="http://l.yimg.com/a/i/us/nws/p/ap_logo_vid_338.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121227525.jpg" name="LARGETHUMB" fileSize="18" height="300" width="400"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ unknown license (a0770000002GXMXAA4) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24225554</atom:id>
+			<title><![CDATA[7News: World Cup opens in style]]></title>
+			<description><![CDATA[The cricket World Cup has been officially opened in India.]]></description>
+			<media:keywords><![CDATA[]]></media:keywords>
+			<media:pubStart><![CDATA[02/17/2011 08:18:16 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[02/17/2012 01:00:00 PM PST]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[Copyright © 2009 Seven Network (Operations) Ltd]]></media:copyright>
+			<media:lmsId><![CDATA[a097000000ANgCAAA1]]></media:lmsId>
+			<media:spaceId><![CDATA[2144947778]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://d.yimg.com/hd/ch7news/7_wa_news/7_wa_top/0218_0530_cricket_sml_16lqs5l-16lqs5m.jpg?a=ch7news&amp;c=b3f377eac861019e030531aab055d31e&amp;mr=0&amp;ns=width&amp;s=4717652b70bebd6048a64b14c66b279f" name="SMALLTHUMB" height="90" width="120"/>
+			<media:content medium="image" url="http://d.yimg.com/hd/ch7news/7_wa_news/7_wa_top/0218_0530_cricket_lrg_16lqs5l-16lqs5l.jpg?a=ch7news&amp;c=cc85e76fabe1860162162c73f85550e9&amp;mr=0&amp;ns=width&amp;s=29a8b24134a2b63fff7fcd5811b3491c" name="LARGETHUMB" fileSize="0" height="354" width="630"/>
+			<media:content medium="image" url="http://au.i1.yimg.com/au.yimg.com/i/vid/news/7news_338x87.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ capability "embed" is not supported (a097000000ANgCAAA1) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24225220</atom:id>
+			<title><![CDATA[Pujols arrives in Cardinals' camp]]></title>
+			<description><![CDATA[One day after he and the team failed to reach an agreement on a new contract, St. Louis Cardinals first baseman Albert Pujols arrived for spring training Thursday morning. Pujols met with the media as he arrived. (Feb. 17)]]></description>
+			<media:keywords><![CDATA[]]></media:keywords>
+			<media:pubStart><![CDATA[02/17/2011 07:49:34 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/19/2011 07:44:52 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002GXMXAA4]]></media:lmsId>
+			<media:spaceId><![CDATA[2144947664]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121225345.jpg" name="SMALLTHUMB" height="69" width="92"/>
+			<media:content medium="image" url="http://l.yimg.com/a/i/us/nws/p/ap_logo_vid_338.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121225347.jpg" name="LARGETHUMB" fileSize="28" height="300" width="400"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ unknown license (a0770000002GXMXAA4) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24223043</atom:id>
+			<title><![CDATA[Daytona's new surface creating higher speeds]]></title>
+			<description><![CDATA[A repaved track with a fast grip may bring a new style of racing for this year's Daytona 500. The AP's Robert Ray reports from Daytona Beach, Florida. (Feb. 17)]]></description>
+			<media:keywords><![CDATA[[Notes:ANCHOR VOICE]   [NATSOT: DAYTONA INTERNATIONAL SPEEDWAY---Feb 16, 2011]  [VOICE-OVER] THE SUPERBOWL OF RACING..FROM THE NOISY GARAGES TO PIT ROW TO THE FAST TRACK..  [NATSOT: DAYTONA INTERNATIONAL SPEEDWAY---Feb 16, 2011]  [VOICE-OVER} THE DAYTONA 500 RACES AWAY ON SUNDAY..  [NATSOT: DAYTONA INTERNATION]]></media:keywords>
+			<media:pubStart><![CDATA[02/17/2011 04:19:33 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/19/2011 04:14:48 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002GXMXAA4]]></media:lmsId>
+			<media:spaceId><![CDATA[2144947053]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121219833.jpg" name="SMALLTHUMB" height="69" width="92"/>
+			<media:content medium="image" url="http://l.yimg.com/a/i/us/nws/p/ap_logo_vid_338.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121219834.jpg" name="LARGETHUMB" fileSize="19" height="300" width="400"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ unknown license (a0770000002GXMXAA4) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24222943</atom:id>
+			<title><![CDATA[Tragedy in Tucson: Dallas Green Speaks]]></title>
+			<description><![CDATA[The baseball veteran opens up about granddaughter Christina-Taylor Green.]]></description>
+			<media:keywords><![CDATA[tragedy, tucson, arizona, congresswoman gabrielle giffords, jared lee loughner, christina-taylor green, dallas green speaks, baseball veteran, opens up, granddaughter, matt gutman, us]]></media:keywords>
+			<media:pubStart><![CDATA[02/17/2011 04:00:53 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/19/2011 04:00:07 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[©ABC News]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002G9p7AAC]]></media:lmsId>
+			<media:spaceId><![CDATA[2144947029]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://a.abcnews.com/images/GMA/abc_gma_gutman_110217_yb.jpg" name="SMALLTHUMB" height="0" width="0"/>
+			<media:content medium="image" url="http://a.abcnews.com/images/GMA/abc_gma_gutman_110217_220x146.jpg" name="LARGETHUMB" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/us/news/editorial/c/4f/c4f8b349efa22ef263f01799a1ec232b.jpeg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ capability "embed" is not supported (a0770000002G9p7AAC) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24219178</atom:id>
+			<title><![CDATA[Bangladesh ready for ICC Cricket World Cup 2011]]></title>
+			<description><![CDATA[Bangladesh has spruced up its capital Dhaka, drafted in Indian choreographers and had thousands of people rehearsing for what it hopes will be a spectacular ICC cricket World Cup opening ceremony on February 17.  Duration: 00:37]]></description>
+			<media:keywords><![CDATA[]]></media:keywords>
+			<media:pubStart><![CDATA[02/17/2011 07:39:10 AM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/19/2011 07:36:25 AM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002GZ7tAAG]]></media:lmsId>
+			<media:spaceId><![CDATA[2144946068]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/yp/afp/17612/121207645.jpg" name="SMALLTHUMB" height="432" width="768"/>
+			<media:content medium="image" url="http://l.yimg.com/us.yimg.com/i/us/nws/p/afp_vid_logo_338x87c.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ capability "embed" is not supported (a0770000002GZ7tAAG) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24216656</atom:id>
+			<title><![CDATA[Harlem Globetrotters on Tour]]></title>
+			<description><![CDATA[CEO talks about the team's 85th consecutive season of touring the world]]></description>
+			<media:keywords><![CDATA[Harlem Globetrotters CEO business Tracy Byrnes basketball]]></media:keywords>
+			<media:pubStart><![CDATA[02/17/2011 02:27:10 AM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/19/2011 01:20:00 AM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002lmbdAAA]]></media:lmsId>
+			<media:spaceId><![CDATA[2144945410]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/yp/fbc/17699/121201108.jpg" name="SMALLTHUMB" height="360" width="640"/>
+			<media:content medium="image" url="http://l.yimg.com/us.yimg.com/p/us/news/editorial/7/68/768c6330f22ac14d029bfad5fb63cb56.jpeg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ capability "embed" is not supported (a0770000002lmbdAAA) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24207975</atom:id>
+			<title><![CDATA[AP Exclusive: Lance Armstrong retiring]]></title>
+			<description><![CDATA[Almost a month after finishing 65th in his last race, and nearly 6 years after the last of a record seven straight Tour de France wins, Lance Armstrong made it clear in an exclusive interview he's leaving professional cycling for good. (Feb. 16)]]></description>
+			<media:keywords><![CDATA[[Notes:ANCHOR VOICE]  [Notes:Source: AP Images] [Notes:Location: Austin, Tx] [Notes:Source: AP] [Notes:Voiceover]  SEVEN TIME TOUR DE FRANCE CHAMPION AND CANCER SURVIVOR LANCE ARMSTRONG IS RETIRING FROM COMPETITIVE RACING. IN AN INTERVIEW WITH THE ASSOCIATED PRESS ARMSTRONG SAYS THAT HIS MAIN FOCUS WILL NOW BE]]></media:keywords>
+			<media:pubStart><![CDATA[02/16/2011 11:17:50 AM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/18/2011 11:12:02 AM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002GXMXAA4]]></media:lmsId>
+			<media:spaceId><![CDATA[2144943029]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/3728/121176098.jpg" name="SMALLTHUMB" height="69" width="92"/>
+			<media:content medium="image" url="http://l.yimg.com/a/i/us/nws/p/ap_logo_vid_338.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/4547/121176099.jpg" name="LARGETHUMB" fileSize="23" height="300" width="400"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ unknown license (a0770000002GXMXAA4) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24206487</atom:id>
+			<title><![CDATA[Pakistan bids for glory at Cricket World Cup]]></title>
+			<description><![CDATA[Pakistan cricket fans hope their team can put a recent corruption scandal in the past, and bat its way back to glory in the World Cup.]]></description>
+			<media:keywords><![CDATA[]]></media:keywords>
+			<media:pubStart><![CDATA[02/16/2011 07:27:00 AM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/18/2011 07:20:43 AM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002GZ7tAAG]]></media:lmsId>
+			<media:spaceId><![CDATA[2144942654]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/yp/afp/17612/121171260.jpg" name="SMALLTHUMB" height="432" width="768"/>
+			<media:content medium="image" url="http://l.yimg.com/us.yimg.com/i/us/nws/p/afp_vid_logo_338x87c.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ capability "embed" is not supported (a0770000002GZ7tAAG) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24203299</atom:id>
+			<title><![CDATA[Snubbed Fans Sue Over Super Bowl Seating Fumble]]></title>
+			<description><![CDATA[Disgruntled patrons file lawsuit against NFL for being left seatless at big game]]></description>
+			<media:keywords><![CDATA[Foxnews.com LIVE Sports Uma Pemmaraju Lis Wiehl Joel Mowbray NFL Super Bowl lawsuit fans tickets]]></media:keywords>
+			<media:pubStart><![CDATA[02/16/2011 12:42:22 AM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/17/2011 11:20:00 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002lmbdAAA]]></media:lmsId>
+			<media:spaceId><![CDATA[2144941878]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/yp/fbc/17699/121162208.jpg" name="SMALLTHUMB" height="360" width="640"/>
+			<media:content medium="image" url="http://l.yimg.com/us.yimg.com/p/us/news/editorial/7/68/768c6330f22ac14d029bfad5fb63cb56.jpeg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ capability "embed" is not supported (a0770000002lmbdAAA) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24203212</atom:id>
+			<title><![CDATA[Athletes sue over use of likeness in video game]]></title>
+			<description><![CDATA[A former collegiate quarterback is suing Electronic Arts Inc. over the unpaid use of his image in a video game. The video game company argues that the First Amendment gives them the right to use athletes' likenesses in video games. (Feb. 15)]]></description>
+			<media:keywords><![CDATA[[Notes:ANCHOR VOICE]   [Location: Austin, Texas - October 30, 2007] [Source: Big 12 Conference/ESPN, MUST COURTESY] [VO: Keller playing football]  [VOICE-OVER] A quarterback who played for Arizona State and the University of Nebraska says the N-C-double-A and Electronic Arts should share royalties from the v]]></media:keywords>
+			<media:pubStart><![CDATA[02/16/2011 12:38:38 AM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/18/2011 12:34:46 AM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002GXMXAA4]]></media:lmsId>
+			<media:spaceId><![CDATA[2144941842]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121162026.jpg" name="SMALLTHUMB" height="69" width="92"/>
+			<media:content medium="image" url="http://l.yimg.com/a/i/us/nws/p/ap_logo_vid_338.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121162027.jpg" name="LARGETHUMB" fileSize="18" height="300" width="400"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ unknown license (a0770000002GXMXAA4) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24199490</atom:id>
+			<title><![CDATA[Pacquiao's a knockout during Capitol Hill visit]]></title>
+			<description><![CDATA[Eight-time world champion boxer Manny Pacquiao was in Washington Tuesday, visiting with Nevada Senator Harry Reid on Capitol Hill. Pacquiao was wrapping up his press tour for his next fight, May 7th against Shane Mosley in Las Vegas. (Feb. 15)]]></description>
+			<media:keywords><![CDATA[]]></media:keywords>
+			<media:pubStart><![CDATA[02/15/2011 06:45:50 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/17/2011 06:40:45 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002GXMXAA4]]></media:lmsId>
+			<media:spaceId><![CDATA[2144940740]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121152048.jpg" name="SMALLTHUMB" height="69" width="92"/>
+			<media:content medium="image" url="http://l.yimg.com/a/i/us/nws/p/ap_logo_vid_338.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/i/bcst/associatedpress/apfree/17725/121152050.jpg" name="LARGETHUMB" fileSize="28" height="300" width="400"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ unknown license (a0770000002GXMXAA4) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24199394</atom:id>
+			<title><![CDATA[Sergio Garcia Tees It Up for Good Cause]]></title>
+			<description><![CDATA[Golfing great raising money for wounded vets]]></description>
+			<media:keywords><![CDATA[Sports spotlight fffamous]]></media:keywords>
+			<media:pubStart><![CDATA[02/15/2011 06:32:18 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/17/2011 05:20:00 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002lmbdAAA]]></media:lmsId>
+			<media:spaceId><![CDATA[2144940707]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/yp/fbc/17699/121151803.jpg" name="SMALLTHUMB" height="360" width="640"/>
+			<media:content medium="image" url="http://l.yimg.com/us.yimg.com/p/us/news/editorial/7/68/768c6330f22ac14d029bfad5fb63cb56.jpeg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ capability "embed" is not supported (a0770000002lmbdAAA) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24197667</atom:id>
+			<title><![CDATA[Tiger Beat: Woods Spits on the Green]]></title>
+			<description><![CDATA[Tiger Woods fined for spitting on the course during a golf tournament in Dubai.]]></description>
+			<media:keywords><![CDATA[tiger woods, caught spitting, on green, on camera, fined, course, golf tournament, dubai, united arab emirates, uae, john berman, sports]]></media:keywords>
+			<media:pubStart><![CDATA[02/15/2011 03:00:36 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/17/2011 03:00:04 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[©ABC News]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002G9p7AAC]]></media:lmsId>
+			<media:spaceId><![CDATA[2144940256]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://a.abcnews.com/images/GMA/abc_gma_berman_110215_yb.jpg" name="SMALLTHUMB" height="0" width="0"/>
+			<media:content medium="image" url="http://a.abcnews.com/images/GMA/abc_gma_berman_110215_220x146.jpg" name="LARGETHUMB" fileSize="0" height="0" width="0"/>
+			<media:content medium="image" url="http://l.yimg.com/a/p/us/news/editorial/c/4f/c4f8b349efa22ef263f01799a1ec232b.jpeg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ capability "embed" is not supported (a0770000002G9p7AAC) ]]></media:error>
+		</item>
+		<item>
+			<atom:id>tag:yahoo.com,0000:mdb:24196317</atom:id>
+			<title><![CDATA[India’s cricket fans eye World Cup glory]]></title>
+			<description><![CDATA[India, the most cricket-obsessed nation on earth where millions follow the sport with a religious fervour, is set to co-host the 2011 Cricket World Cup. Duration: 02:10]]></description>
+			<media:keywords><![CDATA[]]></media:keywords>
+			<media:pubStart><![CDATA[02/15/2011 12:25:31 PM PST]]></media:pubStart>
+			<media:pubStop><![CDATA[03/17/2011 12:19:59 PM PDT]]></media:pubStop>
+			<media:viewCount><![CDATA[0]]></media:viewCount>
+			<media:ratingsCount><![CDATA[0]]></media:ratingsCount>
+			<media:ratingsAvg><![CDATA[0]]></media:ratingsAvg>
+			<media:nodeDef><![CDATA[]]></media:nodeDef>
+			<media:comScore4><![CDATA[]]></media:comScore4>
+			<media:appName><![CDATA[]]></media:appName>
+			<media:beaconID><![CDATA[]]></media:beaconID>
+			<media:beaconURL><![CDATA[]]></media:beaconURL>
+			<media:copyright><![CDATA[]]></media:copyright>
+			<media:lmsId><![CDATA[a0770000002GZ7tAAG]]></media:lmsId>
+			<media:spaceId><![CDATA[2144939877]]></media:spaceId>
+			<media:parentPath><![CDATA[/4543756/3906861/0]]></media:parentPath>
+			<media:thumbnail url="http://l.yimg.com/a/p/i/bcst/yp/afp/17612/121142196.jpg" name="SMALLTHUMB" height="432" width="768"/>
+			<media:content medium="image" url="http://l.yimg.com/us.yimg.com/i/us/nws/p/afp_vid_logo_338x87c.jpg" name="PROVIDER" fileSize="0" height="0" width="0"/>
+			<media:embeddable><![CDATA[false]]></media:embeddable>
+			<media:error source="lms" code="403"><![CDATA[ Blocked attempt to play content that is restricted ]]></media:error>
+			<media:error source="lms" code="403"><![CDATA[ capability "embed" is not supported (a0770000002GZ7tAAG) ]]></media:error>
+		</item>
+	</channel>
+</rss>

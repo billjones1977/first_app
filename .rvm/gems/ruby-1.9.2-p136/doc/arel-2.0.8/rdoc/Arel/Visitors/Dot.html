@@ -1,0 +1,2753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Arel::Visitors::Dot</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/arel/visitors/dot_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/visitors/dot.rb">lib/arel/visitors/dot.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="Visitor.html">Arel::Visitors::Visitor</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="Dot/Edge.html">Arel::Visitors::Dot::Edge</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Dot/Node.html">Arel::Visitors::Dot::Node</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-accept">#accept</a></li>
+					
+					<li><a href="#method-i-edge">#edge</a></li>
+					
+					<li><a href="#method-i-quote">#quote</a></li>
+					
+					<li><a href="#method-i-to_dot">#to_dot</a></li>
+					
+					<li><a href="#method-i-unary">#unary</a></li>
+					
+					<li><a href="#method-i-visit">#visit</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attribute">#visit_Arel_Attribute</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_Attribute">#visit_Arel_Attributes_Attribute</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_Boolean">#visit_Arel_Attributes_Boolean</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_Float">#visit_Arel_Attributes_Float</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_Integer">#visit_Arel_Attributes_Integer</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_String">#visit_Arel_Attributes_String</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_Time">#visit_Arel_Attributes_Time</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_And">#visit_Arel_Nodes_And</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Assignment">#visit_Arel_Nodes_Assignment</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Avg">#visit_Arel_Nodes_Avg</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Between">#visit_Arel_Nodes_Between</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Count">#visit_Arel_Nodes_Count</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_DeleteStatement">#visit_Arel_Nodes_DeleteStatement</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_DoesNotMatch">#visit_Arel_Nodes_DoesNotMatch</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Equality">#visit_Arel_Nodes_Equality</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_GreaterThan">#visit_Arel_Nodes_GreaterThan</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_GreaterThanOrEqual">#visit_Arel_Nodes_GreaterThanOrEqual</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Group">#visit_Arel_Nodes_Group</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Grouping">#visit_Arel_Nodes_Grouping</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Having">#visit_Arel_Nodes_Having</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_In">#visit_Arel_Nodes_In</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_InnerJoin">#visit_Arel_Nodes_InnerJoin</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_InsertStatement">#visit_Arel_Nodes_InsertStatement</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_LessThan">#visit_Arel_Nodes_LessThan</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_LessThanOrEqual">#visit_Arel_Nodes_LessThanOrEqual</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Limit">#visit_Arel_Nodes_Limit</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Matches">#visit_Arel_Nodes_Matches</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Max">#visit_Arel_Nodes_Max</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Not">#visit_Arel_Nodes_Not</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_NotEqual">#visit_Arel_Nodes_NotEqual</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_NotIn">#visit_Arel_Nodes_NotIn</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Offset">#visit_Arel_Nodes_Offset</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_On">#visit_Arel_Nodes_On</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Or">#visit_Arel_Nodes_Or</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Ordering">#visit_Arel_Nodes_Ordering</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_OuterJoin">#visit_Arel_Nodes_OuterJoin</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_SelectCore">#visit_Arel_Nodes_SelectCore</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_SelectStatement">#visit_Arel_Nodes_SelectStatement</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_SqlLiteral">#visit_Arel_Nodes_SqlLiteral</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_StringJoin">#visit_Arel_Nodes_StringJoin</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Sum">#visit_Arel_Nodes_Sum</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_TableAlias">#visit_Arel_Nodes_TableAlias</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Top">#visit_Arel_Nodes_Top</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_UnqualifiedColumn">#visit_Arel_Nodes_UnqualifiedColumn</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_UpdateStatement">#visit_Arel_Nodes_UpdateStatement</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Values">#visit_Arel_Nodes_Values</a></li>
+					
+					<li><a href="#method-i-visit_Arel_SqlLiteral">#visit_Arel_SqlLiteral</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Table">#visit_Arel_Table</a></li>
+					
+					<li><a href="#method-i-visit_Array">#visit_Array</a></li>
+					
+					<li><a href="#method-i-visit_BigDecimal">#visit_BigDecimal</a></li>
+					
+					<li><a href="#method-i-visit_Date">#visit_Date</a></li>
+					
+					<li><a href="#method-i-visit_DateTime">#visit_DateTime</a></li>
+					
+					<li><a href="#method-i-visit_FalseClass">#visit_FalseClass</a></li>
+					
+					<li><a href="#method-i-visit_Fixnum">#visit_Fixnum</a></li>
+					
+					<li><a href="#method-i-visit_Float">#visit_Float</a></li>
+					
+					<li><a href="#method-i-visit_Hash">#visit_Hash</a></li>
+					
+					<li><a href="#method-i-visit_NilClass">#visit_NilClass</a></li>
+					
+					<li><a href="#method-i-visit_String">#visit_String</a></li>
+					
+					<li><a href="#method-i-visit_Symbol">#visit_Symbol</a></li>
+					
+					<li><a href="#method-i-visit_Time">#visit_Time</a></li>
+					
+					<li><a href="#method-i-visit_TrueClass">#visit_TrueClass</a></li>
+					
+					<li><a href="#method-i-visit_edge">#visit_edge</a></li>
+					
+					<li><a href="#method-i-with_node">#with_node</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../../MIT-LICENSE_txt.html">MIT-LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../../Manifest_txt.html">Manifest.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Arel.html">Arel</a></li>
+				
+					<li><a href="../../Arel/Attributes.html">Arel::Attributes</a></li>
+				
+					<li><a href="../../Arel/Attributes/Attribute.html">Arel::Attributes::Attribute</a></li>
+				
+					<li><a href="../../Arel/Attributes/Boolean.html">Arel::Attributes::Boolean</a></li>
+				
+					<li><a href="../../Arel/Attributes/Decimal.html">Arel::Attributes::Decimal</a></li>
+				
+					<li><a href="../../Arel/Attributes/Float.html">Arel::Attributes::Float</a></li>
+				
+					<li><a href="../../Arel/Attributes/Integer.html">Arel::Attributes::Integer</a></li>
+				
+					<li><a href="../../Arel/Attributes/String.html">Arel::Attributes::String</a></li>
+				
+					<li><a href="../../Arel/Attributes/Time.html">Arel::Attributes::Time</a></li>
+				
+					<li><a href="../../Arel/Attributes/Undefined.html">Arel::Attributes::Undefined</a></li>
+				
+					<li><a href="../../Arel/Crud.html">Arel::Crud</a></li>
+				
+					<li><a href="../../Arel/DeleteManager.html">Arel::DeleteManager</a></li>
+				
+					<li><a href="../../Arel/Expression.html">Arel::Expression</a></li>
+				
+					<li><a href="../../Arel/Expressions.html">Arel::Expressions</a></li>
+				
+					<li><a href="../../Arel/InsertManager.html">Arel::InsertManager</a></li>
+				
+					<li><a href="../../Arel/Nodes.html">Arel::Nodes</a></li>
+				
+					<li><a href="../../Arel/Nodes/And.html">Arel::Nodes::And</a></li>
+				
+					<li><a href="../../Arel/Nodes/As.html">Arel::Nodes::As</a></li>
+				
+					<li><a href="../../Arel/Nodes/Assignment.html">Arel::Nodes::Assignment</a></li>
+				
+					<li><a href="../../Arel/Nodes/Avg.html">Arel::Nodes::Avg</a></li>
+				
+					<li><a href="../../Arel/Nodes/Between.html">Arel::Nodes::Between</a></li>
+				
+					<li><a href="../../Arel/Nodes/Binary.html">Arel::Nodes::Binary</a></li>
+				
+					<li><a href="../../Arel/Nodes/Count.html">Arel::Nodes::Count</a></li>
+				
+					<li><a href="../../Arel/Nodes/DeleteStatement.html">Arel::Nodes::DeleteStatement</a></li>
+				
+					<li><a href="../../Arel/Nodes/DoesNotMatch.html">Arel::Nodes::DoesNotMatch</a></li>
+				
+					<li><a href="../../Arel/Nodes/Equality.html">Arel::Nodes::Equality</a></li>
+				
+					<li><a href="../../Arel/Nodes/Except.html">Arel::Nodes::Except</a></li>
+				
+					<li><a href="../../Arel/Nodes/Exists.html">Arel::Nodes::Exists</a></li>
+				
+					<li><a href="../../Arel/Nodes/Function.html">Arel::Nodes::Function</a></li>
+				
+					<li><a href="../../Arel/Nodes/GreaterThan.html">Arel::Nodes::GreaterThan</a></li>
+				
+					<li><a href="../../Arel/Nodes/GreaterThanOrEqual.html">Arel::Nodes::GreaterThanOrEqual</a></li>
+				
+					<li><a href="../../Arel/Nodes/Group.html">Arel::Nodes::Group</a></li>
+				
+					<li><a href="../../Arel/Nodes/Grouping.html">Arel::Nodes::Grouping</a></li>
+				
+					<li><a href="../../Arel/Nodes/Having.html">Arel::Nodes::Having</a></li>
+				
+					<li><a href="../../Arel/Nodes/In.html">Arel::Nodes::In</a></li>
+				
+					<li><a href="../../Arel/Nodes/InnerJoin.html">Arel::Nodes::InnerJoin</a></li>
+				
+					<li><a href="../../Arel/Nodes/InsertStatement.html">Arel::Nodes::InsertStatement</a></li>
+				
+					<li><a href="../../Arel/Nodes/Intersect.html">Arel::Nodes::Intersect</a></li>
+				
+					<li><a href="../../Arel/Nodes/Join.html">Arel::Nodes::Join</a></li>
+				
+					<li><a href="../../Arel/Nodes/LessThan.html">Arel::Nodes::LessThan</a></li>
+				
+					<li><a href="../../Arel/Nodes/LessThanOrEqual.html">Arel::Nodes::LessThanOrEqual</a></li>
+				
+					<li><a href="../../Arel/Nodes/Limit.html">Arel::Nodes::Limit</a></li>
+				
+					<li><a href="../../Arel/Nodes/Lock.html">Arel::Nodes::Lock</a></li>
+				
+					<li><a href="../../Arel/Nodes/Matches.html">Arel::Nodes::Matches</a></li>
+				
+					<li><a href="../../Arel/Nodes/Max.html">Arel::Nodes::Max</a></li>
+				
+					<li><a href="../../Arel/Nodes/Min.html">Arel::Nodes::Min</a></li>
+				
+					<li><a href="../../Arel/Nodes/Node.html">Arel::Nodes::Node</a></li>
+				
+					<li><a href="../../Arel/Nodes/Node.html">Arel::Nodes::Node</a></li>
+				
+					<li><a href="../../Arel/Nodes/Not.html">Arel::Nodes::Not</a></li>
+				
+					<li><a href="../../Arel/Nodes/NotEqual.html">Arel::Nodes::NotEqual</a></li>
+				
+					<li><a href="../../Arel/Nodes/NotIn.html">Arel::Nodes::NotIn</a></li>
+				
+					<li><a href="../../Arel/Nodes/Offset.html">Arel::Nodes::Offset</a></li>
+				
+					<li><a href="../../Arel/Nodes/On.html">Arel::Nodes::On</a></li>
+				
+					<li><a href="../../Arel/Nodes/Or.html">Arel::Nodes::Or</a></li>
+				
+					<li><a href="../../Arel/Nodes/Ordering.html">Arel::Nodes::Ordering</a></li>
+				
+					<li><a href="../../Arel/Nodes/OuterJoin.html">Arel::Nodes::OuterJoin</a></li>
+				
+					<li><a href="../../Arel/Nodes/SelectCore.html">Arel::Nodes::SelectCore</a></li>
+				
+					<li><a href="../../Arel/Nodes/SelectStatement.html">Arel::Nodes::SelectStatement</a></li>
+				
+					<li><a href="../../Arel/Nodes/SqlLiteral.html">Arel::Nodes::SqlLiteral</a></li>
+				
+					<li><a href="../../Arel/Nodes/StringJoin.html">Arel::Nodes::StringJoin</a></li>
+				
+					<li><a href="../../Arel/Nodes/Sum.html">Arel::Nodes::Sum</a></li>
+				
+					<li><a href="../../Arel/Nodes/TableAlias.html">Arel::Nodes::TableAlias</a></li>
+				
+					<li><a href="../../Arel/Nodes/Top.html">Arel::Nodes::Top</a></li>
+				
+					<li><a href="../../Arel/Nodes/Unary.html">Arel::Nodes::Unary</a></li>
+				
+					<li><a href="../../Arel/Nodes/Union.html">Arel::Nodes::Union</a></li>
+				
+					<li><a href="../../Arel/Nodes/UnionAll.html">Arel::Nodes::UnionAll</a></li>
+				
+					<li><a href="../../Arel/Nodes/UnqualifiedColumn.html">Arel::Nodes::UnqualifiedColumn</a></li>
+				
+					<li><a href="../../Arel/Nodes/UpdateStatement.html">Arel::Nodes::UpdateStatement</a></li>
+				
+					<li><a href="../../Arel/Nodes/Values.html">Arel::Nodes::Values</a></li>
+				
+					<li><a href="../../Arel/Predications.html">Arel::Predications</a></li>
+				
+					<li><a href="../../Arel/Relation.html">Arel::Relation</a></li>
+				
+					<li><a href="../../Arel/SelectManager.html">Arel::SelectManager</a></li>
+				
+					<li><a href="../../Arel/Sql.html">Arel::Sql</a></li>
+				
+					<li><a href="../../Arel/Sql/Engine.html">Arel::Sql::Engine</a></li>
+				
+					<li><a href="../../Arel/SqlLiteral.html">Arel::SqlLiteral</a></li>
+				
+					<li><a href="../../Arel/Table.html">Arel::Table</a></li>
+				
+					<li><a href="../../Arel/TreeManager.html">Arel::TreeManager</a></li>
+				
+					<li><a href="../../Arel/UpdateManager.html">Arel::UpdateManager</a></li>
+				
+					<li><a href="../../Arel/Visitors.html">Arel::Visitors</a></li>
+				
+					<li><a href="../../Arel/Visitors/DepthFirst.html">Arel::Visitors::DepthFirst</a></li>
+				
+					<li><a href="../../Arel/Visitors/Dot.html">Arel::Visitors::Dot</a></li>
+				
+					<li><a href="../../Arel/Visitors/JoinSql.html">Arel::Visitors::JoinSql</a></li>
+				
+					<li><a href="../../Arel/Visitors/MSSQL.html">Arel::Visitors::MSSQL</a></li>
+				
+					<li><a href="../../Arel/Visitors/MySQL.html">Arel::Visitors::MySQL</a></li>
+				
+					<li><a href="../../Arel/Visitors/Oracle.html">Arel::Visitors::Oracle</a></li>
+				
+					<li><a href="../../Arel/Visitors/OrderClauses.html">Arel::Visitors::OrderClauses</a></li>
+				
+					<li><a href="../../Arel/Visitors/PostgreSQL.html">Arel::Visitors::PostgreSQL</a></li>
+				
+					<li><a href="../../Arel/Visitors/SQLite.html">Arel::Visitors::SQLite</a></li>
+				
+					<li><a href="../../Arel/Visitors/ToSql.html">Arel::Visitors::ToSql</a></li>
+				
+					<li><a href="../../Arel/Visitors/Visitor.html">Arel::Visitors::Visitor</a></li>
+				
+					<li><a href="../../Arel/Visitors/WhereSql.html">Arel::Visitors::WhereSql</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Arel::Visitors::Dot</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 17</span>
+17:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+18:         <span class="ruby-ivar">@nodes</span>      = []
+19:         <span class="ruby-ivar">@edges</span>      = []
+20:         <span class="ruby-ivar">@node_stack</span> = []
+21:         <span class="ruby-ivar">@edge_stack</span> = []
+22:         <span class="ruby-ivar">@seen</span>       = {}
+23:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="accept-method" class="method-detail ">
+				<a name="method-i-accept"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">accept</span><span
+						class="method-args">(object)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="accept-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 25</span>
+25:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">accept</span> <span class="ruby-identifier">object</span>
+26:         <span class="ruby-keyword kw">super</span>
+27:         <span class="ruby-identifier">to_dot</span>
+28:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="edge-method" class="method-detail ">
+				<a name="method-i-edge"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">edge</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="edge-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 192</span>
+192:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">edge</span> <span class="ruby-identifier">name</span>
+193:         <span class="ruby-identifier">edge</span> = <span class="ruby-constant">Edge</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-ivar">@node_stack</span>.<span class="ruby-identifier">last</span>)
+194:         <span class="ruby-ivar">@edge_stack</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">edge</span>
+195:         <span class="ruby-ivar">@edges</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">edge</span>
+196:         <span class="ruby-keyword kw">yield</span>
+197:         <span class="ruby-ivar">@edge_stack</span>.<span class="ruby-identifier">pop</span>
+198:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="quote-method" class="method-detail ">
+				<a name="method-i-quote"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">quote</span><span
+						class="method-args">(string)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="quote-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 210</span>
+210:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">quote</span> <span class="ruby-identifier">string</span>
+211:         <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">'&quot;'</span>, <span class="ruby-value str">'\&quot;'</span>)
+212:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-dot-method" class="method-detail ">
+				<a name="method-i-to_dot"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_dot</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="to-dot-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 214</span>
+214:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_dot</span>
+215:         <span class="ruby-value str">&quot;digraph \&quot;ARel\&quot; {\nnode [width=0.375,height=0.25,shape=record];\n&quot;</span> <span class="ruby-operator">+</span>
+216:           <span class="ruby-ivar">@nodes</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+217:             <span class="ruby-identifier">label</span> = <span class="ruby-node">&quot;&lt;f0&gt;#{node.name}&quot;</span>
+218: 
+219:             <span class="ruby-identifier">node</span>.<span class="ruby-identifier">fields</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+220:               <span class="ruby-identifier">label</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;|&lt;f#{i + 1}&gt;#{quote field}&quot;</span>
+221:             <span class="ruby-keyword kw">end</span>
+222: 
+223:             <span class="ruby-node">&quot;#{node.id} [label=\&quot;#{label}\&quot;];&quot;</span>
+224:           }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@edges</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">edge</span><span class="ruby-operator">|</span>
+225:             <span class="ruby-node">&quot;#{edge.from.id} -&gt; #{edge.to.id} [label=\&quot;#{edge.name}\&quot;];&quot;</span>
+226:           }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n}&quot;</span>
+227:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="unary-method" class="method-detail ">
+				<a name="method-i-unary"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">unary</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="unary-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 75</span>
+75:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unary</span> <span class="ruby-identifier">o</span>
+76:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;expr&quot;</span>
+77:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Dot.html#method-i-visit_Arel_Nodes_Group">visit_Arel_Nodes_Group</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_Grouping">visit_Arel_Nodes_Grouping</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_Having">visit_Arel_Nodes_Having</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_Limit">visit_Arel_Nodes_Limit</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_Not">visit_Arel_Nodes_Not</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_Offset">visit_Arel_Nodes_Offset</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_On">visit_Arel_Nodes_On</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_Top">visit_Arel_Nodes_Top</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_UnqualifiedColumn">visit_Arel_Nodes_UnqualifiedColumn</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="visit-method" class="method-detail ">
+				<a name="method-i-visit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 178</span>
+178:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>
+179:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node</span> = <span class="ruby-ivar">@seen</span>[<span class="ruby-identifier">o</span>.<span class="ruby-identifier">object_id</span>]
+180:           <span class="ruby-ivar">@edge_stack</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">to</span> = <span class="ruby-identifier">node</span>
+181:           <span class="ruby-keyword kw">return</span>
+182:         <span class="ruby-keyword kw">end</span>
+183: 
+184:         <span class="ruby-identifier">node</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">o</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">o</span>.<span class="ruby-identifier">object_id</span>)
+185:         <span class="ruby-ivar">@seen</span>[<span class="ruby-identifier">node</span>.<span class="ruby-identifier">id</span>] = <span class="ruby-identifier">node</span>
+186:         <span class="ruby-ivar">@nodes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span>
+187:         <span class="ruby-identifier">with_node</span> <span class="ruby-identifier">node</span> <span class="ruby-keyword kw">do</span>
+188:           <span class="ruby-keyword kw">super</span>
+189:         <span class="ruby-keyword kw">end</span>
+190:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-ttribute-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Attribute"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attribute</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-ttribute-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 117</span>
+117:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Attribute</span> <span class="ruby-identifier">o</span>
+118:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;relation&quot;</span>
+119:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;name&quot;</span>
+120:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Dot.html#method-i-visit_Arel_Attributes_Integer">visit_Arel_Attributes_Integer</a>, <a href="Dot.html#method-i-visit_Arel_Attributes_Float">visit_Arel_Attributes_Float</a>, <a href="Dot.html#method-i-visit_Arel_Attributes_String">visit_Arel_Attributes_String</a>, <a href="Dot.html#method-i-visit_Arel_Attributes_Time">visit_Arel_Attributes_Time</a>, <a href="Dot.html#method-i-visit_Arel_Attributes_Boolean">visit_Arel_Attributes_Boolean</a>, <a href="Dot.html#method-i-visit_Arel_Attributes_Attribute">visit_Arel_Attributes_Attribute</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-ttribute-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_Attribute"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_Attribute</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-oolean-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_Boolean"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_Boolean</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-loat-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_Float"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_Float</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-nteger-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_Integer"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_Integer</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-tring-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_String"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_String</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-ime-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_Time"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_Time</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-nd-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_And"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_And</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ssignment-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Assignment"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Assignment</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-vg-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Avg"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Avg</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Sum">visit_Arel_Nodes_Sum</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-etween-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Between"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Between</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ount-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_Count"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Count</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-ount-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 49</span>
+49:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_Count</span> <span class="ruby-identifier">o</span>
+50:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;expressions&quot;</span>
+51:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;distinct&quot;</span>
+52:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-elete-tatement-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_DeleteStatement"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_DeleteStatement</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-elete-tatement-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 70</span>
+70:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_DeleteStatement</span> <span class="ruby-identifier">o</span>
+71:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;relation&quot;</span>
+72:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;wheres&quot;</span>
+73:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-oes-ot-atch-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_DoesNotMatch"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_DoesNotMatch</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-quality-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_Equality"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Equality</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-quality-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 128</span>
+128:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_Equality</span> <span class="ruby-identifier">o</span>
+129:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;left&quot;</span>
+130:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;right&quot;</span>
+131:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Dot.html#method-i-visit_Arel_Nodes_And">visit_Arel_Nodes_And</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_Or">visit_Arel_Nodes_Or</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_NotEqual">visit_Arel_Nodes_NotEqual</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_GreaterThan">visit_Arel_Nodes_GreaterThan</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_GreaterThanOrEqual">visit_Arel_Nodes_GreaterThanOrEqual</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_Assignment">visit_Arel_Nodes_Assignment</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_In">visit_Arel_Nodes_In</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_LessThan">visit_Arel_Nodes_LessThan</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_LessThanOrEqual">visit_Arel_Nodes_LessThanOrEqual</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_Between">visit_Arel_Nodes_Between</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_NotIn">visit_Arel_Nodes_NotIn</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_DoesNotMatch">visit_Arel_Nodes_DoesNotMatch</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_Matches">visit_Arel_Nodes_Matches</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-reater-han-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_GreaterThan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_GreaterThan</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-reater-han-r-qual-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_GreaterThanOrEqual"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_GreaterThanOrEqual</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-roup-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Group"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Group</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-rouping-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Grouping"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Grouping</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-aving-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Having"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Having</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-n-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_In"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_In</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-nner-oin-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_InnerJoin"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_InnerJoin</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-nner-oin-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 63</span>
+63:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_InnerJoin</span> <span class="ruby-identifier">o</span>
+64:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;left&quot;</span>
+65:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;right&quot;</span>
+66:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;constraint&quot;</span>
+67:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Dot.html#method-i-visit_Arel_Nodes_OuterJoin">visit_Arel_Nodes_OuterJoin</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-nsert-tatement-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_InsertStatement"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_InsertStatement</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-nsert-tatement-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 88</span>
+88:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_InsertStatement</span> <span class="ruby-identifier">o</span>
+89:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;relation&quot;</span>
+90:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;columns&quot;</span>
+91:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;values&quot;</span>
+92:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ess-han-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_LessThan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_LessThan</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ess-han-r-qual-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_LessThanOrEqual"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_LessThanOrEqual</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-imit-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Limit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Limit</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-atches-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Matches"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Matches</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ax-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Max"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Max</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Sum">visit_Arel_Nodes_Sum</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ot-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Not"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Not</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ot-qual-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_NotEqual"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_NotEqual</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ot-n-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_NotIn"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_NotIn</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ffset-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Offset"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Offset</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-n-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_On"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_On</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-r-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Or"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Or</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-rdering-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_Ordering"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Ordering</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-rdering-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 31</span>
+31:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_Ordering</span> <span class="ruby-identifier">o</span>
+32:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;expr&quot;</span>
+33:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;direction&quot;</span>
+34:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-uter-oin-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_OuterJoin"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_OuterJoin</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_Arel_Nodes_InnerJoin">visit_Arel_Nodes_InnerJoin</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-elect-ore-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_SelectCore"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_SelectCore</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-elect-ore-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 94</span>
+94:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_SelectCore</span> <span class="ruby-identifier">o</span>
+95:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;froms&quot;</span>
+96:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;projections&quot;</span>
+97:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;wheres&quot;</span>
+98:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-elect-tatement-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_SelectStatement"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_SelectStatement</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-elect-tatement-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 100</span>
+100:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_SelectStatement</span> <span class="ruby-identifier">o</span>
+101:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;cores&quot;</span>
+102:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;limit&quot;</span>
+103:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;orders&quot;</span>
+104:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;offset&quot;</span>
+105:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ql-iteral-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_SqlLiteral"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_SqlLiteral</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-tring-oin-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_StringJoin"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_StringJoin</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-tring-oin-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 58</span>
+58:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_StringJoin</span> <span class="ruby-identifier">o</span>
+59:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;left&quot;</span>
+60:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;right&quot;</span>
+61:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-um-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_Sum"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Sum</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-um-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 42</span>
+42:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_Sum</span> <span class="ruby-identifier">o</span>
+43:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;expressions&quot;</span>
+44:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;alias&quot;</span>
+45:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Dot.html#method-i-visit_Arel_Nodes_Max">visit_Arel_Nodes_Max</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_Avg">visit_Arel_Nodes_Avg</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-able-lias-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_TableAlias"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_TableAlias</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-able-lias-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 36</span>
+36:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_TableAlias</span> <span class="ruby-identifier">o</span>
+37:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;name&quot;</span>
+38:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;relation&quot;</span>
+39:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;columns&quot;</span>
+40:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-op-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Top"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Top</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-nqualified-olumn-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_UnqualifiedColumn"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_UnqualifiedColumn</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-pdate-tatement-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_UpdateStatement"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_UpdateStatement</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-pdate-tatement-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 107</span>
+107:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_UpdateStatement</span> <span class="ruby-identifier">o</span>
+108:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;relation&quot;</span>
+109:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;wheres&quot;</span>
+110:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;values&quot;</span>
+111:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-alues-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_Values"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Values</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-alues-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 54</span>
+54:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_Values</span> <span class="ruby-identifier">o</span>
+55:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;expressions&quot;</span>
+56:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-ql-iteral-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_SqlLiteral"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_SqlLiteral</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-able-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Table"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Table</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-able-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 113</span>
+113:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Table</span> <span class="ruby-identifier">o</span>
+114:         <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-value str">&quot;name&quot;</span>
+115:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rray-method" class="method-detail ">
+				<a name="method-i-visit_Array"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Array</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rray-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 168</span>
+168:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Array</span> <span class="ruby-identifier">o</span>
+169:         <span class="ruby-identifier">o</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+170:           <span class="ruby-identifier">edge</span>(<span class="ruby-identifier">i</span>) { <span class="ruby-identifier">visit</span> <span class="ruby-identifier">x</span> }
+171:         <span class="ruby-keyword kw">end</span>
+172:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-ig-ecimal-method" class="method-detail method-alias">
+				<a name="method-i-visit_BigDecimal"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_BigDecimal</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ate-method" class="method-detail method-alias">
+				<a name="method-i-visit_Date"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Date</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ate-ime-method" class="method-detail method-alias">
+				<a name="method-i-visit_DateTime"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_DateTime</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-alse-lass-method" class="method-detail method-alias">
+				<a name="method-i-visit_FalseClass"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_FalseClass</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ixnum-method" class="method-detail method-alias">
+				<a name="method-i-visit_Fixnum"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Fixnum</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-loat-method" class="method-detail method-alias">
+				<a name="method-i-visit_Float"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Float</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ash-method" class="method-detail ">
+				<a name="method-i-visit_Hash"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Hash</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-ash-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 162</span>
+162:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Hash</span> <span class="ruby-identifier">o</span>
+163:         <span class="ruby-identifier">o</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pair</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+164:           <span class="ruby-identifier">edge</span>(<span class="ruby-node">&quot;pair_#{i}&quot;</span>)   { <span class="ruby-identifier">visit</span> <span class="ruby-identifier">pair</span> }
+165:         <span class="ruby-keyword kw">end</span>
+166:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-il-lass-method" class="method-detail method-alias">
+				<a name="method-i-visit_NilClass"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_NilClass</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-tring-method" class="method-detail ">
+				<a name="method-i-visit_String"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_String</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-tring-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 146</span>
+146:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_String</span> <span class="ruby-identifier">o</span>
+147:         <span class="ruby-ivar">@node_stack</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">fields</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">o</span>
+148:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Dot.html#method-i-visit_Time">visit_Time</a>, <a href="Dot.html#method-i-visit_Date">visit_Date</a>, <a href="Dot.html#method-i-visit_DateTime">visit_DateTime</a>, <a href="Dot.html#method-i-visit_NilClass">visit_NilClass</a>, <a href="Dot.html#method-i-visit_TrueClass">visit_TrueClass</a>, <a href="Dot.html#method-i-visit_FalseClass">visit_FalseClass</a>, <a href="Dot.html#method-i-visit_Arel_SqlLiteral">visit_Arel_SqlLiteral</a>, <a href="Dot.html#method-i-visit_Fixnum">visit_Fixnum</a>, <a href="Dot.html#method-i-visit_BigDecimal">visit_BigDecimal</a>, <a href="Dot.html#method-i-visit_Float">visit_Float</a>, <a href="Dot.html#method-i-visit_Symbol">visit_Symbol</a>, <a href="Dot.html#method-i-visit_Arel_Nodes_SqlLiteral">visit_Arel_Nodes_SqlLiteral</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="visit-ymbol-method" class="method-detail method-alias">
+				<a name="method-i-visit_Symbol"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Symbol</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ime-method" class="method-detail method-alias">
+				<a name="method-i-visit_Time"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Time</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rue-lass-method" class="method-detail method-alias">
+				<a name="method-i-visit_TrueClass"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_TrueClass</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Dot.html#method-i-visit_String">visit_String</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-edge-method" class="method-detail ">
+				<a name="method-i-visit_edge"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_edge</span><span
+						class="method-args">(o, method)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-edge-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 174</span>
+174:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_edge</span> <span class="ruby-identifier">o</span>, <span class="ruby-identifier">method</span>
+175:         <span class="ruby-identifier">edge</span>(<span class="ruby-identifier">method</span>) { <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>) }
+176:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="with-node-method" class="method-detail ">
+				<a name="method-i-with_node"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">with_node</span><span
+						class="method-args">(node)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="with-node-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/dot.rb, line 200</span>
+200:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">with_node</span> <span class="ruby-identifier">node</span>
+201:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">edge</span> = <span class="ruby-ivar">@edge_stack</span>.<span class="ruby-identifier">last</span>
+202:           <span class="ruby-identifier">edge</span>.<span class="ruby-identifier">to</span> = <span class="ruby-identifier">node</span>
+203:         <span class="ruby-keyword kw">end</span>
+204: 
+205:         <span class="ruby-ivar">@node_stack</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">node</span>
+206:         <span class="ruby-keyword kw">yield</span>
+207:         <span class="ruby-ivar">@node_stack</span>.<span class="ruby-identifier">pop</span>
+208:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

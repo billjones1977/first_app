@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="promote" mtime="1298648927" type="bool" value="true"/>
+	<entry name="trigger" mtime="1298648927" type="string">
+		<stringvalue>Escape</stringvalue>
+	</entry>
+	<entry name="order" mtime="1298648927" type="string">
+		<stringvalue>proximity</stringvalue>
+	</entry>
+	<entry name="scope" mtime="1298648927" type="string">
+		<stringvalue>document</stringvalue>
+	</entry>
+</gconf>

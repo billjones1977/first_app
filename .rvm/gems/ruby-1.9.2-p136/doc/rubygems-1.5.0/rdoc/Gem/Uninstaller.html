@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Gem::Uninstaller</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/rubygems/uninstaller_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rubygems/uninstaller.rb">lib/rubygems/uninstaller.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-ask_if_ok">#ask_if_ok</a></li>
+					
+					<li><a href="#method-i-dependencies_ok%3F">#dependencies_ok?</a></li>
+					
+					<li><a href="#method-i-path_ok%3F">#path_ok?</a></li>
+					
+					<li><a href="#method-i-remove">#remove</a></li>
+					
+					<li><a href="#method-i-remove_all">#remove_all</a></li>
+					
+					<li><a href="#method-i-remove_executables">#remove_executables</a></li>
+					
+					<li><a href="#method-i-uninstall">#uninstall</a></li>
+					
+					<li><a href="#method-i-uninstall_gem">#uninstall_gem</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="UserInteraction.html">Gem::UserInteraction</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../GPL_txt.html">GPL.txt</a></li>
+				
+					<li class="file"><a href="../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../UPGRADING_rdoc.html">UPGRADING.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Gem.html">Gem</a></li>
+				
+					<li><a href="../Gem/Builder.html">Gem::Builder</a></li>
+				
+					<li><a href="../Gem/Command.html">Gem::Command</a></li>
+				
+					<li><a href="../Gem/CommandLineError.html">Gem::CommandLineError</a></li>
+				
+					<li><a href="../Gem/CommandManager.html">Gem::CommandManager</a></li>
+				
+					<li><a href="../Gem/Commands.html">Gem::Commands</a></li>
+				
+					<li><a href="../Gem/Commands/BuildCommand.html">Gem::Commands::BuildCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CertCommand.html">Gem::Commands::CertCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CheckCommand.html">Gem::Commands::CheckCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CleanupCommand.html">Gem::Commands::CleanupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ContentsCommand.html">Gem::Commands::ContentsCommand</a></li>
+				
+					<li><a href="../Gem/Commands/DependencyCommand.html">Gem::Commands::DependencyCommand</a></li>
+				
+					<li><a href="../Gem/Commands/EnvironmentCommand.html">Gem::Commands::EnvironmentCommand</a></li>
+				
+					<li><a href="../Gem/Commands/FetchCommand.html">Gem::Commands::FetchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/GenerateIndexCommand.html">Gem::Commands::GenerateIndexCommand</a></li>
+				
+					<li><a href="../Gem/Commands/HelpCommand.html">Gem::Commands::HelpCommand</a></li>
+				
+					<li><a href="../Gem/Commands/InstallCommand.html">Gem::Commands::InstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ListCommand.html">Gem::Commands::ListCommand</a></li>
+				
+					<li><a href="../Gem/Commands/LockCommand.html">Gem::Commands::LockCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OutdatedCommand.html">Gem::Commands::OutdatedCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OwnerCommand.html">Gem::Commands::OwnerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PristineCommand.html">Gem::Commands::PristineCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PushCommand.html">Gem::Commands::PushCommand</a></li>
+				
+					<li><a href="../Gem/Commands/QueryCommand.html">Gem::Commands::QueryCommand</a></li>
+				
+					<li><a href="../Gem/Commands/RdocCommand.html">Gem::Commands::RdocCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SearchCommand.html">Gem::Commands::SearchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ServerCommand.html">Gem::Commands::ServerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SetupCommand.html">Gem::Commands::SetupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SourcesCommand.html">Gem::Commands::SourcesCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SpecificationCommand.html">Gem::Commands::SpecificationCommand</a></li>
+				
+					<li><a href="../Gem/Commands/StaleCommand.html">Gem::Commands::StaleCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UninstallCommand.html">Gem::Commands::UninstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UnpackCommand.html">Gem::Commands::UnpackCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UpdateCommand.html">Gem::Commands::UpdateCommand</a></li>
+				
+					<li><a href="../Gem/Commands/WhichCommand.html">Gem::Commands::WhichCommand</a></li>
+				
+					<li><a href="../Gem/ConfigFile.html">Gem::ConfigFile</a></li>
+				
+					<li><a href="../Gem/ConsoleUI.html">Gem::ConsoleUI</a></li>
+				
+					<li><a href="../Gem/DefaultUserInteraction.html">Gem::DefaultUserInteraction</a></li>
+				
+					<li><a href="../Gem/Dependency.html">Gem::Dependency</a></li>
+				
+					<li><a href="../Gem/DependencyError.html">Gem::DependencyError</a></li>
+				
+					<li><a href="../Gem/DependencyInstaller.html">Gem::DependencyInstaller</a></li>
+				
+					<li><a href="../Gem/DependencyList.html">Gem::DependencyList</a></li>
+				
+					<li><a href="../Gem/DependencyRemovalException.html">Gem::DependencyRemovalException</a></li>
+				
+					<li><a href="../Gem/DocManager.html">Gem::DocManager</a></li>
+				
+					<li><a href="../Gem/DocumentError.html">Gem::DocumentError</a></li>
+				
+					<li><a href="../Gem/EndOfYAMLException.html">Gem::EndOfYAMLException</a></li>
+				
+					<li><a href="../Gem/ErrorReason.html">Gem::ErrorReason</a></li>
+				
+					<li><a href="../Gem/Exception.html">Gem::Exception</a></li>
+				
+					<li><a href="../Gem/Ext.html">Gem::Ext</a></li>
+				
+					<li><a href="../Gem/Ext/Builder.html">Gem::Ext::Builder</a></li>
+				
+					<li><a href="../Gem/Ext/ConfigureBuilder.html">Gem::Ext::ConfigureBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/ExtConfBuilder.html">Gem::Ext::ExtConfBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/RakeBuilder.html">Gem::Ext::RakeBuilder</a></li>
+				
+					<li><a href="../Gem/FakeFetcher.html">Gem::FakeFetcher</a></li>
+				
+					<li><a href="../Gem/FileOperations.html">Gem::FileOperations</a></li>
+				
+					<li><a href="../Gem/FilePermissionError.html">Gem::FilePermissionError</a></li>
+				
+					<li><a href="../Gem/Format.html">Gem::Format</a></li>
+				
+					<li><a href="../Gem/FormatException.html">Gem::FormatException</a></li>
+				
+					<li><a href="../Gem/GemNotFoundException.html">Gem::GemNotFoundException</a></li>
+				
+					<li><a href="../Gem/GemNotInHomeException.html">Gem::GemNotInHomeException</a></li>
+				
+					<li><a href="../Gem/GemPathSearcher.html">Gem::GemPathSearcher</a></li>
+				
+					<li><a href="../Gem/GemRunner.html">Gem::GemRunner</a></li>
+				
+					<li><a href="../Gem/GemcutterUtilities.html">Gem::GemcutterUtilities</a></li>
+				
+					<li><a href="../Gem/Indexer.html">Gem::Indexer</a></li>
+				
+					<li><a href="../Gem/InstallError.html">Gem::InstallError</a></li>
+				
+					<li><a href="../Gem/InstallUpdateOptions.html">Gem::InstallUpdateOptions</a></li>
+				
+					<li><a href="../Gem/Installer.html">Gem::Installer</a></li>
+				
+					<li><a href="../Gem/Installer/ExtensionBuildError.html">Gem::Installer::ExtensionBuildError</a></li>
+				
+					<li><a href="../Gem/InstallerTestCase.html">Gem::InstallerTestCase</a></li>
+				
+					<li><a href="../Gem/InvalidSpecificationException.html">Gem::InvalidSpecificationException</a></li>
+				
+					<li><a href="../Gem/LoadError.html">Gem::LoadError</a></li>
+				
+					<li><a href="../Gem/LocalRemoteOptions.html">Gem::LocalRemoteOptions</a></li>
+				
+					<li><a href="../Gem/MockGemUi.html">Gem::MockGemUi</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TTY.html">Gem::MockGemUi::TTY</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TermError.html">Gem::MockGemUi::TermError</a></li>
+				
+					<li><a href="../Gem/OldFormat.html">Gem::OldFormat</a></li>
+				
+					<li><a href="../Gem/OperationNotSupportedError.html">Gem::OperationNotSupportedError</a></li>
+				
+					<li><a href="../Gem/Package.html">Gem::Package</a></li>
+				
+					<li><a href="../Gem/Package/BadCheckSum.html">Gem::Package::BadCheckSum</a></li>
+				
+					<li><a href="../Gem/Package/ClosedIO.html">Gem::Package::ClosedIO</a></li>
+				
+					<li><a href="../Gem/Package/Error.html">Gem::Package::Error</a></li>
+				
+					<li><a href="../Gem/Package/FSyncDir.html">Gem::Package::FSyncDir</a></li>
+				
+					<li><a href="../Gem/Package/FormatError.html">Gem::Package::FormatError</a></li>
+				
+					<li><a href="../Gem/Package/NonSeekableIO.html">Gem::Package::NonSeekableIO</a></li>
+				
+					<li><a href="../Gem/Package/TarHeader.html">Gem::Package::TarHeader</a></li>
+				
+					<li><a href="../Gem/Package/TarInput.html">Gem::Package::TarInput</a></li>
+				
+					<li><a href="../Gem/Package/TarInvalidError.html">Gem::Package::TarInvalidError</a></li>
+				
+					<li><a href="../Gem/Package/TarOutput.html">Gem::Package::TarOutput</a></li>
+				
+					<li><a href="../Gem/Package/TarReader.html">Gem::Package::TarReader</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/Entry.html">Gem::Package::TarReader::Entry</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/UnexpectedEOF.html">Gem::Package::TarReader::UnexpectedEOF</a></li>
+				
+					<li><a href="../Gem/Package/TarTestCase.html">Gem::Package::TarTestCase</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter.html">Gem::Package::TarWriter</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/BoundedStream.html">Gem::Package::TarWriter::BoundedStream</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/FileOverflow.html">Gem::Package::TarWriter::FileOverflow</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/RestrictedStream.html">Gem::Package::TarWriter::RestrictedStream</a></li>
+				
+					<li><a href="../Gem/Package/TooLongFileName.html">Gem::Package::TooLongFileName</a></li>
+				
+					<li><a href="../Gem/PackageTask.html">Gem::PackageTask</a></li>
+				
+					<li><a href="../Gem/Platform.html">Gem::Platform</a></li>
+				
+					<li><a href="../Gem/PlatformMismatch.html">Gem::PlatformMismatch</a></li>
+				
+					<li><a href="../Gem/RemoteError.html">Gem::RemoteError</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher.html">Gem::RemoteFetcher</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher/FetchError.html">Gem::RemoteFetcher::FetchError</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationCancelled.html">Gem::RemoteInstallationCancelled</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationSkipped.html">Gem::RemoteInstallationSkipped</a></li>
+				
+					<li><a href="../Gem/RemoteSourceException.html">Gem::RemoteSourceException</a></li>
+				
+					<li><a href="../Gem/RequirePathsBuilder.html">Gem::RequirePathsBuilder</a></li>
+				
+					<li><a href="../Gem/Requirement.html">Gem::Requirement</a></li>
+				
+					<li><a href="../Gem/Security/Exception.html">Gem::Security::Exception</a></li>
+				
+					<li><a href="../Gem/Security/Signer.html">Gem::Security::Signer</a></li>
+				
+					<li><a href="../Gem/Server.html">Gem::Server</a></li>
+				
+					<li><a href="../Gem/SilentUI.html">Gem::SilentUI</a></li>
+				
+					<li><a href="../Gem/SourceIndex.html">Gem::SourceIndex</a></li>
+				
+					<li><a href="../Gem/SpecFetcher.html">Gem::SpecFetcher</a></li>
+				
+					<li><a href="../Gem/Specification.html">Gem::Specification</a></li>
+				
+					<li><a href="../Gem/StreamUI.html">Gem::StreamUI</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentDownloadReporter.html">Gem::StreamUI::SilentDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentProgressReporter.html">Gem::StreamUI::SilentProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SimpleProgressReporter.html">Gem::StreamUI::SimpleProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseDownloadReporter.html">Gem::StreamUI::VerboseDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseProgressReporter.html">Gem::StreamUI::VerboseProgressReporter</a></li>
+				
+					<li><a href="../Gem/SystemExitException.html">Gem::SystemExitException</a></li>
+				
+					<li><a href="../Gem/TestCase.html">Gem::TestCase</a></li>
+				
+					<li><a href="../Gem/Text.html">Gem::Text</a></li>
+				
+					<li><a href="../Gem/Uninstaller.html">Gem::Uninstaller</a></li>
+				
+					<li><a href="../Gem/UserInteraction.html">Gem::UserInteraction</a></li>
+				
+					<li><a href="../Gem/Validator.html">Gem::Validator</a></li>
+				
+					<li><a href="../Gem/VerificationError.html">Gem::VerificationError</a></li>
+				
+					<li><a href="../Gem/Version.html">Gem::Version</a></li>
+				
+					<li><a href="../Gem/VersionOption.html">Gem::VersionOption</a></li>
+				
+					<li><a href="../OpenSSL.html">OpenSSL</a></li>
+				
+					<li><a href="../OpenSSL/X509.html">OpenSSL::X509</a></li>
+				
+					<li><a href="../GemGauntlet.html">GemGauntlet</a></li>
+				
+					<li><a href="../Kernel.html">Kernel</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+					<li><a href="../TempIO.html">TempIO</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Gem::Uninstaller</h1>
+
+		<div id="description">
+			<p>
+An <a href="Uninstaller.html">Uninstaller</a>.
+</p>
+<p>
+The uninstaller fires pre and post uninstall hooks.  Hooks can be added
+either through a rubygems_plugin.rb file in an installed gem or via a
+rubygems/defaults/#{RUBY_ENGINE}.rb or
+rubygems/defaults/operating_system.rb file.  See Gem.pre_uninstall and
+Gem.post_uninstall for details.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="bin-dir-attribute-method" class="method-detail">
+				<a name="bin_dir"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">bin_dir</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The directory a gem&#8217;s executables will be installed into
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="gem-home-attribute-method" class="method-detail">
+				<a name="gem_home"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">gem_home</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The gem repository the gem will be installed into
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="spec-attribute-method" class="method-detail">
+				<a name="spec"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">spec</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The <a href="Specification.html">Gem::Specification</a> for the gem being
+uninstalled, only set during <a
+href="Uninstaller.html#method-i-uninstall_gem">#</a>
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(gem, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Constructs an uninstaller that will uninstall <tt>gem</tt>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/uninstaller.rb, line 44</span>
+44:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">gem</span>, <span class="ruby-identifier">options</span> = {})
+45:     <span class="ruby-ivar">@gem</span> = <span class="ruby-identifier">gem</span>
+46:     <span class="ruby-ivar">@version</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:version</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">default</span>
+47:     <span class="ruby-identifier">gem_home</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:install_dir</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">dir</span>
+48:     <span class="ruby-ivar">@gem_home</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span> <span class="ruby-identifier">gem_home</span>
+49:     <span class="ruby-ivar">@force_executables</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:executables</span>]
+50:     <span class="ruby-ivar">@force_all</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:all</span>]
+51:     <span class="ruby-ivar">@force_ignore</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:ignore</span>]
+52:     <span class="ruby-ivar">@bin_dir</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:bin_dir</span>]
+53: 
+54:     <span class="ruby-comment cmt"># only add user directory if install_dir is not set</span>
+55:     <span class="ruby-ivar">@user_install</span> = <span class="ruby-keyword kw">false</span>
+56:     <span class="ruby-ivar">@user_install</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:user_install</span>] <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:install_dir</span>]
+57: 
+58:     <span class="ruby-identifier">spec_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-ivar">@gem_home</span>, <span class="ruby-value str">'specifications'</span>
+59:     <span class="ruby-ivar">@source_index</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">SourceIndex</span>.<span class="ruby-identifier">from_gems_in</span> <span class="ruby-identifier">spec_dir</span>
+60: 
+61:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@user_install</span> <span class="ruby-keyword kw">then</span>
+62:       <span class="ruby-identifier">user_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">user_dir</span>, <span class="ruby-value str">'specifications'</span>
+63:       <span class="ruby-ivar">@user_index</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">SourceIndex</span>.<span class="ruby-identifier">from_gems_in</span> <span class="ruby-identifier">user_dir</span>
+64:     <span class="ruby-keyword kw">end</span>
+65:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="ask-if-ok-method" class="method-detail ">
+				<a name="method-i-ask_if_ok"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ask_if_ok</span><span
+						class="method-args">(spec)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="ask-if-ok-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/uninstaller.rb, line 246</span>
+246:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ask_if_ok</span>(<span class="ruby-identifier">spec</span>)
+247:     <span class="ruby-identifier">msg</span> = [<span class="ruby-value str">''</span>]
+248:     <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'You have requested to uninstall the gem:'</span>
+249:     <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\t#{spec.full_name}&quot;</span>
+250:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">dependent_gems</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">gem</span>,<span class="ruby-identifier">dep</span>,<span class="ruby-identifier">satlist</span><span class="ruby-operator">|</span>
+251:       <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span>
+252:         (<span class="ruby-node">&quot;#{gem.name}-#{gem.version} depends on &quot;</span> <span class="ruby-operator">+</span>
+253:         <span class="ruby-node">&quot;[#{dep.name} (#{dep.requirement})]&quot;</span>)
+254:     <span class="ruby-keyword kw">end</span>
+255:     <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'If you remove this gems, one or more dependencies will not be met.'</span>
+256:     <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'Continue with Uninstall?'</span>
+257:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">ask_yes_no</span>(<span class="ruby-identifier">msg</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>), <span class="ruby-keyword kw">true</span>)
+258:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="dependencies-ok--method" class="method-detail ">
+				<a name="method-i-dependencies_ok%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">dependencies_ok?</span><span
+						class="method-args">(spec)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="dependencies-ok--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/uninstaller.rb, line 238</span>
+238:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dependencies_ok?</span>(<span class="ruby-identifier">spec</span>)
+239:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@force_ignore</span>
+240: 
+241:     <span class="ruby-identifier">deplist</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">DependencyList</span>.<span class="ruby-identifier">from_source_index</span> <span class="ruby-ivar">@source_index</span>
+242:     <span class="ruby-identifier">deplist</span>.<span class="ruby-identifier">add</span>(*<span class="ruby-ivar">@user_index</span>.<span class="ruby-identifier">gems</span>.<span class="ruby-identifier">values</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@user_install</span>
+243:     <span class="ruby-identifier">deplist</span>.<span class="ruby-identifier">ok_to_remove?</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">full_name</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">ask_if_ok</span>(<span class="ruby-identifier">spec</span>)
+244:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="path-ok--method" class="method-detail ">
+				<a name="method-i-path_ok%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">path_ok?</span><span
+						class="method-args">(gem_dir, spec)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Is <tt>spec</tt> in <tt>gem_dir</tt>?
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="path-ok--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/uninstaller.rb, line 231</span>
+231:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">path_ok?</span>(<span class="ruby-identifier">gem_dir</span>, <span class="ruby-identifier">spec</span>)
+232:     <span class="ruby-identifier">full_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">gem_dir</span>, <span class="ruby-value str">'gems'</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">full_name</span>
+233:     <span class="ruby-identifier">original_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">gem_dir</span>, <span class="ruby-value str">'gems'</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">original_name</span>
+234: 
+235:     <span class="ruby-identifier">full_path</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">full_gem_path</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">original_path</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">full_gem_path</span>
+236:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="remove-method" class="method-detail ">
+				<a name="method-i-remove"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">remove</span><span
+						class="method-args">(spec, list)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<table>
+<tr><td valign="top">spec</td><td><p>
+the spec of the gem to be uninstalled
+</p>
+</td></tr>
+<tr><td valign="top">list</td><td><p>
+the list of all such gems
+</p>
+</td></tr>
+</table>
+<p>
+Warning: this method modifies the <tt>list</tt> parameter.  Once it has
+uninstalled a gem, it is removed from that list.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="remove-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/uninstaller.rb, line 180</span>
+180:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-identifier">list</span>)
+181:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">dependencies_ok?</span> <span class="ruby-identifier">spec</span> <span class="ruby-keyword kw">then</span>
+182:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">DependencyRemovalException</span>,
+183:             <span class="ruby-value str">&quot;Uninstallation aborted due to dependent gem(s)&quot;</span>
+184:     <span class="ruby-keyword kw">end</span>
+185: 
+186:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">path_ok?</span>(<span class="ruby-ivar">@gem_home</span>, <span class="ruby-identifier">spec</span>) <span class="ruby-keyword kw">or</span>
+187:            (<span class="ruby-ivar">@user_install</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">path_ok?</span>(<span class="ruby-constant">Gem</span>.<span class="ruby-identifier">user_dir</span>, <span class="ruby-identifier">spec</span>)) <span class="ruby-keyword kw">then</span>
+188:       <span class="ruby-identifier">e</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">GemNotInHomeException</span>.<span class="ruby-identifier">new</span>              <span class="ruby-node">&quot;Gem is not installed in directory #{@gem_home}&quot;</span>
+189:       <span class="ruby-identifier">e</span>.<span class="ruby-identifier">spec</span> = <span class="ruby-identifier">spec</span>
+190: 
+191:       <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+192:     <span class="ruby-keyword kw">end</span>
+193: 
+194:     <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">FilePermissionError</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">installation_path</span> <span class="ruby-keyword kw">unless</span>
+195:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">writable?</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">installation_path</span>)
+196: 
+197:     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">full_gem_path</span>
+198: 
+199:     <span class="ruby-identifier">original_platform_name</span> = [
+200:       <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">version</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">original_platform</span>].<span class="ruby-identifier">join</span> <span class="ruby-value str">'-'</span>
+201: 
+202:     <span class="ruby-identifier">spec_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">installation_path</span>, <span class="ruby-value str">'specifications'</span>
+203:     <span class="ruby-identifier">gemspec</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">spec_dir</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">spec_name</span>
+204: 
+205:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">gemspec</span> <span class="ruby-keyword kw">then</span>
+206:       <span class="ruby-identifier">gemspec</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">spec_dir</span>, <span class="ruby-node">&quot;#{original_platform_name}.gemspec&quot;</span>
+207:     <span class="ruby-keyword kw">end</span>
+208: 
+209:     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">gemspec</span>
+210: 
+211:     <span class="ruby-identifier">cache_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">installation_path</span>, <span class="ruby-value str">'cache'</span>
+212:     <span class="ruby-identifier">gem</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">cache_dir</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">file_name</span>
+213: 
+214:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">gem</span> <span class="ruby-keyword kw">then</span>
+215:       <span class="ruby-identifier">gem</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">cache_dir</span>, <span class="ruby-node">&quot;#{original_platform_name}.gem&quot;</span>
+216:     <span class="ruby-keyword kw">end</span>
+217: 
+218:     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">gem</span>
+219: 
+220:     <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">DocManager</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">spec</span>).<span class="ruby-identifier">uninstall_doc</span>
+221: 
+222:     <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Successfully uninstalled #{spec.full_name}&quot;</span>
+223: 
+224:     <span class="ruby-identifier">list</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">spec</span>
+225:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="remove-all-method" class="method-detail ">
+				<a name="method-i-remove_all"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">remove_all</span><span
+						class="method-args">(list)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Removes all gems in <tt>list</tt>.
+</p>
+<p>
+NOTE: removes uninstalled gems from <tt>list</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="remove-all-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/uninstaller.rb, line 169</span>
+169:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove_all</span>(<span class="ruby-identifier">list</span>)
+170:     <span class="ruby-identifier">list</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">spec</span><span class="ruby-operator">|</span> <span class="ruby-identifier">uninstall_gem</span> <span class="ruby-identifier">spec</span>, <span class="ruby-identifier">list</span> }
+171:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="remove-executables-method" class="method-detail ">
+				<a name="method-i-remove_executables"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">remove_executables</span><span
+						class="method-args">(spec)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Removes installed executables and batch files (windows only) for
+<tt>gemspec</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="remove-executables-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/uninstaller.rb, line 123</span>
+123:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove_executables</span>(<span class="ruby-identifier">spec</span>)
+124:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">executables</span>.<span class="ruby-identifier">empty?</span>
+125: 
+126:     <span class="ruby-identifier">bindir</span> = <span class="ruby-ivar">@bin_dir</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@bin_dir</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">bindir</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">installation_path</span>)
+127: 
+128:     <span class="ruby-identifier">list</span> = <span class="ruby-ivar">@source_index</span>.<span class="ruby-identifier">find_name</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span>).<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+129:       <span class="ruby-identifier">s</span>.<span class="ruby-identifier">version</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">version</span>
+130:     }
+131: 
+132:     <span class="ruby-identifier">executables</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">executables</span>.<span class="ruby-identifier">clone</span>
+133: 
+134:     <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+135:       <span class="ruby-identifier">s</span>.<span class="ruby-identifier">executables</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">exe_name</span><span class="ruby-operator">|</span>
+136:         <span class="ruby-identifier">executables</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">exe_name</span>
+137:       <span class="ruby-keyword kw">end</span>
+138:     <span class="ruby-keyword kw">end</span>
+139: 
+140:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">executables</span>.<span class="ruby-identifier">empty?</span>
+141: 
+142:     <span class="ruby-identifier">remove</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@force_executables</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">then</span>
+143:                <span class="ruby-identifier">ask_yes_no</span>(<span class="ruby-value str">&quot;Remove executables:\n&quot;</span>                            <span class="ruby-node">&quot;\t#{spec.executables.join ', '}\n\n&quot;</span>                            <span class="ruby-value str">&quot;in addition to the gem?&quot;</span>,
+144:                           <span class="ruby-keyword kw">true</span>)
+145:              <span class="ruby-keyword kw">else</span>
+146:                <span class="ruby-ivar">@force_executables</span>
+147:              <span class="ruby-keyword kw">end</span>
+148: 
+149:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">remove</span> <span class="ruby-keyword kw">then</span>
+150:       <span class="ruby-identifier">say</span> <span class="ruby-value str">&quot;Executables and scripts will remain installed.&quot;</span>
+151:     <span class="ruby-keyword kw">else</span>
+152:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">FilePermissionError</span>, <span class="ruby-identifier">bindir</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">writable?</span> <span class="ruby-identifier">bindir</span>
+153: 
+154:       <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">executables</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">exe_name</span><span class="ruby-operator">|</span>
+155:         <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Removing #{exe_name}&quot;</span>
+156:         <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">bindir</span>, <span class="ruby-identifier">exe_name</span>)
+157:         <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_f</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">bindir</span>, <span class="ruby-node">&quot;#{exe_name}.bat&quot;</span>)
+158:       <span class="ruby-keyword kw">end</span>
+159:     <span class="ruby-keyword kw">end</span>
+160:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="uninstall-method" class="method-detail ">
+				<a name="method-i-uninstall"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">uninstall</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Performs the uninstall of the gem.  This removes the spec, the <a
+href="../Gem.html">Gem</a> directory, and the cached .gem file.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="uninstall-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/uninstaller.rb, line 71</span>
+71:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">uninstall</span>
+72:     <span class="ruby-identifier">list</span> = <span class="ruby-ivar">@source_index</span>.<span class="ruby-identifier">find_name</span> <span class="ruby-ivar">@gem</span>, <span class="ruby-ivar">@version</span>
+73:     <span class="ruby-identifier">list</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@user_index</span>.<span class="ruby-identifier">find_name</span> <span class="ruby-ivar">@gem</span>, <span class="ruby-ivar">@version</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@user_install</span>
+74: 
+75:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+76:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InstallError</span>, <span class="ruby-node">&quot;cannot uninstall, check `gem list -d #{@gem}`&quot;</span>
+77: 
+78:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">and</span> <span class="ruby-ivar">@force_all</span> <span class="ruby-keyword kw">then</span>
+79:       <span class="ruby-identifier">remove_all</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">dup</span>
+80: 
+81:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">then</span>
+82:       <span class="ruby-identifier">gem_names</span> = <span class="ruby-identifier">list</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">gem</span><span class="ruby-operator">|</span> <span class="ruby-identifier">gem</span>.<span class="ruby-identifier">full_name</span>} <span class="ruby-operator">+</span> [<span class="ruby-value str">&quot;All versions&quot;</span>]
+83: 
+84:       <span class="ruby-identifier">say</span>
+85:       <span class="ruby-identifier">_</span>, <span class="ruby-identifier">index</span> = <span class="ruby-identifier">choose_from_list</span> <span class="ruby-value str">&quot;Select gem to uninstall:&quot;</span>, <span class="ruby-identifier">gem_names</span>
+86: 
+87:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword kw">then</span>
+88:         <span class="ruby-identifier">remove_all</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">dup</span>
+89:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">size</span> <span class="ruby-keyword kw">then</span>
+90:         <span class="ruby-identifier">uninstall_gem</span> <span class="ruby-identifier">list</span>[<span class="ruby-identifier">index</span>], <span class="ruby-identifier">list</span>.<span class="ruby-identifier">dup</span>
+91:       <span class="ruby-keyword kw">else</span>
+92:         <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Error: must enter a number [1-#{list.size+1}]&quot;</span>
+93:       <span class="ruby-keyword kw">end</span>
+94:     <span class="ruby-keyword kw">else</span>
+95:       <span class="ruby-identifier">uninstall_gem</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">first</span>, <span class="ruby-identifier">list</span>.<span class="ruby-identifier">dup</span>
+96:     <span class="ruby-keyword kw">end</span>
+97:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="uninstall-gem-method" class="method-detail ">
+				<a name="method-i-uninstall_gem"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">uninstall_gem</span><span
+						class="method-args">(spec, specs)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Uninstalls gem <tt>spec</tt>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="uninstall-gem-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/uninstaller.rb, line 102</span>
+102:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">uninstall_gem</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-identifier">specs</span>)
+103:     <span class="ruby-ivar">@spec</span> = <span class="ruby-identifier">spec</span>
+104: 
+105:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">pre_uninstall_hooks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hook</span><span class="ruby-operator">|</span>
+106:       <span class="ruby-identifier">hook</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword kw">self</span>
+107:     <span class="ruby-keyword kw">end</span>
+108: 
+109:     <span class="ruby-identifier">remove_executables</span> <span class="ruby-ivar">@spec</span>
+110:     <span class="ruby-identifier">remove</span> <span class="ruby-ivar">@spec</span>, <span class="ruby-identifier">specs</span>
+111: 
+112:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">post_uninstall_hooks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hook</span><span class="ruby-operator">|</span>
+113:       <span class="ruby-identifier">hook</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword kw">self</span>
+114:     <span class="ruby-keyword kw">end</span>
+115: 
+116:     <span class="ruby-ivar">@spec</span> = <span class="ruby-keyword kw">nil</span>
+117:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

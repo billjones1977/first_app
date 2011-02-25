@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="cursor_theme" mtime="1298485574" type="string">
+		<stringvalue>DMZ-White</stringvalue>
+	</entry>
+	<entry name="cursor_size" mtime="1298477503" type="int" value="18"/>
+</gconf>

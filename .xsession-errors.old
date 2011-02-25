@@ -1,0 +1,232 @@
+/etc/gdm/Xsession: Beginning session setup...
+Setting IM through im-switch for locale=en_US.
+Start IM through /etc/X11/xinit/xinput.d/all_ALL linked to /etc/X11/xinit/xinput.d/default.
+GNOME_KEYRING_CONTROL=/tmp/keyring-Jq1QO4
+GNOME_KEYRING_CONTROL=/tmp/keyring-Jq1QO4
+SSH_AUTH_SOCK=/tmp/keyring-Jq1QO4/ssh
+GNOME_KEYRING_CONTROL=/tmp/keyring-Jq1QO4
+SSH_AUTH_SOCK=/tmp/keyring-Jq1QO4/ssh
+
+(polkit-gnome-authentication-agent-1:1317): GLib-GObject-WARNING **: cannot register existing type `_PolkitError'
+
+(polkit-gnome-authentication-agent-1:1317): GLib-CRITICAL **: g_once_init_leave: assertion `initialization_value != 0' failed
+** Message: applet now removed from the notification area
+Unable to find a synaptics device.
+Initializing nautilus-gdu extension
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+** Message: applet now embedded in the notification area
+/usr/bin/compiz (core) - Fatal: Software rendering detected.
+/usr/bin/compiz (core) - Error: Failed to manage screen: 0
+/usr/bin/compiz (core) - Fatal: No manageable screens found on display :0.0
+** (update-notifier:1634): DEBUG: aptdaemon on bus: 0
+** (update-notifier:1634): DEBUG: Skipping reboot required
+/usr/lib/python2.6/dist-packages/UpdateManager/SimpleGtkbuilderApp.py:35: GtkWarning: Ignoring the separator setting
+  self.builder.add_from_file(path)
+WARNING:root:timeout reached, exiting
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+
+(evolution-alarm-notify:1304): evolution-alarm-notify-WARNING **: alarm.c:253: Requested removal of nonexistent alarm!
+** (update-notifier:1634): DEBUG: --security-updates-unattended: 0
+
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+There is no available graphics driver for your system which supports the composite extension, or the current one already supports it.
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+compiz (core) - Fatal: Software rendering detected.
+compiz (core) - Error: Failed to manage screen: 0
+compiz (core) - Fatal: No manageable screens found on display :0.0
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:23065): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+
+** (gdmsetup:25652): WARNING **: Error calling GetValue('daemon/TimedLoginEnable'): Key not found
+
+** (gdmsetup:25652): WARNING **: Error calling GetValue('daemon/TimedLoginDelay'): Key not found
+** (gdmsetup:25652): DEBUG: init delay=30
+** (gdmsetup:25652): DEBUG: "/usr/share/xsessions/une-efl-guest-restricted.desktop" is hidden or contains non-executable TryExec program
+
+** (gdmsetup:25652): DEBUG: "/usr/share/xsessions/une-guest-restricted.desktop" is hidden or contains non-executable TryExec program
+
+** (gdmsetup:25652): DEBUG: "/usr/share/xsessions/guest-restricted.desktop" is hidden or contains non-executable TryExec program
+
+
+** (gdmsetup:25652): WARNING **: Error calling GetValue('daemon/DefaultSession'): Key not found
+** (gdmsetup:25652): DEBUG: Init default session found:'(null)'
+** (gdmsetup:25652): DEBUG: GdmUserManager: Found current seat: /org/freedesktop/ConsoleKit/Seat1
+** (gdmsetup:25652): DEBUG: GdmUserManager: running 'ck-history --frequent --seat='Seat1' --session-type='''
+** (gdmsetup:25652): DEBUG: GdmUserManager: explicitly skipping user: nobody
+** (gdmsetup:25652): DEBUG: GdmUserManager: user icon changed
+** (gdmsetup:25652): DEBUG: adding monitor for '/home/billones1977/.face'
+** (gdmsetup:25652): DEBUG: Getting list of sessions for user 1000
+** (gdmsetup:25652): DEBUG: Found 1 sessions for user billones1977
+** (gdmsetup:25652): DEBUG: GdmUser: adding session /org/freedesktop/ConsoleKit/Session2
+** (gdmsetup:25652): DEBUG: GdmUserManager: sessions changed user=billones1977 num=1
+** (gdmsetup:25652): DEBUG: GdmUserManager: added session for user: billones1977
+** (gdmsetup:25652): DEBUG: GdmUserManager: history output: billones 4
+
+
+** (gdmsetup:25652): WARNING **: Unable to lookup user name billones: Success
+
+** (gdmsetup:25652): WARNING **: Error calling GetValue('daemon/AutomaticLoginEnable'): Key not found
+
+** (gdmsetup:25652): WARNING **: Error calling GetValue('daemon/TimedLoginEnable'): Key not found
+
+** (gdmsetup:25652): WARNING **: Error calling GetValue('daemon/TimedLogin'): Key not found
+** (gdmsetup:25652): DEBUG: init user='(null)' auto=False
+
+(gnome-appearance-properties:25660): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:25660): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+
+(gnome-appearance-properties:26967): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(gnome-appearance-properties:26967): Gdk-CRITICAL **: IA__gdk_display_sync: assertion `GDK_IS_DISPLAY (display)' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+** (update-notifier:1634): DEBUG: aptdaemon on bus: 0
+** (update-notifier:1634): DEBUG: Skipping reboot required
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+
+(nautilus:1309): GConf-CRITICAL **: gconf_value_free: assertion `value != NULL' failed
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+
+(evolution-alarm-notify:1304): evolution-alarm-notify-WARNING **: alarm.c:253: Requested removal of nonexistent alarm!
+** (update-notifier:1634): DEBUG: --security-updates-unattended: 0
+
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+Window manager warning: Received a _NET_WM_MOVERESIZE message for 0x483256b (billones19); these messages lack timestamps and therefore suck.
+
+(gnome-power-manager:1282): GLib-GObject-CRITICAL **: g_object_unref: assertion `G_IS_OBJECT (object)' failed
+** Message: applet now removed from the notification area
+Shutting down nautilus-gdu extension
+
+--- Hash table keys for warning below:
+--> inode/directory
+--> William Jones
+--> billones1977
+--> text/rhtml
+--> l2049
+
+(nautilus:1309): Eel-WARNING **: "unique eel_ref_str" hash table still has 5 elements at quit time (keys above)
+
+(nautilus:1309): Eel-WARNING **: "nautilus-directory.c: directories" hash table still has 9 elements at quit time
+** Message: <info>  disconnected by the session bus.
+
+** Message: Got disconnected from the session message bus; retrying to reconnect every 10 seconds
+gnome-settings-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.0.
+** Message: NM disappeared
+gdu-notification-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.0.
+gnome-screensaver: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.0.
+update-notifier: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.0.
+nm-applet: Fatal IO error 0 (Success) on X server :0.0.

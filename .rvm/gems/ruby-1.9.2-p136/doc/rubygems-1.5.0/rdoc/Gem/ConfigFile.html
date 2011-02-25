@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Gem::ConfigFile</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/rubygems/config_file_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rubygems/config_file.rb">lib/rubygems/config_file.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-%5B%5D">#[]</a></li>
+					
+					<li><a href="#method-i-%5B%5D%3D">#[]=</a></li>
+					
+					<li><a href="#method-i-backtrace">#backtrace</a></li>
+					
+					<li><a href="#method-i-config_file_name">#config_file_name</a></li>
+					
+					<li><a href="#method-i-credentials_path">#credentials_path</a></li>
+					
+					<li><a href="#method-i-each">#each</a></li>
+					
+					<li><a href="#method-i-handle_arguments">#handle_arguments</a></li>
+					
+					<li><a href="#method-i-load_file">#load_file</a></li>
+					
+					<li><a href="#method-i-load_rubygems_api_key">#load_rubygems_api_key</a></li>
+					
+					<li><a href="#method-i-really_verbose">#really_verbose</a></li>
+					
+					<li><a href="#method-i-rubygems_api_key%3D">#rubygems_api_key=</a></li>
+					
+					<li><a href="#method-i-write">#write</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../GPL_txt.html">GPL.txt</a></li>
+				
+					<li class="file"><a href="../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../UPGRADING_rdoc.html">UPGRADING.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Gem.html">Gem</a></li>
+				
+					<li><a href="../Gem/Builder.html">Gem::Builder</a></li>
+				
+					<li><a href="../Gem/Command.html">Gem::Command</a></li>
+				
+					<li><a href="../Gem/CommandLineError.html">Gem::CommandLineError</a></li>
+				
+					<li><a href="../Gem/CommandManager.html">Gem::CommandManager</a></li>
+				
+					<li><a href="../Gem/Commands.html">Gem::Commands</a></li>
+				
+					<li><a href="../Gem/Commands/BuildCommand.html">Gem::Commands::BuildCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CertCommand.html">Gem::Commands::CertCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CheckCommand.html">Gem::Commands::CheckCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CleanupCommand.html">Gem::Commands::CleanupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ContentsCommand.html">Gem::Commands::ContentsCommand</a></li>
+				
+					<li><a href="../Gem/Commands/DependencyCommand.html">Gem::Commands::DependencyCommand</a></li>
+				
+					<li><a href="../Gem/Commands/EnvironmentCommand.html">Gem::Commands::EnvironmentCommand</a></li>
+				
+					<li><a href="../Gem/Commands/FetchCommand.html">Gem::Commands::FetchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/GenerateIndexCommand.html">Gem::Commands::GenerateIndexCommand</a></li>
+				
+					<li><a href="../Gem/Commands/HelpCommand.html">Gem::Commands::HelpCommand</a></li>
+				
+					<li><a href="../Gem/Commands/InstallCommand.html">Gem::Commands::InstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ListCommand.html">Gem::Commands::ListCommand</a></li>
+				
+					<li><a href="../Gem/Commands/LockCommand.html">Gem::Commands::LockCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OutdatedCommand.html">Gem::Commands::OutdatedCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OwnerCommand.html">Gem::Commands::OwnerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PristineCommand.html">Gem::Commands::PristineCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PushCommand.html">Gem::Commands::PushCommand</a></li>
+				
+					<li><a href="../Gem/Commands/QueryCommand.html">Gem::Commands::QueryCommand</a></li>
+				
+					<li><a href="../Gem/Commands/RdocCommand.html">Gem::Commands::RdocCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SearchCommand.html">Gem::Commands::SearchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ServerCommand.html">Gem::Commands::ServerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SetupCommand.html">Gem::Commands::SetupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SourcesCommand.html">Gem::Commands::SourcesCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SpecificationCommand.html">Gem::Commands::SpecificationCommand</a></li>
+				
+					<li><a href="../Gem/Commands/StaleCommand.html">Gem::Commands::StaleCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UninstallCommand.html">Gem::Commands::UninstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UnpackCommand.html">Gem::Commands::UnpackCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UpdateCommand.html">Gem::Commands::UpdateCommand</a></li>
+				
+					<li><a href="../Gem/Commands/WhichCommand.html">Gem::Commands::WhichCommand</a></li>
+				
+					<li><a href="../Gem/ConfigFile.html">Gem::ConfigFile</a></li>
+				
+					<li><a href="../Gem/ConsoleUI.html">Gem::ConsoleUI</a></li>
+				
+					<li><a href="../Gem/DefaultUserInteraction.html">Gem::DefaultUserInteraction</a></li>
+				
+					<li><a href="../Gem/Dependency.html">Gem::Dependency</a></li>
+				
+					<li><a href="../Gem/DependencyError.html">Gem::DependencyError</a></li>
+				
+					<li><a href="../Gem/DependencyInstaller.html">Gem::DependencyInstaller</a></li>
+				
+					<li><a href="../Gem/DependencyList.html">Gem::DependencyList</a></li>
+				
+					<li><a href="../Gem/DependencyRemovalException.html">Gem::DependencyRemovalException</a></li>
+				
+					<li><a href="../Gem/DocManager.html">Gem::DocManager</a></li>
+				
+					<li><a href="../Gem/DocumentError.html">Gem::DocumentError</a></li>
+				
+					<li><a href="../Gem/EndOfYAMLException.html">Gem::EndOfYAMLException</a></li>
+				
+					<li><a href="../Gem/ErrorReason.html">Gem::ErrorReason</a></li>
+				
+					<li><a href="../Gem/Exception.html">Gem::Exception</a></li>
+				
+					<li><a href="../Gem/Ext.html">Gem::Ext</a></li>
+				
+					<li><a href="../Gem/Ext/Builder.html">Gem::Ext::Builder</a></li>
+				
+					<li><a href="../Gem/Ext/ConfigureBuilder.html">Gem::Ext::ConfigureBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/ExtConfBuilder.html">Gem::Ext::ExtConfBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/RakeBuilder.html">Gem::Ext::RakeBuilder</a></li>
+				
+					<li><a href="../Gem/FakeFetcher.html">Gem::FakeFetcher</a></li>
+				
+					<li><a href="../Gem/FileOperations.html">Gem::FileOperations</a></li>
+				
+					<li><a href="../Gem/FilePermissionError.html">Gem::FilePermissionError</a></li>
+				
+					<li><a href="../Gem/Format.html">Gem::Format</a></li>
+				
+					<li><a href="../Gem/FormatException.html">Gem::FormatException</a></li>
+				
+					<li><a href="../Gem/GemNotFoundException.html">Gem::GemNotFoundException</a></li>
+				
+					<li><a href="../Gem/GemNotInHomeException.html">Gem::GemNotInHomeException</a></li>
+				
+					<li><a href="../Gem/GemPathSearcher.html">Gem::GemPathSearcher</a></li>
+				
+					<li><a href="../Gem/GemRunner.html">Gem::GemRunner</a></li>
+				
+					<li><a href="../Gem/GemcutterUtilities.html">Gem::GemcutterUtilities</a></li>
+				
+					<li><a href="../Gem/Indexer.html">Gem::Indexer</a></li>
+				
+					<li><a href="../Gem/InstallError.html">Gem::InstallError</a></li>
+				
+					<li><a href="../Gem/InstallUpdateOptions.html">Gem::InstallUpdateOptions</a></li>
+				
+					<li><a href="../Gem/Installer.html">Gem::Installer</a></li>
+				
+					<li><a href="../Gem/Installer/ExtensionBuildError.html">Gem::Installer::ExtensionBuildError</a></li>
+				
+					<li><a href="../Gem/InstallerTestCase.html">Gem::InstallerTestCase</a></li>
+				
+					<li><a href="../Gem/InvalidSpecificationException.html">Gem::InvalidSpecificationException</a></li>
+				
+					<li><a href="../Gem/LoadError.html">Gem::LoadError</a></li>
+				
+					<li><a href="../Gem/LocalRemoteOptions.html">Gem::LocalRemoteOptions</a></li>
+				
+					<li><a href="../Gem/MockGemUi.html">Gem::MockGemUi</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TTY.html">Gem::MockGemUi::TTY</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TermError.html">Gem::MockGemUi::TermError</a></li>
+				
+					<li><a href="../Gem/OldFormat.html">Gem::OldFormat</a></li>
+				
+					<li><a href="../Gem/OperationNotSupportedError.html">Gem::OperationNotSupportedError</a></li>
+				
+					<li><a href="../Gem/Package.html">Gem::Package</a></li>
+				
+					<li><a href="../Gem/Package/BadCheckSum.html">Gem::Package::BadCheckSum</a></li>
+				
+					<li><a href="../Gem/Package/ClosedIO.html">Gem::Package::ClosedIO</a></li>
+				
+					<li><a href="../Gem/Package/Error.html">Gem::Package::Error</a></li>
+				
+					<li><a href="../Gem/Package/FSyncDir.html">Gem::Package::FSyncDir</a></li>
+				
+					<li><a href="../Gem/Package/FormatError.html">Gem::Package::FormatError</a></li>
+				
+					<li><a href="../Gem/Package/NonSeekableIO.html">Gem::Package::NonSeekableIO</a></li>
+				
+					<li><a href="../Gem/Package/TarHeader.html">Gem::Package::TarHeader</a></li>
+				
+					<li><a href="../Gem/Package/TarInput.html">Gem::Package::TarInput</a></li>
+				
+					<li><a href="../Gem/Package/TarInvalidError.html">Gem::Package::TarInvalidError</a></li>
+				
+					<li><a href="../Gem/Package/TarOutput.html">Gem::Package::TarOutput</a></li>
+				
+					<li><a href="../Gem/Package/TarReader.html">Gem::Package::TarReader</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/Entry.html">Gem::Package::TarReader::Entry</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/UnexpectedEOF.html">Gem::Package::TarReader::UnexpectedEOF</a></li>
+				
+					<li><a href="../Gem/Package/TarTestCase.html">Gem::Package::TarTestCase</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter.html">Gem::Package::TarWriter</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/BoundedStream.html">Gem::Package::TarWriter::BoundedStream</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/FileOverflow.html">Gem::Package::TarWriter::FileOverflow</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/RestrictedStream.html">Gem::Package::TarWriter::RestrictedStream</a></li>
+				
+					<li><a href="../Gem/Package/TooLongFileName.html">Gem::Package::TooLongFileName</a></li>
+				
+					<li><a href="../Gem/PackageTask.html">Gem::PackageTask</a></li>
+				
+					<li><a href="../Gem/Platform.html">Gem::Platform</a></li>
+				
+					<li><a href="../Gem/PlatformMismatch.html">Gem::PlatformMismatch</a></li>
+				
+					<li><a href="../Gem/RemoteError.html">Gem::RemoteError</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher.html">Gem::RemoteFetcher</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher/FetchError.html">Gem::RemoteFetcher::FetchError</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationCancelled.html">Gem::RemoteInstallationCancelled</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationSkipped.html">Gem::RemoteInstallationSkipped</a></li>
+				
+					<li><a href="../Gem/RemoteSourceException.html">Gem::RemoteSourceException</a></li>
+				
+					<li><a href="../Gem/RequirePathsBuilder.html">Gem::RequirePathsBuilder</a></li>
+				
+					<li><a href="../Gem/Requirement.html">Gem::Requirement</a></li>
+				
+					<li><a href="../Gem/Security/Exception.html">Gem::Security::Exception</a></li>
+				
+					<li><a href="../Gem/Security/Signer.html">Gem::Security::Signer</a></li>
+				
+					<li><a href="../Gem/Server.html">Gem::Server</a></li>
+				
+					<li><a href="../Gem/SilentUI.html">Gem::SilentUI</a></li>
+				
+					<li><a href="../Gem/SourceIndex.html">Gem::SourceIndex</a></li>
+				
+					<li><a href="../Gem/SpecFetcher.html">Gem::SpecFetcher</a></li>
+				
+					<li><a href="../Gem/Specification.html">Gem::Specification</a></li>
+				
+					<li><a href="../Gem/StreamUI.html">Gem::StreamUI</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentDownloadReporter.html">Gem::StreamUI::SilentDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentProgressReporter.html">Gem::StreamUI::SilentProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SimpleProgressReporter.html">Gem::StreamUI::SimpleProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseDownloadReporter.html">Gem::StreamUI::VerboseDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseProgressReporter.html">Gem::StreamUI::VerboseProgressReporter</a></li>
+				
+					<li><a href="../Gem/SystemExitException.html">Gem::SystemExitException</a></li>
+				
+					<li><a href="../Gem/TestCase.html">Gem::TestCase</a></li>
+				
+					<li><a href="../Gem/Text.html">Gem::Text</a></li>
+				
+					<li><a href="../Gem/Uninstaller.html">Gem::Uninstaller</a></li>
+				
+					<li><a href="../Gem/UserInteraction.html">Gem::UserInteraction</a></li>
+				
+					<li><a href="../Gem/Validator.html">Gem::Validator</a></li>
+				
+					<li><a href="../Gem/VerificationError.html">Gem::VerificationError</a></li>
+				
+					<li><a href="../Gem/Version.html">Gem::Version</a></li>
+				
+					<li><a href="../Gem/VersionOption.html">Gem::VersionOption</a></li>
+				
+					<li><a href="../OpenSSL.html">OpenSSL</a></li>
+				
+					<li><a href="../OpenSSL/X509.html">OpenSSL::X509</a></li>
+				
+					<li><a href="../GemGauntlet.html">GemGauntlet</a></li>
+				
+					<li><a href="../Kernel.html">Kernel</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+					<li><a href="../TempIO.html">TempIO</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Gem::ConfigFile</h1>
+
+		<div id="description">
+			<p>
+<a href="ConfigFile.html">Gem::ConfigFile</a> RubyGems options and gem
+command options from ~/.gemrc.
+</p>
+<p>
+~/.gemrc is a YAML file that uses strings to match gem command arguments
+and symbols to match RubyGems options.
+</p>
+<p>
+<a href="../Gem.html">Gem</a> command arguments use a String key that
+matches the command name and allow you to specify default arguments:
+</p>
+<pre>
+  install: --no-rdoc --no-ri
+  update: --no-rdoc --no-ri
+</pre>
+<p>
+You can use <tt>gem:</tt> to set default arguments for all commands.
+</p>
+<p>
+RubyGems options use symbol keys.  Valid options are:
+</p>
+<table>
+<tr><td valign="top"><tt>:backtrace</tt></td><td><p>
+See <a href="ConfigFile.html#method-i-backtrace">#</a>
+</p>
+</td></tr>
+<tr><td valign="top"><tt>:benchmark</tt></td><td><p>
+See #
+</p>
+</td></tr>
+<tr><td valign="top"><tt>:sources</tt></td><td><p>
+Sets Gem::sources
+</p>
+</td></tr>
+<tr><td valign="top"><tt>:verbose</tt></td><td><p>
+See #
+</p>
+</td></tr>
+</table>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="DEFAULT_BACKTRACE">DEFAULT_BACKTRACE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="DEFAULT_BENCHMARK">DEFAULT_BENCHMARK</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="DEFAULT_BULK_THRESHOLD">DEFAULT_BULK_THRESHOLD</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="DEFAULT_VERBOSITY">DEFAULT_VERBOSITY</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="DEFAULT_UPDATE_SOURCES">DEFAULT_UPDATE_SOURCES</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="OPERATING_SYSTEM_DEFAULTS">OPERATING_SYSTEM_DEFAULTS</a></dt>
+				
+				<dd class="description"><p>
+For Ruby packagers to set configuration defaults.  Set in
+rubygems/defaults/operating_system.rb
+</p></dd>
+				
+			
+				<dt><a name="PLATFORM_DEFAULTS">PLATFORM_DEFAULTS</a></dt>
+				
+				<dd class="description"><p>
+For Ruby implementers to set configuration defaults.  Set in
+rubygems/defaults/#{RUBY_ENGINE}.rb
+</p></dd>
+				
+			
+				<dt><a name="CSIDL_COMMON_APPDATA">CSIDL_COMMON_APPDATA</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="SHGetFolderPath">SHGetFolderPath</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="SHGetFolderPath">SHGetFolderPath</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="SYSTEM_WIDE_CONFIG_FILE">SYSTEM_WIDE_CONFIG_FILE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="args-attribute-method" class="method-detail">
+				<a name="args"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">args</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+List of arguments supplied to the config file object.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="path-attribute-method" class="method-detail">
+				<a name="path"></a>
+				
+				<a name="path="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">path</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Where to look for gems (deprecated)
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="home-attribute-method" class="method-detail">
+				<a name="home"></a>
+				
+				<a name="home="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">home</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Where to install gems (deprecated)
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="backtrace-attribute-method" class="method-detail">
+				<a name="backtrace"></a>
+				
+				<a name="backtrace="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">backtrace</span><span
+						class="attribute-access-type">[W]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+True if we print backtraces on errors.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="benchmark-attribute-method" class="method-detail">
+				<a name="benchmark"></a>
+				
+				<a name="benchmark="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">benchmark</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+True if we are benchmarking this run.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="bulk-threshold-attribute-method" class="method-detail">
+				<a name="bulk_threshold"></a>
+				
+				<a name="bulk_threshold="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">bulk_threshold</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Bulk threshold value.  If the number of missing gems are above this
+threshold value, then a bulk download technique is used.  (deprecated)
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="verbose-attribute-method" class="method-detail">
+				<a name="verbose"></a>
+				
+				<a name="verbose="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">verbose</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Verbose level of output:
+</p>
+<ul>
+<li><p>
+false &#8212; No output
+</p>
+</li>
+<li><p>
+true &#8212; Normal output
+</p>
+</li>
+<li><p>
+:loud &#8212; Extra output
+</p>
+</li>
+</ul>
+				
+				</div>
+			</div>
+			
+			<div id="update-sources-attribute-method" class="method-detail">
+				<a name="update_sources"></a>
+				
+				<a name="update_sources="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">update_sources</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+True if we want to update the SourceInfoCache every time, false otherwise
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="rubygems-api-key-attribute-method" class="method-detail">
+				<a name="rubygems_api_key"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">rubygems_api_key</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+API key for RubyGems.org
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="hash-attribute-method" class="method-detail">
+				<a name="hash"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">hash</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(arg_list)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Create the config file object.  <tt>args</tt> is the list of arguments from
+the command line.
+</p>
+<p>
+The following command line options are handled early here rather than later
+at the time most command options are processed.
+</p>
+<table>
+<tr><td valign="top"><tt>--config-file</tt>, <tt>--config-file==NAME</tt></td><td><p>
+Obviously these need to be handled by the <a
+href="ConfigFile.html">ConfigFile</a> object to ensure we get the right
+config file.
+</p>
+</td></tr>
+<tr><td valign="top"><tt>--backtrace</tt></td><td><p>
+Backtrace needs to be turned on early so that errors before normal option
+parsing can be properly handled.
+</p>
+</td></tr>
+<tr><td valign="top"><tt>--debug</tt></td><td><p>
+Enable Ruby level debug messages.  Handled early for the same reason as
+&#8212;backtrace.
+</p>
+</td></tr>
+</table>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 145</span>
+145:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">arg_list</span>)
+146:     <span class="ruby-ivar">@config_file_name</span> = <span class="ruby-keyword kw">nil</span>
+147:     <span class="ruby-identifier">need_config_file_name</span> = <span class="ruby-keyword kw">false</span>
+148: 
+149:     <span class="ruby-identifier">arg_list</span> = <span class="ruby-identifier">arg_list</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+150:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">need_config_file_name</span> <span class="ruby-keyword kw">then</span>
+151:         <span class="ruby-ivar">@config_file_name</span> = <span class="ruby-identifier">arg</span>
+152:         <span class="ruby-identifier">need_config_file_name</span> = <span class="ruby-keyword kw">false</span>
+153:         <span class="ruby-keyword kw">nil</span>
+154:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">arg</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^--config-file=(.*)/</span> <span class="ruby-keyword kw">then</span>
+155:         <span class="ruby-ivar">@config_file_name</span> = <span class="ruby-node">$1</span>
+156:         <span class="ruby-keyword kw">nil</span>
+157:       <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">arg</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^--config-file$/</span> <span class="ruby-keyword kw">then</span>
+158:         <span class="ruby-identifier">need_config_file_name</span> = <span class="ruby-keyword kw">true</span>
+159:         <span class="ruby-keyword kw">nil</span>
+160:       <span class="ruby-keyword kw">else</span>
+161:         <span class="ruby-identifier">arg</span>
+162:       <span class="ruby-keyword kw">end</span>
+163:     <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">compact</span>
+164: 
+165:     <span class="ruby-ivar">@backtrace</span> = <span class="ruby-constant">DEFAULT_BACKTRACE</span>
+166:     <span class="ruby-ivar">@benchmark</span> = <span class="ruby-constant">DEFAULT_BENCHMARK</span>
+167:     <span class="ruby-ivar">@bulk_threshold</span> = <span class="ruby-constant">DEFAULT_BULK_THRESHOLD</span>
+168:     <span class="ruby-ivar">@verbose</span> = <span class="ruby-constant">DEFAULT_VERBOSITY</span>
+169:     <span class="ruby-ivar">@update_sources</span> = <span class="ruby-constant">DEFAULT_UPDATE_SOURCES</span>
+170: 
+171:     <span class="ruby-identifier">operating_system_config</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span> <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-constant">OPERATING_SYSTEM_DEFAULTS</span>)
+172:     <span class="ruby-identifier">platform_config</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span> <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-constant">PLATFORM_DEFAULTS</span>)
+173:     <span class="ruby-identifier">system_config</span> = <span class="ruby-identifier">load_file</span> <span class="ruby-constant">SYSTEM_WIDE_CONFIG_FILE</span>
+174:     <span class="ruby-identifier">user_config</span> = <span class="ruby-identifier">load_file</span> <span class="ruby-identifier">config_file_name</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">untaint</span>
+175: 
+176:     <span class="ruby-ivar">@hash</span> = <span class="ruby-identifier">operating_system_config</span>.<span class="ruby-identifier">merge</span> <span class="ruby-identifier">platform_config</span>
+177:     <span class="ruby-ivar">@hash</span> = <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">merge</span> <span class="ruby-identifier">system_config</span>
+178:     <span class="ruby-ivar">@hash</span> = <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">merge</span> <span class="ruby-identifier">user_config</span>
+179: 
+180:     <span class="ruby-comment cmt"># HACK these override command-line args, which is bad</span>
+181:     <span class="ruby-ivar">@backtrace</span>        = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:backtrace</span>]        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">key?</span> <span class="ruby-value">:backtrace</span>
+182:     <span class="ruby-ivar">@benchmark</span>        = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:benchmark</span>]        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">key?</span> <span class="ruby-value">:benchmark</span>
+183:     <span class="ruby-ivar">@bulk_threshold</span>   = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:bulk_threshold</span>]   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">key?</span> <span class="ruby-value">:bulk_threshold</span>
+184:     <span class="ruby-ivar">@home</span>             = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:gemhome</span>]          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">key?</span> <span class="ruby-value">:gemhome</span>
+185:     <span class="ruby-ivar">@path</span>             = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:gempath</span>]          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">key?</span> <span class="ruby-value">:gempath</span>
+186:     <span class="ruby-ivar">@update_sources</span>   = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:update_sources</span>]   <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">key?</span> <span class="ruby-value">:update_sources</span>
+187:     <span class="ruby-ivar">@verbose</span>          = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:verbose</span>]          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">key?</span> <span class="ruby-value">:verbose</span>
+188: 
+189:     <span class="ruby-identifier">load_rubygems_api_key</span>
+190: 
+191:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">sources</span> = <span class="ruby-ivar">@hash</span>[<span class="ruby-value">:sources</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">key?</span> <span class="ruby-value">:sources</span>
+192:     <span class="ruby-identifier">handle_arguments</span> <span class="ruby-identifier">arg_list</span>
+193:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%5B%5D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]</span><span
+						class="method-args">(key)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return the configuration information for <tt>key</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 328</span>
+328:   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key</span>)
+329:     <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>]
+330:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%5B%5D%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]=</span><span
+						class="method-args">(key, value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Set configuration option <tt>key</tt> to <tt>value</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 333</span>
+333:   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+334:     <span class="ruby-ivar">@hash</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">value</span>
+335:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="backtrace-method" class="method-detail ">
+				<a name="method-i-backtrace"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">backtrace</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+True if the backtrace option has been specified, or debug is on.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="backtrace-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 237</span>
+237:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">backtrace</span>
+238:     <span class="ruby-ivar">@backtrace</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">$DEBUG</span>
+239:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="config-file-name-method" class="method-detail ">
+				<a name="method-i-config_file_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">config_file_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The name of the configuration file.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="config-file-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 242</span>
+242:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">config_file_name</span>
+243:     <span class="ruby-ivar">@config_file_name</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">config_file</span>
+244:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="credentials-path-method" class="method-detail ">
+				<a name="method-i-credentials_path"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">credentials_path</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Location of RubyGems.org credentials
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="credentials-path-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 198</span>
+198:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">credentials_path</span>
+199:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">Gem</span>.<span class="ruby-identifier">user_home</span>, <span class="ruby-value str">'.gem'</span>, <span class="ruby-value str">'credentials'</span>)
+200:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="each-method" class="method-detail ">
+				<a name="method-i-each"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">each</span><span
+						class="method-args">(&block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Delegates to @hash
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="each-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 247</span>
+247:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">each</span>(&amp;<span class="ruby-identifier">block</span>)
+248:     <span class="ruby-identifier">hash</span> = <span class="ruby-ivar">@hash</span>.<span class="ruby-identifier">dup</span>
+249:     <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:update_sources</span>
+250:     <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:verbose</span>
+251:     <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:benchmark</span>
+252:     <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:backtrace</span>
+253:     <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:bulk_threshold</span>
+254: 
+255:     <span class="ruby-keyword kw">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">update_sources</span>, <span class="ruby-ivar">@update_sources</span>
+256:     <span class="ruby-keyword kw">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">verbose</span>, <span class="ruby-ivar">@verbose</span>
+257:     <span class="ruby-keyword kw">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">benchmark</span>, <span class="ruby-ivar">@benchmark</span>
+258:     <span class="ruby-keyword kw">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">backtrace</span>, <span class="ruby-ivar">@backtrace</span>
+259:     <span class="ruby-keyword kw">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">bulk_threshold</span>, <span class="ruby-ivar">@bulk_threshold</span>
+260: 
+261:     <span class="ruby-keyword kw">yield</span> <span class="ruby-value str">'config_file_name'</span>, <span class="ruby-ivar">@config_file_name</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config_file_name</span>
+262: 
+263:     <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">each</span>(&amp;<span class="ruby-identifier">block</span>)
+264:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-arguments-method" class="method-detail ">
+				<a name="method-i-handle_arguments"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handle_arguments</span><span
+						class="method-args">(arg_list)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Handle the command arguments.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="handle-arguments-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 267</span>
+267:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handle_arguments</span>(<span class="ruby-identifier">arg_list</span>)
+268:     <span class="ruby-ivar">@args</span> = []
+269: 
+270:     <span class="ruby-identifier">arg_list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+271:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">arg</span>
+272:       <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^--(backtrace|traceback)$/</span> <span class="ruby-keyword kw">then</span>
+273:         <span class="ruby-ivar">@backtrace</span> = <span class="ruby-keyword kw">true</span>
+274:       <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^--bench(mark)?$/</span> <span class="ruby-keyword kw">then</span>
+275:         <span class="ruby-ivar">@benchmark</span> = <span class="ruby-keyword kw">true</span>
+276:       <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^--debug$/</span> <span class="ruby-keyword kw">then</span>
+277:         <span class="ruby-identifier">$DEBUG</span> = <span class="ruby-keyword kw">true</span>
+278:       <span class="ruby-keyword kw">else</span>
+279:         <span class="ruby-ivar">@args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">arg</span>
+280:       <span class="ruby-keyword kw">end</span>
+281:     <span class="ruby-keyword kw">end</span>
+282:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-file-method" class="method-detail ">
+				<a name="method-i-load_file"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_file</span><span
+						class="method-args">(filename)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="load-file-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 223</span>
+223:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_file</span>(<span class="ruby-identifier">filename</span>)
+224:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">load_yaml</span>
+225: 
+226:     <span class="ruby-keyword kw">return</span> {} <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">filename</span> <span class="ruby-keyword kw">and</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">filename</span>)
+227:     <span class="ruby-keyword kw">begin</span>
+228:       <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>))
+229:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">ArgumentError</span>
+230:       <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Failed to load #{config_file_name}&quot;</span>
+231:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span>
+232:       <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Failed to load #{config_file_name} due to permissions problem.&quot;</span>
+233:     <span class="ruby-keyword kw">end</span> <span class="ruby-keyword kw">or</span> {}
+234:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-rubygems-api-key-method" class="method-detail ">
+				<a name="method-i-load_rubygems_api_key"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load_rubygems_api_key</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="load-rubygems-api-key-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 202</span>
+202:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_rubygems_api_key</span>
+203:     <span class="ruby-identifier">api_key_hash</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">credentials_path</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">load_file</span>(<span class="ruby-identifier">credentials_path</span>) <span class="ruby-operator">:</span> <span class="ruby-ivar">@hash</span>
+204: 
+205:     <span class="ruby-ivar">@rubygems_api_key</span> = <span class="ruby-identifier">api_key_hash</span>[<span class="ruby-value">:rubygems_api_key</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">api_key_hash</span>.<span class="ruby-identifier">key?</span> <span class="ruby-value">:rubygems_api_key</span>
+206:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="really-verbose-method" class="method-detail ">
+				<a name="method-i-really_verbose"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">really_verbose</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Really verbose mode gives you extra output.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="really-verbose-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 285</span>
+285:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">really_verbose</span>
+286:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">verbose</span>
+287:     <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">true</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">false</span>
+288:     <span class="ruby-keyword kw">else</span> <span class="ruby-keyword kw">true</span>
+289:     <span class="ruby-keyword kw">end</span>
+290:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="rubygems-api-key--method" class="method-detail ">
+				<a name="method-i-rubygems_api_key%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">rubygems_api_key=</span><span
+						class="method-args">(api_key)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="rubygems-api-key--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 208</span>
+208:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rubygems_api_key=</span>(<span class="ruby-identifier">api_key</span>)
+209:     <span class="ruby-identifier">config</span> = <span class="ruby-identifier">load_file</span>(<span class="ruby-identifier">credentials_path</span>).<span class="ruby-identifier">merge</span>(<span class="ruby-value">:rubygems_api_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">api_key</span>)
+210: 
+211:     <span class="ruby-identifier">dirname</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">credentials_path</span>)
+212:     <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span>(<span class="ruby-identifier">dirname</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">dirname</span>)
+213: 
+214:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">load_yaml</span>
+215: 
+216:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">credentials_path</span>, <span class="ruby-value str">'w'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+217:       <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">to_yaml</span>
+218:     <span class="ruby-keyword kw">end</span>
+219: 
+220:     <span class="ruby-ivar">@rubygems_api_key</span> = <span class="ruby-identifier">api_key</span>
+221:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="write-method" class="method-detail ">
+				<a name="method-i-write"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">write</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Writes out this config file, replacing its source.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="write-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/config_file.rb, line 321</span>
+321:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">write</span>
+322:     <span class="ruby-identifier">open</span> <span class="ruby-identifier">config_file_name</span>, <span class="ruby-value str">'w'</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+323:       <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">to_yaml</span>
+324:     <span class="ruby-keyword kw">end</span>
+325:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

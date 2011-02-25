@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Gem::Dependency</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/rubygems/dependency_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rubygems/dependency.rb">lib/rubygems/dependency.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-%3C%3D%3E">#<=></a></li>
+					
+					<li><a href="#method-i-%3D%7E">#=~</a></li>
+					
+					<li><a href="#method-i-match%3F">#match?</a></li>
+					
+					<li><a href="#method-i-matches_spec%3F">#matches_spec?</a></li>
+					
+					<li><a href="#method-i-prerelease%3F">#prerelease?</a></li>
+					
+					<li><a href="#method-i-requirement">#requirement</a></li>
+					
+					<li><a href="#method-i-requirements_list">#requirements_list</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../GPL_txt.html">GPL.txt</a></li>
+				
+					<li class="file"><a href="../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../UPGRADING_rdoc.html">UPGRADING.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Gem.html">Gem</a></li>
+				
+					<li><a href="../Gem/Builder.html">Gem::Builder</a></li>
+				
+					<li><a href="../Gem/Command.html">Gem::Command</a></li>
+				
+					<li><a href="../Gem/CommandLineError.html">Gem::CommandLineError</a></li>
+				
+					<li><a href="../Gem/CommandManager.html">Gem::CommandManager</a></li>
+				
+					<li><a href="../Gem/Commands.html">Gem::Commands</a></li>
+				
+					<li><a href="../Gem/Commands/BuildCommand.html">Gem::Commands::BuildCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CertCommand.html">Gem::Commands::CertCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CheckCommand.html">Gem::Commands::CheckCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CleanupCommand.html">Gem::Commands::CleanupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ContentsCommand.html">Gem::Commands::ContentsCommand</a></li>
+				
+					<li><a href="../Gem/Commands/DependencyCommand.html">Gem::Commands::DependencyCommand</a></li>
+				
+					<li><a href="../Gem/Commands/EnvironmentCommand.html">Gem::Commands::EnvironmentCommand</a></li>
+				
+					<li><a href="../Gem/Commands/FetchCommand.html">Gem::Commands::FetchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/GenerateIndexCommand.html">Gem::Commands::GenerateIndexCommand</a></li>
+				
+					<li><a href="../Gem/Commands/HelpCommand.html">Gem::Commands::HelpCommand</a></li>
+				
+					<li><a href="../Gem/Commands/InstallCommand.html">Gem::Commands::InstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ListCommand.html">Gem::Commands::ListCommand</a></li>
+				
+					<li><a href="../Gem/Commands/LockCommand.html">Gem::Commands::LockCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OutdatedCommand.html">Gem::Commands::OutdatedCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OwnerCommand.html">Gem::Commands::OwnerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PristineCommand.html">Gem::Commands::PristineCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PushCommand.html">Gem::Commands::PushCommand</a></li>
+				
+					<li><a href="../Gem/Commands/QueryCommand.html">Gem::Commands::QueryCommand</a></li>
+				
+					<li><a href="../Gem/Commands/RdocCommand.html">Gem::Commands::RdocCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SearchCommand.html">Gem::Commands::SearchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ServerCommand.html">Gem::Commands::ServerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SetupCommand.html">Gem::Commands::SetupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SourcesCommand.html">Gem::Commands::SourcesCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SpecificationCommand.html">Gem::Commands::SpecificationCommand</a></li>
+				
+					<li><a href="../Gem/Commands/StaleCommand.html">Gem::Commands::StaleCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UninstallCommand.html">Gem::Commands::UninstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UnpackCommand.html">Gem::Commands::UnpackCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UpdateCommand.html">Gem::Commands::UpdateCommand</a></li>
+				
+					<li><a href="../Gem/Commands/WhichCommand.html">Gem::Commands::WhichCommand</a></li>
+				
+					<li><a href="../Gem/ConfigFile.html">Gem::ConfigFile</a></li>
+				
+					<li><a href="../Gem/ConsoleUI.html">Gem::ConsoleUI</a></li>
+				
+					<li><a href="../Gem/DefaultUserInteraction.html">Gem::DefaultUserInteraction</a></li>
+				
+					<li><a href="../Gem/Dependency.html">Gem::Dependency</a></li>
+				
+					<li><a href="../Gem/DependencyError.html">Gem::DependencyError</a></li>
+				
+					<li><a href="../Gem/DependencyInstaller.html">Gem::DependencyInstaller</a></li>
+				
+					<li><a href="../Gem/DependencyList.html">Gem::DependencyList</a></li>
+				
+					<li><a href="../Gem/DependencyRemovalException.html">Gem::DependencyRemovalException</a></li>
+				
+					<li><a href="../Gem/DocManager.html">Gem::DocManager</a></li>
+				
+					<li><a href="../Gem/DocumentError.html">Gem::DocumentError</a></li>
+				
+					<li><a href="../Gem/EndOfYAMLException.html">Gem::EndOfYAMLException</a></li>
+				
+					<li><a href="../Gem/ErrorReason.html">Gem::ErrorReason</a></li>
+				
+					<li><a href="../Gem/Exception.html">Gem::Exception</a></li>
+				
+					<li><a href="../Gem/Ext.html">Gem::Ext</a></li>
+				
+					<li><a href="../Gem/Ext/Builder.html">Gem::Ext::Builder</a></li>
+				
+					<li><a href="../Gem/Ext/ConfigureBuilder.html">Gem::Ext::ConfigureBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/ExtConfBuilder.html">Gem::Ext::ExtConfBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/RakeBuilder.html">Gem::Ext::RakeBuilder</a></li>
+				
+					<li><a href="../Gem/FakeFetcher.html">Gem::FakeFetcher</a></li>
+				
+					<li><a href="../Gem/FileOperations.html">Gem::FileOperations</a></li>
+				
+					<li><a href="../Gem/FilePermissionError.html">Gem::FilePermissionError</a></li>
+				
+					<li><a href="../Gem/Format.html">Gem::Format</a></li>
+				
+					<li><a href="../Gem/FormatException.html">Gem::FormatException</a></li>
+				
+					<li><a href="../Gem/GemNotFoundException.html">Gem::GemNotFoundException</a></li>
+				
+					<li><a href="../Gem/GemNotInHomeException.html">Gem::GemNotInHomeException</a></li>
+				
+					<li><a href="../Gem/GemPathSearcher.html">Gem::GemPathSearcher</a></li>
+				
+					<li><a href="../Gem/GemRunner.html">Gem::GemRunner</a></li>
+				
+					<li><a href="../Gem/GemcutterUtilities.html">Gem::GemcutterUtilities</a></li>
+				
+					<li><a href="../Gem/Indexer.html">Gem::Indexer</a></li>
+				
+					<li><a href="../Gem/InstallError.html">Gem::InstallError</a></li>
+				
+					<li><a href="../Gem/InstallUpdateOptions.html">Gem::InstallUpdateOptions</a></li>
+				
+					<li><a href="../Gem/Installer.html">Gem::Installer</a></li>
+				
+					<li><a href="../Gem/Installer/ExtensionBuildError.html">Gem::Installer::ExtensionBuildError</a></li>
+				
+					<li><a href="../Gem/InstallerTestCase.html">Gem::InstallerTestCase</a></li>
+				
+					<li><a href="../Gem/InvalidSpecificationException.html">Gem::InvalidSpecificationException</a></li>
+				
+					<li><a href="../Gem/LoadError.html">Gem::LoadError</a></li>
+				
+					<li><a href="../Gem/LocalRemoteOptions.html">Gem::LocalRemoteOptions</a></li>
+				
+					<li><a href="../Gem/MockGemUi.html">Gem::MockGemUi</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TTY.html">Gem::MockGemUi::TTY</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TermError.html">Gem::MockGemUi::TermError</a></li>
+				
+					<li><a href="../Gem/OldFormat.html">Gem::OldFormat</a></li>
+				
+					<li><a href="../Gem/OperationNotSupportedError.html">Gem::OperationNotSupportedError</a></li>
+				
+					<li><a href="../Gem/Package.html">Gem::Package</a></li>
+				
+					<li><a href="../Gem/Package/BadCheckSum.html">Gem::Package::BadCheckSum</a></li>
+				
+					<li><a href="../Gem/Package/ClosedIO.html">Gem::Package::ClosedIO</a></li>
+				
+					<li><a href="../Gem/Package/Error.html">Gem::Package::Error</a></li>
+				
+					<li><a href="../Gem/Package/FSyncDir.html">Gem::Package::FSyncDir</a></li>
+				
+					<li><a href="../Gem/Package/FormatError.html">Gem::Package::FormatError</a></li>
+				
+					<li><a href="../Gem/Package/NonSeekableIO.html">Gem::Package::NonSeekableIO</a></li>
+				
+					<li><a href="../Gem/Package/TarHeader.html">Gem::Package::TarHeader</a></li>
+				
+					<li><a href="../Gem/Package/TarInput.html">Gem::Package::TarInput</a></li>
+				
+					<li><a href="../Gem/Package/TarInvalidError.html">Gem::Package::TarInvalidError</a></li>
+				
+					<li><a href="../Gem/Package/TarOutput.html">Gem::Package::TarOutput</a></li>
+				
+					<li><a href="../Gem/Package/TarReader.html">Gem::Package::TarReader</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/Entry.html">Gem::Package::TarReader::Entry</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/UnexpectedEOF.html">Gem::Package::TarReader::UnexpectedEOF</a></li>
+				
+					<li><a href="../Gem/Package/TarTestCase.html">Gem::Package::TarTestCase</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter.html">Gem::Package::TarWriter</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/BoundedStream.html">Gem::Package::TarWriter::BoundedStream</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/FileOverflow.html">Gem::Package::TarWriter::FileOverflow</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/RestrictedStream.html">Gem::Package::TarWriter::RestrictedStream</a></li>
+				
+					<li><a href="../Gem/Package/TooLongFileName.html">Gem::Package::TooLongFileName</a></li>
+				
+					<li><a href="../Gem/PackageTask.html">Gem::PackageTask</a></li>
+				
+					<li><a href="../Gem/Platform.html">Gem::Platform</a></li>
+				
+					<li><a href="../Gem/PlatformMismatch.html">Gem::PlatformMismatch</a></li>
+				
+					<li><a href="../Gem/RemoteError.html">Gem::RemoteError</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher.html">Gem::RemoteFetcher</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher/FetchError.html">Gem::RemoteFetcher::FetchError</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationCancelled.html">Gem::RemoteInstallationCancelled</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationSkipped.html">Gem::RemoteInstallationSkipped</a></li>
+				
+					<li><a href="../Gem/RemoteSourceException.html">Gem::RemoteSourceException</a></li>
+				
+					<li><a href="../Gem/RequirePathsBuilder.html">Gem::RequirePathsBuilder</a></li>
+				
+					<li><a href="../Gem/Requirement.html">Gem::Requirement</a></li>
+				
+					<li><a href="../Gem/Security/Exception.html">Gem::Security::Exception</a></li>
+				
+					<li><a href="../Gem/Security/Signer.html">Gem::Security::Signer</a></li>
+				
+					<li><a href="../Gem/Server.html">Gem::Server</a></li>
+				
+					<li><a href="../Gem/SilentUI.html">Gem::SilentUI</a></li>
+				
+					<li><a href="../Gem/SourceIndex.html">Gem::SourceIndex</a></li>
+				
+					<li><a href="../Gem/SpecFetcher.html">Gem::SpecFetcher</a></li>
+				
+					<li><a href="../Gem/Specification.html">Gem::Specification</a></li>
+				
+					<li><a href="../Gem/StreamUI.html">Gem::StreamUI</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentDownloadReporter.html">Gem::StreamUI::SilentDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentProgressReporter.html">Gem::StreamUI::SilentProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SimpleProgressReporter.html">Gem::StreamUI::SimpleProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseDownloadReporter.html">Gem::StreamUI::VerboseDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseProgressReporter.html">Gem::StreamUI::VerboseProgressReporter</a></li>
+				
+					<li><a href="../Gem/SystemExitException.html">Gem::SystemExitException</a></li>
+				
+					<li><a href="../Gem/TestCase.html">Gem::TestCase</a></li>
+				
+					<li><a href="../Gem/Text.html">Gem::Text</a></li>
+				
+					<li><a href="../Gem/Uninstaller.html">Gem::Uninstaller</a></li>
+				
+					<li><a href="../Gem/UserInteraction.html">Gem::UserInteraction</a></li>
+				
+					<li><a href="../Gem/Validator.html">Gem::Validator</a></li>
+				
+					<li><a href="../Gem/VerificationError.html">Gem::VerificationError</a></li>
+				
+					<li><a href="../Gem/Version.html">Gem::Version</a></li>
+				
+					<li><a href="../Gem/VersionOption.html">Gem::VersionOption</a></li>
+				
+					<li><a href="../OpenSSL.html">OpenSSL</a></li>
+				
+					<li><a href="../OpenSSL/X509.html">OpenSSL::X509</a></li>
+				
+					<li><a href="../GemGauntlet.html">GemGauntlet</a></li>
+				
+					<li><a href="../Kernel.html">Kernel</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+					<li><a href="../TempIO.html">TempIO</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Gem::Dependency</h1>
+
+		<div id="description">
+			<p>
+The <a href="Dependency.html">Dependency</a> class holds a <a
+href="../Gem.html">Gem</a> name and a <a
+href="Requirement.html">Gem::Requirement</a>.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="TYPES">TYPES</a></dt>
+				
+				<dd class="description"><p>
+Valid dependency types.
+</p></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="name-attribute-method" class="method-detail">
+				<a name="name"></a>
+				
+				<a name="name="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">name</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+<a href="Dependency.html">Dependency</a> name or regular expression.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="prerelease-attribute-method" class="method-detail">
+				<a name="prerelease"></a>
+				
+				<a name="prerelease="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">prerelease</span><span
+						class="attribute-access-type">[W]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Allows you to force this dependency to be a prerelease.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="type-attribute-method" class="method-detail">
+				<a name="type"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">type</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+<a href="Dependency.html">Dependency</a> type.
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(name, *requirements)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Constructs a dependency with <tt>name</tt> and <tt>requirements</tt>. The
+last argument can optionally be the dependency type, which defaults to
+<tt>:runtime</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/dependency.rb, line 39</span>
+39:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">name</span>, *<span class="ruby-identifier">requirements</span>
+40:     <span class="ruby-identifier">type</span>         = <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">requirements</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">requirements</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> <span class="ruby-value">:runtime</span>
+41:     <span class="ruby-identifier">requirements</span> = <span class="ruby-identifier">requirements</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword kw">if</span> <span class="ruby-value">1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">requirements</span>.<span class="ruby-identifier">length</span> <span class="ruby-comment cmt"># unpack</span>
+42: 
+43:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">TYPES</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">type</span>
+44:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Valid types are #{TYPES.inspect}, &quot;</span>
+45:         <span class="ruby-operator">+</span> <span class="ruby-node">&quot;not #{type.inspect}&quot;</span>
+46:     <span class="ruby-keyword kw">end</span>
+47: 
+48:     <span class="ruby-ivar">@name</span>        = <span class="ruby-identifier">name</span>
+49:     <span class="ruby-ivar">@requirement</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">create</span> <span class="ruby-identifier">requirements</span>
+50:     <span class="ruby-ivar">@type</span>        = <span class="ruby-identifier">type</span>
+51:     <span class="ruby-ivar">@prerelease</span>  = <span class="ruby-keyword kw">false</span>
+52: 
+53:     <span class="ruby-comment cmt"># This is for Marshal backwards compatibility. See the comments in</span>
+54:     <span class="ruby-comment cmt"># +requirement+ for the dirty details.</span>
+55: 
+56:     <span class="ruby-ivar">@version_requirements</span> = <span class="ruby-ivar">@requirement</span>
+57:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%3C%3D%3E"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">&lt;=&gt;</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Dependencies are ordered by name.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/dependency.rb, line 142</span>
+142:   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>
+143:     <span class="ruby-ivar">@name</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">name</span>
+144:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%3D%7E"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">=~</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Uses this dependency as a pattern to compare to <tt>other</tt>. This
+dependency will match if the name matches the other&#8217;s name, and other
+has only an equal version requirement that satisfies this dependency.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/dependency.rb, line 152</span>
+152:   <span class="ruby-keyword kw">def</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">other</span>
+153:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Dependency</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">other</span>
+154:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:name</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:version</span>)
+155:       <span class="ruby-identifier">other</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Dependency</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">version</span>
+156:     <span class="ruby-keyword kw">end</span>
+157: 
+158:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">name</span>
+159: 
+160:     <span class="ruby-identifier">reqs</span> = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">requirement</span>.<span class="ruby-identifier">requirements</span>
+161: 
+162:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">reqs</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+163:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">reqs</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'='</span>
+164: 
+165:     <span class="ruby-identifier">version</span> = <span class="ruby-identifier">reqs</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">last</span>
+166: 
+167:     <span class="ruby-identifier">requirement</span>.<span class="ruby-identifier">satisfied_by?</span> <span class="ruby-identifier">version</span>
+168:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="match--method" class="method-detail ">
+				<a name="method-i-match%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">match?</span><span
+						class="method-args">(name, version)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="match--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/dependency.rb, line 170</span>
+170:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">match?</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span>
+171:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">name</span>
+172:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">requirement</span>.<span class="ruby-identifier">none?</span>
+173: 
+174:     <span class="ruby-identifier">requirement</span>.<span class="ruby-identifier">satisfied_by?</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">version</span>)
+175:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="matches-spec--method" class="method-detail ">
+				<a name="method-i-matches_spec%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">matches_spec?</span><span
+						class="method-args">(spec)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="matches-spec--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/dependency.rb, line 177</span>
+177:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">matches_spec?</span> <span class="ruby-identifier">spec</span>
+178:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span>
+179:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">requirement</span>.<span class="ruby-identifier">none?</span>
+180: 
+181:     <span class="ruby-identifier">requirement</span>.<span class="ruby-identifier">satisfied_by?</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">version</span>)
+182:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="prerelease--method" class="method-detail ">
+				<a name="method-i-prerelease%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">prerelease?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Does this dependency require a prerelease?
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="prerelease--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/dependency.rb, line 75</span>
+75:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">prerelease?</span>
+76:     <span class="ruby-ivar">@prerelease</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">requirement</span>.<span class="ruby-identifier">prerelease?</span>
+77:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="requirement-method" class="method-detail ">
+				<a name="method-i-requirement"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">requirement</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+What does this dependency require?
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="requirement-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/dependency.rb, line 97</span>
+ 97:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">requirement</span>
+ 98:     <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@requirement</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-ivar">@requirement</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-ivar">@requirement</span>
+ 99: 
+100:     <span class="ruby-comment cmt"># @version_requirements and @version_requirement are legacy ivar</span>
+101:     <span class="ruby-comment cmt"># names, and supported here because older gems need to keep</span>
+102:     <span class="ruby-comment cmt"># working and Dependency doesn't implement marshal_dump and</span>
+103:     <span class="ruby-comment cmt"># marshal_load. In a happier world, this would be an</span>
+104:     <span class="ruby-comment cmt"># attr_accessor. The horrifying instance_variable_get you see</span>
+105:     <span class="ruby-comment cmt"># below is also the legacy of some old restructurings.</span>
+106:     <span class="ruby-comment cmt">#</span>
+107:     <span class="ruby-comment cmt"># Note also that because of backwards compatibility (loading new</span>
+108:     <span class="ruby-comment cmt"># gems in an old RubyGems installation), we can't add explicit</span>
+109:     <span class="ruby-comment cmt"># marshaling to this class until we want to make a big</span>
+110:     <span class="ruby-comment cmt"># break. Maybe 2.0.</span>
+111:     <span class="ruby-comment cmt">#</span>
+112:     <span class="ruby-comment cmt"># Children, define explicit marshal and unmarshal behavior for</span>
+113:     <span class="ruby-comment cmt"># public classes. Marshal formats are part of your public API.</span>
+114: 
+115:     <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-ivar">@version_requirement</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@version_requirement</span>
+116:       <span class="ruby-identifier">version</span> = <span class="ruby-ivar">@version_requirement</span>.<span class="ruby-identifier">instance_variable_get</span> <span class="ruby-value">:@version</span>
+117:       <span class="ruby-ivar">@version_requirement</span>  = <span class="ruby-keyword kw">nil</span>
+118:       <span class="ruby-ivar">@version_requirements</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">version</span>
+119:     <span class="ruby-keyword kw">end</span>
+120: 
+121:     <span class="ruby-ivar">@requirement</span> = <span class="ruby-ivar">@version_requirements</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-ivar">@version_requirements</span>)
+122:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="requirements-list-method" class="method-detail ">
+				<a name="method-i-requirements_list"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">requirements_list</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="requirements-list-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/dependency.rb, line 124</span>
+124:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">requirements_list</span>
+125:     <span class="ruby-identifier">requirement</span>.<span class="ruby-identifier">as_list</span>
+126:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

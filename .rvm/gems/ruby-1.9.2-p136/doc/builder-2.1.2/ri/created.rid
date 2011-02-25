@@ -1,0 +1,14 @@
+Tue, 22 Feb 2011 13:30:54 -0500
+lib/blankslate.rb	Tue, 22 Feb 2011 13:30:44 -0500
+lib/builder.rb	Tue, 22 Feb 2011 13:30:44 -0500
+lib/builder/xchar.rb	Tue, 22 Feb 2011 13:30:44 -0500
+lib/builder/blankslate.rb	Tue, 22 Feb 2011 13:30:44 -0500
+lib/builder/xmlbase.rb	Tue, 22 Feb 2011 13:30:44 -0500
+lib/builder/xmlmarkup.rb	Tue, 22 Feb 2011 13:30:44 -0500
+lib/builder/xmlevents.rb	Tue, 22 Feb 2011 13:30:44 -0500
+CHANGES	Tue, 22 Feb 2011 13:30:44 -0500
+Rakefile	Tue, 22 Feb 2011 13:30:44 -0500
+README	Tue, 22 Feb 2011 13:30:44 -0500
+doc/releases/builder-1.2.4.rdoc	Tue, 22 Feb 2011 13:30:44 -0500
+doc/releases/builder-2.0.0.rdoc	Tue, 22 Feb 2011 13:30:44 -0500
+doc/releases/builder-2.1.1.rdoc	Tue, 22 Feb 2011 13:30:44 -0500

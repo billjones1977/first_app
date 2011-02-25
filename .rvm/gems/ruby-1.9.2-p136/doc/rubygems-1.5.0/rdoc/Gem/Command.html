@@ -1,0 +1,2023 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Gem::Command</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/rubygems/command_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rubygems/command.rb">lib/rubygems/command.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-add_common_option">::add_common_option</a></li>
+					
+					<li><a href="#method-c-add_specific_extra_args">::add_specific_extra_args</a></li>
+					
+					<li><a href="#method-c-build_args">::build_args</a></li>
+					
+					<li><a href="#method-c-build_args%3D">::build_args=</a></li>
+					
+					<li><a href="#method-c-common_options">::common_options</a></li>
+					
+					<li><a href="#method-c-extra_args">::extra_args</a></li>
+					
+					<li><a href="#method-c-extra_args%3D">::extra_args=</a></li>
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-c-specific_extra_args">::specific_extra_args</a></li>
+					
+					<li><a href="#method-c-specific_extra_args_hash">::specific_extra_args_hash</a></li>
+					
+					<li><a href="#method-i-add_extra_args">#add_extra_args</a></li>
+					
+					<li><a href="#method-i-add_option">#add_option</a></li>
+					
+					<li><a href="#method-i-arguments">#arguments</a></li>
+					
+					<li><a href="#method-i-begins%3F">#begins?</a></li>
+					
+					<li><a href="#method-i-configure_options">#configure_options</a></li>
+					
+					<li><a href="#method-i-create_option_parser">#create_option_parser</a></li>
+					
+					<li><a href="#method-i-defaults_str">#defaults_str</a></li>
+					
+					<li><a href="#method-i-description">#description</a></li>
+					
+					<li><a href="#method-i-execute">#execute</a></li>
+					
+					<li><a href="#method-i-get_all_gem_names">#get_all_gem_names</a></li>
+					
+					<li><a href="#method-i-get_one_gem_name">#get_one_gem_name</a></li>
+					
+					<li><a href="#method-i-get_one_optional_argument">#get_one_optional_argument</a></li>
+					
+					<li><a href="#method-i-handle_options">#handle_options</a></li>
+					
+					<li><a href="#method-i-handles%3F">#handles?</a></li>
+					
+					<li><a href="#method-i-invoke">#invoke</a></li>
+					
+					<li><a href="#method-i-merge_options">#merge_options</a></li>
+					
+					<li><a href="#method-i-parser">#parser</a></li>
+					
+					<li><a href="#method-i-remove_option">#remove_option</a></li>
+					
+					<li><a href="#method-i-show_help">#show_help</a></li>
+					
+					<li><a href="#method-i-show_lookup_failure">#show_lookup_failure</a></li>
+					
+					<li><a href="#method-i-usage">#usage</a></li>
+					
+					<li><a href="#method-i-when_invoked">#when_invoked</a></li>
+					
+					<li><a href="#method-i-wrap">#wrap</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="UserInteraction.html">Gem::UserInteraction</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../GPL_txt.html">GPL.txt</a></li>
+				
+					<li class="file"><a href="../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../UPGRADING_rdoc.html">UPGRADING.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Gem.html">Gem</a></li>
+				
+					<li><a href="../Gem/Builder.html">Gem::Builder</a></li>
+				
+					<li><a href="../Gem/Command.html">Gem::Command</a></li>
+				
+					<li><a href="../Gem/CommandLineError.html">Gem::CommandLineError</a></li>
+				
+					<li><a href="../Gem/CommandManager.html">Gem::CommandManager</a></li>
+				
+					<li><a href="../Gem/Commands.html">Gem::Commands</a></li>
+				
+					<li><a href="../Gem/Commands/BuildCommand.html">Gem::Commands::BuildCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CertCommand.html">Gem::Commands::CertCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CheckCommand.html">Gem::Commands::CheckCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CleanupCommand.html">Gem::Commands::CleanupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ContentsCommand.html">Gem::Commands::ContentsCommand</a></li>
+				
+					<li><a href="../Gem/Commands/DependencyCommand.html">Gem::Commands::DependencyCommand</a></li>
+				
+					<li><a href="../Gem/Commands/EnvironmentCommand.html">Gem::Commands::EnvironmentCommand</a></li>
+				
+					<li><a href="../Gem/Commands/FetchCommand.html">Gem::Commands::FetchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/GenerateIndexCommand.html">Gem::Commands::GenerateIndexCommand</a></li>
+				
+					<li><a href="../Gem/Commands/HelpCommand.html">Gem::Commands::HelpCommand</a></li>
+				
+					<li><a href="../Gem/Commands/InstallCommand.html">Gem::Commands::InstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ListCommand.html">Gem::Commands::ListCommand</a></li>
+				
+					<li><a href="../Gem/Commands/LockCommand.html">Gem::Commands::LockCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OutdatedCommand.html">Gem::Commands::OutdatedCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OwnerCommand.html">Gem::Commands::OwnerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PristineCommand.html">Gem::Commands::PristineCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PushCommand.html">Gem::Commands::PushCommand</a></li>
+				
+					<li><a href="../Gem/Commands/QueryCommand.html">Gem::Commands::QueryCommand</a></li>
+				
+					<li><a href="../Gem/Commands/RdocCommand.html">Gem::Commands::RdocCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SearchCommand.html">Gem::Commands::SearchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ServerCommand.html">Gem::Commands::ServerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SetupCommand.html">Gem::Commands::SetupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SourcesCommand.html">Gem::Commands::SourcesCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SpecificationCommand.html">Gem::Commands::SpecificationCommand</a></li>
+				
+					<li><a href="../Gem/Commands/StaleCommand.html">Gem::Commands::StaleCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UninstallCommand.html">Gem::Commands::UninstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UnpackCommand.html">Gem::Commands::UnpackCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UpdateCommand.html">Gem::Commands::UpdateCommand</a></li>
+				
+					<li><a href="../Gem/Commands/WhichCommand.html">Gem::Commands::WhichCommand</a></li>
+				
+					<li><a href="../Gem/ConfigFile.html">Gem::ConfigFile</a></li>
+				
+					<li><a href="../Gem/ConsoleUI.html">Gem::ConsoleUI</a></li>
+				
+					<li><a href="../Gem/DefaultUserInteraction.html">Gem::DefaultUserInteraction</a></li>
+				
+					<li><a href="../Gem/Dependency.html">Gem::Dependency</a></li>
+				
+					<li><a href="../Gem/DependencyError.html">Gem::DependencyError</a></li>
+				
+					<li><a href="../Gem/DependencyInstaller.html">Gem::DependencyInstaller</a></li>
+				
+					<li><a href="../Gem/DependencyList.html">Gem::DependencyList</a></li>
+				
+					<li><a href="../Gem/DependencyRemovalException.html">Gem::DependencyRemovalException</a></li>
+				
+					<li><a href="../Gem/DocManager.html">Gem::DocManager</a></li>
+				
+					<li><a href="../Gem/DocumentError.html">Gem::DocumentError</a></li>
+				
+					<li><a href="../Gem/EndOfYAMLException.html">Gem::EndOfYAMLException</a></li>
+				
+					<li><a href="../Gem/ErrorReason.html">Gem::ErrorReason</a></li>
+				
+					<li><a href="../Gem/Exception.html">Gem::Exception</a></li>
+				
+					<li><a href="../Gem/Ext.html">Gem::Ext</a></li>
+				
+					<li><a href="../Gem/Ext/Builder.html">Gem::Ext::Builder</a></li>
+				
+					<li><a href="../Gem/Ext/ConfigureBuilder.html">Gem::Ext::ConfigureBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/ExtConfBuilder.html">Gem::Ext::ExtConfBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/RakeBuilder.html">Gem::Ext::RakeBuilder</a></li>
+				
+					<li><a href="../Gem/FakeFetcher.html">Gem::FakeFetcher</a></li>
+				
+					<li><a href="../Gem/FileOperations.html">Gem::FileOperations</a></li>
+				
+					<li><a href="../Gem/FilePermissionError.html">Gem::FilePermissionError</a></li>
+				
+					<li><a href="../Gem/Format.html">Gem::Format</a></li>
+				
+					<li><a href="../Gem/FormatException.html">Gem::FormatException</a></li>
+				
+					<li><a href="../Gem/GemNotFoundException.html">Gem::GemNotFoundException</a></li>
+				
+					<li><a href="../Gem/GemNotInHomeException.html">Gem::GemNotInHomeException</a></li>
+				
+					<li><a href="../Gem/GemPathSearcher.html">Gem::GemPathSearcher</a></li>
+				
+					<li><a href="../Gem/GemRunner.html">Gem::GemRunner</a></li>
+				
+					<li><a href="../Gem/GemcutterUtilities.html">Gem::GemcutterUtilities</a></li>
+				
+					<li><a href="../Gem/Indexer.html">Gem::Indexer</a></li>
+				
+					<li><a href="../Gem/InstallError.html">Gem::InstallError</a></li>
+				
+					<li><a href="../Gem/InstallUpdateOptions.html">Gem::InstallUpdateOptions</a></li>
+				
+					<li><a href="../Gem/Installer.html">Gem::Installer</a></li>
+				
+					<li><a href="../Gem/Installer/ExtensionBuildError.html">Gem::Installer::ExtensionBuildError</a></li>
+				
+					<li><a href="../Gem/InstallerTestCase.html">Gem::InstallerTestCase</a></li>
+				
+					<li><a href="../Gem/InvalidSpecificationException.html">Gem::InvalidSpecificationException</a></li>
+				
+					<li><a href="../Gem/LoadError.html">Gem::LoadError</a></li>
+				
+					<li><a href="../Gem/LocalRemoteOptions.html">Gem::LocalRemoteOptions</a></li>
+				
+					<li><a href="../Gem/MockGemUi.html">Gem::MockGemUi</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TTY.html">Gem::MockGemUi::TTY</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TermError.html">Gem::MockGemUi::TermError</a></li>
+				
+					<li><a href="../Gem/OldFormat.html">Gem::OldFormat</a></li>
+				
+					<li><a href="../Gem/OperationNotSupportedError.html">Gem::OperationNotSupportedError</a></li>
+				
+					<li><a href="../Gem/Package.html">Gem::Package</a></li>
+				
+					<li><a href="../Gem/Package/BadCheckSum.html">Gem::Package::BadCheckSum</a></li>
+				
+					<li><a href="../Gem/Package/ClosedIO.html">Gem::Package::ClosedIO</a></li>
+				
+					<li><a href="../Gem/Package/Error.html">Gem::Package::Error</a></li>
+				
+					<li><a href="../Gem/Package/FSyncDir.html">Gem::Package::FSyncDir</a></li>
+				
+					<li><a href="../Gem/Package/FormatError.html">Gem::Package::FormatError</a></li>
+				
+					<li><a href="../Gem/Package/NonSeekableIO.html">Gem::Package::NonSeekableIO</a></li>
+				
+					<li><a href="../Gem/Package/TarHeader.html">Gem::Package::TarHeader</a></li>
+				
+					<li><a href="../Gem/Package/TarInput.html">Gem::Package::TarInput</a></li>
+				
+					<li><a href="../Gem/Package/TarInvalidError.html">Gem::Package::TarInvalidError</a></li>
+				
+					<li><a href="../Gem/Package/TarOutput.html">Gem::Package::TarOutput</a></li>
+				
+					<li><a href="../Gem/Package/TarReader.html">Gem::Package::TarReader</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/Entry.html">Gem::Package::TarReader::Entry</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/UnexpectedEOF.html">Gem::Package::TarReader::UnexpectedEOF</a></li>
+				
+					<li><a href="../Gem/Package/TarTestCase.html">Gem::Package::TarTestCase</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter.html">Gem::Package::TarWriter</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/BoundedStream.html">Gem::Package::TarWriter::BoundedStream</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/FileOverflow.html">Gem::Package::TarWriter::FileOverflow</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/RestrictedStream.html">Gem::Package::TarWriter::RestrictedStream</a></li>
+				
+					<li><a href="../Gem/Package/TooLongFileName.html">Gem::Package::TooLongFileName</a></li>
+				
+					<li><a href="../Gem/PackageTask.html">Gem::PackageTask</a></li>
+				
+					<li><a href="../Gem/Platform.html">Gem::Platform</a></li>
+				
+					<li><a href="../Gem/PlatformMismatch.html">Gem::PlatformMismatch</a></li>
+				
+					<li><a href="../Gem/RemoteError.html">Gem::RemoteError</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher.html">Gem::RemoteFetcher</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher/FetchError.html">Gem::RemoteFetcher::FetchError</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationCancelled.html">Gem::RemoteInstallationCancelled</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationSkipped.html">Gem::RemoteInstallationSkipped</a></li>
+				
+					<li><a href="../Gem/RemoteSourceException.html">Gem::RemoteSourceException</a></li>
+				
+					<li><a href="../Gem/RequirePathsBuilder.html">Gem::RequirePathsBuilder</a></li>
+				
+					<li><a href="../Gem/Requirement.html">Gem::Requirement</a></li>
+				
+					<li><a href="../Gem/Security/Exception.html">Gem::Security::Exception</a></li>
+				
+					<li><a href="../Gem/Security/Signer.html">Gem::Security::Signer</a></li>
+				
+					<li><a href="../Gem/Server.html">Gem::Server</a></li>
+				
+					<li><a href="../Gem/SilentUI.html">Gem::SilentUI</a></li>
+				
+					<li><a href="../Gem/SourceIndex.html">Gem::SourceIndex</a></li>
+				
+					<li><a href="../Gem/SpecFetcher.html">Gem::SpecFetcher</a></li>
+				
+					<li><a href="../Gem/Specification.html">Gem::Specification</a></li>
+				
+					<li><a href="../Gem/StreamUI.html">Gem::StreamUI</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentDownloadReporter.html">Gem::StreamUI::SilentDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentProgressReporter.html">Gem::StreamUI::SilentProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SimpleProgressReporter.html">Gem::StreamUI::SimpleProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseDownloadReporter.html">Gem::StreamUI::VerboseDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseProgressReporter.html">Gem::StreamUI::VerboseProgressReporter</a></li>
+				
+					<li><a href="../Gem/SystemExitException.html">Gem::SystemExitException</a></li>
+				
+					<li><a href="../Gem/TestCase.html">Gem::TestCase</a></li>
+				
+					<li><a href="../Gem/Text.html">Gem::Text</a></li>
+				
+					<li><a href="../Gem/Uninstaller.html">Gem::Uninstaller</a></li>
+				
+					<li><a href="../Gem/UserInteraction.html">Gem::UserInteraction</a></li>
+				
+					<li><a href="../Gem/Validator.html">Gem::Validator</a></li>
+				
+					<li><a href="../Gem/VerificationError.html">Gem::VerificationError</a></li>
+				
+					<li><a href="../Gem/Version.html">Gem::Version</a></li>
+				
+					<li><a href="../Gem/VersionOption.html">Gem::VersionOption</a></li>
+				
+					<li><a href="../OpenSSL.html">OpenSSL</a></li>
+				
+					<li><a href="../OpenSSL/X509.html">OpenSSL::X509</a></li>
+				
+					<li><a href="../GemGauntlet.html">GemGauntlet</a></li>
+				
+					<li><a href="../Kernel.html">Kernel</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+					<li><a href="../TempIO.html">TempIO</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Gem::Command</h1>
+
+		<div id="description">
+			<p>
+Base class for all <a href="../Gem.html">Gem</a> commands.  When creating a
+new gem command, define #, <a href="Command.html#method-i-execute">#</a>,
+<a href="Command.html#method-i-arguments">#</a>, <a
+href="Command.html#method-i-defaults_str">#</a>, <a
+href="Command.html#method-i-description">#</a> and <a
+href="Command.html#method-i-usage">#</a> (as appropriate).  See the above
+mentioned methods for details.
+</p>
+<p>
+A very good example to look at is <a
+href="Commands/ContentsCommand.html">Gem::Commands::ContentsCommand</a>
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="command-attribute-method" class="method-detail">
+				<a name="command"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">command</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The name of the command.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="options-attribute-method" class="method-detail">
+				<a name="options"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">options</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The options for the command.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="defaults-attribute-method" class="method-detail">
+				<a name="defaults"></a>
+				
+				<a name="defaults="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">defaults</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The default options for the command.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="program-name-attribute-method" class="method-detail">
+				<a name="program_name"></a>
+				
+				<a name="program_name="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">program_name</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The name of the command for command-line invocation.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="summary-attribute-method" class="method-detail">
+				<a name="summary"></a>
+				
+				<a name="summary="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">summary</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+A short description of the command.
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="add-common-option-method" class="method-detail ">
+				<a name="method-c-add_common_option"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_common_option</span><span
+						class="method-args">(*args, &handler)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="add-common-option-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 61</span>
+61:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">add_common_option</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">handler</span>)
+62:     <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span>.<span class="ruby-identifier">common_options</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">args</span>, <span class="ruby-identifier">handler</span>]
+63:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="add-specific-extra-args-method" class="method-detail ">
+				<a name="method-c-add_specific_extra_args"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_specific_extra_args</span><span
+						class="method-args">(cmd,args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Add a list of extra arguments for the given command.  <tt>args</tt> may be
+an array or a string to be split on white space.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="add-specific-extra-args-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 90</span>
+90:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">add_specific_extra_args</span>(<span class="ruby-identifier">cmd</span>,<span class="ruby-identifier">args</span>)
+91:     <span class="ruby-identifier">args</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\s+/</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">String</span>
+92:     <span class="ruby-identifier">specific_extra_args_hash</span>[<span class="ruby-identifier">cmd</span>] = <span class="ruby-identifier">args</span>
+93:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-args-method" class="method-detail ">
+				<a name="method-c-build_args"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_args</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Arguments used when building gems
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="build-args-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 49</span>
+49:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">build_args</span>
+50:     <span class="ruby-ivar">@build_args</span> <span class="ruby-operator">||=</span> []
+51:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="build-args--method" class="method-detail ">
+				<a name="method-c-build_args%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">build_args=</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="build-args--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 53</span>
+53:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">build_args=</span>(<span class="ruby-identifier">value</span>)
+54:     <span class="ruby-ivar">@build_args</span> = <span class="ruby-identifier">value</span>
+55:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="common-options-method" class="method-detail ">
+				<a name="method-c-common_options"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">common_options</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="common-options-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 57</span>
+57:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">common_options</span>
+58:     <span class="ruby-ivar">@common_options</span> <span class="ruby-operator">||=</span> []
+59:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="extra-args-method" class="method-detail ">
+				<a name="method-c-extra_args"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extra_args</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="extra-args-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 65</span>
+65:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">extra_args</span>
+66:     <span class="ruby-ivar">@extra_args</span> <span class="ruby-operator">||=</span> []
+67:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="extra-args--method" class="method-detail ">
+				<a name="method-c-extra_args%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extra_args=</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="extra-args--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 69</span>
+69:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">extra_args=</span>(<span class="ruby-identifier">value</span>)
+70:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">value</span>
+71:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
+72:       <span class="ruby-ivar">@extra_args</span> = <span class="ruby-identifier">value</span>
+73:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>
+74:       <span class="ruby-ivar">@extra_args</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">split</span>
+75:     <span class="ruby-keyword kw">end</span>
+76:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(command, summary=nil, defaults={})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Initializes a generic gem command named <tt>command</tt>.  <tt>summary</tt>
+is a short description displayed in `gem help commands`.  <tt>defaults</tt>
+are the default options.  Defaults should be mirrored in <a
+href="Command.html#method-i-defaults_str">#</a>, unless there are none.
+</p>
+<p>
+When defining a new command subclass, use <a
+href="Command.html#method-i-add_option">add_option</a> to add command-line
+switches.
+</p>
+<p>
+Unhandled arguments (gem names, files, etc.) are left in
+<tt>options[:args]</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 116</span>
+116:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">command</span>, <span class="ruby-identifier">summary</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">defaults</span>={})
+117:     <span class="ruby-ivar">@command</span> = <span class="ruby-identifier">command</span>
+118:     <span class="ruby-ivar">@summary</span> = <span class="ruby-identifier">summary</span>
+119:     <span class="ruby-ivar">@program_name</span> = <span class="ruby-node">&quot;gem #{command}&quot;</span>
+120:     <span class="ruby-ivar">@defaults</span> = <span class="ruby-identifier">defaults</span>
+121:     <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">dup</span>
+122:     <span class="ruby-ivar">@option_groups</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = [] }
+123:     <span class="ruby-ivar">@parser</span> = <span class="ruby-keyword kw">nil</span>
+124:     <span class="ruby-ivar">@when_invoked</span> = <span class="ruby-keyword kw">nil</span>
+125:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="specific-extra-args-method" class="method-detail ">
+				<a name="method-c-specific_extra_args"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">specific_extra_args</span><span
+						class="method-args">(cmd)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return an array of extra arguments for the command.  The extra arguments
+come from the gem configuration file read at program startup.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="specific-extra-args-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 82</span>
+82:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">specific_extra_args</span>(<span class="ruby-identifier">cmd</span>)
+83:     <span class="ruby-identifier">specific_extra_args_hash</span>[<span class="ruby-identifier">cmd</span>]
+84:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="specific-extra-args-hash-method" class="method-detail ">
+				<a name="method-c-specific_extra_args_hash"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">specific_extra_args_hash</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Accessor for the specific extra args hash (self initializing).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="specific-extra-args-hash-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 98</span>
+ 98:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">specific_extra_args_hash</span>
+ 99:     <span class="ruby-ivar">@specific_extra_args_hash</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+100:       <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+101:     <span class="ruby-keyword kw">end</span>
+102:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="add-extra-args-method" class="method-detail ">
+				<a name="method-i-add_extra_args"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_extra_args</span><span
+						class="method-args">(args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Adds extra args from ~/.gemrc
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="add-extra-args-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 355</span>
+355:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_extra_args</span>(<span class="ruby-identifier">args</span>)
+356:     <span class="ruby-identifier">result</span> = []
+357: 
+358:     <span class="ruby-identifier">s_extra</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span>.<span class="ruby-identifier">specific_extra_args</span>(<span class="ruby-ivar">@command</span>)
+359:     <span class="ruby-identifier">extra</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span>.<span class="ruby-identifier">extra_args</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">s_extra</span>
+360: 
+361:     <span class="ruby-keyword kw">until</span> <span class="ruby-identifier">extra</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">do</span>
+362:       <span class="ruby-identifier">ex</span> = []
+363:       <span class="ruby-identifier">ex</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">extra</span>.<span class="ruby-identifier">shift</span>
+364:       <span class="ruby-identifier">ex</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">extra</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">extra</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[^-]/</span>
+365:       <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">ex</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">handles?</span>(<span class="ruby-identifier">ex</span>)
+366:     <span class="ruby-keyword kw">end</span>
+367: 
+368:     <span class="ruby-identifier">result</span>.<span class="ruby-identifier">flatten!</span>
+369:     <span class="ruby-identifier">result</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">args</span>)
+370:     <span class="ruby-identifier">result</span>
+371:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="add-option-method" class="method-detail ">
+				<a name="method-i-add_option"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_option</span><span
+						class="method-args">(*opts)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Add a command-line option and handler to the command.
+</p>
+<p>
+See OptionParser#make_switch for an explanation of <tt>opts</tt>.
+</p>
+<p>
+<tt>handler</tt> will be called with two values, the value of the argument
+and the options hash.
+</p>
+<p>
+If the first argument of <a
+href="Command.html#method-i-add_option">add_option</a> is a Symbol,
+it&#8217;s used to group options in output.  See `gem help list` for an
+example.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="add-option-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 305</span>
+305:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_option</span>(*<span class="ruby-identifier">opts</span>, &amp;<span class="ruby-identifier">handler</span>) <span class="ruby-comment cmt"># :yields: value, options</span>
+306:     <span class="ruby-identifier">group_name</span> = <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-value">:options</span>
+307: 
+308:     <span class="ruby-ivar">@option_groups</span>[<span class="ruby-identifier">group_name</span>] <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">opts</span>, <span class="ruby-identifier">handler</span>]
+309:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="arguments-method" class="method-detail ">
+				<a name="method-i-arguments"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">arguments</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Override to provide details of the arguments a command takes.  It should
+return a left-justified string, one argument per line.
+</p>
+<p>
+For example:
+</p>
+<pre>
+  def usage
+    &quot;#{program_name} FILE [FILE ...]&quot;
+  end
+
+  def arguments
+    &quot;FILE          name of file to find&quot;
+  end</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="arguments-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 225</span>
+225:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">arguments</span>
+226:     <span class="ruby-value str">&quot;&quot;</span>
+227:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="begins--method" class="method-detail ">
+				<a name="method-i-begins%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">begins?</span><span
+						class="method-args">(long, short)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+True if <tt>long</tt> begins with the characters from <tt>short</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="begins--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 130</span>
+130:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">begins?</span>(<span class="ruby-identifier">long</span>, <span class="ruby-identifier">short</span>)
+131:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">short</span>.<span class="ruby-identifier">nil?</span>
+132:     <span class="ruby-identifier">long</span>[<span class="ruby-value">0</span>, <span class="ruby-identifier">short</span>.<span class="ruby-identifier">length</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">short</span>
+133:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="defaults-str-method" class="method-detail ">
+				<a name="method-i-defaults_str"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">defaults_str</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Override to display the default values of the command options. (similar to
+<tt>arguments</tt>, but displays the default values).
+</p>
+<p>
+For example:
+</p>
+<pre>
+  def defaults_str
+    --no-gems-first --no-all
+  end</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="defaults-str-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 239</span>
+239:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">defaults_str</span>
+240:     <span class="ruby-value str">&quot;&quot;</span>
+241:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="description-method" class="method-detail ">
+				<a name="method-i-description"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">description</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Override to display a longer description of what this command does.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="description-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 246</span>
+246:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">description</span>
+247:     <span class="ruby-keyword kw">nil</span>
+248:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="execute-method" class="method-detail ">
+				<a name="method-i-execute"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">execute</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Override to provide command handling.
+</p>
+<p>
+# will be filled in with your parsed options, unparsed options will be left
+in <tt>options[:args]</tt>.
+</p>
+<p>
+See also: <a href="Command.html#method-i-get_all_gem_names">#</a>, <a
+href="Command.html#method-i-get_one_gem_name">#</a>, <a
+href="Command.html#method-i-get_one_optional_argument">#</a>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="execute-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 144</span>
+144:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">execute</span>
+145:     <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>, <span class="ruby-value str">&quot;generic command has no actions&quot;</span>
+146:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-all-gem-names-method" class="method-detail ">
+				<a name="method-i-get_all_gem_names"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_all_gem_names</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Get all gem names from the command line.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-all-gem-names-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 171</span>
+171:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_all_gem_names</span>
+172:     <span class="ruby-identifier">args</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:args</span>]
+173: 
+174:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+175:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">CommandLineError</span>,
+176:             <span class="ruby-value str">&quot;Please specify at least one gem name (e.g. gem build GEMNAME)&quot;</span>
+177:     <span class="ruby-keyword kw">end</span>
+178: 
+179:     <span class="ruby-identifier">args</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/^-/</span> }
+180:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-one-gem-name-method" class="method-detail ">
+				<a name="method-i-get_one_gem_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_one_gem_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Get a single gem name from the command line.  Fail if there is no gem name
+or if there is more than one gem name given.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-one-gem-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 186</span>
+186:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_one_gem_name</span>
+187:     <span class="ruby-identifier">args</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:args</span>]
+188: 
+189:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+190:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">CommandLineError</span>,
+191:             <span class="ruby-value str">&quot;Please specify a gem name on the command line (e.g. gem build GEMNAME)&quot;</span>
+192:     <span class="ruby-keyword kw">end</span>
+193: 
+194:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">then</span>
+195:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">CommandLineError</span>,
+196:             <span class="ruby-node">&quot;Too many gem names (#{args.join(', ')}); please specify only one&quot;</span>
+197:     <span class="ruby-keyword kw">end</span>
+198: 
+199:     <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+200:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-one-optional-argument-method" class="method-detail ">
+				<a name="method-i-get_one_optional_argument"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_one_optional_argument</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Get a single optional argument from the command line.  If more than one
+argument is given, return only the first. Return nil if none are given.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-one-optional-argument-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 206</span>
+206:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_one_optional_argument</span>
+207:     <span class="ruby-identifier">args</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:args</span>] <span class="ruby-operator">||</span> []
+208:     <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+209:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handle-options-method" class="method-detail ">
+				<a name="method-i-handle_options"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handle_options</span><span
+						class="method-args">(args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Handle the given list of arguments by parsing them and recording the
+results.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="handle-options-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 345</span>
+345:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handle_options</span>(<span class="ruby-identifier">args</span>)
+346:     <span class="ruby-identifier">args</span> = <span class="ruby-identifier">add_extra_args</span>(<span class="ruby-identifier">args</span>)
+347:     <span class="ruby-ivar">@options</span> = <span class="ruby-ivar">@defaults</span>.<span class="ruby-identifier">clone</span>
+348:     <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse!</span>(<span class="ruby-identifier">args</span>)
+349:     <span class="ruby-ivar">@options</span>[<span class="ruby-value">:args</span>] = <span class="ruby-identifier">args</span>
+350:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="handles--method" class="method-detail ">
+				<a name="method-i-handles%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">handles?</span><span
+						class="method-args">(args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+True if the command handles the given argument list.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="handles--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 332</span>
+332:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">handles?</span>(<span class="ruby-identifier">args</span>)
+333:     <span class="ruby-keyword kw">begin</span>
+334:       <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse!</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">dup</span>)
+335:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+336:     <span class="ruby-keyword kw">rescue</span>
+337:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+338:     <span class="ruby-keyword kw">end</span>
+339:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="invoke-method" class="method-detail ">
+				<a name="method-i-invoke"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">invoke</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Invoke the command with the given list of arguments.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="invoke-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 270</span>
+270:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">invoke</span>(*<span class="ruby-identifier">args</span>)
+271:     <span class="ruby-identifier">handle_options</span> <span class="ruby-identifier">args</span>
+272: 
+273:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>] <span class="ruby-keyword kw">then</span>
+274:       <span class="ruby-identifier">show_help</span>
+275:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@when_invoked</span> <span class="ruby-keyword kw">then</span>
+276:       <span class="ruby-ivar">@when_invoked</span>.<span class="ruby-identifier">call</span> <span class="ruby-identifier">options</span>
+277:     <span class="ruby-keyword kw">else</span>
+278:       <span class="ruby-identifier">execute</span>
+279:     <span class="ruby-keyword kw">end</span>
+280:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="merge-options-method" class="method-detail ">
+				<a name="method-i-merge_options"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">merge_options</span><span
+						class="method-args">(new_options)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Merge a set of command options with the set of default options (without
+modifying the default option hash).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="merge-options-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 324</span>
+324:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge_options</span>(<span class="ruby-identifier">new_options</span>)
+325:     <span class="ruby-ivar">@options</span> = <span class="ruby-ivar">@defaults</span>.<span class="ruby-identifier">clone</span>
+326:     <span class="ruby-identifier">new_options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span> <span class="ruby-keyword kw">end</span>
+327:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="remove-option-method" class="method-detail ">
+				<a name="method-i-remove_option"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">remove_option</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Remove previously defined command-line argument <tt>name</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="remove-option-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 314</span>
+314:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove_option</span>(<span class="ruby-identifier">name</span>)
+315:     <span class="ruby-ivar">@option_groups</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">option_list</span><span class="ruby-operator">|</span>
+316:       <span class="ruby-identifier">option_list</span>.<span class="ruby-identifier">reject!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">args</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/^#{name}/</span> } }
+317:     <span class="ruby-keyword kw">end</span>
+318:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="show-help-method" class="method-detail ">
+				<a name="method-i-show_help"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">show_help</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Display the help message for the command.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="show-help-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 262</span>
+262:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show_help</span>
+263:     <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">program_name</span> = <span class="ruby-identifier">usage</span>
+264:     <span class="ruby-identifier">say</span> <span class="ruby-identifier">parser</span>
+265:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="show-lookup-failure-method" class="method-detail ">
+				<a name="method-i-show_lookup_failure"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">show_lookup_failure</span><span
+						class="method-args">(gem_name, version, errors, domain)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Display to the user that a gem couldn&#8217;t be found and reasons why
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="show-lookup-failure-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 151</span>
+151:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show_lookup_failure</span>(<span class="ruby-identifier">gem_name</span>, <span class="ruby-identifier">version</span>, <span class="ruby-identifier">errors</span>, <span class="ruby-identifier">domain</span>)
+152:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">errors</span> <span class="ruby-keyword kw">and</span> <span class="ruby-operator">!</span><span class="ruby-identifier">errors</span>.<span class="ruby-identifier">empty?</span>
+153:       <span class="ruby-identifier">alert_error</span> <span class="ruby-node">&quot;Could not find a valid gem '#{gem_name}' (#{version}), here is why:&quot;</span>
+154:       <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;          #{x.wordy}&quot;</span> }
+155:     <span class="ruby-keyword kw">else</span>
+156:       <span class="ruby-identifier">alert_error</span> <span class="ruby-node">&quot;Could not find a valid gem '#{gem_name}' (#{version}) in any repository&quot;</span>
+157:     <span class="ruby-keyword kw">end</span>
+158: 
+159:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">domain</span> <span class="ruby-operator">==</span> <span class="ruby-value">:local</span> <span class="ruby-keyword kw">then</span> <span class="ruby-comment cmt"># HACK</span>
+160:       <span class="ruby-identifier">suggestions</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">SpecFetcher</span>.<span class="ruby-identifier">fetcher</span>.<span class="ruby-identifier">suggest_gems_from_name</span> <span class="ruby-identifier">gem_name</span>
+161: 
+162:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">suggestions</span>.<span class="ruby-identifier">empty?</span>
+163:         <span class="ruby-identifier">alert_error</span> <span class="ruby-node">&quot;Possible alternatives: #{suggestions.join(&quot;, &quot;)}&quot;</span>
+164:       <span class="ruby-keyword kw">end</span>
+165:     <span class="ruby-keyword kw">end</span>
+166:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="usage-method" class="method-detail ">
+				<a name="method-i-usage"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">usage</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Override to display the usage for an individual gem command.
+</p>
+<p>
+The text &#8220;[options]&#8221; is automatically appended to the usage
+text.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="usage-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 255</span>
+255:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">usage</span>
+256:     <span class="ruby-identifier">program_name</span>
+257:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="when-invoked-method" class="method-detail ">
+				<a name="method-i-when_invoked"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">when_invoked</span><span
+						class="method-args">(&block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Call the given block when invoked.
+</p>
+<p>
+Normal command invocations just executes the <tt>execute</tt> method of the
+command.  Specifying an invocation block allows the test methods to
+override the normal action of a command to determine that it has been
+invoked correctly.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="when-invoked-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 290</span>
+290:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">when_invoked</span>(&amp;<span class="ruby-identifier">block</span>)
+291:     <span class="ruby-ivar">@when_invoked</span> = <span class="ruby-identifier">block</span>
+292:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="configure-options-method" class="method-detail ">
+				<a name="method-i-configure_options"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">configure_options</span><span
+						class="method-args">(header, option_list)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="configure-options-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 434</span>
+434:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">configure_options</span>(<span class="ruby-identifier">header</span>, <span class="ruby-identifier">option_list</span>)
+435:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">option_list</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">option_list</span>.<span class="ruby-identifier">empty?</span>
+436: 
+437:     <span class="ruby-identifier">header</span> = <span class="ruby-identifier">header</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-value str">''</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;#{header} &quot;</span>
+438:     <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-node">&quot;  #{header}Options:&quot;</span>
+439: 
+440:     <span class="ruby-identifier">option_list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">args</span>, <span class="ruby-identifier">handler</span><span class="ruby-operator">|</span>
+441:       <span class="ruby-identifier">args</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^-/</span> }
+442:       <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">on</span>(*<span class="ruby-identifier">args</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+443:         <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">value</span>, <span class="ruby-ivar">@options</span>)
+444:       <span class="ruby-keyword kw">end</span>
+445:     <span class="ruby-keyword kw">end</span>
+446: 
+447:     <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">''</span>
+448:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="create-option-parser-method" class="method-detail ">
+				<a name="method-i-create_option_parser"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">create_option_parser</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="create-option-parser-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 383</span>
+383:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_option_parser</span>
+384:     <span class="ruby-ivar">@parser</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span>
+385: 
+386:     <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword kw">nil</span>
+387:     <span class="ruby-identifier">regular_options</span> = <span class="ruby-ivar">@option_groups</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:options</span>
+388: 
+389:     <span class="ruby-identifier">configure_options</span> <span class="ruby-value str">&quot;&quot;</span>, <span class="ruby-identifier">regular_options</span>
+390: 
+391:     <span class="ruby-ivar">@option_groups</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span>,<span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">to_s</span> }.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">group_name</span>, <span class="ruby-identifier">option_list</span><span class="ruby-operator">|</span>
+392:       <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword kw">nil</span>
+393:       <span class="ruby-identifier">configure_options</span> <span class="ruby-identifier">group_name</span>, <span class="ruby-identifier">option_list</span>
+394:     <span class="ruby-keyword kw">end</span>
+395: 
+396:     <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword kw">nil</span>
+397:     <span class="ruby-identifier">configure_options</span> <span class="ruby-value str">&quot;Common&quot;</span>, <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Command</span>.<span class="ruby-identifier">common_options</span>
+398: 
+399:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">empty?</span>
+400:       <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword kw">nil</span>
+401:       <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;  Arguments:&quot;</span>
+402:       <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\n/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg_desc</span><span class="ruby-operator">|</span>
+403:         <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-node">&quot;    #{arg_desc}&quot;</span>
+404:       <span class="ruby-keyword kw">end</span>
+405:     <span class="ruby-keyword kw">end</span>
+406: 
+407:     <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword kw">nil</span>
+408:     <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;  Summary:&quot;</span>
+409:     <span class="ruby-identifier">wrap</span>(<span class="ruby-ivar">@summary</span>, <span class="ruby-value">80</span> <span class="ruby-operator">-</span> <span class="ruby-value">4</span>).<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+410:       <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-node">&quot;    #{line.strip}&quot;</span>
+411:     <span class="ruby-keyword kw">end</span>
+412: 
+413:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">description</span> <span class="ruby-keyword kw">then</span>
+414:       <span class="ruby-identifier">formatted</span> = <span class="ruby-identifier">description</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n\n&quot;</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">chunk</span><span class="ruby-operator">|</span>
+415:         <span class="ruby-identifier">wrap</span> <span class="ruby-identifier">chunk</span>, <span class="ruby-value">80</span> <span class="ruby-operator">-</span> <span class="ruby-value">4</span>
+416:       <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span> <span class="ruby-value str">&quot;\n&quot;</span>
+417: 
+418:       <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword kw">nil</span>
+419:       <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;  Description:&quot;</span>
+420:       <span class="ruby-identifier">formatted</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;\n&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+421:         <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-node">&quot;    #{line.rstrip}&quot;</span>
+422:       <span class="ruby-keyword kw">end</span>
+423:     <span class="ruby-keyword kw">end</span>
+424: 
+425:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">defaults_str</span>.<span class="ruby-identifier">empty?</span>
+426:       <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-keyword kw">nil</span>
+427:       <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-value str">&quot;  Defaults:&quot;</span>
+428:       <span class="ruby-identifier">defaults_str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\n/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+429:         <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">separator</span> <span class="ruby-node">&quot;    #{line}&quot;</span>
+430:       <span class="ruby-keyword kw">end</span>
+431:     <span class="ruby-keyword kw">end</span>
+432:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="parser-method" class="method-detail ">
+				<a name="method-i-parser"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parser</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Create on demand parser.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parser-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 378</span>
+378:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parser</span>
+379:     <span class="ruby-identifier">create_option_parser</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">nil?</span>
+380:     <span class="ruby-ivar">@parser</span>
+381:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="wrap-method" class="method-detail ">
+				<a name="method-i-wrap"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">wrap</span><span
+						class="method-args">(text, width)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Wraps <tt>text</tt> to <tt>width</tt>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="wrap-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/command.rb, line 453</span>
+453:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">width</span>) <span class="ruby-comment cmt"># :doc:</span>
+454:     <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">/(.{1,#{width}})( +|$\n?)|(.{1,#{width}})/</span>, <span class="ruby-value str">&quot;\\1\\3\n&quot;</span>)
+455:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="primary_color" mtime="1298485643" type="string">
+		<stringvalue>#e91ec0e96318</stringvalue>
+	</entry>
+	<entry name="secondary_color" mtime="1298485643" type="string">
+		<stringvalue>#2c2c00001e1e</stringvalue>
+	</entry>
+	<entry name="picture_filename" mtime="1298485619" type="string">
+		<stringvalue></stringvalue>
+	</entry>
+	<entry name="color_shading_type" mtime="1298485643" type="string">
+		<stringvalue>solid</stringvalue>
+	</entry>
+	<entry name="picture_options" mtime="1298485619" type="string">
+		<stringvalue>none</stringvalue>
+	</entry>
+</gconf>

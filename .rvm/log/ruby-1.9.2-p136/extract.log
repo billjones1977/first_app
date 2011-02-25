@@ -1,0 +1,3 @@
+[2011-02-22 09:55:20] bunzip2 < '/home/billones1977/.rvm/archives/ruby-1.9.2-p136.tar.bz2' | tar xf - -C /tmp/rvm_src_2140
+[2011-02-22 13:21:43] bunzip2 < '/home/billones1977/.rvm/archives/ruby-1.9.2-p136.tar.bz2' | tar xf - -C /tmp/rvm_src_13243
+[2011-02-23 16:02:48] bunzip2 < '/home/billones1977/.rvm/archives/ruby-1.9.2-p136.tar.bz2' | tar xf - -C /tmp/rvm_src_7547

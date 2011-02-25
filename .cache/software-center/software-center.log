@@ -1,0 +1,5 @@
+2011-02-21 14:31:36,921 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/db/database.py', 96, 'open')'
+2011-02-21 14:31:36,920 - root - WARNING - failed to add sca db Couldn't detect type of database
+2011-02-21 14:31:44,565 - softwarecenter.app - INFO - software-center-agent finished with status 0
+2011-02-21 14:31:46,321 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/lib/pymodules/python2.6/dbus/proxies.py', 400, '_introspect_error_handler')'
+2011-02-21 14:31:46,321 - dbus.proxies - ERROR - Introspect error on :1.66:/: dbus.exceptions.DBusException: org.freedesktop.DBus.Error.AccessDenied: Rejected send message, 1 matched rules; type="method_call", sender=":1.63" (uid=1000 pid=3089 comm="/usr/bin/python) interface="org.freedesktop.DBus.Introspectable" member="Introspect" error name="(unset)" requested_reply=0 destination=":1.66" (uid=0 pid=3119 comm="/usr/bin/python))

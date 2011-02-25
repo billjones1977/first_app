@@ -1,0 +1,1425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: Gem</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./lib/rubygems/test_case_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rubygems/test_case.rb">lib/rubygems/test_case.rb</a></li>
+					
+						<li><a href="./lib/rubygems/defaults_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rubygems/defaults.rb">lib/rubygems/defaults.rb</a></li>
+					
+						<li><a href="./lib/rubygems/gem_openssl_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rubygems/gem_openssl.rb">lib/rubygems/gem_openssl.rb</a></li>
+					
+						<li><a href="./lib/rubygems_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rubygems.rb">lib/rubygems.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">MODULE</span> <a href="Gem/Commands.html">Gem::Commands</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Gem/DefaultUserInteraction.html">Gem::DefaultUserInteraction</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Gem/Ext.html">Gem::Ext</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Gem/GemcutterUtilities.html">Gem::GemcutterUtilities</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Gem/InstallUpdateOptions.html">Gem::InstallUpdateOptions</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Gem/LocalRemoteOptions.html">Gem::LocalRemoteOptions</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Gem/Package.html">Gem::Package</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Gem/RequirePathsBuilder.html">Gem::RequirePathsBuilder</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Gem/Security.html">Gem::Security</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Gem/Text.html">Gem::Text</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Gem/UserInteraction.html">Gem::UserInteraction</a></li>
+					
+					<li><span class="type">MODULE</span> <a href="Gem/VersionOption.html">Gem::VersionOption</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Builder.html">Gem::Builder</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Command.html">Gem::Command</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/CommandLineError.html">Gem::CommandLineError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/CommandManager.html">Gem::CommandManager</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/ConfigFile.html">Gem::ConfigFile</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/ConsoleUI.html">Gem::ConsoleUI</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Dependency.html">Gem::Dependency</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/DependencyError.html">Gem::DependencyError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/DependencyInstaller.html">Gem::DependencyInstaller</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/DependencyList.html">Gem::DependencyList</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/DependencyRemovalException.html">Gem::DependencyRemovalException</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/DocManager.html">Gem::DocManager</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/DocumentError.html">Gem::DocumentError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/EndOfYAMLException.html">Gem::EndOfYAMLException</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/ErrorReason.html">Gem::ErrorReason</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Exception.html">Gem::Exception</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/FakeFetcher.html">Gem::FakeFetcher</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/FileOperations.html">Gem::FileOperations</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/FilePermissionError.html">Gem::FilePermissionError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Format.html">Gem::Format</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/FormatException.html">Gem::FormatException</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/GemNotFoundException.html">Gem::GemNotFoundException</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/GemNotInHomeException.html">Gem::GemNotInHomeException</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/GemPathSearcher.html">Gem::GemPathSearcher</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/GemRunner.html">Gem::GemRunner</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Indexer.html">Gem::Indexer</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/InstallError.html">Gem::InstallError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Installer.html">Gem::Installer</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/InstallerTestCase.html">Gem::InstallerTestCase</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/InvalidSpecificationException.html">Gem::InvalidSpecificationException</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/LoadError.html">Gem::LoadError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/MockGemUi.html">Gem::MockGemUi</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/OldFormat.html">Gem::OldFormat</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/OperationNotSupportedError.html">Gem::OperationNotSupportedError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/PackageTask.html">Gem::PackageTask</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Platform.html">Gem::Platform</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/PlatformMismatch.html">Gem::PlatformMismatch</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/RemoteError.html">Gem::RemoteError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/RemoteFetcher.html">Gem::RemoteFetcher</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/RemoteInstallationCancelled.html">Gem::RemoteInstallationCancelled</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/RemoteInstallationSkipped.html">Gem::RemoteInstallationSkipped</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/RemoteSourceException.html">Gem::RemoteSourceException</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Requirement.html">Gem::Requirement</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Server.html">Gem::Server</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/SilentUI.html">Gem::SilentUI</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/SourceIndex.html">Gem::SourceIndex</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/SpecFetcher.html">Gem::SpecFetcher</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Specification.html">Gem::Specification</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/StreamUI.html">Gem::StreamUI</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/SystemExitException.html">Gem::SystemExitException</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/TestCase.html">Gem::TestCase</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Uninstaller.html">Gem::Uninstaller</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Validator.html">Gem::Validator</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/VerificationError.html">Gem::VerificationError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Gem/Version.html">Gem::Version</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-default_bindir">::default_bindir</a></li>
+					
+					<li><a href="#method-c-default_dir">::default_dir</a></li>
+					
+					<li><a href="#method-c-default_exec_format">::default_exec_format</a></li>
+					
+					<li><a href="#method-c-default_path">::default_path</a></li>
+					
+					<li><a href="#method-c-default_sources">::default_sources</a></li>
+					
+					<li><a href="#method-c-default_system_source_cache_dir">::default_system_source_cache_dir</a></li>
+					
+					<li><a href="#method-c-default_user_source_cache_dir">::default_user_source_cache_dir</a></li>
+					
+					<li><a href="#method-c-ensure_ssl_available">::ensure_ssl_available</a></li>
+					
+					<li><a href="#method-c-ruby%3D">::ruby=</a></li>
+					
+					<li><a href="#method-c-ruby_engine">::ruby_engine</a></li>
+					
+					<li><a href="#method-c-searcher%3D">::searcher=</a></li>
+					
+					<li><a href="#method-c-source_index%3D">::source_index=</a></li>
+					
+					<li><a href="#method-c-ssl_available%3F">::ssl_available?</a></li>
+					
+					<li><a href="#method-c-user_dir">::user_dir</a></li>
+					
+					<li><a href="#method-c-win_platform%3D">::win_platform=</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./GPL_txt.html">GPL.txt</a></li>
+				
+					<li class="file"><a href="./History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="./LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="./UPGRADING_rdoc.html">UPGRADING.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./Gem.html">Gem</a></li>
+				
+					<li><a href="./Gem/Builder.html">Gem::Builder</a></li>
+				
+					<li><a href="./Gem/Command.html">Gem::Command</a></li>
+				
+					<li><a href="./Gem/CommandLineError.html">Gem::CommandLineError</a></li>
+				
+					<li><a href="./Gem/CommandManager.html">Gem::CommandManager</a></li>
+				
+					<li><a href="./Gem/Commands.html">Gem::Commands</a></li>
+				
+					<li><a href="./Gem/Commands/BuildCommand.html">Gem::Commands::BuildCommand</a></li>
+				
+					<li><a href="./Gem/Commands/CertCommand.html">Gem::Commands::CertCommand</a></li>
+				
+					<li><a href="./Gem/Commands/CheckCommand.html">Gem::Commands::CheckCommand</a></li>
+				
+					<li><a href="./Gem/Commands/CleanupCommand.html">Gem::Commands::CleanupCommand</a></li>
+				
+					<li><a href="./Gem/Commands/ContentsCommand.html">Gem::Commands::ContentsCommand</a></li>
+				
+					<li><a href="./Gem/Commands/DependencyCommand.html">Gem::Commands::DependencyCommand</a></li>
+				
+					<li><a href="./Gem/Commands/EnvironmentCommand.html">Gem::Commands::EnvironmentCommand</a></li>
+				
+					<li><a href="./Gem/Commands/FetchCommand.html">Gem::Commands::FetchCommand</a></li>
+				
+					<li><a href="./Gem/Commands/GenerateIndexCommand.html">Gem::Commands::GenerateIndexCommand</a></li>
+				
+					<li><a href="./Gem/Commands/HelpCommand.html">Gem::Commands::HelpCommand</a></li>
+				
+					<li><a href="./Gem/Commands/InstallCommand.html">Gem::Commands::InstallCommand</a></li>
+				
+					<li><a href="./Gem/Commands/ListCommand.html">Gem::Commands::ListCommand</a></li>
+				
+					<li><a href="./Gem/Commands/LockCommand.html">Gem::Commands::LockCommand</a></li>
+				
+					<li><a href="./Gem/Commands/OutdatedCommand.html">Gem::Commands::OutdatedCommand</a></li>
+				
+					<li><a href="./Gem/Commands/OwnerCommand.html">Gem::Commands::OwnerCommand</a></li>
+				
+					<li><a href="./Gem/Commands/PristineCommand.html">Gem::Commands::PristineCommand</a></li>
+				
+					<li><a href="./Gem/Commands/PushCommand.html">Gem::Commands::PushCommand</a></li>
+				
+					<li><a href="./Gem/Commands/QueryCommand.html">Gem::Commands::QueryCommand</a></li>
+				
+					<li><a href="./Gem/Commands/RdocCommand.html">Gem::Commands::RdocCommand</a></li>
+				
+					<li><a href="./Gem/Commands/SearchCommand.html">Gem::Commands::SearchCommand</a></li>
+				
+					<li><a href="./Gem/Commands/ServerCommand.html">Gem::Commands::ServerCommand</a></li>
+				
+					<li><a href="./Gem/Commands/SetupCommand.html">Gem::Commands::SetupCommand</a></li>
+				
+					<li><a href="./Gem/Commands/SourcesCommand.html">Gem::Commands::SourcesCommand</a></li>
+				
+					<li><a href="./Gem/Commands/SpecificationCommand.html">Gem::Commands::SpecificationCommand</a></li>
+				
+					<li><a href="./Gem/Commands/StaleCommand.html">Gem::Commands::StaleCommand</a></li>
+				
+					<li><a href="./Gem/Commands/UninstallCommand.html">Gem::Commands::UninstallCommand</a></li>
+				
+					<li><a href="./Gem/Commands/UnpackCommand.html">Gem::Commands::UnpackCommand</a></li>
+				
+					<li><a href="./Gem/Commands/UpdateCommand.html">Gem::Commands::UpdateCommand</a></li>
+				
+					<li><a href="./Gem/Commands/WhichCommand.html">Gem::Commands::WhichCommand</a></li>
+				
+					<li><a href="./Gem/ConfigFile.html">Gem::ConfigFile</a></li>
+				
+					<li><a href="./Gem/ConsoleUI.html">Gem::ConsoleUI</a></li>
+				
+					<li><a href="./Gem/DefaultUserInteraction.html">Gem::DefaultUserInteraction</a></li>
+				
+					<li><a href="./Gem/Dependency.html">Gem::Dependency</a></li>
+				
+					<li><a href="./Gem/DependencyError.html">Gem::DependencyError</a></li>
+				
+					<li><a href="./Gem/DependencyInstaller.html">Gem::DependencyInstaller</a></li>
+				
+					<li><a href="./Gem/DependencyList.html">Gem::DependencyList</a></li>
+				
+					<li><a href="./Gem/DependencyRemovalException.html">Gem::DependencyRemovalException</a></li>
+				
+					<li><a href="./Gem/DocManager.html">Gem::DocManager</a></li>
+				
+					<li><a href="./Gem/DocumentError.html">Gem::DocumentError</a></li>
+				
+					<li><a href="./Gem/EndOfYAMLException.html">Gem::EndOfYAMLException</a></li>
+				
+					<li><a href="./Gem/ErrorReason.html">Gem::ErrorReason</a></li>
+				
+					<li><a href="./Gem/Exception.html">Gem::Exception</a></li>
+				
+					<li><a href="./Gem/Ext.html">Gem::Ext</a></li>
+				
+					<li><a href="./Gem/Ext/Builder.html">Gem::Ext::Builder</a></li>
+				
+					<li><a href="./Gem/Ext/ConfigureBuilder.html">Gem::Ext::ConfigureBuilder</a></li>
+				
+					<li><a href="./Gem/Ext/ExtConfBuilder.html">Gem::Ext::ExtConfBuilder</a></li>
+				
+					<li><a href="./Gem/Ext/RakeBuilder.html">Gem::Ext::RakeBuilder</a></li>
+				
+					<li><a href="./Gem/FakeFetcher.html">Gem::FakeFetcher</a></li>
+				
+					<li><a href="./Gem/FileOperations.html">Gem::FileOperations</a></li>
+				
+					<li><a href="./Gem/FilePermissionError.html">Gem::FilePermissionError</a></li>
+				
+					<li><a href="./Gem/Format.html">Gem::Format</a></li>
+				
+					<li><a href="./Gem/FormatException.html">Gem::FormatException</a></li>
+				
+					<li><a href="./Gem/GemNotFoundException.html">Gem::GemNotFoundException</a></li>
+				
+					<li><a href="./Gem/GemNotInHomeException.html">Gem::GemNotInHomeException</a></li>
+				
+					<li><a href="./Gem/GemPathSearcher.html">Gem::GemPathSearcher</a></li>
+				
+					<li><a href="./Gem/GemRunner.html">Gem::GemRunner</a></li>
+				
+					<li><a href="./Gem/GemcutterUtilities.html">Gem::GemcutterUtilities</a></li>
+				
+					<li><a href="./Gem/Indexer.html">Gem::Indexer</a></li>
+				
+					<li><a href="./Gem/InstallError.html">Gem::InstallError</a></li>
+				
+					<li><a href="./Gem/InstallUpdateOptions.html">Gem::InstallUpdateOptions</a></li>
+				
+					<li><a href="./Gem/Installer.html">Gem::Installer</a></li>
+				
+					<li><a href="./Gem/Installer/ExtensionBuildError.html">Gem::Installer::ExtensionBuildError</a></li>
+				
+					<li><a href="./Gem/InstallerTestCase.html">Gem::InstallerTestCase</a></li>
+				
+					<li><a href="./Gem/InvalidSpecificationException.html">Gem::InvalidSpecificationException</a></li>
+				
+					<li><a href="./Gem/LoadError.html">Gem::LoadError</a></li>
+				
+					<li><a href="./Gem/LocalRemoteOptions.html">Gem::LocalRemoteOptions</a></li>
+				
+					<li><a href="./Gem/MockGemUi.html">Gem::MockGemUi</a></li>
+				
+					<li><a href="./Gem/MockGemUi/TTY.html">Gem::MockGemUi::TTY</a></li>
+				
+					<li><a href="./Gem/MockGemUi/TermError.html">Gem::MockGemUi::TermError</a></li>
+				
+					<li><a href="./Gem/OldFormat.html">Gem::OldFormat</a></li>
+				
+					<li><a href="./Gem/OperationNotSupportedError.html">Gem::OperationNotSupportedError</a></li>
+				
+					<li><a href="./Gem/Package.html">Gem::Package</a></li>
+				
+					<li><a href="./Gem/Package/BadCheckSum.html">Gem::Package::BadCheckSum</a></li>
+				
+					<li><a href="./Gem/Package/ClosedIO.html">Gem::Package::ClosedIO</a></li>
+				
+					<li><a href="./Gem/Package/Error.html">Gem::Package::Error</a></li>
+				
+					<li><a href="./Gem/Package/FSyncDir.html">Gem::Package::FSyncDir</a></li>
+				
+					<li><a href="./Gem/Package/FormatError.html">Gem::Package::FormatError</a></li>
+				
+					<li><a href="./Gem/Package/NonSeekableIO.html">Gem::Package::NonSeekableIO</a></li>
+				
+					<li><a href="./Gem/Package/TarHeader.html">Gem::Package::TarHeader</a></li>
+				
+					<li><a href="./Gem/Package/TarInput.html">Gem::Package::TarInput</a></li>
+				
+					<li><a href="./Gem/Package/TarInvalidError.html">Gem::Package::TarInvalidError</a></li>
+				
+					<li><a href="./Gem/Package/TarOutput.html">Gem::Package::TarOutput</a></li>
+				
+					<li><a href="./Gem/Package/TarReader.html">Gem::Package::TarReader</a></li>
+				
+					<li><a href="./Gem/Package/TarReader/Entry.html">Gem::Package::TarReader::Entry</a></li>
+				
+					<li><a href="./Gem/Package/TarReader/UnexpectedEOF.html">Gem::Package::TarReader::UnexpectedEOF</a></li>
+				
+					<li><a href="./Gem/Package/TarTestCase.html">Gem::Package::TarTestCase</a></li>
+				
+					<li><a href="./Gem/Package/TarWriter.html">Gem::Package::TarWriter</a></li>
+				
+					<li><a href="./Gem/Package/TarWriter/BoundedStream.html">Gem::Package::TarWriter::BoundedStream</a></li>
+				
+					<li><a href="./Gem/Package/TarWriter/FileOverflow.html">Gem::Package::TarWriter::FileOverflow</a></li>
+				
+					<li><a href="./Gem/Package/TarWriter/RestrictedStream.html">Gem::Package::TarWriter::RestrictedStream</a></li>
+				
+					<li><a href="./Gem/Package/TooLongFileName.html">Gem::Package::TooLongFileName</a></li>
+				
+					<li><a href="./Gem/PackageTask.html">Gem::PackageTask</a></li>
+				
+					<li><a href="./Gem/Platform.html">Gem::Platform</a></li>
+				
+					<li><a href="./Gem/PlatformMismatch.html">Gem::PlatformMismatch</a></li>
+				
+					<li><a href="./Gem/RemoteError.html">Gem::RemoteError</a></li>
+				
+					<li><a href="./Gem/RemoteFetcher.html">Gem::RemoteFetcher</a></li>
+				
+					<li><a href="./Gem/RemoteFetcher/FetchError.html">Gem::RemoteFetcher::FetchError</a></li>
+				
+					<li><a href="./Gem/RemoteInstallationCancelled.html">Gem::RemoteInstallationCancelled</a></li>
+				
+					<li><a href="./Gem/RemoteInstallationSkipped.html">Gem::RemoteInstallationSkipped</a></li>
+				
+					<li><a href="./Gem/RemoteSourceException.html">Gem::RemoteSourceException</a></li>
+				
+					<li><a href="./Gem/RequirePathsBuilder.html">Gem::RequirePathsBuilder</a></li>
+				
+					<li><a href="./Gem/Requirement.html">Gem::Requirement</a></li>
+				
+					<li><a href="./Gem/Security/Exception.html">Gem::Security::Exception</a></li>
+				
+					<li><a href="./Gem/Security/Signer.html">Gem::Security::Signer</a></li>
+				
+					<li><a href="./Gem/Server.html">Gem::Server</a></li>
+				
+					<li><a href="./Gem/SilentUI.html">Gem::SilentUI</a></li>
+				
+					<li><a href="./Gem/SourceIndex.html">Gem::SourceIndex</a></li>
+				
+					<li><a href="./Gem/SpecFetcher.html">Gem::SpecFetcher</a></li>
+				
+					<li><a href="./Gem/Specification.html">Gem::Specification</a></li>
+				
+					<li><a href="./Gem/StreamUI.html">Gem::StreamUI</a></li>
+				
+					<li><a href="./Gem/StreamUI/SilentDownloadReporter.html">Gem::StreamUI::SilentDownloadReporter</a></li>
+				
+					<li><a href="./Gem/StreamUI/SilentProgressReporter.html">Gem::StreamUI::SilentProgressReporter</a></li>
+				
+					<li><a href="./Gem/StreamUI/SimpleProgressReporter.html">Gem::StreamUI::SimpleProgressReporter</a></li>
+				
+					<li><a href="./Gem/StreamUI/VerboseDownloadReporter.html">Gem::StreamUI::VerboseDownloadReporter</a></li>
+				
+					<li><a href="./Gem/StreamUI/VerboseProgressReporter.html">Gem::StreamUI::VerboseProgressReporter</a></li>
+				
+					<li><a href="./Gem/SystemExitException.html">Gem::SystemExitException</a></li>
+				
+					<li><a href="./Gem/TestCase.html">Gem::TestCase</a></li>
+				
+					<li><a href="./Gem/Text.html">Gem::Text</a></li>
+				
+					<li><a href="./Gem/Uninstaller.html">Gem::Uninstaller</a></li>
+				
+					<li><a href="./Gem/UserInteraction.html">Gem::UserInteraction</a></li>
+				
+					<li><a href="./Gem/Validator.html">Gem::Validator</a></li>
+				
+					<li><a href="./Gem/VerificationError.html">Gem::VerificationError</a></li>
+				
+					<li><a href="./Gem/Version.html">Gem::Version</a></li>
+				
+					<li><a href="./Gem/VersionOption.html">Gem::VersionOption</a></li>
+				
+					<li><a href="./OpenSSL.html">OpenSSL</a></li>
+				
+					<li><a href="./OpenSSL/X509.html">OpenSSL::X509</a></li>
+				
+					<li><a href="./GemGauntlet.html">GemGauntlet</a></li>
+				
+					<li><a href="./Kernel.html">Kernel</a></li>
+				
+					<li><a href="./Object.html">Object</a></li>
+				
+					<li><a href="./TempIO.html">TempIO</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">Gem</h1>
+
+		<div id="description">
+			<p>
+RubyGems is the Ruby standard for publishing and managing third party
+libraries.
+</p>
+<p>
+For user documentation, see:
+</p>
+<ul>
+<li><p>
+<tt>gem help</tt> and <tt>gem help [command]</tt>
+</p>
+</li>
+<li><p>
+<a href="http://docs.rubygems.org/read/book/1">RubyGems User Guide</a>
+</p>
+</li>
+<li><p>
+<a href="http://docs.rubygems.org/read/book/3">Frequently Asked
+Questions</a>
+</p>
+</li>
+</ul>
+<p>
+For gem developer documentation see:
+</p>
+<ul>
+<li><p>
+<a href="http://docs.rubygems.org/read/chapter/5">Creating Gems</a>
+</p>
+</li>
+<li><p>
+<a href="Gem/Specification.html">Gem::Specification</a>
+</p>
+</li>
+<li><p>
+<a href="Gem/Version.html">Gem::Version</a> for version dependency notes
+</p>
+</li>
+</ul>
+<p>
+Further RubyGems documentation can be found at:
+</p>
+<ul>
+<li><p>
+<a href="http://rubygems.rubyforge.org/rdoc">RubyGems API</a> (also
+available from <tt>gem server</tt>)
+</p>
+</li>
+<li><p>
+<a href="http://rubygem.org">RubyGems Bookshelf</a>
+</p>
+</li>
+</ul>
+<h2>RubyGems Plugins</h2>
+<p>
+As of RubyGems 1.3.2, RubyGems will load plugins installed in gems or
+$LOAD_PATH.  Plugins must be named &#8216;rubygems_plugin&#8217; (.rb, .so,
+etc) and placed at the root of your gem&#8217;s #.  Plugins are discovered
+via Gem::find_files then loaded.  Take care when implementing a plugin as
+your plugin file may be loaded multiple times if multiple versions of your
+gem are installed.
+</p>
+<p>
+For an example plugin, see the graph gem which adds a `gem graph` command.
+</p>
+<h2>RubyGems Defaults, Packaging</h2>
+<p>
+RubyGems defaults are stored in rubygems/defaults.rb.  If you&#8217;re
+packaging RubyGems or implementing Ruby you can change RubyGems&#8217;
+defaults.
+</p>
+<p>
+For RubyGems packagers, provide lib/rubygems/operating_system.rb and
+override any defaults from lib/rubygems/defaults.rb.
+</p>
+<p>
+For Ruby implementers, provide lib/rubygems/#{RUBY_ENGINE}.rb and override
+any defaults from lib/rubygems/defaults.rb.
+</p>
+<p>
+If you need RubyGems to perform extra work on install or uninstall, your
+defaults override file can set pre and post install and uninstall hooks.
+See Gem::pre_install, Gem::pre_uninstall, Gem::post_install,
+Gem::post_uninstall.
+</p>
+<h2>Bugs</h2>
+<p>
+You can submit bugs to the <a
+href="http://rubyforge.org/tracker/?atid=575&group_id=126">RubyGems bug
+tracker</a> on RubyForge
+</p>
+<h2>Credits</h2>
+<p>
+RubyGems is currently maintained by Eric Hodel.
+</p>
+<p>
+RubyGems was originally developed at RubyConf 2003 by:
+</p>
+<ul>
+<li><p>
+Rich Kilmer  &#8212; rich(at)infoether.com
+</p>
+</li>
+<li><p>
+Chad Fowler  &#8212; chad(at)chadfowler.com
+</p>
+</li>
+<li><p>
+David Black  &#8212; dblack(at)wobblini.net
+</p>
+</li>
+<li><p>
+Paul Brannan &#8212; paul(at)atdesk.com
+</p>
+</li>
+<li><p>
+Jim Weirch   &#8212; jim(at)weirichhouse.org
+</p>
+</li>
+</ul>
+<p>
+Contributors:
+</p>
+<ul>
+<li><p>
+Gavin Sinclair     &#8212; gsinclair(at)soyabean.com.au
+</p>
+</li>
+<li><p>
+George Marrows     &#8212; george.marrows(at)ntlworld.com
+</p>
+</li>
+<li><p>
+Dick Davies        &#8212; rasputnik(at)hellooperator.net
+</p>
+</li>
+<li><p>
+Mauricio Fernandez &#8212; batsman.geo(at)yahoo.com
+</p>
+</li>
+<li><p>
+Simon Strandgaard  &#8212; neoneye(at)adslhome.dk
+</p>
+</li>
+<li><p>
+Dave Glasser       &#8212; glasser(at)mit.edu
+</p>
+</li>
+<li><p>
+Paul Duncan        &#8212; pabs(at)pablotron.org
+</p>
+</li>
+<li><p>
+Ville Aine         &#8212; vaine(at)cs.helsinki.fi
+</p>
+</li>
+<li><p>
+Eric Hodel         &#8212; drbrain(at)segment7.net
+</p>
+</li>
+<li><p>
+Daniel Berger      &#8212; djberg96(at)gmail.com
+</p>
+</li>
+<li><p>
+Phil Hagelberg     &#8212; technomancy(at)gmail.com
+</p>
+</li>
+<li><p>
+Ryan Davis         &#8212; ryand-ruby(at)zenspider.com
+</p>
+</li>
+</ul>
+<p>
+(If your name is missing, PLEASE let us know!)
+</p>
+<p>
+Thanks!
+</p>
+<p>
+-The RubyGems Team
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="QUICKLOADER_SUCKAGE">QUICKLOADER_SUCKAGE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="GEM_PRELUDE_SUCKAGE">GEM_PRELUDE_SUCKAGE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="RubyGemsVersion">RubyGemsVersion</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="RbConfigPriorities">RbConfigPriorities</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="ConfigMap">ConfigMap</a></dt>
+				
+				<dd class="description"><p>
+Configuration settings from ::RbConfig
+</p></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="ssl-available-attribute-method" class="method-detail">
+				<a name="ssl_available"></a>
+				
+				<a name="ssl_available="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">ssl_available</span><span
+						class="attribute-access-type">[W]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Is SSL available?
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="default-bindir-method" class="method-detail ">
+				<a name="method-c-default_bindir"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_bindir</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The default directory for binaries
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-bindir-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/defaults.rb, line 67</span>
+67:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">default_bindir</span>
+68:     <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">RUBY_FRAMEWORK_VERSION</span> <span class="ruby-keyword kw">then</span> <span class="ruby-comment cmt"># mac framework support</span>
+69:       <span class="ruby-value str">'/usr/bin'</span>
+70:     <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt"># generic install</span>
+71:       <span class="ruby-constant">ConfigMap</span>[<span class="ruby-value">:bindir</span>]
+72:     <span class="ruby-keyword kw">end</span>
+73:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-dir-method" class="method-detail ">
+				<a name="method-c-default_dir"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_dir</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Default home directory path to be used if an alternate value is not
+specified in the environment
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-dir-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/defaults.rb, line 19</span>
+19:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">default_dir</span>
+20:     <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">RUBY_FRAMEWORK_VERSION</span> <span class="ruby-keyword kw">then</span>
+21:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">ConfigMap</span>[<span class="ruby-value">:sitedir</span>]), <span class="ruby-value str">'Gems'</span>,
+22:                 <span class="ruby-constant">ConfigMap</span>[<span class="ruby-value">:ruby_version</span>]
+23:     <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">ConfigMap</span>[<span class="ruby-value">:rubylibprefix</span>] <span class="ruby-keyword kw">then</span>
+24:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">ConfigMap</span>[<span class="ruby-value">:rubylibprefix</span>], <span class="ruby-value str">'gems'</span>,
+25:                 <span class="ruby-constant">ConfigMap</span>[<span class="ruby-value">:ruby_version</span>])
+26:     <span class="ruby-keyword kw">else</span>
+27:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">ConfigMap</span>[<span class="ruby-value">:libdir</span>], <span class="ruby-identifier">ruby_engine</span>, <span class="ruby-value str">'gems'</span>,
+28:                 <span class="ruby-constant">ConfigMap</span>[<span class="ruby-value">:ruby_version</span>])
+29:     <span class="ruby-keyword kw">end</span>
+30:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-exec-format-method" class="method-detail ">
+				<a name="method-c-default_exec_format"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_exec_format</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Deduce Ruby&#8217;s &#8212;program-prefix and &#8212;program-suffix from
+its install name
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-exec-format-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/defaults.rb, line 53</span>
+53:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">default_exec_format</span>
+54:     <span class="ruby-identifier">exec_format</span> = <span class="ruby-constant">ConfigMap</span>[<span class="ruby-value">:ruby_install_name</span>].<span class="ruby-identifier">sub</span>(<span class="ruby-value str">'ruby'</span>, <span class="ruby-value str">'%s'</span>) <span class="ruby-keyword kw">rescue</span> <span class="ruby-value str">'%s'</span>
+55: 
+56:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">exec_format</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/%s/</span> <span class="ruby-keyword kw">then</span>
+57:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>,
+58:         <span class="ruby-node">&quot;[BUG] invalid exec_format #{exec_format.inspect}, no %s&quot;</span>
+59:     <span class="ruby-keyword kw">end</span>
+60: 
+61:     <span class="ruby-identifier">exec_format</span>
+62:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-path-method" class="method-detail ">
+				<a name="method-c-default_path"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_path</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Default gem load path
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-path-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/defaults.rb, line 42</span>
+42:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">default_path</span>
+43:     <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">user_home</span> <span class="ruby-keyword kw">then</span>
+44:       [<span class="ruby-identifier">user_dir</span>, <span class="ruby-identifier">default_dir</span>]
+45:     <span class="ruby-keyword kw">else</span>
+46:       [<span class="ruby-identifier">default_dir</span>]
+47:     <span class="ruby-keyword kw">end</span>
+48:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-sources-method" class="method-detail ">
+				<a name="method-c-default_sources"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_sources</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+An Array of the default sources that come with RubyGems
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-sources-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/defaults.rb, line 11</span>
+11:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">default_sources</span>
+12:     <span class="ruby-node">]http://rubygems.org/]</span>
+13:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-system-source-cache-dir-method" class="method-detail ">
+				<a name="method-c-default_system_source_cache_dir"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_system_source_cache_dir</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The default system-wide source info cache directory
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-system-source-cache-dir-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/defaults.rb, line 78</span>
+78:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">default_system_source_cache_dir</span>
+79:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">dir</span>, <span class="ruby-value str">'source_cache'</span>
+80:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-user-source-cache-dir-method" class="method-detail ">
+				<a name="method-c-default_user_source_cache_dir"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_user_source_cache_dir</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The default user-specific source info cache directory
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-user-source-cache-dir-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/defaults.rb, line 85</span>
+85:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">default_user_source_cache_dir</span>
+86:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">user_home</span>, <span class="ruby-value str">'.gem'</span>, <span class="ruby-value str">'source_cache'</span>
+87:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="ensure-ssl-available-method" class="method-detail ">
+				<a name="method-c-ensure_ssl_available"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ensure_ssl_available</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Ensure that SSL is available.  Throw an exception if it is not.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="ensure-ssl-available-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/gem_openssl.rb, line 31</span>
+31:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ensure_ssl_available</span>
+32:       <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">ssl_available?</span>
+33:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>, <span class="ruby-value str">&quot;SSL is not installed on this system&quot;</span>
+34:       <span class="ruby-keyword kw">end</span>
+35:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="ruby--method" class="method-detail ">
+				<a name="method-c-ruby%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ruby=</span><span
+						class="method-args">(ruby)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Allows setting path to ruby.  This method is available when requiring
+&#8216;rubygems/test_case&#8216;
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="ruby--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/test_case.rb, line 68</span>
+68:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">ruby=</span> <span class="ruby-identifier">ruby</span>
+69:     <span class="ruby-ivar">@ruby</span> = <span class="ruby-identifier">ruby</span>
+70:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="ruby-engine-method" class="method-detail ">
+				<a name="method-c-ruby_engine"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ruby_engine</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+A wrapper around RUBY_ENGINE const that may not be defined
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="ruby-engine-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/defaults.rb, line 92</span>
+92:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">ruby_engine</span>
+93:     <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">RUBY_ENGINE</span> <span class="ruby-keyword kw">then</span>
+94:       <span class="ruby-constant">RUBY_ENGINE</span>
+95:     <span class="ruby-keyword kw">else</span>
+96:       <span class="ruby-value str">'ruby'</span>
+97:     <span class="ruby-keyword kw">end</span>
+98:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="searcher--method" class="method-detail ">
+				<a name="method-c-searcher%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">searcher=</span><span
+						class="method-args">(searcher)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Allows setting the gem path searcher.  This method is available when
+requiring &#8216;rubygems/test_case&#8216;
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="searcher--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/test_case.rb, line 44</span>
+44:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">searcher=</span>(<span class="ruby-identifier">searcher</span>)
+45:     <span class="ruby-ivar">@searcher</span> = <span class="ruby-identifier">searcher</span>
+46:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="source-index--method" class="method-detail ">
+				<a name="method-c-source_index%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">source_index=</span><span
+						class="method-args">(si)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Allows setting the default <a href="Gem/SourceIndex.html">SourceIndex</a>. 
+This method is available when requiring &#8216;rubygems/test_case&#8216;
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="source-index--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/test_case.rb, line 52</span>
+52:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">source_index=</span>(<span class="ruby-identifier">si</span>)
+53:     <span class="ruby-identifier">@@source_index</span> = <span class="ruby-identifier">si</span>
+54:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="ssl-available--method" class="method-detail ">
+				<a name="method-c-ssl_available%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ssl_available?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Is SSL (used by the signing commands) available on this platform?
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="ssl-available--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/gem_openssl.rb, line 19</span>
+19:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ssl_available?</span>
+20:       <span class="ruby-ivar">@ssl_available</span>
+21:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="user-dir-method" class="method-detail ">
+				<a name="method-c-user_dir"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">user_dir</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Path for gems in the user&#8217;s home directory
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="user-dir-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/defaults.rb, line 35</span>
+35:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">user_dir</span>
+36:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">user_home</span>, <span class="ruby-value str">'.gem'</span>, <span class="ruby-identifier">ruby_engine</span>, <span class="ruby-constant">ConfigMap</span>[<span class="ruby-value">:ruby_version</span>]
+37:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="win-platform--method" class="method-detail ">
+				<a name="method-c-win_platform%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">win_platform=</span><span
+						class="method-args">(val)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Allows toggling Windows behavior.  This method is available when requiring
+&#8216;rubygems/test_case&#8216;
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="win-platform--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/test_case.rb, line 60</span>
+60:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">win_platform=</span>(<span class="ruby-identifier">val</span>)
+61:     <span class="ruby-identifier">@@win_platform</span> = <span class="ruby-identifier">val</span>
+62:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

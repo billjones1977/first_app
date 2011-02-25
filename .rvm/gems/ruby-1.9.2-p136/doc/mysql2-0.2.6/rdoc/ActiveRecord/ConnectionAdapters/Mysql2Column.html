@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+	<title>Class: ActiveRecord::ConnectionAdapters::Mysql2Column</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/active_record/connection_adapters/mysql2_adapter_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/active_record/connection_adapters/mysql2_adapter.rb">lib/active_record/connection_adapters/mysql2_adapter.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Column</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-extract_default">#extract_default</a></li>
+					
+					<li><a href="#method-i-extract_limit">#extract_limit</a></li>
+					
+					<li><a href="#method-i-has_default%3F">#has_default?</a></li>
+					
+					<li><a href="#method-i-klass">#klass</a></li>
+					
+					<li><a href="#method-i-missing_default_forged_as_empty_string%3F">#missing_default_forged_as_empty_string?</a></li>
+					
+					<li><a href="#method-i-simplified_type">#simplified_type</a></li>
+					
+					<li><a href="#method-i-type_cast">#type_cast</a></li>
+					
+					<li><a href="#method-i-type_cast_code">#type_cast_code</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../../ext/mysql2/Makefile.html">Makefile</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Mysql2.html">Mysql2</a></li>
+				
+					<li><a href="../../Mysql2/Client.html">Mysql2::Client</a></li>
+				
+					<li><a href="../../Mysql2/EM.html">Mysql2::EM</a></li>
+				
+					<li><a href="../../Mysql2/EM/Client.html">Mysql2::EM::Client</a></li>
+				
+					<li><a href="../../Mysql2/EM/Client/Watcher.html">Mysql2::EM::Client::Watcher</a></li>
+				
+					<li><a href="../../Mysql2/Error.html">Mysql2::Error</a></li>
+				
+					<li><a href="../../Mysql2/Fibered.html">Mysql2::Fibered</a></li>
+				
+					<li><a href="../../Mysql2/Fibered/Client.html">Mysql2::Fibered::Client</a></li>
+				
+					<li><a href="../../Mysql2/Fibered/Client/Watcher.html">Mysql2::Fibered::Client::Watcher</a></li>
+				
+					<li><a href="../../Mysql2/Result.html">Mysql2::Result</a></li>
+				
+					<li><a href="../../ActiveRecord.html">ActiveRecord</a></li>
+				
+					<li><a href="../../ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters.html">ActiveRecord::ConnectionAdapters</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/FiberedMonitor.html">ActiveRecord::ConnectionAdapters::FiberedMonitor</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/FiberedMonitor/Queue.html">ActiveRecord::ConnectionAdapters::FiberedMonitor::Queue</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Mysql2Adapter.html">ActiveRecord::ConnectionAdapters::Mysql2Adapter</a></li>
+				
+					<li><a href="../../ActiveRecord/ConnectionAdapters/Mysql2Column.html">ActiveRecord::ConnectionAdapters::Mysql2Column</a></li>
+				
+					<li><a href="../../Arel.html">Arel</a></li>
+				
+					<li><a href="../../Arel/SqlCompiler.html">Arel::SqlCompiler</a></li>
+				
+					<li><a href="../../Arel/SqlCompiler/Mysql2Compiler.html">Arel::SqlCompiler::Mysql2Compiler</a></li>
+				
+					<li><a href="../../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActiveRecord::ConnectionAdapters::Mysql2Column</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="BOOL">BOOL</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="extract-default-method" class="method-detail ">
+				<a name="method-i-extract_default"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extract_default</span><span
+						class="method-args">(default)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="extract-default-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/mysql2_adapter.rb, line 23</span>
+23:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_default</span>(<span class="ruby-identifier">default</span>)
+24:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sql_type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/blob/</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:text</span>
+25:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">default</span>.<span class="ruby-identifier">blank?</span>
+26:             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">null</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-value str">''</span>
+27:           <span class="ruby-keyword kw">else</span>
+28:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{type} columns cannot have a default value: #{default.inspect}&quot;</span>
+29:           <span class="ruby-keyword kw">end</span>
+30:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">missing_default_forged_as_empty_string?</span>(<span class="ruby-identifier">default</span>)
+31:           <span class="ruby-keyword kw">nil</span>
+32:         <span class="ruby-keyword kw">else</span>
+33:           <span class="ruby-keyword kw">super</span>
+34:         <span class="ruby-keyword kw">end</span>
+35:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="has-default--method" class="method-detail ">
+				<a name="method-i-has_default%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_default?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="has-default--source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/mysql2_adapter.rb, line 37</span>
+37:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_default?</span>
+38:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sql_type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/blob/</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:text</span> <span class="ruby-comment cmt">#mysql forbids defaults on blob and text columns</span>
+39:         <span class="ruby-keyword kw">super</span>
+40:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="klass-method" class="method-detail ">
+				<a name="method-i-klass"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">klass</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the Ruby class that corresponds to the abstract data type.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="klass-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/mysql2_adapter.rb, line 43</span>
+43:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">klass</span>
+44:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">type</span>
+45:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>       <span class="ruby-keyword kw">then</span> <span class="ruby-constant">Fixnum</span>
+46:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:float</span>         <span class="ruby-keyword kw">then</span> <span class="ruby-constant">Float</span>
+47:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:decimal</span>       <span class="ruby-keyword kw">then</span> <span class="ruby-constant">BigDecimal</span>
+48:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:datetime</span>      <span class="ruby-keyword kw">then</span> <span class="ruby-constant">Time</span>
+49:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:date</span>          <span class="ruby-keyword kw">then</span> <span class="ruby-constant">Date</span>
+50:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:timestamp</span>     <span class="ruby-keyword kw">then</span> <span class="ruby-constant">Time</span>
+51:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:time</span>          <span class="ruby-keyword kw">then</span> <span class="ruby-constant">Time</span>
+52:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:text</span>, <span class="ruby-value">:string</span> <span class="ruby-keyword kw">then</span> <span class="ruby-constant">String</span>
+53:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:binary</span>        <span class="ruby-keyword kw">then</span> <span class="ruby-constant">String</span>
+54:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:boolean</span>       <span class="ruby-keyword kw">then</span> <span class="ruby-constant">Object</span>
+55:         <span class="ruby-keyword kw">end</span>
+56:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="type-cast-method" class="method-detail ">
+				<a name="method-i-type_cast"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">type_cast</span><span
+						class="method-args">(value)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="type-cast-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/mysql2_adapter.rb, line 58</span>
+58:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">type_cast</span>(<span class="ruby-identifier">value</span>)
+59:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+60:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">type</span>
+61:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:string</span>                <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">value</span>
+62:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:text</span>                  <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">value</span>
+63:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>               <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+64:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:float</span>                 <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-comment cmt"># returns self if it's already a Float</span>
+65:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:decimal</span>               <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">value_to_decimal</span>(<span class="ruby-identifier">value</span>)
+66:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:datetime</span>, <span class="ruby-value">:timestamp</span>  <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Time</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">string_to_time</span>(<span class="ruby-identifier">value</span>)
+67:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:time</span>                  <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Time</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">string_to_dummy_time</span>(<span class="ruby-identifier">value</span>)
+68:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:date</span>                  <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Date</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">string_to_date</span>(<span class="ruby-identifier">value</span>)
+69:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:binary</span>                <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">value</span>
+70:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:boolean</span>               <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">value_to_boolean</span>(<span class="ruby-identifier">value</span>)
+71:           <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">value</span>
+72:         <span class="ruby-keyword kw">end</span>
+73:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="type-cast-code-method" class="method-detail ">
+				<a name="method-i-type_cast_code"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">type_cast_code</span><span
+						class="method-args">(var_name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="type-cast-code-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/mysql2_adapter.rb, line 75</span>
+75:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">type_cast_code</span>(<span class="ruby-identifier">var_name</span>)
+76:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">type</span>
+77:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:string</span>                <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">nil</span>
+78:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:text</span>                  <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">nil</span>
+79:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>               <span class="ruby-keyword kw">then</span> <span class="ruby-node">&quot;#{var_name}.to_i rescue #{var_name} ? 1 : 0&quot;</span>
+80:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:float</span>                 <span class="ruby-keyword kw">then</span> <span class="ruby-node">&quot;#{var_name}.to_f&quot;</span>
+81:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:decimal</span>               <span class="ruby-keyword kw">then</span> <span class="ruby-node">&quot;#{self.class.name}.value_to_decimal(#{var_name})&quot;</span>
+82:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:datetime</span>, <span class="ruby-value">:timestamp</span>  <span class="ruby-keyword kw">then</span> <span class="ruby-node">&quot;#{var_name}.class == Time ? #{var_name} : #{self.class.name}.string_to_time(#{var_name})&quot;</span>
+83:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:time</span>                  <span class="ruby-keyword kw">then</span> <span class="ruby-node">&quot;#{var_name}.class == Time ? #{var_name} : #{self.class.name}.string_to_dummy_time(#{var_name})&quot;</span>
+84:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:date</span>                  <span class="ruby-keyword kw">then</span> <span class="ruby-node">&quot;#{var_name}.class == Date ? #{var_name} : #{self.class.name}.string_to_date(#{var_name})&quot;</span>
+85:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:binary</span>                <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">nil</span>
+86:           <span class="ruby-keyword kw">when</span> <span class="ruby-value">:boolean</span>               <span class="ruby-keyword kw">then</span> <span class="ruby-node">&quot;#{self.class.name}.value_to_boolean(#{var_name})&quot;</span>
+87:           <span class="ruby-keyword kw">else</span> <span class="ruby-keyword kw">nil</span>
+88:         <span class="ruby-keyword kw">end</span>
+89:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="extract-limit-method" class="method-detail ">
+				<a name="method-i-extract_limit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">extract_limit</span><span
+						class="method-args">(sql_type)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="extract-limit-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/mysql2_adapter.rb, line 100</span>
+100:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_limit</span>(<span class="ruby-identifier">sql_type</span>)
+101:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">sql_type</span>
+102:           <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/blob|text/</span>
+103:             <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">sql_type</span>
+104:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/tiny/</span>
+105:               <span class="ruby-value">255</span>
+106:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/medium/</span>
+107:               <span class="ruby-value">16777215</span>
+108:             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/long/</span>
+109:               <span class="ruby-value">2147483647</span> <span class="ruby-comment cmt"># mysql only allows 2^31-1, not 2^32-1, somewhat inconsistently with the tiny/medium/normal cases</span>
+110:             <span class="ruby-keyword kw">else</span>
+111:               <span class="ruby-keyword kw">super</span> <span class="ruby-comment cmt"># we could return 65535 here, but we leave it undecorated by default</span>
+112:             <span class="ruby-keyword kw">end</span>
+113:           <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^bigint/</span>;    <span class="ruby-value">8</span>
+114:           <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^int/</span>;       <span class="ruby-value">4</span>
+115:           <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^mediumint/</span>; <span class="ruby-value">3</span>
+116:           <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^smallint/</span>;  <span class="ruby-value">2</span>
+117:           <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^tinyint/</span>;   <span class="ruby-value">1</span>
+118:           <span class="ruby-keyword kw">else</span>
+119:             <span class="ruby-keyword kw">super</span>
+120:           <span class="ruby-keyword kw">end</span>
+121:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="missing-default-forged-as-empty-string--method" class="method-detail ">
+				<a name="method-i-missing_default_forged_as_empty_string%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">missing_default_forged_as_empty_string?</span><span
+						class="method-args">(default)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+MySQL misreports NOT NULL column default when none is given. We can&#8217;t
+detect this for columns which may have a legitimate &#8217;&#8217; default
+(string) but we can for others (integer, datetime, boolean, and the rest).
+</p>
+<p>
+Test whether the column has default &#8217;&#8217;, is not null, and is not
+a type allowing default &#8217;&#8217;.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="missing-default-forged-as-empty-string--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/mysql2_adapter.rb, line 130</span>
+130:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">missing_default_forged_as_empty_string?</span>(<span class="ruby-identifier">default</span>)
+131:           <span class="ruby-identifier">type</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:string</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">null</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">default</span> <span class="ruby-operator">==</span> <span class="ruby-value str">''</span>
+132:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="simplified-type-method" class="method-detail ">
+				<a name="method-i-simplified_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">simplified_type</span><span
+						class="method-args">(field_type)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="simplified-type-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/active_record/connection_adapters/mysql2_adapter.rb, line 92</span>
+92:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">simplified_type</span>(<span class="ruby-identifier">field_type</span>)
+93:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:boolean</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Mysql2Adapter</span>.<span class="ruby-identifier">emulate_booleans</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">field_type</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">index</span>(<span class="ruby-constant">BOOL</span>)
+94:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:string</span>  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">field_type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/enum/</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">field_type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/set/</span>
+95:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:integer</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">field_type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/year/</span>
+96:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:binary</span>  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">field_type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/bit/</span>
+97:           <span class="ruby-keyword kw">super</span>
+98:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

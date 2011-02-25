@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+	<title>File: README.rdoc [mysql2-0.2.6 Documentation]</title>
+
+	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="./ext/mysql2/Makefile.html">Makefile</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./Mysql2.html">Mysql2</a></li>
+				
+					<li><a href="./Mysql2/Client.html">Mysql2::Client</a></li>
+				
+					<li><a href="./Mysql2/EM.html">Mysql2::EM</a></li>
+				
+					<li><a href="./Mysql2/EM/Client.html">Mysql2::EM::Client</a></li>
+				
+					<li><a href="./Mysql2/EM/Client/Watcher.html">Mysql2::EM::Client::Watcher</a></li>
+				
+					<li><a href="./Mysql2/Error.html">Mysql2::Error</a></li>
+				
+					<li><a href="./Mysql2/Fibered.html">Mysql2::Fibered</a></li>
+				
+					<li><a href="./Mysql2/Fibered/Client.html">Mysql2::Fibered::Client</a></li>
+				
+					<li><a href="./Mysql2/Fibered/Client/Watcher.html">Mysql2::Fibered::Client::Watcher</a></li>
+				
+					<li><a href="./Mysql2/Result.html">Mysql2::Result</a></li>
+				
+					<li><a href="./ActiveRecord.html">ActiveRecord</a></li>
+				
+					<li><a href="./ActiveRecord/Base.html">ActiveRecord::Base</a></li>
+				
+					<li><a href="./ActiveRecord/ConnectionAdapters.html">ActiveRecord::ConnectionAdapters</a></li>
+				
+					<li><a href="./ActiveRecord/ConnectionAdapters/ConnectionPool.html">ActiveRecord::ConnectionAdapters::ConnectionPool</a></li>
+				
+					<li><a href="./ActiveRecord/ConnectionAdapters/FiberedMonitor.html">ActiveRecord::ConnectionAdapters::FiberedMonitor</a></li>
+				
+					<li><a href="./ActiveRecord/ConnectionAdapters/FiberedMonitor/Queue.html">ActiveRecord::ConnectionAdapters::FiberedMonitor::Queue</a></li>
+				
+					<li><a href="./ActiveRecord/ConnectionAdapters/Mysql2Adapter.html">ActiveRecord::ConnectionAdapters::Mysql2Adapter</a></li>
+				
+					<li><a href="./ActiveRecord/ConnectionAdapters/Mysql2Column.html">ActiveRecord::ConnectionAdapters::Mysql2Column</a></li>
+				
+					<li><a href="./Arel.html">Arel</a></li>
+				
+					<li><a href="./Arel/SqlCompiler.html">Arel::SqlCompiler</a></li>
+				
+					<li><a href="./Arel/SqlCompiler/Mysql2Compiler.html">Arel::SqlCompiler::Mysql2Compiler</a></li>
+				
+					<li><a href="./Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1><a href="Mysql2.html">Mysql2</a> - A modern, simple and very fast Mysql library for Ruby - binding to libmysql</h1>
+<p>
+The <a href="Mysql2.html">Mysql2</a> gem is meant to serve the extremely
+common use-case of connecting, querying and iterating on results. Some
+database libraries out there serve as direct 1:1 mappings of the already
+complex C API&#8217;s available. This one is not.
+</p>
+<p>
+It also forces the use of UTF-8 [or binary] for the connection [and all
+strings in 1.9, unless Encoding.default_internal is set then it&#8217;ll
+convert from UTF-8 to that encoding] and uses encoding-aware MySQL API
+calls where it can.
+</p>
+<p>
+The API consists of two clases:
+</p>
+<p>
+<a href="Mysql2/Client.html">Mysql2::Client</a> - your connection to the
+database
+</p>
+<p>
+<a href="Mysql2/Result.html">Mysql2::Result</a> - returned from issuing a #
+on the connection. It includes Enumerable.
+</p>
+<h2>Installing</h2>
+<pre>
+  gem install mysql2
+</pre>
+<p>
+You may have to specify
+&#8212;with-mysql-config=/some/random/path/bin/mysql_config
+</p>
+<h2>Usage</h2>
+<p>
+Connect to a database:
+</p>
+<pre>
+  # this takes a hash of options, almost all of which map directly
+  # to the familiar database.yml in rails
+  # See http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/MysqlAdapter.html
+  client = Mysql2::Client.new(:host =&gt; &quot;localhost&quot;, :username =&gt; &quot;root&quot;)
+</pre>
+<p>
+Then query it:
+</p>
+<pre>
+  results = client.query(&quot;SELECT * FROM users WHERE group='githubbers'&quot;)
+</pre>
+<p>
+Need to escape something first?
+</p>
+<pre>
+  escaped = client.escape(&quot;gi'thu\&quot;bbe\0r's&quot;)
+  results = client.query(&quot;SELECT * FROM users WHERE group='#{escaped}'&quot;)
+</pre>
+<p>
+Finally, iterate over the results:
+</p>
+<pre>
+  results.each do |row|
+    # conveniently, row is a hash
+    # the keys are the fields, as you'd expect
+    # the values are pre-built ruby primitives mapped from their corresponding field types in MySQL
+    # Here's an otter: http://farm1.static.flickr.com/130/398077070_b8795d0ef3_b.jpg
+  end
+</pre>
+<p>
+Or, you might just keep it simple:
+</p>
+<pre>
+  client.query(&quot;SELECT * FROM users WHERE group='githubbers'&quot;).each do |row|
+    # do something with row, it's ready to rock
+  end
+</pre>
+<p>
+How about with symbolized keys?
+</p>
+<pre>
+  # NOTE: the :symbolize_keys and future options will likely move to the #query method soon
+  client.query(&quot;SELECT * FROM users WHERE group='githubbers'&quot;).each(:symbolize_keys =&gt; true) do |row|
+    # do something with row, it's ready to rock
+  end
+</pre>
+<h2>Cascading config</h2>
+<p>
+The default config hash is at:
+</p>
+<pre>
+ Mysql2::Client.default_query_options
+</pre>
+<p>
+which defaults to:
+</p>
+<pre>
+ {:async =&gt; false, :as =&gt; :hash, :symbolize_keys =&gt; false}
+</pre>
+<p>
+that can be used as so:
+</p>
+<pre>
+ # these are the defaults all Mysql2::Client instances inherit
+ Mysql2::Client.default_query_options.merge!(:as =&gt; :array)
+</pre>
+<p>
+or
+</p>
+<pre>
+ # this will change the defaults for all future results returned by the #query method _for this connection only_
+ c = Mysql2::Client.new
+ c.query_options.merge!(:symbolize_keys =&gt; true)
+</pre>
+<p>
+or
+</p>
+<pre>
+ # this will set the options for the Mysql2::Result instance returned from the #query method
+ c = Mysql2::Client.new
+ c.query(sql, :symbolize_keys =&gt; true)
+</pre>
+<h2>Result types</h2>
+<h3>Array of Arrays</h3>
+<p>
+Pass the :as => :array option to any of the above methods of configuration
+</p>
+<h3>Array of Hashes</h3>
+<p>
+The default result type is set to :hash, but you can override a previous
+setting to something else with :as => :hash
+</p>
+<h3>Others&#8230;</h3>
+<p>
+I may add support for :as => :csv or even :as => :json to allow for
+<b>much</b> more efficient generation of those data types from result sets.
+If you&#8217;d like to see either of these (or others), open an issue and
+start bugging me about it ;)
+</p>
+<h3>Timezones</h3>
+<p>
+<a href="Mysql2.html">Mysql2</a> now supports two timezone options:
+</p>
+<pre>
+  :database_timezone - this is the timezone Mysql2 will assume fields are already stored as, and will use this when creating the initial Time objects in ruby
+  :application_timezone - this is the timezone Mysql2 will convert to before finally handing back to the caller
+</pre>
+<p>
+In other words, if :database_timezone is set to :utc - <a
+href="Mysql2.html">Mysql2</a> will create the Time objects using
+Time.utc(...) from the raw value libmysql hands over initially. Then, if
+:application_timezone is set to say - :local - <a
+href="Mysql2.html">Mysql2</a> will then convert the just-created UTC Time
+object to local time.
+</p>
+<p>
+Both options only allow two values - :local or :utc - with the exception
+that :application_timezone can be [and defaults to] nil
+</p>
+<h3>Casting &#8220;boolean&#8221; columns</h3>
+<p>
+You can now tell <a href="Mysql2.html">Mysql2</a> to cast tinyint(1) fields
+to boolean values in Ruby with the :cast_booleans option.
+</p>
+<pre>
+  client = Mysql2::Client.new
+  result = client.query(&quot;SELECT * FROM table_with_boolean_field&quot;, :cast_booleans =&gt; true)
+</pre>
+<h3>Async</h3>
+<p>
+<a href="Mysql2/Client.html">Mysql2::Client</a> takes advantage of the
+MySQL C API&#8217;s (undocumented) non-blocking function mysql_send_query
+for <b>all</b> queries. But, in order to take full advantage of it in your
+Ruby code, you can do:
+</p>
+<pre>
+  client.query(&quot;SELECT sleep(5)&quot;, :async =&gt; true)
+</pre>
+<p>
+Which will return nil immediately. At this point you&#8217;ll probably want
+to use some socket monitoring mechanism like EventMachine or even
+IO.select. Once the socket becomes readable, you can do:
+</p>
+<pre>
+  # result will be a Mysql2::Result instance
+  result = client.async_result
+</pre>
+<p>
+NOTE: Because of the way MySQL&#8217;s query API works, this method will
+block until the result is ready. So if you really need things to stay
+async, it&#8217;s best to just monitor the socket with something like
+EventMachine. If you need multiple query concurrency take a look at using a
+connection pool.
+</p>
+<h3>Row Caching</h3>
+<p>
+By default, <a href="Mysql2.html">Mysql2</a> will cache rows that have been
+created in Ruby (since this happens lazily). This is especially helpful
+since it saves the cost of creating the row in Ruby if you were to iterate
+over the collection again.
+</p>
+<p>
+If you only plan on using each row once, then it&#8217;s much more
+efficient to disable this behavior by setting the :cache_rows option to
+false. This would be helpful if you wanted to iterate over the results in a
+streaming manner. Meaning the GC would cleanup rows you don&#8217;t need
+anymore as you&#8217;re iterating over the result set.
+</p>
+<h2><a href="ActiveRecord.html">ActiveRecord</a></h2>
+<p>
+To use the <a href="ActiveRecord.html">ActiveRecord</a> driver, all you
+should need to do is have this gem installed and set the adapter in your
+database.yml to &#8220;mysql2&#8221;. That was easy right? :)
+</p>
+<h2>Asynchronous <a href="ActiveRecord.html">ActiveRecord</a></h2>
+<p>
+You can also use <a href="Mysql2.html">Mysql2</a> with asynchronous Rails
+(first introduced at <a
+href="http://www.mikeperham.com/2010/04/03/introducing-phat-an-asynchronous-rails-app/">www.mikeperham.com/2010/04/03/introducing-phat-an-asynchronous-rails-app/</a>)
+by setting the adapter in your database.yml to &#8220;em_mysql2&#8220;. 
+You must be running Ruby 1.9, thin and the rack-fiber_pool middleware for
+it to work.
+</p>
+<h2>Sequel</h2>
+<p>
+The Sequel adapter was pulled out into Sequel core (will be part of the
+next release) and can be used by specifying the &#8220;mysql2://&#8221;
+prefix to your connection specification.
+</p>
+<h2>EventMachine</h2>
+<p>
+The mysql2 EventMachine deferrable api allows you to make async queries
+using EventMachine, while specifying callbacks for success for failure.
+Here&#8217;s a simple example:
+</p>
+<pre>
+  require 'mysql2/em'
+
+  EM.run do
+    client1 = Mysql2::EM::Client.new
+    defer1 = client1.query &quot;SELECT sleep(3) as first_query&quot;
+    defer1.callback do |result|
+      puts &quot;Result: #{result.to_a.inspect}&quot;
+    end
+
+    client2 = Mysql2::EM::Client.new
+    defer2 = client2.query &quot;SELECT sleep(1) second_query&quot;
+    defer2.callback do |result|
+      puts &quot;Result: #{result.to_a.inspect}&quot;
+    end
+  end
+</pre>
+<h2>Lazy Everything</h2>
+<p>
+Well&#8230; almost ;)
+</p>
+<p>
+Field name strings/symbols are shared across all the rows so only one
+object is ever created to represent the field name for an entire dataset.
+</p>
+<p>
+Rows themselves are lazily created in ruby-land when an attempt to yield it
+is made via #. For example, if you were to yield 4 rows from a 100 row
+dataset, only 4 hashes will be created. The rest will sit and wait in
+C-land until you want them (or when the GC goes to cleanup your <a
+href="Mysql2/Result.html">Mysql2::Result</a> instance). Now say you were to
+iterate over that same collection again, this time yielding 15 rows - the 4
+previous rows that had already been turned into ruby hashes would be pulled
+from an internal cache, then 11 more would be created and stored in that
+cache. Once the entire dataset has been converted into ruby objects, <a
+href="Mysql2/Result.html">Mysql2::Result</a> will free the Mysql C result
+object as it&#8217;s no longer needed.
+</p>
+<p>
+This caching behavior can be disabled by setting the :cache_rows option to
+false.
+</p>
+<p>
+As for field values themselves, I&#8217;m workin on it - but expect that
+soon.
+</p>
+<h2>Compatibility</h2>
+<p>
+The specs pass on my system (SL 10.6.3, x86_64) in these rubies:
+</p>
+<ul>
+<li><p>
+1.8.7-p249
+</p>
+</li>
+<li><p>
+ree-1.8.7-2010.01
+</p>
+</li>
+<li><p>
+1.9.1-p378
+</p>
+</li>
+<li><p>
+ruby-trunk
+</p>
+</li>
+<li><p>
+rbx-head - broken at the moment, working with the rbx team for a solution
+</p>
+</li>
+</ul>
+<p>
+The <a href="ActiveRecord.html">ActiveRecord</a> driver should work on
+2.3.5 and 3.0
+</p>
+<h2>Yeah&#8230; but why?</h2>
+<p>
+Someone: Dude, the Mysql gem works fiiiiiine.
+</p>
+<p>
+Me: It sure does, but it only hands you nil and strings for field values.
+Leaving you to convert them into proper Ruby types in Ruby-land - which is
+slow as balls.
+</p>
+<p>
+Someone: OK fine, but do_mysql can already give me back values with Ruby
+objects mapped to MySQL types.
+</p>
+<p>
+Me: Yep, but it&#8217;s API is considerably more complex <b>and</b> can be
+~2x slower.
+</p>
+<h2>Benchmarks</h2>
+<p>
+Performing a basic &#8220;SELECT * FROM&#8221; query on a table with 30k
+rows and fields of nearly every Ruby-representable data type, then
+iterating over every row using an # like method yielding a block:
+</p>
+<p>
+# These results are from the query_with_mysql_casting.rb script in the
+benchmarks folder
+</p>
+<pre>
+   user       system     total       real
+  Mysql2
+   0.750000   0.180000   0.930000 (  1.821655)
+  do_mysql
+   1.650000   0.200000   1.850000 (  2.811357)
+  Mysql
+   7.500000   0.210000   7.710000 (  8.065871)
+</pre>
+<h2>Special Thanks</h2>
+<ul>
+<li><p>
+Eric Wong - for the contribution (and the informative explanations) of some
+thread-safety, non-blocking I/O and cleanup patches. You rock dude
+</p>
+</li>
+<li><p>
+Yury Korolev (<a href="http://github.com/yury">github.com/yury</a>) - for
+TONS of help testing the <a href="ActiveRecord.html">ActiveRecord</a>
+adapter
+</p>
+</li>
+<li><p>
+Aaron Patterson (<a
+href="http://github.com/tenderlove">github.com/tenderlove</a>) - tons of
+contributions, suggestions and general badassness
+</p>
+</li>
+<li><p>
+Mike Perham (<a href="http://github.com/mperham">github.com/mperham</a>) -
+Async <a href="ActiveRecord.html">ActiveRecord</a> adapter (uses Fibers and
+EventMachine)
+</p>
+</li>
+</ul>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

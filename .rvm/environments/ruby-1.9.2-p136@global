@@ -1,0 +1,18 @@
+export PATH="/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global/bin:/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global/bin:/home/billones1977/.rvm/rubies/ruby-1.9.2-p136/bin:/home/billones1977/.rvm/bin:$PATH"
+rvm_path='/home/billones1977/.rvm'
+export rvm_path
+RUBY_VERSION='ruby-1.9.2-p136'
+export RUBY_VERSION
+GEM_HOME='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global'
+export GEM_HOME
+GEM_PATH='/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global:/home/billones1977/.rvm/gems/ruby-1.9.2-p136@global'
+export GEM_PATH
+MY_RUBY_HOME='/home/billones1977/.rvm/rubies/ruby-1.9.2-p136'
+export MY_RUBY_HOME
+IRBRC='/home/billones1977/.rvm/rubies/ruby-1.9.2-p136/.irbrc'
+export IRBRC
+rvm_ruby_string='ruby-1.9.2-p136'
+export rvm_ruby_string
+rvm_gemset_name='global'
+export rvm_gemset_name
+unset MAGLEV_HOME

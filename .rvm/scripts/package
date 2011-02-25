@@ -1,0 +1,315 @@
+#!/usr/bin/env bash
+
+if [[ "$rvm_trace_flag" -eq 2 ]] ; then set -x ; export rvm_trace_flag ; fi
+
+rvm_base_except="selector"
+source "$rvm_path/scripts/base"
+
+__rvm_setup_compile_environment
+
+set +o errexit
+
+install_package()
+{
+  __rvm_db "${package}_url" "package_url"
+
+  if [[ ! -z "$rvm_make_flags_flag" ]] ; then __rvm_make_flags ; fi
+
+  (
+    builtin cd "$src_path"
+
+    "$rvm_path/scripts/log" "info" \
+      "Fetching $package-$version.$archive_format to $archives_path"
+
+    case "$archive_format" in
+
+      tar.gz|tgz)
+
+        "$rvm_path/scripts/fetch" \
+          "$package_url/$package-$version.$archive_format" \
+          || (result=$? && return $result)
+
+        __rvm_run "$package/extract" \
+          "tar zxf $archives_path/$package-$version.$archive_format -C $src_path" \
+          "Extracting $package-$version.$archive_format to $src_path"
+        ;;
+
+      tar.bz2)
+
+        "$rvm_path/scripts/fetch" \
+          "$package_url/$package-$version.$archive_format" \
+          || (result=$? && return $result)
+
+        __rvm_run "$package/extract" \
+          "tar jxf $archives_path/$package-$version.$archive_format -C $src_path" \
+          "Extracting $package-$version.$archive_format to $src_path"
+
+        ;;
+
+      zip)
+
+        "$rvm_path/scripts/fetch" \
+          "$package_url/$package-$version.$archive_format" \
+          || (result=$? && return $result)
+
+        __rvm_run "$package/extract" \
+          "unzip -q -o $archives_path/$package-$version.$archive_format -d $src_path/$package-$version" \
+          "Extracting $package-$version.$archive_format to $src_path"
+        ;;
+
+      *)
+        printf "\nUnrecognized archive format '$archive_format'" ; return 1
+
+    esac
+
+    builtin cd "$src_path/$package-$version"
+
+    if [[ ! -z "$patches" ]] ; then
+      for patch in $(echo $patches | tr ',' ' ') ; do
+        __rvm_run "$package/patch" "patch -p0 -f < $patch" "Applying patch '$patch'..."
+        if [[ $? -gt 0 ]] ; then
+          $rvm_scripts_path/log "error" "Patch $patch did not apply cleanly... back to the patching board :(" ; exit 1
+        fi
+      done
+    fi
+
+    __rvm_run "$package/configure" \
+      "${configure:-"${rvm_configure_env:-""} ./configure --prefix=\"${prefix_path:-"$usr_path"}\""} ${rvm_configure_flags:-""} $configure_flags" \
+      "Configuring $package in $src_path/$package-$version."
+
+    unset configure_flags
+
+    if [[ "$action" = "uninstall" ]] ; then
+
+      __rvm_run "$package/make.uninstall" \
+        "/usr/bin/make uninstall" \
+        "Uninstalling $package from $usr_path"
+
+    else
+
+      __rvm_run "$package/make" \
+        "/usr/bin/make $rvm_make_flags" \
+        "Compiling $package in $src_path/$package-$version."
+
+      __rvm_run "$package/make.install" \
+        "/usr/bin/make install" \
+        "Installing $package to $usr_path"
+
+    fi
+
+    touch "$rvm_path/config/packages"
+    "$rvm_path/scripts/db" \
+      "$rvm_path/config/packages" "${package}" "${version}"
+  )
+  result=$?
+
+  return ${result:-0}
+}
+
+readline()
+{
+  package="readline" ; archive_format="tar.gz"
+  configure="env CFLAGS=-I${usr_path}/include LDFLAGS=-L${usr_path}/lib ./configure --prefix=${usr_path} --disable-dependency-tracking --disable-static --enable-shared"
+
+  version="5.2"
+  patches="$rvm_path/patches/$package-$version/shobj-conf.patch"
+  install_package
+
+  version="6.0"
+  patches=""
+  install_package
+}
+
+iconv()
+{
+  package="libiconv" ; version=1.13.1 ; archive_format="tar.gz"
+  install_package
+}
+
+curl()
+{
+  package="curl" ; version=7.19.7 ; archive_format="tar.gz"
+  install_package
+}
+
+openssl()
+{
+  package="openssl" ; version="0.9.8n" ; archive_format="tar.gz"
+  if [[ "Darwin" = "$(uname)" ]] ; then
+
+    if [[ ! -z "$rvm_archflags" ]]; then
+
+      if "$rvm_path/scripts/match" "$rvm_archflags" "64"; then
+        hw_cpu64bit=1
+      fi
+
+      if "$rvm_path/scripts/match" "$rvm_archflags" "ppc"; then
+        hw_machine="Power Macintosh"
+      fi
+    else
+      hw_machine=$(sysctl hw.machine | awk -F: '{print $2}' | sed 's/^ //')
+      hw_cpu64bit=$(sysctl hw.cpu64bit_capable | awk '{print $2}')
+    fi
+
+    if [[ "Power Macintosh" = "$hw_machine" ]] ; then
+
+      if [[ $hw_cpu64bit = 1 ]]; then
+        openssl_os="darwin64-ppc-cc"
+      else
+        openssl_os="darwin-ppc-cc"
+      fi
+
+    else
+      if [[ $hw_cpu64bit = 1 ]]; then
+        openssl_os="darwin64-x86_64-cc"
+      else
+        openssl_os="darwin-i386-cc"
+      fi
+    fi
+    configure_command="./Configure"
+
+    # Anyone know WTF happened to these patches???
+    #patches="$rvm_path/patches/$package/Makefile.org.patch,$rvm_path/patches/$package/crypto-Makefile.patch"
+
+    # Don't use -j option for make OpenSSL
+    if [[ ! -z "$rvm_make_flags" ]] ; then
+      rvm_make_flags=$(echo "$rvm_make_flags" | sed -e "s/-j[[:space:]]*[[0-9]]*//")
+    fi
+  else
+    configure_command="./config"
+  fi
+  configure="$configure_command $openssl_os -I$usr_path/include -L$usr_path/lib --prefix=$usr_path zlib no-asm no-krb5 shared"
+  install_package
+}
+
+zlib()
+{
+  package="zlib" ; version="1.2.5" ; archive_format="tar.gz"
+  install_package
+}
+
+autoconf()
+{
+  package="autoconf" ; version="2.65" ; archive_format="tar.gz"
+  prefix_path="$usr_path"
+  install_package
+}
+
+ncurses()
+{
+  package="ncurses" ; version="5.7" ; archive_format="tar.gz"
+  configure_flags="--with-shared --disable-rpath --without-debug --without-ada --enable-safe-sprintf --enable-sigwinch --without-progs"
+  install_package
+}
+
+pkgconfig()
+{
+  package="pkg-config" ; version="0.23" archive_format="tar.gz"
+  install_package
+}
+
+gettext()
+{
+  package="gettext" ; version="0.17" ; archive_format="tar.gz"
+  install_package
+}
+
+libxml2()
+{
+  package="libxml2" ; version="2.7.3" ; archive_format="tar.gz"
+  if [[ "Darwin" = "$(uname)" ]] ; then
+    configure="./configure --prefix=$usr_path --build=i686-apple-darwin$(uname -r) --host=i686-apple-darwin$(uname -r)"
+  fi
+  install_package
+  unset prefix_path
+}
+
+libyaml()
+{
+  package="yaml" ; version="0.1.3" ; archive_format="tar.gz"
+  if [[ "Darwin" = "$(uname)" ]]; then
+    unset rvm_configure_env
+  fi
+  install_package
+}
+
+glib()
+{
+  pkgconfig
+  gettext
+  package="glib" ; version="2.23.1" ; archive_format="tar.gz"
+  configure="CC=\"cc -L$usr_path/lib -I$usr_path/include\" PKG_CONFIG=\"$usr_path/bin/pkg-config\" ./configure --prefix=\"$usr_path\""
+
+  install_package
+}
+
+mono()
+{
+  glib
+
+  __rvm_mono_env
+  package="mono" ; version="2.6.1" ; archive_format="tar.bz2"
+  install_package
+}
+
+llvm()
+{
+  package="llvm" ; version="89156"
+  if [[ ! -z "$rvm_make_flags_flag" ]] ; then __rvm_make_flags ; fi
+  (
+    builtin cd $src_path
+    if [[ ! -d "$src_path/llvm/.svn" ]] ; then
+      __rvm_db "${package}_url" "package_url"
+      \rm -rf "$src_path/llvm"
+      svn co -r "$version" "$package_url" llvm
+      builtin cd "$src_path/llvm"
+      ./configure --enable-bindings=none
+      UNIVERSAL=1 UNIVERSAL_ARCH="i386 x86_64" ENABLE_OPTIMIZED=1 make -j2
+      sudo env UNIVERSAL=1 UNIVERSAL_ARCH="i386 x86_64" ENABLE_OPTIMIZED=1 make install
+    fi
+  )
+}
+
+reset()
+{
+  unset package version archive_format patches prefix_path configure configure_flags
+}
+
+# Tools to make managing ruby dependencies inside of rvm easier.
+args=($*)
+action="${args[0]:-""}"
+library="${args[1]:-""}"
+args="$(echo ${args[@]:2})"
+
+archives_path="${rvm_archives_path:-"$rvm_path/archives"}"
+src_path="${rvm_src_path:-"$rvm_path/src"}"
+usr_path="${rvm_usr_path:-"$rvm_path/usr"}"
+
+if [[ -n "$library" ]] ; then
+
+  case $library in
+    readline|iconv|curl|openssl|zlib|autoconf|ncurses|pkgconfig|gettext|glib|mono|llvm|libxml2|libyaml)
+      ${library}
+    ;;
+    ree_dependencies)
+      for i in zlib ncurses readline openssl iconv; do
+        ${i}
+        reset
+      done
+    ;;
+    *)
+      "$rvm_path/scripts/log" "error" "Package '${library}' is unknown."
+    ;;
+  esac
+
+  exit $?
+
+else
+  "$rvm_path/scripts/log" "info" \
+    "\nUsage:\n  'rvm package {install,uninstall} {readline,iconv,curl,openssl,zlib,autoconf,ncurses,pkgconfig,gettext,glib,mono,llvm,libxml2,libxslt,libyaml}'\n"
+  "$rvm_path/scripts/log" "info" \
+    "  'ree_dependencies' installs zlib, ncurses, readline, openssl and iconv in this order.\n"
+  "$rvm_path/scripts/log" "info" \
+    "  still need to add ' --with-readline-dir=\$rvm_path/usr --with-iconv-dir=\$rvm_path/usr --with-zlib-dir=\$rvm_path/usr --with-openssl-dir=\$rvm_path/usr' to 'rvm install ree'\n"
+  exit 1
+fi

@@ -1,0 +1,3692 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Gem::Specification</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/rubygems/specification_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rubygems/specification.rb">lib/rubygems/specification.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-_load">::_load</a></li>
+					
+					<li><a href="#method-c-array_attribute">::array_attribute</a></li>
+					
+					<li><a href="#method-c-array_attributes">::array_attributes</a></li>
+					
+					<li><a href="#method-c-attribute">::attribute</a></li>
+					
+					<li><a href="#method-c-attribute_alias_singular">::attribute_alias_singular</a></li>
+					
+					<li><a href="#method-c-attribute_defaults">::attribute_defaults</a></li>
+					
+					<li><a href="#method-c-attribute_names">::attribute_names</a></li>
+					
+					<li><a href="#method-c-attributes">::attributes</a></li>
+					
+					<li><a href="#method-c-default_value">::default_value</a></li>
+					
+					<li><a href="#method-c-from_yaml">::from_yaml</a></li>
+					
+					<li><a href="#method-c-load">::load</a></li>
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-c-normalize_yaml_input">::normalize_yaml_input</a></li>
+					
+					<li><a href="#method-c-overwrite_accessor">::overwrite_accessor</a></li>
+					
+					<li><a href="#method-c-read_only">::read_only</a></li>
+					
+					<li><a href="#method-c-required_attribute">::required_attribute</a></li>
+					
+					<li><a href="#method-c-required_attribute%3F">::required_attribute?</a></li>
+					
+					<li><a href="#method-c-required_attributes">::required_attributes</a></li>
+					
+					<li><a href="#method-i-_dump">#_dump</a></li>
+					
+					<li><a href="#method-i-add_bindir">#add_bindir</a></li>
+					
+					<li><a href="#method-i-add_dependency">#add_dependency</a></li>
+					
+					<li><a href="#method-i-add_dependency_with_type">#add_dependency_with_type</a></li>
+					
+					<li><a href="#method-i-add_development_dependency">#add_development_dependency</a></li>
+					
+					<li><a href="#method-i-add_runtime_dependency">#add_runtime_dependency</a></li>
+					
+					<li><a href="#method-i-assign_defaults">#assign_defaults</a></li>
+					
+					<li><a href="#method-i-author">#author</a></li>
+					
+					<li><a href="#method-i-dependent_gems">#dependent_gems</a></li>
+					
+					<li><a href="#method-i-development_dependencies">#development_dependencies</a></li>
+					
+					<li><a href="#method-i-executable">#executable</a></li>
+					
+					<li><a href="#method-i-file_name">#file_name</a></li>
+					
+					<li><a href="#method-i-find_all_satisfiers">#find_all_satisfiers</a></li>
+					
+					<li><a href="#method-i-full_gem_path">#full_gem_path</a></li>
+					
+					<li><a href="#method-i-full_name">#full_name</a></li>
+					
+					<li><a href="#method-i-has_rdoc">#has_rdoc</a></li>
+					
+					<li><a href="#method-i-has_rdoc%3F">#has_rdoc?</a></li>
+					
+					<li><a href="#method-i-has_unit_tests%3F">#has_unit_tests?</a></li>
+					
+					<li><a href="#method-i-initialize_copy">#initialize_copy</a></li>
+					
+					<li><a href="#method-i-installation_path">#installation_path</a></li>
+					
+					<li><a href="#method-i-lib_files">#lib_files</a></li>
+					
+					<li><a href="#method-i-license">#license</a></li>
+					
+					<li><a href="#method-i-mark_version">#mark_version</a></li>
+					
+					<li><a href="#method-i-normalize">#normalize</a></li>
+					
+					<li><a href="#method-i-require_path">#require_path</a></li>
+					
+					<li><a href="#method-i-ruby_code">#ruby_code</a></li>
+					
+					<li><a href="#method-i-runtime_dependencies">#runtime_dependencies</a></li>
+					
+					<li><a href="#method-i-same_attributes%3F">#same_attributes?</a></li>
+					
+					<li><a href="#method-i-satisfies_requirement%3F">#satisfies_requirement?</a></li>
+					
+					<li><a href="#method-i-sort_obj">#sort_obj</a></li>
+					
+					<li><a href="#method-i-spec_name">#spec_name</a></li>
+					
+					<li><a href="#method-i-test_file">#test_file</a></li>
+					
+					<li><a href="#method-i-to_ruby">#to_ruby</a></li>
+					
+					<li><a href="#method-i-validate">#validate</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../GPL_txt.html">GPL.txt</a></li>
+				
+					<li class="file"><a href="../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../UPGRADING_rdoc.html">UPGRADING.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Gem.html">Gem</a></li>
+				
+					<li><a href="../Gem/Builder.html">Gem::Builder</a></li>
+				
+					<li><a href="../Gem/Command.html">Gem::Command</a></li>
+				
+					<li><a href="../Gem/CommandLineError.html">Gem::CommandLineError</a></li>
+				
+					<li><a href="../Gem/CommandManager.html">Gem::CommandManager</a></li>
+				
+					<li><a href="../Gem/Commands.html">Gem::Commands</a></li>
+				
+					<li><a href="../Gem/Commands/BuildCommand.html">Gem::Commands::BuildCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CertCommand.html">Gem::Commands::CertCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CheckCommand.html">Gem::Commands::CheckCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CleanupCommand.html">Gem::Commands::CleanupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ContentsCommand.html">Gem::Commands::ContentsCommand</a></li>
+				
+					<li><a href="../Gem/Commands/DependencyCommand.html">Gem::Commands::DependencyCommand</a></li>
+				
+					<li><a href="../Gem/Commands/EnvironmentCommand.html">Gem::Commands::EnvironmentCommand</a></li>
+				
+					<li><a href="../Gem/Commands/FetchCommand.html">Gem::Commands::FetchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/GenerateIndexCommand.html">Gem::Commands::GenerateIndexCommand</a></li>
+				
+					<li><a href="../Gem/Commands/HelpCommand.html">Gem::Commands::HelpCommand</a></li>
+				
+					<li><a href="../Gem/Commands/InstallCommand.html">Gem::Commands::InstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ListCommand.html">Gem::Commands::ListCommand</a></li>
+				
+					<li><a href="../Gem/Commands/LockCommand.html">Gem::Commands::LockCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OutdatedCommand.html">Gem::Commands::OutdatedCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OwnerCommand.html">Gem::Commands::OwnerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PristineCommand.html">Gem::Commands::PristineCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PushCommand.html">Gem::Commands::PushCommand</a></li>
+				
+					<li><a href="../Gem/Commands/QueryCommand.html">Gem::Commands::QueryCommand</a></li>
+				
+					<li><a href="../Gem/Commands/RdocCommand.html">Gem::Commands::RdocCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SearchCommand.html">Gem::Commands::SearchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ServerCommand.html">Gem::Commands::ServerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SetupCommand.html">Gem::Commands::SetupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SourcesCommand.html">Gem::Commands::SourcesCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SpecificationCommand.html">Gem::Commands::SpecificationCommand</a></li>
+				
+					<li><a href="../Gem/Commands/StaleCommand.html">Gem::Commands::StaleCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UninstallCommand.html">Gem::Commands::UninstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UnpackCommand.html">Gem::Commands::UnpackCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UpdateCommand.html">Gem::Commands::UpdateCommand</a></li>
+				
+					<li><a href="../Gem/Commands/WhichCommand.html">Gem::Commands::WhichCommand</a></li>
+				
+					<li><a href="../Gem/ConfigFile.html">Gem::ConfigFile</a></li>
+				
+					<li><a href="../Gem/ConsoleUI.html">Gem::ConsoleUI</a></li>
+				
+					<li><a href="../Gem/DefaultUserInteraction.html">Gem::DefaultUserInteraction</a></li>
+				
+					<li><a href="../Gem/Dependency.html">Gem::Dependency</a></li>
+				
+					<li><a href="../Gem/DependencyError.html">Gem::DependencyError</a></li>
+				
+					<li><a href="../Gem/DependencyInstaller.html">Gem::DependencyInstaller</a></li>
+				
+					<li><a href="../Gem/DependencyList.html">Gem::DependencyList</a></li>
+				
+					<li><a href="../Gem/DependencyRemovalException.html">Gem::DependencyRemovalException</a></li>
+				
+					<li><a href="../Gem/DocManager.html">Gem::DocManager</a></li>
+				
+					<li><a href="../Gem/DocumentError.html">Gem::DocumentError</a></li>
+				
+					<li><a href="../Gem/EndOfYAMLException.html">Gem::EndOfYAMLException</a></li>
+				
+					<li><a href="../Gem/ErrorReason.html">Gem::ErrorReason</a></li>
+				
+					<li><a href="../Gem/Exception.html">Gem::Exception</a></li>
+				
+					<li><a href="../Gem/Ext.html">Gem::Ext</a></li>
+				
+					<li><a href="../Gem/Ext/Builder.html">Gem::Ext::Builder</a></li>
+				
+					<li><a href="../Gem/Ext/ConfigureBuilder.html">Gem::Ext::ConfigureBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/ExtConfBuilder.html">Gem::Ext::ExtConfBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/RakeBuilder.html">Gem::Ext::RakeBuilder</a></li>
+				
+					<li><a href="../Gem/FakeFetcher.html">Gem::FakeFetcher</a></li>
+				
+					<li><a href="../Gem/FileOperations.html">Gem::FileOperations</a></li>
+				
+					<li><a href="../Gem/FilePermissionError.html">Gem::FilePermissionError</a></li>
+				
+					<li><a href="../Gem/Format.html">Gem::Format</a></li>
+				
+					<li><a href="../Gem/FormatException.html">Gem::FormatException</a></li>
+				
+					<li><a href="../Gem/GemNotFoundException.html">Gem::GemNotFoundException</a></li>
+				
+					<li><a href="../Gem/GemNotInHomeException.html">Gem::GemNotInHomeException</a></li>
+				
+					<li><a href="../Gem/GemPathSearcher.html">Gem::GemPathSearcher</a></li>
+				
+					<li><a href="../Gem/GemRunner.html">Gem::GemRunner</a></li>
+				
+					<li><a href="../Gem/GemcutterUtilities.html">Gem::GemcutterUtilities</a></li>
+				
+					<li><a href="../Gem/Indexer.html">Gem::Indexer</a></li>
+				
+					<li><a href="../Gem/InstallError.html">Gem::InstallError</a></li>
+				
+					<li><a href="../Gem/InstallUpdateOptions.html">Gem::InstallUpdateOptions</a></li>
+				
+					<li><a href="../Gem/Installer.html">Gem::Installer</a></li>
+				
+					<li><a href="../Gem/Installer/ExtensionBuildError.html">Gem::Installer::ExtensionBuildError</a></li>
+				
+					<li><a href="../Gem/InstallerTestCase.html">Gem::InstallerTestCase</a></li>
+				
+					<li><a href="../Gem/InvalidSpecificationException.html">Gem::InvalidSpecificationException</a></li>
+				
+					<li><a href="../Gem/LoadError.html">Gem::LoadError</a></li>
+				
+					<li><a href="../Gem/LocalRemoteOptions.html">Gem::LocalRemoteOptions</a></li>
+				
+					<li><a href="../Gem/MockGemUi.html">Gem::MockGemUi</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TTY.html">Gem::MockGemUi::TTY</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TermError.html">Gem::MockGemUi::TermError</a></li>
+				
+					<li><a href="../Gem/OldFormat.html">Gem::OldFormat</a></li>
+				
+					<li><a href="../Gem/OperationNotSupportedError.html">Gem::OperationNotSupportedError</a></li>
+				
+					<li><a href="../Gem/Package.html">Gem::Package</a></li>
+				
+					<li><a href="../Gem/Package/BadCheckSum.html">Gem::Package::BadCheckSum</a></li>
+				
+					<li><a href="../Gem/Package/ClosedIO.html">Gem::Package::ClosedIO</a></li>
+				
+					<li><a href="../Gem/Package/Error.html">Gem::Package::Error</a></li>
+				
+					<li><a href="../Gem/Package/FSyncDir.html">Gem::Package::FSyncDir</a></li>
+				
+					<li><a href="../Gem/Package/FormatError.html">Gem::Package::FormatError</a></li>
+				
+					<li><a href="../Gem/Package/NonSeekableIO.html">Gem::Package::NonSeekableIO</a></li>
+				
+					<li><a href="../Gem/Package/TarHeader.html">Gem::Package::TarHeader</a></li>
+				
+					<li><a href="../Gem/Package/TarInput.html">Gem::Package::TarInput</a></li>
+				
+					<li><a href="../Gem/Package/TarInvalidError.html">Gem::Package::TarInvalidError</a></li>
+				
+					<li><a href="../Gem/Package/TarOutput.html">Gem::Package::TarOutput</a></li>
+				
+					<li><a href="../Gem/Package/TarReader.html">Gem::Package::TarReader</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/Entry.html">Gem::Package::TarReader::Entry</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/UnexpectedEOF.html">Gem::Package::TarReader::UnexpectedEOF</a></li>
+				
+					<li><a href="../Gem/Package/TarTestCase.html">Gem::Package::TarTestCase</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter.html">Gem::Package::TarWriter</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/BoundedStream.html">Gem::Package::TarWriter::BoundedStream</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/FileOverflow.html">Gem::Package::TarWriter::FileOverflow</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/RestrictedStream.html">Gem::Package::TarWriter::RestrictedStream</a></li>
+				
+					<li><a href="../Gem/Package/TooLongFileName.html">Gem::Package::TooLongFileName</a></li>
+				
+					<li><a href="../Gem/PackageTask.html">Gem::PackageTask</a></li>
+				
+					<li><a href="../Gem/Platform.html">Gem::Platform</a></li>
+				
+					<li><a href="../Gem/PlatformMismatch.html">Gem::PlatformMismatch</a></li>
+				
+					<li><a href="../Gem/RemoteError.html">Gem::RemoteError</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher.html">Gem::RemoteFetcher</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher/FetchError.html">Gem::RemoteFetcher::FetchError</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationCancelled.html">Gem::RemoteInstallationCancelled</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationSkipped.html">Gem::RemoteInstallationSkipped</a></li>
+				
+					<li><a href="../Gem/RemoteSourceException.html">Gem::RemoteSourceException</a></li>
+				
+					<li><a href="../Gem/RequirePathsBuilder.html">Gem::RequirePathsBuilder</a></li>
+				
+					<li><a href="../Gem/Requirement.html">Gem::Requirement</a></li>
+				
+					<li><a href="../Gem/Security/Exception.html">Gem::Security::Exception</a></li>
+				
+					<li><a href="../Gem/Security/Signer.html">Gem::Security::Signer</a></li>
+				
+					<li><a href="../Gem/Server.html">Gem::Server</a></li>
+				
+					<li><a href="../Gem/SilentUI.html">Gem::SilentUI</a></li>
+				
+					<li><a href="../Gem/SourceIndex.html">Gem::SourceIndex</a></li>
+				
+					<li><a href="../Gem/SpecFetcher.html">Gem::SpecFetcher</a></li>
+				
+					<li><a href="../Gem/Specification.html">Gem::Specification</a></li>
+				
+					<li><a href="../Gem/StreamUI.html">Gem::StreamUI</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentDownloadReporter.html">Gem::StreamUI::SilentDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentProgressReporter.html">Gem::StreamUI::SilentProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SimpleProgressReporter.html">Gem::StreamUI::SimpleProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseDownloadReporter.html">Gem::StreamUI::VerboseDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseProgressReporter.html">Gem::StreamUI::VerboseProgressReporter</a></li>
+				
+					<li><a href="../Gem/SystemExitException.html">Gem::SystemExitException</a></li>
+				
+					<li><a href="../Gem/TestCase.html">Gem::TestCase</a></li>
+				
+					<li><a href="../Gem/Text.html">Gem::Text</a></li>
+				
+					<li><a href="../Gem/Uninstaller.html">Gem::Uninstaller</a></li>
+				
+					<li><a href="../Gem/UserInteraction.html">Gem::UserInteraction</a></li>
+				
+					<li><a href="../Gem/Validator.html">Gem::Validator</a></li>
+				
+					<li><a href="../Gem/VerificationError.html">Gem::VerificationError</a></li>
+				
+					<li><a href="../Gem/Version.html">Gem::Version</a></li>
+				
+					<li><a href="../Gem/VersionOption.html">Gem::VersionOption</a></li>
+				
+					<li><a href="../OpenSSL.html">OpenSSL</a></li>
+				
+					<li><a href="../OpenSSL/X509.html">OpenSSL::X509</a></li>
+				
+					<li><a href="../GemGauntlet.html">GemGauntlet</a></li>
+				
+					<li><a href="../Kernel.html">Kernel</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+					<li><a href="../TempIO.html">TempIO</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Gem::Specification</h1>
+
+		<div id="description">
+			<p>
+The <a href="Specification.html">Specification</a> class contains the
+metadata for a <a href="../Gem.html">Gem</a>.  Typically defined in a
+.gemspec file or a Rakefile, and looks like this:
+</p>
+<pre>
+  spec = Gem::Specification.new do |s|
+    s.name = 'example'
+    s.version = '1.0'
+    s.summary = 'Example gem specification'
+    ...
+  end
+</pre>
+<p>
+For a great way to package gems, use Hoe.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="NONEXISTENT_SPECIFICATION_VERSION">NONEXISTENT_SPECIFICATION_VERSION</a></dt>
+				
+				<dd class="description"><p>
+The the version number of a specification that does not specify one (i.e.
+RubyGems 0.7 or earlier).
+</p></dd>
+				
+			
+				<dt><a name="CURRENT_SPECIFICATION_VERSION">CURRENT_SPECIFICATION_VERSION</a></dt>
+				
+				<dd class="description"><p>
+The specification version applied to any new <a
+href="Specification.html">Specification</a> instances created.  This should
+be bumped whenever something in the spec format changes.
+</p></dd>
+				
+			
+				<dt><a name="SPECIFICATION_VERSION_HISTORY">SPECIFICATION_VERSION_HISTORY</a></dt>
+				
+				<dd class="description"><p>
+An informal list of changes to the specification.  The highest-valued key
+should be equal to the <a
+href="Specification.html#CURRENT_SPECIFICATION_VERSION">CURRENT_SPECIFICATION_VERSION</a>.
+</p></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="loaded-attribute-method" class="method-detail">
+				<a name="loaded"></a>
+				
+				<a name="loaded="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">loaded</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+true when this gemspec has been loaded from a specifications directory.
+This attribute is not persisted.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="loaded-from-attribute-method" class="method-detail">
+				<a name="loaded_from"></a>
+				
+				<a name="loaded_from="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">loaded_from</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Path this gemspec was loaded from.  This attribute is not persisted.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="rubygems-version-attribute-method" class="method-detail">
+				<a name="rubygems_version"></a>
+				
+				<a name="rubygems_version="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">rubygems_version</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The version of RubyGems used to create this gem.
+</p>
+<p>
+Do not set this, it is set automatically when the gem is packaged.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="specification-version-attribute-method" class="method-detail">
+				<a name="specification_version"></a>
+				
+				<a name="specification_version="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">specification_version</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The <a href="Specification.html">Gem::Specification</a> version of this
+gemspec.
+</p>
+<p>
+Do not set this, it is set automatically when the gem is packaged.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="name-attribute-method" class="method-detail">
+				<a name="name"></a>
+				
+				<a name="name="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">name</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+This gem&#8217;s name
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="version-attribute-method" class="method-detail">
+				<a name="version"></a>
+				
+				<a name="version="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">version</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+This gem&#8217;s version
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="date-attribute-method" class="method-detail">
+				<a name="date"></a>
+				
+				<a name="date="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">date</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The date this gem was created
+</p>
+<p>
+Do not set this, it is set automatically when the gem is packaged.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="summary-attribute-method" class="method-detail">
+				<a name="summary"></a>
+				
+				<a name="summary="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">summary</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+A short summary of this gem&#8217;s description.  Displayed in `gem list
+-d`.
+</p>
+<p>
+The description should be more detailed than the summary.  For example, you
+might wish to copy the entire README into the description.
+</p>
+<p>
+As of RubyGems 1.3.2 newlines are no longer stripped.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="require-paths-attribute-method" class="method-detail">
+				<a name="require_paths"></a>
+				
+				<a name="require_paths="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">require_paths</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Paths in the gem to add to $LOAD_PATH when this gem is activated.
+</p>
+<p>
+The default &#8216;lib&#8217; is typically sufficient.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="email-attribute-method" class="method-detail">
+				<a name="email"></a>
+				
+				<a name="email="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">email</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+A contact email for this gem
+</p>
+<p>
+If you are providing multiple authors and multiple emails they should be in
+the same order such that:
+</p>
+<pre>
+  Hash[*spec.authors.zip(spec.emails).flatten]
+</pre>
+<p>
+Gives a hash of author name to email address.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="homepage-attribute-method" class="method-detail">
+				<a name="homepage"></a>
+				
+				<a name="homepage="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">homepage</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The URL of this gem&#8217;s home page
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="rubyforge-project-attribute-method" class="method-detail">
+				<a name="rubyforge_project"></a>
+				
+				<a name="rubyforge_project="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">rubyforge_project</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The rubyforge project this gem lives under.  i.e. RubyGems&#8217; <a
+href="Specification.html#rubyforge_project">rubyforge_project</a> is
+&#8220;rubygems&#8221;.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="description-attribute-method" class="method-detail">
+				<a name="description"></a>
+				
+				<a name="description="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">description</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+A long description of this gem
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="autorequire-attribute-method" class="method-detail">
+				<a name="autorequire"></a>
+				
+				<a name="autorequire="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">autorequire</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Autorequire was used by old RubyGems to automatically require a file. It no
+longer is supported.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="default-executable-attribute-method" class="method-detail">
+				<a name="default_executable"></a>
+				
+				<a name="default_executable="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">default_executable</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The default executable for this gem.
+</p>
+<p>
+This is not used.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="bindir-attribute-method" class="method-detail">
+				<a name="bindir"></a>
+				
+				<a name="bindir="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">bindir</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The path in the gem for executable scripts
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="has-rdoc-attribute-method" class="method-detail">
+				<a name="has_rdoc"></a>
+				
+				<a name="has_rdoc="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">has_rdoc</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Deprecated and ignored, defaults to true.
+</p>
+<p>
+Formerly used to indicate this gem was RDoc-capable.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="required-ruby-version-attribute-method" class="method-detail">
+				<a name="required_ruby_version"></a>
+				
+				<a name="required_ruby_version="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">required_ruby_version</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The version of ruby required by this gem
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="required-rubygems-version-attribute-method" class="method-detail">
+				<a name="required_rubygems_version"></a>
+				
+				<a name="required_rubygems_version="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">required_rubygems_version</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The RubyGems version required by this gem
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="platform-attribute-method" class="method-detail">
+				<a name="platform"></a>
+				
+				<a name="platform="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">platform</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The platform this gem runs on.  See <a
+href="Platform.html">Gem::Platform</a> for details.
+</p>
+<p>
+Setting this to any value other than Gem::Platform::RUBY or
+Gem::Platform::CURRENT is probably wrong.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="signing-key-attribute-method" class="method-detail">
+				<a name="signing_key"></a>
+				
+				<a name="signing_key="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">signing_key</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The key used to sign this gem.  See Gem::Security for details.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="cert-chain-attribute-method" class="method-detail">
+				<a name="cert_chain"></a>
+				
+				<a name="cert_chain="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">cert_chain</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The certificate chain used to sign this gem.  See Gem::Security for
+details.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="post-install-message-attribute-method" class="method-detail">
+				<a name="post_install_message"></a>
+				
+				<a name="post_install_message="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">post_install_message</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+A message that gets displayed after the gem is installed
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="authors-attribute-method" class="method-detail">
+				<a name="authors"></a>
+				
+				<a name="authors="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">authors</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The list of author names who wrote this gem.
+</p>
+<p>
+If you are providing multiple authors and multiple emails they should be in
+the same order such that:
+</p>
+<pre>
+  Hash[*spec.authors.zip(spec.emails).flatten]
+</pre>
+<p>
+Gives a hash of author name to email address.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="licenses-attribute-method" class="method-detail">
+				<a name="licenses"></a>
+				
+				<a name="licenses="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">licenses</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The license(s) for the library.  Each license must be a short name, no more
+than 64 characters.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="files-attribute-method" class="method-detail">
+				<a name="files"></a>
+				
+				<a name="files="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">files</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Files included in this gem.  You cannot append to this accessor, you must
+assign to it.
+</p>
+<p>
+Only add files you can require to this list, not directories, etc.
+</p>
+<p>
+Directories are automatically stripped from this list when building a gem,
+other non-files cause an error.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="test-files-attribute-method" class="method-detail">
+				<a name="test_files"></a>
+				
+				<a name="test_files="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">test_files</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Test files included in this gem.  You cannot append to this accessor, you
+must assign to it.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="rdoc-options-attribute-method" class="method-detail">
+				<a name="rdoc_options"></a>
+				
+				<a name="rdoc_options="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">rdoc_options</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+An ARGV style array of options to RDoc
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="extra-rdoc-files-attribute-method" class="method-detail">
+				<a name="extra_rdoc_files"></a>
+				
+				<a name="extra_rdoc_files="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">extra_rdoc_files</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Extra files to add to RDoc such as README or doc/examples.txt
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="executables-attribute-method" class="method-detail">
+				<a name="executables"></a>
+				
+				<a name="executables="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">executables</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Executables included in the gem.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="extensions-attribute-method" class="method-detail">
+				<a name="extensions"></a>
+				
+				<a name="extensions="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">extensions</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+Extensions to build when installing the gem.  See <a
+href="Installer.html#method-i-build_extensions">Gem::Installer#build_extensions</a>
+for valid values.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="requirements-attribute-method" class="method-detail">
+				<a name="requirements"></a>
+				
+				<a name="requirements="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">requirements</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+An array or things required by this gem.  Not used by anything presently.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="dependencies-attribute-method" class="method-detail">
+				<a name="dependencies"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">dependencies</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+A list of <a href="Dependency.html">Gem::Dependency</a> objects this gem
+depends on.
+</p>
+<p>
+Use <a href="Specification.html#method-i-add_dependency">#</a> or <a
+href="Specification.html#method-i-add_development_dependency">#</a> to add
+dependencies to a gem.
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="-load-method" class="method-detail ">
+				<a name="method-c-_load"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_load</span><span
+						class="method-args">(str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Load custom marshal format, re-initializing defaults as needed
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="-load-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 288</span>
+288:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">_load</span>(<span class="ruby-identifier">str</span>)
+289:     <span class="ruby-identifier">array</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span> <span class="ruby-identifier">str</span>
+290: 
+291:     <span class="ruby-identifier">spec</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">new</span>
+292:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@specification_version</span>, <span class="ruby-identifier">array</span>[<span class="ruby-value">1</span>]
+293: 
+294:     <span class="ruby-identifier">current_version</span> = <span class="ruby-constant">CURRENT_SPECIFICATION_VERSION</span>
+295: 
+296:     <span class="ruby-identifier">field_count</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">specification_version</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">current_version</span> <span class="ruby-keyword kw">then</span>
+297:                     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@specification_version</span>,
+298:                                                <span class="ruby-identifier">current_version</span>
+299:                     <span class="ruby-constant">MARSHAL_FIELDS</span>[<span class="ruby-identifier">current_version</span>]
+300:                   <span class="ruby-keyword kw">else</span>
+301:                     <span class="ruby-constant">MARSHAL_FIELDS</span>[<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">specification_version</span>]
+302:                   <span class="ruby-keyword kw">end</span>
+303: 
+304:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">array</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">field_count</span> <span class="ruby-keyword kw">then</span>
+305:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;invalid Gem::Specification format #{array.inspect}&quot;</span>
+306:     <span class="ruby-keyword kw">end</span>
+307: 
+308:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@rubygems_version</span>,          <span class="ruby-identifier">array</span>[<span class="ruby-value">0</span>]
+309:     <span class="ruby-comment cmt"># spec version</span>
+310:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@name</span>,                      <span class="ruby-identifier">array</span>[<span class="ruby-value">2</span>]
+311:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@version</span>,                   <span class="ruby-identifier">array</span>[<span class="ruby-value">3</span>]
+312:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@date</span>,                      <span class="ruby-identifier">array</span>[<span class="ruby-value">4</span>]
+313:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@summary</span>,                   <span class="ruby-identifier">array</span>[<span class="ruby-value">5</span>]
+314:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@required_ruby_version</span>,     <span class="ruby-identifier">array</span>[<span class="ruby-value">6</span>]
+315:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@required_rubygems_version</span>, <span class="ruby-identifier">array</span>[<span class="ruby-value">7</span>]
+316:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@original_platform</span>,         <span class="ruby-identifier">array</span>[<span class="ruby-value">8</span>]
+317:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@dependencies</span>,              <span class="ruby-identifier">array</span>[<span class="ruby-value">9</span>]
+318:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@rubyforge_project</span>,         <span class="ruby-identifier">array</span>[<span class="ruby-value">10</span>]
+319:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@email</span>,                     <span class="ruby-identifier">array</span>[<span class="ruby-value">11</span>]
+320:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@authors</span>,                   <span class="ruby-identifier">array</span>[<span class="ruby-value">12</span>]
+321:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@description</span>,               <span class="ruby-identifier">array</span>[<span class="ruby-value">13</span>]
+322:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@homepage</span>,                  <span class="ruby-identifier">array</span>[<span class="ruby-value">14</span>]
+323:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@has_rdoc</span>,                  <span class="ruby-identifier">array</span>[<span class="ruby-value">15</span>]
+324:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@new_platform</span>,              <span class="ruby-identifier">array</span>[<span class="ruby-value">16</span>]
+325:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@platform</span>,                  <span class="ruby-identifier">array</span>[<span class="ruby-value">16</span>].<span class="ruby-identifier">to_s</span>
+326:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@license</span>,                   <span class="ruby-identifier">array</span>[<span class="ruby-value">17</span>]
+327:     <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@loaded</span>,                    <span class="ruby-keyword kw">false</span>
+328: 
+329:     <span class="ruby-identifier">spec</span>
+330:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="array-attribute-method" class="method-detail ">
+				<a name="method-c-array_attribute"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">array_attribute</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Same as :attribute, but ensures that values assigned to the attribute are
+array values by applying :to_a to the value.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="array-attribute-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 175</span>
+175:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">array_attribute</span>(<span class="ruby-identifier">name</span>)
+176:     <span class="ruby-identifier">@@non_nil_attributes</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-node">&quot;@#{name}&quot;</span>.<span class="ruby-identifier">intern</span>, []]
+177: 
+178:     <span class="ruby-identifier">@@array_attributes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span>
+179:     <span class="ruby-identifier">@@attributes</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">name</span>, []]
+180:     <span class="ruby-identifier">@@default_value</span>[<span class="ruby-identifier">name</span>] = []
+181:     <span class="ruby-identifier">code</span> = <span class="ruby-node">%{
+182:       def #{name}
+183:         @#{name} ||= []
+184:       end
+185:       def #{name}=(value)
+186:         @#{name} = Array(value)
+187:       end
+188:     }</span>
+189: 
+190:     <span class="ruby-identifier">module_eval</span> <span class="ruby-identifier">code</span>, <span class="ruby-keyword kw">__FILE__</span>, <span class="ruby-keyword kw">__LINE__</span> <span class="ruby-operator">-</span> <span class="ruby-value">9</span>
+191:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="array-attributes-method" class="method-detail ">
+				<a name="method-c-array_attributes"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">array_attributes</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Specification.html">Specification</a> attributes that are arrays
+(appendable and so-forth)
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="array-attributes-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 148</span>
+148:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">array_attributes</span>
+149:     <span class="ruby-identifier">@@array_attributes</span>.<span class="ruby-identifier">dup</span>
+150:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="attribute-method" class="method-detail ">
+				<a name="method-c-attribute"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">attribute</span><span
+						class="method-args">(name, default=nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Specifies the <tt>name</tt> and <tt>default</tt> for a specification
+attribute, and creates a reader and writer method like
+Module#attr_accessor.
+</p>
+<p>
+The reader method returns the default if the value hasn&#8217;t been set.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="attribute-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 158</span>
+158:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">attribute</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">default</span>=<span class="ruby-keyword kw">nil</span>)
+159:     <span class="ruby-identifier">ivar_name</span> = <span class="ruby-node">&quot;@#{name}&quot;</span>.<span class="ruby-identifier">intern</span>
+160:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">default</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">then</span>
+161:       <span class="ruby-identifier">@@nil_attributes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">ivar_name</span>
+162:     <span class="ruby-keyword kw">else</span>
+163:       <span class="ruby-identifier">@@non_nil_attributes</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">ivar_name</span>, <span class="ruby-identifier">default</span>]
+164:     <span class="ruby-keyword kw">end</span>
+165: 
+166:     <span class="ruby-identifier">@@attributes</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">default</span>]
+167:     <span class="ruby-identifier">@@default_value</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">default</span>
+168:     <span class="ruby-identifier">attr_accessor</span>(<span class="ruby-identifier">name</span>)
+169:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="attribute-alias-singular-method" class="method-detail ">
+				<a name="method-c-attribute_alias_singular"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">attribute_alias_singular</span><span
+						class="method-args">(singular, plural)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Defines a <em>singular</em> version of an existing <em>plural</em>
+attribute (i.e. one whose value is expected to be an array).  This means
+just creating a helper method that takes a single value and appends it to
+the array. These are created for convenience, so that in a spec, one can
+write
+</p>
+<pre>
+  s.require_path = 'mylib'
+</pre>
+<p>
+instead of:
+</p>
+<pre>
+  s.require_paths = ['mylib']
+</pre>
+<p>
+That above convenience is available courtesy of:
+</p>
+<pre>
+  attribute_alias_singular :require_path, :require_paths</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="attribute-alias-singular-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 247</span>
+247:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">attribute_alias_singular</span>(<span class="ruby-identifier">singular</span>, <span class="ruby-identifier">plural</span>)
+248:     <span class="ruby-identifier">define_method</span>(<span class="ruby-node">&quot;#{singular}=&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
+249:       <span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{plural}=&quot;</span>, [<span class="ruby-identifier">val</span>])
+250:     }
+251:     <span class="ruby-identifier">define_method</span>(<span class="ruby-node">&quot;#{singular}&quot;</span>) {
+252:       <span class="ruby-identifier">val</span> = <span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{plural}&quot;</span>)
+253:       <span class="ruby-identifier">val</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">first</span>
+254:     }
+255:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="attribute-defaults-method" class="method-detail ">
+				<a name="method-c-attribute_defaults"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">attribute_defaults</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Default values for specification attributes
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="attribute-defaults-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 120</span>
+120:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">attribute_defaults</span>
+121:     <span class="ruby-identifier">@@attributes</span>.<span class="ruby-identifier">dup</span>
+122:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="attribute-names-method" class="method-detail ">
+				<a name="method-c-attribute_names"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">attribute_names</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Names of all specification attributes
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="attribute-names-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 113</span>
+113:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">attribute_names</span>
+114:     <span class="ruby-identifier">@@attributes</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">|</span> <span class="ruby-identifier">name</span> }
+115:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="attributes-method" class="method-detail ">
+				<a name="method-c-attributes"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">attributes</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Shortcut for creating several attributes at once (each with a default value
+of <tt>nil</tt>).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="attributes-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 216</span>
+216:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">attributes</span>(*<span class="ruby-identifier">args</span>)
+217:     <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+218:       <span class="ruby-identifier">attribute</span>(<span class="ruby-identifier">arg</span>, <span class="ruby-keyword kw">nil</span>)
+219:     <span class="ruby-keyword kw">end</span>
+220:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="default-value-method" class="method-detail ">
+				<a name="method-c-default_value"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">default_value</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The default value for specification attribute <tt>name</tt>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="default-value-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 127</span>
+127:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">default_value</span>(<span class="ruby-identifier">name</span>)
+128:     <span class="ruby-identifier">@@default_value</span>[<span class="ruby-identifier">name</span>]
+129:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="from-yaml-method" class="method-detail ">
+				<a name="method-c-from_yaml"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">from_yaml</span><span
+						class="method-args">(input)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Special loader for YAML files.  When a <a
+href="Specification.html">Specification</a> object is loaded from a YAML
+file, it bypasses the normal Ruby object initialization routine (#).  This
+method makes up for that and deals with gems of different ages.
+</p>
+<p>
+&#8216;input&#8217; can be anything that YAML.load() accepts: String or IO.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="from-yaml-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 478</span>
+478:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">from_yaml</span>(<span class="ruby-identifier">input</span>)
+479:     <span class="ruby-identifier">input</span> = <span class="ruby-identifier">normalize_yaml_input</span> <span class="ruby-identifier">input</span>
+480:     <span class="ruby-identifier">spec</span> = <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span> <span class="ruby-identifier">input</span>
+481: 
+482:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">spec</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">FalseClass</span> <span class="ruby-keyword kw">then</span>
+483:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">EndOfYAMLException</span>
+484:     <span class="ruby-keyword kw">end</span>
+485: 
+486:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">spec</span> <span class="ruby-keyword kw">then</span>
+487:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>, <span class="ruby-value str">&quot;YAML data doesn't evaluate to gem specification&quot;</span>
+488:     <span class="ruby-keyword kw">end</span>
+489: 
+490:     <span class="ruby-keyword kw">unless</span> (<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value str">'@specification_version'</span> <span class="ruby-keyword kw">or</span>
+491:             <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value">:@specification_version</span>) <span class="ruby-keyword kw">and</span>
+492:            <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_get</span> <span class="ruby-value">:@specification_version</span>
+493:       <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@specification_version</span>,
+494:                                  <span class="ruby-constant">NONEXISTENT_SPECIFICATION_VERSION</span>
+495:     <span class="ruby-keyword kw">end</span>
+496: 
+497:     <span class="ruby-identifier">spec</span>
+498:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="load-method" class="method-detail ">
+				<a name="method-c-load"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">load</span><span
+						class="method-args">(file)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Loads Ruby format gemspec from <tt>file</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="load-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 503</span>
+503:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">load</span> <span class="ruby-identifier">file</span>
+504:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">file</span>)
+505: 
+506:     <span class="ruby-identifier">file</span> = <span class="ruby-identifier">file</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">untaint</span>
+507: 
+508:     <span class="ruby-identifier">code</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">Encoding</span>
+509:              <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span> <span class="ruby-identifier">file</span>, <span class="ruby-value">:encoding</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;UTF-8&quot;</span>
+510:            <span class="ruby-keyword kw">else</span>
+511:              <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span> <span class="ruby-identifier">file</span>
+512:            <span class="ruby-keyword kw">end</span>
+513: 
+514:     <span class="ruby-identifier">code</span>.<span class="ruby-identifier">untaint</span>
+515: 
+516:     <span class="ruby-keyword kw">begin</span>
+517:       <span class="ruby-identifier">spec</span> = <span class="ruby-identifier">eval</span> <span class="ruby-identifier">code</span>, <span class="ruby-identifier">binding</span>, <span class="ruby-identifier">file</span>
+518: 
+519:       <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">spec</span>
+520:         <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">loaded_from</span> = <span class="ruby-identifier">file</span>
+521:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">spec</span>
+522:       <span class="ruby-keyword kw">end</span>
+523: 
+524:       <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;[#{file}] isn't a Gem::Specification (#{spec.class} instead).&quot;</span>
+525:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">SignalException</span>, <span class="ruby-constant">SystemExit</span>
+526:       <span class="ruby-identifier">raise</span>
+527:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">SyntaxError</span>, <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+528:       <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Invalid gemspec in [#{file}]: #{e}&quot;</span>
+529:     <span class="ruby-keyword kw">end</span>
+530: 
+531:     <span class="ruby-keyword kw">nil</span>
+532:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(name = nil, version = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Specification.html">Specification</a> constructor.  Assigns the
+default values to the attributes and yields itself for further
+initialization. Optionally takes <tt>name</tt> and <tt>version</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 416</span>
+416:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">name</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">version</span> = <span class="ruby-keyword kw">nil</span>
+417:     <span class="ruby-ivar">@new_platform</span> = <span class="ruby-keyword kw">nil</span>
+418:     <span class="ruby-identifier">assign_defaults</span>
+419:     <span class="ruby-ivar">@loaded</span> = <span class="ruby-keyword kw">false</span>
+420:     <span class="ruby-ivar">@loaded_from</span> = <span class="ruby-keyword kw">nil</span>
+421: 
+422:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>
+423:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">version</span> = <span class="ruby-identifier">version</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">version</span>
+424: 
+425:     <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">self</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+426: 
+427:     <span class="ruby-identifier">@@gather</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword kw">self</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">@@gather</span>
+428:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="normalize-yaml-input-method" class="method-detail ">
+				<a name="method-c-normalize_yaml_input"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">normalize_yaml_input</span><span
+						class="method-args">(input)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Make sure the YAML specification is properly formatted with dashes
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="normalize-yaml-input-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 537</span>
+537:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">normalize_yaml_input</span>(<span class="ruby-identifier">input</span>)
+538:     <span class="ruby-identifier">result</span> = <span class="ruby-identifier">input</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:read</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">read</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">input</span>
+539:     <span class="ruby-identifier">result</span> = <span class="ruby-value str">&quot;--- &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">result</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^--- /</span>
+540:     <span class="ruby-identifier">result</span>
+541:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="overwrite-accessor-method" class="method-detail ">
+				<a name="method-c-overwrite_accessor"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">overwrite_accessor</span><span
+						class="method-args">(name, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Some attributes require special behaviour when they are accessed.  This
+allows for that.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="overwrite-accessor-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 226</span>
+226:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">overwrite_accessor</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+227:     <span class="ruby-identifier">remove_method</span> <span class="ruby-identifier">name</span>
+228:     <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+229:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="read-only-method" class="method-detail ">
+				<a name="method-c-read_only"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">read_only</span><span
+						class="method-args">(*names)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sometimes we don&#8217;t want the world to use a setter method for a
+particular attribute.
+</p>
+<p>
+<tt><a href="Specification.html#method-c-read_only">read_only</a></tt>
+makes it private so we can still use it internally.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="read-only-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 207</span>
+207:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">read_only</span>(*<span class="ruby-identifier">names</span>)
+208:     <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+209:       <span class="ruby-identifier">private</span> <span class="ruby-node">&quot;#{name}=&quot;</span>
+210:     <span class="ruby-keyword kw">end</span>
+211:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="required-attribute-method" class="method-detail ">
+				<a name="method-c-required_attribute"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">required_attribute</span><span
+						class="method-args">(*args)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Same as attribute above, but also records this attribute as mandatory.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="required-attribute-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 196</span>
+196:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">required_attribute</span>(*<span class="ruby-identifier">args</span>)
+197:     <span class="ruby-identifier">@@required_attributes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+198:     <span class="ruby-identifier">attribute</span>(*<span class="ruby-identifier">args</span>)
+199:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="required-attribute--method" class="method-detail ">
+				<a name="method-c-required_attribute%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">required_attribute?</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Is <tt>name</tt> a required attribute?
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="required-attribute--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 141</span>
+141:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">required_attribute?</span>(<span class="ruby-identifier">name</span>)
+142:     <span class="ruby-identifier">@@required_attributes</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>
+143:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="required-attributes-method" class="method-detail ">
+				<a name="method-c-required_attributes"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">required_attributes</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Required specification attributes
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="required-attributes-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 134</span>
+134:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">required_attributes</span>
+135:     <span class="ruby-identifier">@@required_attributes</span>.<span class="ruby-identifier">dup</span>
+136:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="-dump-method" class="method-detail ">
+				<a name="method-i-_dump"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">_dump</span><span
+						class="method-args">(limit)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Dump only crucial instance variables.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="-dump-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 262</span>
+262:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_dump</span>(<span class="ruby-identifier">limit</span>)
+263:     <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span> [
+264:       <span class="ruby-ivar">@rubygems_version</span>,
+265:       <span class="ruby-ivar">@specification_version</span>,
+266:       <span class="ruby-ivar">@name</span>,
+267:       <span class="ruby-ivar">@version</span>,
+268:       (<span class="ruby-constant">Time</span> <span class="ruby-operator">===</span> <span class="ruby-ivar">@date</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@date</span> <span class="ruby-operator">:</span> (<span class="ruby-identifier">require</span> <span class="ruby-value str">'time'</span>; <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-ivar">@date</span>.<span class="ruby-identifier">to_s</span>))),
+269:       <span class="ruby-ivar">@summary</span>,
+270:       <span class="ruby-ivar">@required_ruby_version</span>,
+271:       <span class="ruby-ivar">@required_rubygems_version</span>,
+272:       <span class="ruby-ivar">@original_platform</span>,
+273:       <span class="ruby-ivar">@dependencies</span>,
+274:       <span class="ruby-ivar">@rubyforge_project</span>,
+275:       <span class="ruby-ivar">@email</span>,
+276:       <span class="ruby-ivar">@authors</span>,
+277:       <span class="ruby-ivar">@description</span>,
+278:       <span class="ruby-ivar">@homepage</span>,
+279:       <span class="ruby-ivar">@has_rdoc</span>,
+280:       <span class="ruby-ivar">@new_platform</span>,
+281:       <span class="ruby-ivar">@licenses</span>
+282:     ]
+283:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="add-bindir-method" class="method-detail ">
+				<a name="method-i-add_bindir"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_bindir</span><span
+						class="method-args">(executables)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns an array with bindir attached to each executable in the executables
+list
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="add-bindir-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 372</span>
+372:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_bindir</span>(<span class="ruby-identifier">executables</span>)
+373:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">executables</span>.<span class="ruby-identifier">nil?</span>
+374: 
+375:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@bindir</span> <span class="ruby-keyword kw">then</span>
+376:       <span class="ruby-constant">Array</span>(<span class="ruby-identifier">executables</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@bindir</span>, <span class="ruby-identifier">e</span>) }
+377:     <span class="ruby-keyword kw">else</span>
+378:       <span class="ruby-identifier">executables</span>
+379:     <span class="ruby-keyword kw">end</span>
+380:   <span class="ruby-keyword kw">rescue</span>
+381:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
+382:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="add-dependency-method" class="method-detail method-alias">
+				<a name="method-i-add_dependency"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_dependency</span><span
+						class="method-args">(gem, *requirements)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Adds a runtime dependency
+</p>
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Specification.html#method-i-add_runtime_dependency">add_runtime_dependency</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="add-development-dependency-method" class="method-detail ">
+				<a name="method-i-add_development_dependency"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_development_dependency</span><span
+						class="method-args">(gem, *requirements)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Adds a development dependency named <tt>gem</tt> with <tt>requirements</tt>
+to this <a href="../Gem.html">Gem</a>.  For example:
+</p>
+<pre>
+  spec.add_development_dependency 'jabber4r', '&gt; 0.1', '&lt;= 0.5'
+</pre>
+<p>
+Development dependencies aren&#8217;t installed by default and aren&#8217;t
+activated when a gem is required.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="add-development-dependency-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 571</span>
+571:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_development_dependency</span>(<span class="ruby-identifier">gem</span>, *<span class="ruby-identifier">requirements</span>)
+572:     <span class="ruby-identifier">add_dependency_with_type</span>(<span class="ruby-identifier">gem</span>, <span class="ruby-value">:development</span>, *<span class="ruby-identifier">requirements</span>)
+573:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="add-runtime-dependency-method" class="method-detail ">
+				<a name="method-i-add_runtime_dependency"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_runtime_dependency</span><span
+						class="method-args">(gem, *requirements)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Adds a runtime dependency named <tt>gem</tt> with <tt>requirements</tt> to
+this <a href="../Gem.html">Gem</a>. For example:
+</p>
+<pre>
+  spec.add_runtime_dependency 'jabber4r', '&gt; 0.1', '&lt;= 0.5'</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="add-runtime-dependency-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 581</span>
+581:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_runtime_dependency</span>(<span class="ruby-identifier">gem</span>, *<span class="ruby-identifier">requirements</span>)
+582:     <span class="ruby-identifier">add_dependency_with_type</span>(<span class="ruby-identifier">gem</span>, <span class="ruby-value">:runtime</span>, *<span class="ruby-identifier">requirements</span>)
+583:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Specification.html#method-i-add_dependency">add_dependency</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="assign-defaults-method" class="method-detail ">
+				<a name="method-i-assign_defaults"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">assign_defaults</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Each attribute has a default value (possibly nil).  Here, we initialize all
+attributes to their default value.  This is done through the accessor
+methods, so special behaviours will be honored.  Furthermore, we take a
+<em>copy</em> of the default so each specification instance has its own
+empty arrays, etc.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="assign-defaults-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 452</span>
+452:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">assign_defaults</span>
+453:     <span class="ruby-identifier">@@nil_attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+454:       <span class="ruby-identifier">instance_variable_set</span> <span class="ruby-identifier">name</span>, <span class="ruby-keyword kw">nil</span>
+455:     <span class="ruby-keyword kw">end</span>
+456: 
+457:     <span class="ruby-identifier">@@non_nil_attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">|</span>
+458:       <span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">default</span>
+459:               <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Time</span>, <span class="ruby-constant">Numeric</span>, <span class="ruby-constant">Symbol</span>, <span class="ruby-keyword kw">true</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">default</span>
+460:               <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">default</span>.<span class="ruby-identifier">dup</span>
+461:               <span class="ruby-keyword kw">end</span>
+462: 
+463:       <span class="ruby-identifier">instance_variable_set</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>
+464:     <span class="ruby-keyword kw">end</span>
+465: 
+466:     <span class="ruby-comment cmt"># HACK</span>
+467:     <span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@new_platform</span>, <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span><span class="ruby-operator">::</span><span class="ruby-constant">RUBY</span>
+468:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="author-method" class="method-detail ">
+				<a name="method-i-author"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">author</span><span
+						class="method-args"></span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Singular accessor for #
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="author-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 1362</span>
+1362:   <span class="ruby-identifier">attribute_alias_singular</span> <span class="ruby-value">:author</span>, <span class="ruby-value">:authors</span>
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="dependent-gems-method" class="method-detail ">
+				<a name="method-i-dependent_gems"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">dependent_gems</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return a list of all gems that have a dependency on this gemspec.  The list
+is structured with entries that conform to:
+</p>
+<pre>
+  [depending_gem, dependency, [list_of_gems_that_satisfy_dependency]]</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="dependent-gems-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 972</span>
+972:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dependent_gems</span>
+973:     <span class="ruby-identifier">out</span> = []
+974:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">source_index</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>,<span class="ruby-identifier">gem</span><span class="ruby-operator">|</span>
+975:       <span class="ruby-identifier">gem</span>.<span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dep</span><span class="ruby-operator">|</span>
+976:         <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">satisfies_requirement?</span>(<span class="ruby-identifier">dep</span>) <span class="ruby-keyword kw">then</span>
+977:           <span class="ruby-identifier">sats</span> = []
+978:           <span class="ruby-identifier">find_all_satisfiers</span>(<span class="ruby-identifier">dep</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sat</span><span class="ruby-operator">|</span>
+979:             <span class="ruby-identifier">sats</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sat</span>
+980:           <span class="ruby-keyword kw">end</span>
+981:           <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">gem</span>, <span class="ruby-identifier">dep</span>, <span class="ruby-identifier">sats</span>]
+982:         <span class="ruby-keyword kw">end</span>
+983:       <span class="ruby-keyword kw">end</span>
+984:     <span class="ruby-keyword kw">end</span>
+985:     <span class="ruby-identifier">out</span>
+986:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="development-dependencies-method" class="method-detail ">
+				<a name="method-i-development_dependencies"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">development_dependencies</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+List of dependencies that are used for development
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="development-dependencies-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 342</span>
+342:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">development_dependencies</span>
+343:     <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:development</span> }
+344:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="executable-method" class="method-detail ">
+				<a name="method-i-executable"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">executable</span><span
+						class="method-args"></span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Singular accessor for #
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="executable-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 1357</span>
+1357:   <span class="ruby-identifier">attribute_alias_singular</span> <span class="ruby-value">:executable</span>, <span class="ruby-value">:executables</span>
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="file-name-method" class="method-detail ">
+				<a name="method-i-file_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">file_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The default (generated) file name of the gem.  See also <a
+href="Specification.html#method-i-spec_name">#</a>.
+</p>
+<pre>
+  spec.file_name # =&gt; &quot;example-1.0.gem&quot;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="file-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 629</span>
+629:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">file_name</span>
+630:     <span class="ruby-identifier">full_name</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'.gem'</span>
+631:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="full-gem-path-method" class="method-detail ">
+				<a name="method-i-full_gem_path"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">full_gem_path</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The full path to the gem (install path + full name).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="full-gem-path-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 618</span>
+618:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">full_gem_path</span>
+619:     <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">installation_path</span>, <span class="ruby-value str">'gems'</span>, <span class="ruby-identifier">full_name</span>
+620:     <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">path</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">path</span>
+621:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">installation_path</span>, <span class="ruby-value str">'gems'</span>, <span class="ruby-identifier">original_name</span>
+622:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="full-name-method" class="method-detail ">
+				<a name="method-i-full_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">full_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the full name (name-version) of this <a href="../Gem.html">Gem</a>.
+<a href="Platform.html">Platform</a> information is included
+(name-version-platform) if it is specified and not the default Ruby
+platform.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="full-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 595</span>
+595:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">full_name</span>
+596:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">platform</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span><span class="ruby-operator">::</span><span class="ruby-constant">RUBY</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">platform</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">then</span>
+597:       <span class="ruby-node">&quot;#{@name}-#{@version}&quot;</span>
+598:     <span class="ruby-keyword kw">else</span>
+599:       <span class="ruby-node">&quot;#{@name}-#{@version}-#{platform}&quot;</span>
+600:     <span class="ruby-keyword kw">end</span>
+601:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="has-rdoc-method" class="method-detail ">
+				<a name="method-i-has_rdoc"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_rdoc</span><span
+						class="method-args"></span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a href="Specification.html#method-i-has_rdoc">has_rdoc</a> is now ignored
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="has-rdoc-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 1382</span>
+1382:   <span class="ruby-identifier">overwrite_accessor</span> <span class="ruby-value">:has_rdoc</span> <span class="ruby-keyword kw">do</span>
+</pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="Specification.html#method-i-has_rdoc%3F">has_rdoc?</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="has-rdoc--method" class="method-detail method-alias">
+				<a name="method-i-has_rdoc%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_rdoc?</span><span
+						class="method-args"></span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+True if this gem supports RDoc
+</p>
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="Specification.html#method-i-has_rdoc">has_rdoc</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="has-unit-tests--method" class="method-detail ">
+				<a name="method-i-has_unit_tests%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">has_unit_tests?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+True if this gem has files in <a
+href="Specification.html#test_files">test_files</a>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="has-unit-tests--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 403</span>
+403:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_unit_tests?</span>
+404:     <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">test_files</span>.<span class="ruby-identifier">empty?</span>
+405:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="initialize-copy-method" class="method-detail ">
+				<a name="method-i-initialize_copy"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">initialize_copy</span><span
+						class="method-args">(other_spec)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Duplicates <a
+href="Specification.html#method-c-array_attributes">array_attributes</a>
+from <tt>other_spec</tt> so state isn&#8217;t shared.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="initialize-copy-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 433</span>
+433:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize_copy</span>(<span class="ruby-identifier">other_spec</span>)
+434:     <span class="ruby-identifier">other_ivars</span> = <span class="ruby-identifier">other_spec</span>.<span class="ruby-identifier">instance_variables</span>
+435:     <span class="ruby-identifier">other_ivars</span> = <span class="ruby-identifier">other_ivars</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ivar</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ivar</span>.<span class="ruby-identifier">intern</span> } <span class="ruby-keyword kw">if</span> <span class="ruby-comment cmt"># for 1.9</span>
+436:       <span class="ruby-identifier">other_ivars</span>.<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ivar</span><span class="ruby-operator">|</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">ivar</span> }
+437: 
+438:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">array_attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+439:       <span class="ruby-identifier">name</span> = <span class="ruby-value">:&quot;@#{name}&quot;</span>
+440:       <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">other_ivars</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">name</span>
+441:       <span class="ruby-identifier">instance_variable_set</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">other_spec</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">dup</span>
+442:     <span class="ruby-keyword kw">end</span>
+443:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="installation-path-method" class="method-detail ">
+				<a name="method-i-installation_path"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">installation_path</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The directory that this gem was installed into.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="installation-path-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 636</span>
+636:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">installation_path</span>
+637:     <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@loaded_from</span> <span class="ruby-keyword kw">then</span>
+638:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;spec #{full_name} is not from an installed gem&quot;</span>
+639:     <span class="ruby-keyword kw">end</span>
+640: 
+641:     <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-ivar">@loaded_from</span>))
+642:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="lib-files-method" class="method-detail ">
+				<a name="method-i-lib_files"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">lib_files</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Files in the <a href="../Gem.html">Gem</a> under one of the <a
+href="Specification.html#require_paths">require_paths</a>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="lib-files-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 387</span>
+387:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lib_files</span>
+388:     <span class="ruby-ivar">@files</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+389:       <span class="ruby-identifier">require_paths</span>.<span class="ruby-identifier">any?</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+390:         <span class="ruby-identifier">file</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">path</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+391:       <span class="ruby-keyword kw">end</span>
+392:     <span class="ruby-keyword kw">end</span>
+393:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="license-method" class="method-detail ">
+				<a name="method-i-license"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">license</span><span
+						class="method-args"></span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Singular accessor for #
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="license-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 1367</span>
+1367:   <span class="ruby-identifier">attribute_alias_singular</span> <span class="ruby-value">:license</span>, <span class="ruby-value">:licenses</span>
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="mark-version-method" class="method-detail ">
+				<a name="method-i-mark_version"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">mark_version</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the <a href="Specification.html#rubygems_version">rubygems_version</a>
+to the current RubyGems version
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="mark-version-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 546</span>
+546:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mark_version</span>
+547:     <span class="ruby-ivar">@rubygems_version</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>
+548:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="normalize-method" class="method-detail ">
+				<a name="method-i-normalize"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">normalize</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Normalize the list of files so that:
+</p>
+<ul>
+<li><p>
+All file lists have redundancies removed.
+</p>
+</li>
+<li><p>
+Files referenced in the <a
+href="Specification.html#extra_rdoc_files">extra_rdoc_files</a> are
+included in the package file list.
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="normalize-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 957</span>
+957:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">normalize</span>
+958:     <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-ivar">@extra_rdoc_files</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-ivar">@extra_rdoc_files</span> <span class="ruby-keyword kw">then</span>
+959:       <span class="ruby-ivar">@extra_rdoc_files</span>.<span class="ruby-identifier">uniq!</span>
+960:       <span class="ruby-ivar">@files</span> <span class="ruby-operator">||=</span> []
+961:       <span class="ruby-ivar">@files</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-ivar">@extra_rdoc_files</span>)
+962:     <span class="ruby-keyword kw">end</span>
+963:     <span class="ruby-ivar">@files</span>.<span class="ruby-identifier">uniq!</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@files</span>
+964:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="require-path-method" class="method-detail ">
+				<a name="method-i-require_path"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">require_path</span><span
+						class="method-args"></span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Singular accessor for #
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="require-path-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 1372</span>
+1372:   <span class="ruby-identifier">attribute_alias_singular</span> <span class="ruby-value">:require_path</span>, <span class="ruby-value">:require_paths</span>
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="runtime-dependencies-method" class="method-detail ">
+				<a name="method-i-runtime_dependencies"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">runtime_dependencies</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+List of dependencies that will automatically be activated at runtime.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="runtime-dependencies-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 335</span>
+335:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">runtime_dependencies</span>
+336:     <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:runtime</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span> }
+337:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="satisfies-requirement--method" class="method-detail ">
+				<a name="method-i-satisfies_requirement%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">satisfies_requirement?</span><span
+						class="method-args">(dependency)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Checks if this specification meets the requirement of <tt>dependency</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="satisfies-requirement--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 647</span>
+647:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">satisfies_requirement?</span>(<span class="ruby-identifier">dependency</span>)
+648:     <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">dependency</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">&amp;&amp;</span>
+649:       <span class="ruby-identifier">dependency</span>.<span class="ruby-identifier">requirement</span>.<span class="ruby-identifier">satisfied_by?</span>(<span class="ruby-ivar">@version</span>)
+650:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="sort-obj-method" class="method-detail ">
+				<a name="method-i-sort_obj"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sort_obj</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns an object you can use to sort specifications in #.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="sort-obj-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 655</span>
+655:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sort_obj</span>
+656:     [<span class="ruby-ivar">@name</span>, <span class="ruby-ivar">@version</span>, <span class="ruby-ivar">@new_platform</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span><span class="ruby-operator">::</span><span class="ruby-constant">RUBY</span> <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>]
+657:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="spec-name-method" class="method-detail ">
+				<a name="method-i-spec_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">spec_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The default name of the gemspec.  See also <a
+href="Specification.html#method-i-file_name">#</a>
+</p>
+<pre>
+  spec.spec_name # =&gt; &quot;example-1.0.gemspec&quot;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="spec-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 664</span>
+664:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">spec_name</span>
+665:     <span class="ruby-identifier">full_name</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'.gemspec'</span>
+666:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="test-file-method" class="method-detail ">
+				<a name="method-i-test_file"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_file</span><span
+						class="method-args"></span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Singular accessor for #
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-file-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 1377</span>
+1377:   <span class="ruby-identifier">attribute_alias_singular</span> <span class="ruby-value">:test_file</span>, <span class="ruby-value">:test_files</span>
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-ruby-method" class="method-detail ">
+				<a name="method-i-to_ruby"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_ruby</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a Ruby code representation of this specification, such that it can
+be eval&#8217;ed and reconstruct the same specification later.  Attributes
+that still have their default values are omitted.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="to-ruby-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 750</span>
+750:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_ruby</span>
+751:     <span class="ruby-identifier">mark_version</span>
+752:     <span class="ruby-identifier">result</span> = []
+753:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;# -*- encoding: utf-8 -*-&quot;</span>
+754:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">nil</span>
+755:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;Gem::Specification.new do |s|&quot;</span>
+756: 
+757:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  s.name = #{ruby_code name}&quot;</span>
+758:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  s.version = #{ruby_code version}&quot;</span>
+759:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">platform</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">platform</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span><span class="ruby-operator">::</span><span class="ruby-constant">RUBY</span> <span class="ruby-keyword kw">then</span>
+760:       <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  s.platform = #{ruby_code original_platform}&quot;</span>
+761:     <span class="ruby-keyword kw">end</span>
+762:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;&quot;</span>
+763:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  s.required_rubygems_version = #{ruby_code required_rubygems_version} if s.respond_to? :required_rubygems_version=&quot;</span>
+764: 
+765:     <span class="ruby-identifier">handled</span> = [
+766:       <span class="ruby-value">:dependencies</span>,
+767:       <span class="ruby-value">:name</span>,
+768:       <span class="ruby-value">:platform</span>,
+769:       <span class="ruby-value">:required_rubygems_version</span>,
+770:       <span class="ruby-value">:specification_version</span>,
+771:       <span class="ruby-value">:version</span>,
+772:     ]
+773: 
+774:     <span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">@@attributes</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">attr_name</span>,<span class="ruby-operator">|</span> <span class="ruby-identifier">attr_name</span>.<span class="ruby-identifier">to_s</span> }
+775: 
+776:     <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attr_name</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">|</span>
+777:       <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">handled</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">attr_name</span>
+778:       <span class="ruby-identifier">current_value</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">attr_name</span>)
+779:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current_value</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">default</span> <span class="ruby-keyword kw">or</span>
+780:          <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">required_attribute?</span> <span class="ruby-identifier">attr_name</span> <span class="ruby-keyword kw">then</span>
+781:         <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  s.#{attr_name} = #{ruby_code current_value}&quot;</span>
+782:       <span class="ruby-keyword kw">end</span>
+783:     <span class="ruby-keyword kw">end</span>
+784: 
+785:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">nil</span>
+786:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;  if s.respond_to? :specification_version then&quot;</span>
+787:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;    s.specification_version = #{specification_version}&quot;</span>
+788:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">nil</span>
+789: 
+790:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;    if Gem::Version.new(Gem::VERSION) &gt;= Gem::Version.new('1.2.0') then&quot;</span>
+791: 
+792:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+793:       <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dep</span><span class="ruby-operator">|</span>
+794:         <span class="ruby-identifier">version_reqs_param</span> = <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">requirements_list</span>.<span class="ruby-identifier">inspect</span>
+795:         <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@type</span>, <span class="ruby-value">:runtime</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">type</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-comment cmt"># HACK</span>
+796:         <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;      s.add_#{dep.type}_dependency(%q&lt;#{dep.name}&gt;, #{version_reqs_param})&quot;</span>
+797:       <span class="ruby-keyword kw">end</span>
+798:     <span class="ruby-keyword kw">end</span>
+799: 
+800:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;    else&quot;</span>
+801: 
+802:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+803:       <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dep</span><span class="ruby-operator">|</span>
+804:         <span class="ruby-identifier">version_reqs_param</span> = <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">requirements_list</span>.<span class="ruby-identifier">inspect</span>
+805:         <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;      s.add_dependency(%q&lt;#{dep.name}&gt;, #{version_reqs_param})&quot;</span>
+806:       <span class="ruby-keyword kw">end</span>
+807:     <span class="ruby-keyword kw">end</span>
+808: 
+809:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">'    end'</span>
+810: 
+811:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;  else&quot;</span>
+812:       <span class="ruby-identifier">dependencies</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dep</span><span class="ruby-operator">|</span>
+813:         <span class="ruby-identifier">version_reqs_param</span> = <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">requirements_list</span>.<span class="ruby-identifier">inspect</span>
+814:         <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;    s.add_dependency(%q&lt;#{dep.name}&gt;, #{version_reqs_param})&quot;</span>
+815:       <span class="ruby-keyword kw">end</span>
+816:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;  end&quot;</span>
+817: 
+818:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;end&quot;</span>
+819:     <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">nil</span>
+820: 
+821:     <span class="ruby-identifier">result</span>.<span class="ruby-identifier">join</span> <span class="ruby-value str">&quot;\n&quot;</span>
+822:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="validate-method" class="method-detail ">
+				<a name="method-i-validate"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">validate</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Checks that the specification contains all required fields, and does a very
+basic sanity check.
+</p>
+<p>
+Raises <a
+href="InvalidSpecificationException.html">InvalidSpecificationException</a>
+if the spec does not pass the checks..
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="validate-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 831</span>
+831:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validate</span>
+832:     <span class="ruby-identifier">extend</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">UserInteraction</span>
+833:     <span class="ruby-identifier">normalize</span>
+834: 
+835:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">rubygems_version</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span> <span class="ruby-keyword kw">then</span>
+836:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+837:             <span class="ruby-node">&quot;expected RubyGems version #{Gem::VERSION}, was #{rubygems_version}&quot;</span>
+838:     <span class="ruby-keyword kw">end</span>
+839: 
+840:     <span class="ruby-identifier">@@required_attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">symbol</span><span class="ruby-operator">|</span>
+841:       <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">symbol</span> <span class="ruby-keyword kw">then</span>
+842:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+843:               <span class="ruby-node">&quot;missing value for attribute #{symbol}&quot;</span>
+844:       <span class="ruby-keyword kw">end</span>
+845:     <span class="ruby-keyword kw">end</span>
+846: 
+847:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword kw">then</span>
+848:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+849:             <span class="ruby-node">&quot;invalid value for attribute name: \&quot;#{name.inspect}\&quot;&quot;</span>
+850:     <span class="ruby-keyword kw">end</span>
+851: 
+852:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">require_paths</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+853:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+854:             <span class="ruby-value str">'specification must have at least one require_path'</span>
+855:     <span class="ruby-keyword kw">end</span>
+856: 
+857:     <span class="ruby-ivar">@files</span>.<span class="ruby-identifier">delete_if</span>            <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">file</span> <span class="ruby-keyword kw">end</span>
+858:     <span class="ruby-ivar">@test_files</span>.<span class="ruby-identifier">delete_if</span>       <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">file</span> <span class="ruby-keyword kw">end</span>
+859:     <span class="ruby-ivar">@executables</span>.<span class="ruby-identifier">delete_if</span>      <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+860:       <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">bindir</span>, <span class="ruby-identifier">file</span>)
+861:     <span class="ruby-keyword kw">end</span>
+862:     <span class="ruby-ivar">@extra_rdoc_files</span>.<span class="ruby-identifier">delete_if</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">file</span> <span class="ruby-keyword kw">end</span>
+863:     <span class="ruby-ivar">@extensions</span>.<span class="ruby-identifier">delete_if</span>       <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">file</span> <span class="ruby-keyword kw">end</span>
+864: 
+865:     <span class="ruby-identifier">non_files</span> = <span class="ruby-identifier">files</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+866:       <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span> <span class="ruby-identifier">file</span>
+867:     <span class="ruby-keyword kw">end</span>
+868: 
+869:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">non_files</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+870:       <span class="ruby-identifier">non_files</span> = <span class="ruby-identifier">non_files</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">inspect</span> }
+871:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+872:             <span class="ruby-node">&quot;[#{non_files.join &quot;, &quot;}] are not files&quot;</span>
+873:     <span class="ruby-keyword kw">end</span>
+874: 
+875:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">specification_version</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Fixnum</span>)
+876:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+877:             <span class="ruby-value str">'specification_version must be a Fixnum (did you mean version?)'</span>
+878:     <span class="ruby-keyword kw">end</span>
+879: 
+880:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">platform</span>
+881:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>, <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span><span class="ruby-operator">::</span><span class="ruby-constant">RUBY</span> <span class="ruby-keyword kw">then</span> <span class="ruby-comment cmt"># ok</span>
+882:     <span class="ruby-keyword kw">else</span>
+883:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+884:             <span class="ruby-node">&quot;invalid platform #{platform.inspect}, see Gem::Platform&quot;</span>
+885:     <span class="ruby-keyword kw">end</span>
+886: 
+887:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">authors</span> <span class="ruby-keyword kw">and</span>
+888:            <span class="ruby-identifier">authors</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">author</span><span class="ruby-operator">|</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">author</span> } <span class="ruby-keyword kw">then</span>
+889:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+890:             <span class="ruby-value str">'authors must be Array of Strings'</span>
+891:     <span class="ruby-keyword kw">end</span>
+892: 
+893:     <span class="ruby-identifier">licenses</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">license</span><span class="ruby-operator">|</span>
+894:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">license</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">64</span>
+895:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+896:           <span class="ruby-value str">&quot;each license must be 64 characters or less&quot;</span>
+897:       <span class="ruby-keyword kw">end</span>
+898:     }
+899: 
+900:     <span class="ruby-comment cmt"># reject FIXME and TODO</span>
+901: 
+902:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">authors</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp re">/FIXME|TODO/</span>).<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+903:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+904:             <span class="ruby-value str">'&quot;FIXME&quot; or &quot;TODO&quot; is not an author'</span>
+905:     <span class="ruby-keyword kw">end</span>
+906: 
+907:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Array</span>(<span class="ruby-identifier">email</span>).<span class="ruby-identifier">grep</span>(<span class="ruby-regexp re">/FIXME|TODO/</span>).<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+908:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+909:             <span class="ruby-value str">'&quot;FIXME&quot; or &quot;TODO&quot; is not an email address'</span>
+910:     <span class="ruby-keyword kw">end</span>
+911: 
+912:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">description</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/FIXME|TODO/</span> <span class="ruby-keyword kw">then</span>
+913:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+914:             <span class="ruby-value str">'&quot;FIXME&quot; or &quot;TODO&quot; is not a description'</span>
+915:     <span class="ruby-keyword kw">end</span>
+916: 
+917:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">summary</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/FIXME|TODO/</span> <span class="ruby-keyword kw">then</span>
+918:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+919:             <span class="ruby-value str">'&quot;FIXME&quot; or &quot;TODO&quot; is not a summary'</span>
+920:     <span class="ruby-keyword kw">end</span>
+921: 
+922:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">homepage</span> <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">homepage</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">and</span>
+923:        <span class="ruby-identifier">homepage</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/\A[a-z][a-z\d+.-]*:/</span> <span class="ruby-keyword kw">then</span>
+924:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidSpecificationException</span>,
+925:             <span class="ruby-node">&quot;\&quot;#{homepage}\&quot; is not a URI&quot;</span>
+926:     <span class="ruby-keyword kw">end</span>
+927: 
+928:     <span class="ruby-comment cmt"># Warnings</span>
+929: 
+930:     <span class="ruby-node">]author description email homepage summary]</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">attribute</span><span class="ruby-operator">|</span>
+931:       <span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">attribute</span>
+932:       <span class="ruby-identifier">alert_warning</span> <span class="ruby-node">&quot;no #{attribute} specified&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">empty?</span>
+933:     <span class="ruby-keyword kw">end</span>
+934: 
+935:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">summary</span> <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">summary</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">description</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">summary</span> <span class="ruby-keyword kw">then</span>
+936:       <span class="ruby-identifier">alert_warning</span> <span class="ruby-value str">'description and summary are identical'</span>
+937:     <span class="ruby-keyword kw">end</span>
+938: 
+939:     <span class="ruby-identifier">alert_warning</span> <span class="ruby-value str">&quot;deprecated autorequire specified&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">autorequire</span>
+940: 
+941:     <span class="ruby-identifier">executables</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">executable</span><span class="ruby-operator">|</span>
+942:       <span class="ruby-identifier">executable_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">bindir</span>, <span class="ruby-identifier">executable</span>
+943:       <span class="ruby-identifier">shebang</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">executable_path</span>, <span class="ruby-value">2</span>) <span class="ruby-operator">==</span> <span class="ruby-value str">'#!'</span>
+944: 
+945:       <span class="ruby-identifier">alert_warning</span> <span class="ruby-node">&quot;#{executable_path} is missing #! line&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">shebang</span>
+946:     <span class="ruby-keyword kw">end</span>
+947: 
+948:     <span class="ruby-keyword kw">true</span>
+949:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="add-dependency-with-type-method" class="method-detail ">
+				<a name="method-i-add_dependency_with_type"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add_dependency_with_type</span><span
+						class="method-args">(dependency, type, *requirements)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Adds a dependency on gem <tt>dependency</tt> with type <tt>type</tt> that
+requires <tt>requirements</tt>.  Valid types are currently
+<tt>:runtime</tt> and <tt>:development</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="add-dependency-with-type-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 1024</span>
+1024:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_dependency_with_type</span>(<span class="ruby-identifier">dependency</span>, <span class="ruby-identifier">type</span>, *<span class="ruby-identifier">requirements</span>)
+1025:     <span class="ruby-identifier">requirements</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">requirements</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+1026:                      <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">default</span>
+1027:                    <span class="ruby-keyword kw">else</span>
+1028:                      <span class="ruby-identifier">requirements</span>.<span class="ruby-identifier">flatten</span>
+1029:                    <span class="ruby-keyword kw">end</span>
+1030: 
+1031:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">dependency</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:name</span>) <span class="ruby-operator">&amp;&amp;</span>
+1032:       <span class="ruby-identifier">dependency</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:version_requirements</span>)
+1033: 
+1034:       <span class="ruby-identifier">dependency</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Dependency</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">dependency</span>, <span class="ruby-identifier">requirements</span>, <span class="ruby-identifier">type</span>)
+1035:     <span class="ruby-keyword kw">end</span>
+1036: 
+1037:     <span class="ruby-identifier">dependencies</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">dependency</span>
+1038:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="find-all-satisfiers-method" class="method-detail ">
+				<a name="method-i-find_all_satisfiers"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">find_all_satisfiers</span><span
+						class="method-args">(dep)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Finds all gems that satisfy <tt>dep</tt>
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="find-all-satisfiers-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 1045</span>
+1045:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_all_satisfiers</span>(<span class="ruby-identifier">dep</span>)
+1046:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">source_index</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">gem</span><span class="ruby-operator">|</span>
+1047:       <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">gem</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">gem</span>.<span class="ruby-identifier">satisfies_requirement?</span> <span class="ruby-identifier">dep</span>
+1048:     <span class="ruby-keyword kw">end</span>
+1049:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="ruby-code-method" class="method-detail ">
+				<a name="method-i-ruby_code"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ruby_code</span><span
+						class="method-args">(obj)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return a string containing a Ruby code representation of the given object.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="ruby-code-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 1057</span>
+1057:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ruby_code</span>(<span class="ruby-identifier">obj</span>)
+1058:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">obj</span>
+1059:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>            <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'%q{'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">obj</span> <span class="ruby-operator">+</span> <span class="ruby-value str">'}'</span>
+1060:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>             <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">inspect</span>
+1061:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span>      <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">inspect</span>
+1062:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Date</span>              <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'%q{'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-value str">'%Y-%m-%d'</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">'}'</span>
+1063:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Time</span>              <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'%q{'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-value str">'%Y-%m-%d'</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">'}'</span>
+1064:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Numeric</span>           <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">inspect</span>
+1065:     <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">true</span>, <span class="ruby-keyword kw">false</span>, <span class="ruby-keyword kw">nil</span>  <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">inspect</span>
+1066:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span>     <span class="ruby-keyword kw">then</span> <span class="ruby-node">&quot;Gem::Platform.new(#{obj.to_a.inspect})&quot;</span>
+1067:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>  <span class="ruby-keyword kw">then</span> <span class="ruby-node">&quot;Gem::Requirement.new(#{obj.to_s.inspect})&quot;</span>
+1068:     <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;ruby_code case not handled: #{obj.class}&quot;</span>
+1069:     <span class="ruby-keyword kw">end</span>
+1070:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="same-attributes--method" class="method-detail ">
+				<a name="method-i-same_attributes%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">same_attributes?</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+True if this gem has the same attributes as <tt>other</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="same-attributes--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/specification.rb, line 684</span>
+684:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">same_attributes?</span>(<span class="ruby-identifier">other</span>)
+685:     <span class="ruby-identifier">@@attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">|</span>
+686:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">name</span>)
+687:     <span class="ruby-keyword kw">end</span>
+688:     <span class="ruby-keyword kw">true</span>
+689:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

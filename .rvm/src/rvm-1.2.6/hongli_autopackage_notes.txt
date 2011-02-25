@@ -1,0 +1,328 @@
+2010-09-28 13:29:23	-->	FooBarWidget (~FooBarWid@dhcp-077-250-047-010.chello.nl) has joined #rvm
+2010-09-28 13:29:36	FooBarWidget	wayneeseguin: hi
+2010-09-28 13:29:36	Mathetes	FooBarWidget: [01:46:28 ago] <wayneeseguin> Yes?
+2010-09-28 13:30:05	FooBarWidget	wayneeseguin: about that cross-linux distro package manager...
+2010-09-28 13:30:12	FooBarWidget	I beat you to it... 7 years ago :)
+2010-09-28 13:30:22	FooBarWidget	autopackage.org
+2010-09-28 13:31:07	FooBarWidget	but trying to "fix" linux packaging opens a big cans of worms. there's too much politics by the distros involved to make it succeed
+2010-09-28 13:31:37	FooBarWidget	Mathetes: !help
+2010-09-28 13:31:43	FooBarWidget	how does this channel memo thing work?
+2010-09-28 13:32:12	<--	goyox86 (~goyox86@200-71-152-228.static.telcel.net.ve) has quit (Read error: Connection reset by peer)
+2010-09-28 13:32:55	@wayneeseguin	FooBarWidget: hi :)
+2010-09-28 13:33:07	@wayneeseguin	FooBarWidget:  "!memo FooBarWidget hihi!"
+2010-09-28 13:33:37	FooBarWidget	autopackage aims to be a package manager that works on as many distros as possible
+2010-09-28 13:33:44	FooBarWidget	at the time we did extensive research into the problem
+2010-09-28 13:33:51	<--	metaskills (~metaskill@gateway.actionmoniker.com) has left #rvm
+2010-09-28 13:33:55	FooBarWidget	the surface problem of packaging itself is just the tip of the iceberg
+2010-09-28 13:34:14	FooBarWidget	different directory locations on different linux distros turn out to be the least important of all problems
+2010-09-28 13:34:33	FooBarWidget	biggest problem is binary compatibility. we spent a lot of research & development time into fixing that
+2010-09-28 13:34:56	FooBarWidget	but in the end distros just fight us because Our Package Manager is not Their Package Manager
+2010-09-28 13:35:07	FooBarWidget	and they don't care about compatibility about other distros
+2010-09-28 13:35:18	-->	Utkarsh (~admin@117.201.89.23) has joined #rvm
+2010-09-28 13:35:22	@wayneeseguin	FooBarWidget: Yes the politics can be vicious
+2010-09-28 13:35:25	@wayneeseguin	I've run into that with RVM
+2010-09-28 13:35:38	FooBarWidget	distro guys harass you about not using dpkg/rpm?
+2010-09-28 13:36:17	@wayneeseguin	They harrass me about several things but yes including that
+2010-09-28 13:36:58	@wayneeseguin	FooBarWidget: so autopackage is your result from that ?
+2010-09-28 13:37:12	@wayneeseguin	is it still active ?
+2010-09-28 13:37:36	FooBarWidget	I left the project several years ago. it's been taken over by other people since, but I don't know how active it is
+2010-09-28 13:38:18	<--	drako (~luisjose@nelug/coreteam/luisjose) has quit (Quit: Leaving...)
+2010-09-28 13:38:56	FooBarWidget	gave me a lot of experience though, which allowed me to write the passenger installer the way it is
+2010-09-28 13:39:57	@wayneeseguin	right
+2010-09-28 13:40:00	@wayneeseguin	hrm
+2010-09-28 13:40:06	@wayneeseguin	That does give me some stuff to ponder
+2010-09-28 13:40:28	@wayneeseguin	The docs on that project seem VERY light
+2010-09-28 13:40:36	FooBarWidget	what do you need to know?
+2010-09-28 13:40:45	@wayneeseguin	I want to read about it's internal architecture
+2010-09-28 13:40:48	FooBarWidget	the website used to be better, looks like the revamped website has less details
+2010-09-28 13:40:54	@wayneeseguin	how it handles the management
+2010-09-28 13:41:12	FooBarWidget	ok here's how it works. autopackage is for the most part bash and C
+2010-09-28 13:41:27	FooBarWidget	bash was chosen because, at the time, we thought bash + shell tools are the least common denominator that should work everywhere
+2010-09-28 13:41:41	FooBarWidget	turned out we were wrong, but more about this later :)
+2010-09-28 13:41:57	FooBarWidget	C is for some parts of the user interface, like the GTK GUI
+2010-09-28 13:42:39	FooBarWidget	the idea behind autopackage is that packages are scripts - not unlike NSIS - and they call installation functions like copyFiles()
+2010-09-28 13:42:44	-->	onkara (~other_tha@adsl-65-67-13-26.dsl.hstntx.swbell.net) has joined #rvm
+2010-09-28 13:43:12	FooBarWidget	so packages are turing complete (because bash is). this was done because we wanted to give packagers the power to deal with cross-distro differences and nothing less than a turing-complete language allows one to do that
+2010-09-28 13:43:27	-->	ugisozols (~ugisozols@84.237.168.16) has joined #rvm
+2010-09-28 13:43:40	FooBarWidget	besides the install script there's some basic metadata like dependency information, name, description, etc
+2010-09-28 13:44:08	FooBarWidget	and the autopackage runtime would take care of downloading the right dependencies and run the install scripts and displaying progress in the GUI, or the terminal, depending on the user's preference
+2010-09-28 13:44:50	FooBarWidget	binary compatibility was a big issue, e.g. a program compiled for one distro would not always work in another thanks to different glibc versions, gcc versions, library ABI versions, etc
+2010-09-28 13:45:25	FooBarWidget	so we developed a set of compiler toolchain add-ons to fight that problem, called apbuild. apbuild compiles binaries that work on a large number of distros by correctly mangling glibc symbols among other things
+2010-09-28 13:45:44	FooBarWidget	autopackages are relocatable, meaning you can choose where to install a package to
+2010-09-28 13:45:54	FooBarWidget	systemwide, just $HOME, or whatever
+2010-09-28 13:46:15	-->	hakunin (~hakunin@252-10-20-64.static.cosmoweb.net) has joined #rvm
+2010-09-28 13:46:24	FooBarWidget	this requires modifications to applications themselves because the norm is to have ./configure && make hard-code $PREFIX into the binary
+2010-09-28 13:47:03	FooBarWidget	so we developed a library, BinReloc, that allows apps to detect their executables' locations during runtime, and to calculate resource paths based on that information, similar to what Windows apps do
+2010-09-28 13:47:32	<--	invalidrecord (~invalidre@client-80-4-250-42.cht-bng-011.adsl.virginmedia.net) has quit (Ping timeout: 276 seconds)
+2010-09-28 13:47:42	-->	invalidrecord (~invalidre@client-80-3-175-138.cht-bng-011.adsl.virginmedia.net) has joined #rvm
+2010-09-28 13:47:52	@wayneeseguin	I'm liking the sound of this so far
+2010-09-28 13:47:52	FooBarWidget	making an autopackage involves writing a spec file and running the autopackage build command to build a package from that spec file
+2010-09-28 13:48:16	<--	ajsharp (~ajsharp@li22-69.members.linode.com) has left #rvm ("Leaving...")
+2010-09-28 13:49:19	FooBarWidget	the spec file contains the package name, description, root name, installation script code, uninstallation script code, and script code for compiling the app
+2010-09-28 13:49:40	FooBarWidget	the "root name" is an URI-like construct like myorganization.org/appname
+2010-09-28 13:49:46	FooBarWidget	we did this to fight naming conflicts
+2010-09-28 13:49:58	FooBarWidget	e.g. "galeon" is both a card game and a web browser
+2010-09-28 13:50:18	FooBarWidget	so as long as the root name @sourceforge.net/galeon and @someoneelse.org/galeon are different it'll be all ok
+2010-09-28 13:50:27	@wayneeseguin	makes sense, I've seen those 'com.....
+2010-09-28 13:50:40	FooBarWidget	I think this is the gist of it. some of the things I mentioned may not be relevant anymore or less relevant these days, and some of the design choices turn out to be not so good, but if I were to write another package manager I would definitely use some of the ideas we had
+2010-09-28 13:51:27	@wayneeseguin	I'd like to get a list of the good and bad  design decisions from you :)
+2010-09-28 13:51:32	FooBarWidget	for example apbuild is probably obsolete now. there are still binary compatibility issues between distros but these days it's easier to grab an old distro and run it on a virtual machine and use it as a Holy Build Box
+2010-09-28 13:51:47	FooBarWidget	which was unfeasible or too much hassle back in 2003-2005
+2010-09-28 13:51:53	@wayneeseguin	true
+2010-09-28 13:52:14	FooBarWidget	bad design decision: the use of bash
+2010-09-28 13:52:29	FooBarWidget	compatibility turned out to be not as good as we had hoped so we still had to write lots of code to work around the differences
+2010-09-28 13:52:36	FooBarWidget	even basic commands like 'head' and 'tail' can be different
+2010-09-28 13:52:56	FooBarWidget	and bash sucks for anything longer than 10 lines
+2010-09-28 13:53:17	FooBarWidget	I would choose Python these days. not Ruby, because Python is more widespread and usually installed by default
+2010-09-28 13:53:34	FooBarWidget	and standardize on Python 2.2 or something, which should be virtually everywhere
+2010-09-28 13:53:41	@wayneeseguin	interesting
+2010-09-28 13:53:50	@wayneeseguin	What about TCL ?
+2010-09-28 13:54:11	@wayneeseguin	I disagree about "bash sucks for anything longer than 10 lines"
+2010-09-28 13:54:17	@wayneeseguin	I've rather enjoyed RVM ;)
+2010-09-28 13:55:11	FooBarWidget	I don't like TCL as a language :) but I'll get back to this later
+2010-09-28 13:55:19	@wayneeseguin	ok
+2010-09-28 13:55:29	FooBarWidget	writing autopackage in bash turned out to be very painful later on
+2010-09-28 13:55:33	FooBarWidget	it works for easy stuff, but:
+2010-09-28 13:55:51	FooBarWidget	1. complicated logic doesn't express itself very well in bash
+2010-09-28 13:56:02	FooBarWidget	e.g. complicated loops, string manipulations, calculations
+2010-09-28 13:56:02	@wayneeseguin	true
+2010-09-28 13:56:09	FooBarWidget	things that we all need for autopackage
+2010-09-28 13:56:23	<--	Utkarsh (~admin@117.201.89.23) has quit (Ping timeout: 245 seconds)
+2010-09-28 13:56:35	FooBarWidget	check the compareVersion function in autopackage. it's a very advanced function that detects all sorts of version number identifiers that occur in the wild
+2010-09-28 13:56:44	FooBarWidget	it's very good, works very well, but don't try to read it :)
+2010-09-28 13:57:04	@wayneeseguin	heh, that depends on the author really
+2010-09-28 13:57:09	FooBarWidget	2. writing unit tests for it is a pain. as the system grew we ran into more and more regressions. we should have had more unit tests
+2010-09-28 13:57:11	@wayneeseguin	that is true about every language I've found :)
+2010-09-28 13:57:30	FooBarWidget	I don't agree. it performs a lot of string manipulations
+2010-09-28 13:57:37	FooBarWidget	for even the most basic things you need sed and grep
+2010-09-28 13:57:44	<--	drd (~eric@compassing.net) has left #rvm
+2010-09-28 13:57:54	FooBarWidget	chain them together more than a few times and I have a hard time reading what it's doing
+2010-09-28 13:58:15	@wayneeseguin	ahh :)
+2010-09-28 13:58:29	@wayneeseguin	I guess I've had my head stuck in bash too long then
+2010-09-28 13:58:32	FooBarWidget	3. performance. almost everything requires a fork() and exec()
+2010-09-28 13:58:42	@wayneeseguin	true
+2010-09-28 13:58:51	<--	Dementia_ (~sara@maxiez.com) has quit (Remote host closed the connection)
+2010-09-28 13:58:52	FooBarWidget	so performance is not that great. we worked around it by making the UI extremely slick and smooth
+2010-09-28 13:59:11	--	adamholt is now known as adamholt_away
+2010-09-28 13:59:11	@wayneeseguin	Sounds like C is the best option TBH
+2010-09-28 13:59:16	--	adamholt_away is now known as adamholt
+2010-09-28 13:59:19	@wayneeseguin	based on those points
+2010-09-28 13:59:35	FooBarWidget	I wouldn't choose C. I would choose Python
+2010-09-28 13:59:46	FooBarWidget	developing in C is too slow. too much micromanaging of everything
+2010-09-28 13:59:52	FooBarWidget	running external commands in C is a pain
+2010-09-28 14:00:14	FooBarWidget	performance is good but seeing that it's a package manager python wouldn't really be a bottleneck
+2010-09-28 14:00:34	FooBarWidget	in bash, even replacing a substring requires a fork() and exec() to sed. python can do it in a few nanoseconds
+2010-09-28 14:00:46	FooBarWidget	and that was the main problem
+2010-09-28 14:01:00	@wayneeseguin	that's no longer true
+2010-09-28 14:01:12	@wayneeseguin	bash has search and replace and regex built in now
+2010-09-28 14:01:27	FooBarWidget	ok it probably has it now. back then bash 3.0 was very new :)
+2010-09-28 14:01:34	@wayneeseguin	and most greps and sed can be replaced
+2010-09-28 14:01:37	@wayneeseguin	hehe
+2010-09-28 14:01:41	FooBarWidget	do all distros have bash 3 nowadays?
+2010-09-28 14:01:42	@wayneeseguin	yeah 3.2 is 'old ' now
+2010-09-28 14:02:06	FooBarWidget	still, python is easier to unit test than both C and bash
+2010-09-28 14:02:18	-->	lhuffman (~lhuffman@208.76.186.114) has joined #rvm
+2010-09-28 14:02:21	FooBarWidget	another reason for choosing python and not C or TCL is "programmer market share" of the language
+2010-09-28 14:02:24	@wayneeseguin	I wouldn't know, I've not written more than a simple script in it
+2010-09-28 14:02:36	FooBarWidget	a lot more people are familiar python than C or TCL
+2010-09-28 14:02:45	FooBarWidget	it lowers the learning curve, promoting adoption
+2010-09-28 14:02:50	@wayneeseguin	gothca
+2010-09-28 14:02:51	FooBarWidget	this turned out to be really really important
+2010-09-28 14:03:03	FooBarWidget	even bash was too obscure for people, apparently
+2010-09-28 14:03:14	-->	Utkarsh (~admin@117.201.82.68) has joined #rvm
+2010-09-28 14:03:16	@wayneeseguin	lol even though almost all of them work in it
+2010-09-28 14:03:28	-->	chrismear (~chrismear@tramp-adsl.demon.co.uk) has joined #rvm
+2010-09-28 14:03:29	FooBarWidget	sure people know how to execute commands but most people don't know about functions, if-statements, loops, etc
+2010-09-28 14:03:54	FooBarWidget	we spent a lot of time writing docs but people had a hard time understanding the bash base beneth it
+2010-09-28 14:04:14	FooBarWidget	python is pretty much the same as ruby. you can pick it up in a weekend
+2010-09-28 14:04:46	FooBarWidget	I don't know anybody who still uses TCL for anything but sucky UIs like the linux kernel's xconfig :)
+2010-09-28 14:04:52	@wayneeseguin	hrm
+2010-09-28 14:05:33	FooBarWidget	another thing that I would do different now:
+2010-09-28 14:05:43	FooBarWidget	try to integrate with the native package manager
+2010-09-28 14:05:45	-->	drako (~luisjose@nelug/coreteam/luisjose) has joined #rvm
+2010-09-28 14:06:10	FooBarWidget	this is really important. without this, distros won't accept you, period. they would spread FUD about you and users will follow them because they consider distros authoritive
+2010-09-28 14:06:33	@wayneeseguin	Sadly, that makes sense.
+2010-09-28 14:06:37	FooBarWidget	this was on our TODO list but me and the original co-author both left the project before we got to it
+2010-09-28 14:06:43	<--	j0ni (~joni@192.219.30.200) has quit (Ping timeout: 240 seconds)
+2010-09-28 14:07:09	FooBarWidget	third, security. although this is kind of bullshit
+2010-09-28 14:07:14	<--	drako (~luisjose@nelug/coreteam/luisjose) has quit (Client Quit)
+2010-09-28 14:07:17	@wayneeseguin	?
+2010-09-28 14:07:50	-->	altrux (~altrux@rrcs-24-73-187-202.se.biz.rr.com) has joined #rvm
+2010-09-28 14:07:57	FooBarWidget	autopackage works in a decentralized manner. i.e. we empower the software authors themselves to make packages instead of relying on the distro to package it
+2010-09-28 14:08:10	@wayneeseguin	That sounds like a win to me
+2010-09-28 14:08:15	FooBarWidget	we placed a lot of emphasis on this. we thought that the centralized model doesn't scale
+2010-09-28 14:08:16	@wayneeseguin	and that does sound like bullshit
+2010-09-28 14:08:38	FooBarWidget	I've not reached the point yet :)
+2010-09-28 14:08:46	@wayneeseguin	oh?
+2010-09-28 14:09:20	FooBarWidget	and especially seeing how often downstream packagers screw up (i.e. at the time Wine was broken in Fedora thanks to downstream patching), we really wanted to empower the developers as packagers
+2010-09-28 14:09:48	FooBarWidget	but a lot of conservative people saw this as being equivalent to the Windows model of software distribution, with all the bad things that come with it
+2010-09-28 14:10:01	FooBarWidget	i.e. it'll allow users to download random viruses from untrusted websites
+2010-09-28 14:10:21	FooBarWidget	in their eyes, the centralized model is the most secure one because distros check what go into the repository
+2010-09-28 14:10:53	_kch	wayneeseguin: did you have a chance to take a look into : http://gist.github.com/601355 re the infinite bashes?
+2010-09-28 14:11:02	FooBarWidget	so one of the things that we had on our TODO list was to allow packages to be signed and to make a distributed ring of trust
+2010-09-28 14:11:21	@wayneeseguin	_kch: not yet no, I will a bit later
+2010-09-28 14:11:46	-->	drako (~luisjose@190.142.42.129) has joined #rvm
+2010-09-28 14:11:46	<--	drako (~luisjose@190.142.42.129) has quit (Changing host)
+2010-09-28 14:11:46	-->	drako (~luisjose@nelug/coreteam/luisjose) has joined #rvm
+2010-09-28 14:11:51	@wayneeseguin	FooBarWidget: makes sense
+2010-09-28 14:12:04	FooBarWidget	but I still think it is bullshit. distros don't check every line of code
+2010-09-28 14:12:14	@wayneeseguin	no they sure as heck don't
+2010-09-28 14:12:21	_kch	wayneeseguin: ok. fwiw I removed all my .profile, rcs, and whatnot, sourced rvm manually, and am still seeing it.
+2010-09-28 14:12:27	-->	j0ni (~joni@192.219.30.200) has joined #rvm
+2010-09-28 14:12:29	FooBarWidget	and the walled garden model doesn't scale which we saw as a bigger problem than whatever viruses people can get
+2010-09-28 14:12:40	@wayneeseguin	I agree
+2010-09-28 14:12:45	FooBarWidget	but this is more easily solved by integrating with the native package manager
+2010-09-28 14:12:49	FooBarWidget	that'll kill two flies in one
+2010-09-28 14:13:02	-->	donmelton (~don@2002:43bc:93de:0:223:dfff:feff:7a68) has joined #rvm
+2010-09-28 14:13:09	FooBarWidget	or at least, it'll kill the perception that it's less secure
+2010-09-28 14:13:35	FooBarWidget	at some point we spent more time fighting critics than coding
+2010-09-28 14:13:54	bjencks	Adobe Air does a pretty good job integrating with the native package manager, fwiw
+2010-09-28 14:13:55	FooBarWidget	people started spreading FUD like that installing autopackage can break your system
+2010-09-28 14:14:44	@wayneeseguin	ugh :/
+2010-09-28 14:14:48	<--	Utkarsh (~admin@117.201.82.68) has quit (Ping timeout: 240 seconds)
+2010-09-28 14:14:50	FooBarWidget	I think I had a forth thing that I wanted to explain but I forgot about it after having typed so much text :)
+2010-09-28 14:14:52	@wayneeseguin	Yeah distro maintainers would be my guess
+2010-09-28 14:14:58	@wayneeseguin	LOL
+2010-09-28 14:15:04	@wayneeseguin	Thanks for letting me know all this
+2010-09-28 14:15:30	FooBarWidget	no problem, I hope my knowledge and experience is useful to other people
+2010-09-28 14:15:33	<--	pjb3 (~pjb3@216.200.161.1) has quit (Ping timeout: 245 seconds)
+2010-09-28 14:15:44	@wayneeseguin	It has definitely given me a lot to think about
+2010-09-28 14:15:47	@wayneeseguin	FooBarWidget: how did the project handle different versions of software
+2010-09-28 14:15:51	FooBarWidget	ah I remember
+2010-09-28 14:15:56	@wayneeseguin	OK?
+2010-09-28 14:16:00	FooBarWidget	we require that apps patch themselves to support relocation
+2010-09-28 14:16:12	FooBarWidget	because one of our goals was to be able to install to $HOME without root privileges
+2010-09-28 14:16:34	FooBarWidget	but turned out this is too much trouble to most app developers
+2010-09-28 14:16:49	FooBarWidget	we wanted a really, really good user experience
+2010-09-28 14:17:01	FooBarWidget	so we were really dedicated to make the right choices for the end users
+2010-09-28 14:17:15	FooBarWidget	but most app developers are not as dedicated as we are, they favor ease of packaging
+2010-09-28 14:17:24	-->	bayard (~bayard@d-206-53-93-227.cpe.metrocast.net) has joined #rvm
+2010-09-28 14:17:27	@wayneeseguin	true
+2010-09-28 14:17:33	FooBarWidget	so requiring patching - even though we documented the process very well - was a problem
+2010-09-28 14:18:12	FooBarWidget	ah, glad you asked, I forgot to mention that
+2010-09-28 14:18:24	@wayneeseguin	Example: postgresql 8.4.4 + 9.0.0
+2010-09-28 14:18:25	FooBarWidget	we invented the concept of Interface Compatibility
+2010-09-28 14:18:47	FooBarWidget	one of our goals was to work well with libraries too
+2010-09-28 14:19:03	FooBarWidget	so their interface compatibility has to be properly versioned
+2010-09-28 14:19:07	<--	drako (~luisjose@nelug/coreteam/luisjose) has quit (Quit: Leaving...)
+2010-09-28 14:19:21	FooBarWidget	whenever you break compatibility, you must increment your major number. when you add features you must increment minor number
+2010-09-28 14:20:00	-->	dpickett_ (~dpickett@173-162-135-93-NewEngland.hfc.comcastbusiness.net) has joined #rvm
+2010-09-28 14:20:02	<--	dpickett_ (~dpickett@173-162-135-93-NewEngland.hfc.comcastbusiness.net) has quit (Client Quit)
+2010-09-28 14:20:03	FooBarWidget	and I don't remember it exactly but I believe we allowed different versions of libraries to be installed assuming they're properly versioned on the filesystem
+2010-09-28 14:20:11	FooBarWidget	like GTK does
+2010-09-28 14:20:12	-->	Utkarsh (~admin@117.201.82.191) has joined #rvm
+2010-09-28 14:20:30	@wayneeseguin	ok
+2010-09-28 14:20:43	@wayneeseguin	That was one of my biggest interest points intiitally
+2010-09-28 14:20:56	deryl	hehe having a blast following this conversation. learning more than a few things as it progresses too :)
+2010-09-28 14:21:03	FooBarWidget	ah wait, I remember. we didn't provide special support for installing multiple versions. it's up to the developer to make sure different versions are parallel installable
+2010-09-28 14:21:14	@wayneeseguin	gotcha
+2010-09-28 14:21:30	<--	Steve_ (~abstrusep@110.137.83.227) has quit (Remote host closed the connection)
+2010-09-28 14:21:32	FooBarWidget	but we did provide support for checking compatibility through interface compatibility versioning
+2010-09-28 14:21:48	FooBarWidget	this is used by the dependency resolver to figure out which version of a library it should downloa
+2010-09-28 14:21:49	FooBarWidget	d
+2010-09-28 14:22:00	-->	andev (~devo@udp283464uds.hawaiiantel.net) has joined #rvm
+2010-09-28 14:22:00	FooBarWidget	we didn't think about installing different versions of apps
+2010-09-28 14:22:11	@wayneeseguin	makes sense
+2010-09-28 14:22:34	FooBarWidget	we also tried to integrate with the traditional unix filesystem hierarchy as much as possible
+2010-09-28 14:22:54	deryl	actually that should have been a holy never-break-this-rule
+2010-09-28 14:23:01	FooBarWidget	i.e. instead of one-directory-per-app or one-directory-per-library we just put everything in ~/.local/{bin,lib} etc
+2010-09-28 14:23:18	FooBarWidget	deryl: what do you mean?
+2010-09-28 14:23:52	FooBarWidget	anyway, autopackage provides special support for making sure that ~/.local/bin is in $PATH, that ~/.local/lib is in $LD_LIBRARY_PATH, and so on
+2010-09-28 14:23:53	<--	dpickett (~dpickett@173-9-51-138-NewEngland.hfc.comcastbusiness.net) has quit (Ping timeout: 245 seconds)
+2010-09-28 14:24:00	FooBarWidget	it modifies your bashrc for you if necessary
+2010-09-28 14:24:14	@wayneeseguin	ok
+2010-09-28 14:24:14	deryl	too many venders fail to respect the FHS which means that you end up with apps all over the placewhich leads to cruft and often times causes breakage
+2010-09-28 14:24:24	FooBarWidget	it provides special functions for scripts for installing things like file associations, desktop menu items, GConf schema files, etc
+2010-09-28 14:24:32	FooBarWidget	because those things tend to be very different among different distros
+2010-09-28 14:24:43	FooBarWidget	it would autodetect which desktop environment you're running or have installed
+2010-09-28 14:24:53	FooBarWidget	and based on that information decide how and where to install menu items
+2010-09-28 14:25:15	FooBarWidget	deryl: well we weren't really fans of the FHS :)
+2010-09-28 14:25:20	@wayneeseguin	Definitely an ambitious project
+2010-09-28 14:25:29	-->	lhuffman_ (~lhuffman@2607:f700:0:fd:21e:52ff:fe76:b960) has joined #rvm
+2010-09-28 14:25:35	FooBarWidget	yes, and I think being too ambitious was a bad thing :)
+2010-09-28 14:25:40	@wayneeseguin	I am still intending on doing something however I believe my scope is different
+2010-09-28 14:25:40	FooBarWidget	too much work
+2010-09-28 14:25:56	@wayneeseguin	That said you have definitely given me a lot to think about
+2010-09-28 14:26:01	-->	drako (~luisjose@190.142.42.129) has joined #rvm
+2010-09-28 14:26:01	<--	drako (~luisjose@190.142.42.129) has quit (Changing host)
+2010-09-28 14:26:01	-->	drako (~luisjose@nelug/coreteam/luisjose) has joined #rvm
+2010-09-28 14:26:09	FooBarWidget	deryl: the only reason why we used the traditional unix hierarchy was because we didn't see the need to do otherwise
+2010-09-28 14:26:46	deryl	hehe. the FHS project was built to ensure compatability and known locations across the board. one thing that not following the FHS caused was what I described. admittedly FHS v1 was screwed. but FHS 2.3.x is spot on for even traditional unices like SunOS IRIX ect
+2010-09-28 14:26:49	FooBarWidget	the package manager takes care of uninstalling the files and apps are launched via menu items, or are already in $PATH
+2010-09-28 14:26:50	-->	tyler_over_0 (~tyler_ove@184-9-14-166.dr01.hlcm.ny.frontiernet.net) has joined #rvm
+2010-09-28 14:26:57	<--	andev (~devo@udp283464uds.hawaiiantel.net) has left #rvm
+2010-09-28 14:26:57	FooBarWidget	so where they are on the filesystem shouldn't matter
+2010-09-28 14:27:21	@wayneeseguin	true
+2010-09-28 14:27:23	FooBarWidget	only exception is config files for server software, they should be in /etc or ~/.something
+2010-09-28 14:27:29	@wayneeseguin	unless you need to work with the files
+2010-09-28 14:27:30	FooBarWidget	but our scope was primarily desktop software
+2010-09-28 14:27:45	FooBarWidget	so working with the files directly was more exception than rule
+2010-09-28 14:28:06	deryl	now thats where I and the FHS seem to differ. anything *system* related should be in /etc/ anything mission related should be in /usr/local/etc/
+2010-09-28 14:28:15	deryl	but sorry, I'm digressing fromt he point of the convo.
+2010-09-28 14:28:19	<--	lhuffman (~lhuffman@208.76.186.114) has quit (Ping timeout: 252 seconds)
+2010-09-28 14:28:21	@wayneeseguin	THe scope is disjoint from mine hover those points are all good and I am going to have to step back and give things more of a think now
+2010-09-28 14:28:41	FooBarWidget	we had a lot of discussion about the FHS back then but let's leave that for another time
+2010-09-28 14:28:53	@wayneeseguin	and place... boxing ring... ;)
+2010-09-28 14:28:56	deryl	true. just ignore my interjections on that :)
+2010-09-28 14:29:02	FooBarWidget	wayneeseguin: yes the main focus is not like yours, but a lot of things should be relevant
+2010-09-28 14:29:13	@wayneeseguin	they most definitely are
+2010-09-28 14:29:18	FooBarWidget	you're probably more interested in package manager for server software and libraries right?
+2010-09-28 14:29:24	@wayneeseguin	exactly correct
+2010-09-28 14:29:34	deryl	amazing how many places a simple app touches. both standards wise and system wise :)
+2010-09-28 14:29:39	@wayneeseguin	and bound to /usr/local/ (or similar)
+2010-09-28 14:29:58	FooBarWidget	one of our basic goals was to empower the user to install a newer Firefox without upgrading their entire distro :)
+2010-09-28 14:29:58	@wayneeseguin	heh package management is anything but simple
+2010-09-28 14:30:12	@wayneeseguin	A very worthy goal ;)
+2010-09-28 14:30:22	FooBarWidget	and have it automatically integrate well into the desktop
+2010-09-28 14:30:26	deryl	wayneeseguin ~ well meaning simple as in you're not designing an entire OS :)
+2010-09-28 14:30:29	FooBarWidget	whether you're running GNOME, KDE, XFCE or whatever
+2010-09-28 14:30:32	FooBarWidget	we probably support for all 3
+2010-09-28 14:30:35	@wayneeseguin	deryl: point.
+2010-09-28 14:30:46	FooBarWidget	all 5 actually: GNOME 1, GNOME 2, KDE 2, KDE 3, XFCE
+2010-09-28 14:31:19	FooBarWidget	we also found out that /usr/local doesn't work very well
+2010-09-28 14:31:28	@wayneeseguin	other software installing into it ?
+2010-09-28 14:31:31	FooBarWidget	we initially installed to /usr/local in order not to interfere with the normal package manager
+2010-09-28 14:31:41	FooBarWidget	however turned out /usr/local support on a lot of distros is broken
+2010-09-28 14:31:41	deryl	foobarwidget ~ pre 'always in the path'?
+2010-09-28 14:32:03	@wayneeseguin	ahh ldconfig etc ?
+2010-09-28 14:32:04	FooBarWidget	ranging from not properly having /usr/local/bin in $PATH in all situations to not detecting menu items and file associations that are installed to /usr/local
+2010-09-28 14:32:08	-->	liquidoz (~liquidoz@2002:4a42:431f:0:21b:63ff:fe9a:c466) has joined #rvm
+2010-09-28 14:32:13	FooBarWidget	and yes even things like ldconfig
+2010-09-28 14:32:24	FooBarWidget	we reported bugs to distros
+2010-09-28 14:32:30	FooBarWidget	most of them don't want to fix it
+2010-09-28 14:32:31	deryl	that was the biggest failure of most distros for quite a long time. they enforced / and /usr/local seperation but systematically failed to ensure that /usr/local was always in the pathings
+2010-09-28 14:32:46	FooBarWidget	they *deliberately crippled* /usr/local to encourage the user to use the native package manager
+2010-09-28 14:33:07	deryl	which distros were doing that beyond RH/Fedora?
+2010-09-28 14:33:12	FooBarWidget	we documented the issues extensively in some wiki page
+2010-09-28 14:33:13	deryl	nm, off track there
+2010-09-28 14:33:15	FooBarWidget	debian
+2010-09-28 14:33:18	FooBarWidget	mandrake
+2010-09-28 14:33:20	FooBarWidget	tons
+2010-09-28 14:33:34	deryl	ahhh yeah initially deb was definitely doing that. one of the things that led to so many offshootts
+2010-09-28 14:33:37	FooBarWidget	all the popular ones had some form of /usr/local breakage
+2010-09-28 14:33:40	deryl	forgot about that
+2010-09-28 14:33:46	<--	jdee (~jdee@70.114.216.61) has quit (Quit: back in a bit)
+2010-09-28 14:34:21	FooBarWidget	so later we were like, 'fsck you, we'll install to /usr instead so that things actually work'
+2010-09-28 14:34:33	@wayneeseguin	heh
+2010-09-28 14:34:35	deryl	heh
+2010-09-28 14:34:37	FooBarWidget	and that's where they began accusing us of breaking the system
+2010-09-28 14:34:43	FooBarWidget	and things went downhill from there
+2010-09-28 14:35:01	@wayneeseguin	FooBarWidget: I very much want to continue this conversation however I currently have some nasty Fever chills and need to lay down for a bit, can we continue this later/tomorrow ?
+2010-09-28 14:35:05	FooBarWidget	most people are like... hm... autopackage.... OMG WTF IT INSTALLS TO /USR BURN IT WITH FIRE
+2010-09-28 14:35:15	liquidoz	alo, need a little installation help... rcv'd the welcome message but running  type rvm | head -n1 says rvm isn't found...any ideas?
+2010-09-28 14:35:16	FooBarWidget	sure
+2010-09-28 14:35:23	deryl	hehe they refuse to fix things so that seperation works correctly, but blame you when you *have* to start intermixing with the default system. awesome
+2010-09-28 14:35:32	FooBarWidget	not sure I'll be around on IRC, but ping me on github if you want to talk
+2010-09-28 14:35:35	@wayneeseguin	ok
+2010-09-28 14:35:38	FooBarWidget	see you
+2010-09-28 14:35:41	@wayneeseguin	FooBarWidget: thank you again :)
+2010-09-28 14:35:44	@wayneeseguin	Love the information
+2010-09-28 14:35:44	FooBarWidget	np
+2010-09-28 14:35:45	deryl	wayneeseguin ~ damn get better
+2010-09-28 14:35:50	@wayneeseguin	bbl
+2010-09-28 14:35:55	deryl	foobarwidget ~ thanks for not toasting me over my interjections
+2010-09-28 14:36:05	 *	FooBarWidget gets the toaster...
+2010-09-28 14:36:13	 *	deryl runs AWAY from the water and foobarwidget
+2010-09-28 14:36:15	 *	wayneeseguin gets the bathtub
+2010-09-28 14:36:27	deryl	I can run faster scared than you can mad!
+2010-09-28 14:36:31	@wayneeseguin	bbl

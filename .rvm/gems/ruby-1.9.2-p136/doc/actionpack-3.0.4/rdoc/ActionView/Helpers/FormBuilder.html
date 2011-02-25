@@ -1,0 +1,1593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: ActionView::Helpers::FormBuilder</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/action_view/helpers/date_helper_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_view/helpers/date_helper.rb">lib/action_view/helpers/date_helper.rb</a></li>
+					
+						<li><a href="../../lib/action_view/helpers/form_helper_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_view/helpers/form_helper.rb">lib/action_view/helpers/form_helper.rb</a></li>
+					
+						<li><a href="../../lib/action_view/helpers/form_options_helper_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_view/helpers/form_options_helper.rb">lib/action_view/helpers/form_options_helper.rb</a></li>
+					
+						<li><a href="../../lib/action_view/helpers/active_model_helper_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/action_view/helpers/active_model_helper.rb">lib/action_view/helpers/active_model_helper.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-model_name">::model_name</a></li>
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-check_box">#check_box</a></li>
+					
+					<li><a href="#method-i-collection_select">#collection_select</a></li>
+					
+					<li><a href="#method-i-date_select">#date_select</a></li>
+					
+					<li><a href="#method-i-datetime_select">#datetime_select</a></li>
+					
+					<li><a href="#method-i-emitted_hidden_id%3F">#emitted_hidden_id?</a></li>
+					
+					<li><a href="#method-i-fields_for">#fields_for</a></li>
+					
+					<li><a href="#method-i-fields_for_nested_model">#fields_for_nested_model</a></li>
+					
+					<li><a href="#method-i-fields_for_with_nested_attributes">#fields_for_with_nested_attributes</a></li>
+					
+					<li><a href="#method-i-grouped_collection_select">#grouped_collection_select</a></li>
+					
+					<li><a href="#method-i-hidden_field">#hidden_field</a></li>
+					
+					<li><a href="#method-i-label">#label</a></li>
+					
+					<li><a href="#method-i-nested_attributes_association%3F">#nested_attributes_association?</a></li>
+					
+					<li><a href="#method-i-nested_child_index">#nested_child_index</a></li>
+					
+					<li><a href="#method-i-objectify_options">#objectify_options</a></li>
+					
+					<li><a href="#method-i-radio_button">#radio_button</a></li>
+					
+					<li><a href="#method-i-select">#select</a></li>
+					
+					<li><a href="#method-i-submit">#submit</a></li>
+					
+					<li><a href="#method-i-submit_default_value">#submit_default_value</a></li>
+					
+					<li><a href="#method-i-time_select">#time_select</a></li>
+					
+					<li><a href="#method-i-time_zone_select">#time_zone_select</a></li>
+					
+					<li><a href="#method-i-to_model">#to_model</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><span class="include">ActiveModelFormBuilder</span></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../ActionDispatch/Assertions.html">ActionDispatch::Assertions</a></li>
+				
+					<li><a href="../../ActionDispatch/Assertions/DomAssertions.html">ActionDispatch::Assertions::DomAssertions</a></li>
+				
+					<li><a href="../../ActionDispatch/Assertions/ResponseAssertions.html">ActionDispatch::Assertions::ResponseAssertions</a></li>
+				
+					<li><a href="../../ActionDispatch/Assertions/RoutingAssertions.html">ActionDispatch::Assertions::RoutingAssertions</a></li>
+				
+					<li><a href="../../ActionDispatch/Assertions/SelectorAssertions.html">ActionDispatch::Assertions::SelectorAssertions</a></li>
+				
+					<li><a href="../../ActionDispatch/Assertions/TagAssertions.html">ActionDispatch::Assertions::TagAssertions</a></li>
+				
+					<li><a href="../../ActionDispatch/BestStandardsSupport.html">ActionDispatch::BestStandardsSupport</a></li>
+				
+					<li><a href="../../ActionDispatch/Callbacks.html">ActionDispatch::Callbacks</a></li>
+				
+					<li><a href="../../ActionDispatch/Cookies.html">ActionDispatch::Cookies</a></li>
+				
+					<li><a href="../../ActionDispatch/Cookies/CookieOverflow.html">ActionDispatch::Cookies::CookieOverflow</a></li>
+				
+					<li><a href="../../ActionDispatch/Flash.html">ActionDispatch::Flash</a></li>
+				
+					<li><a href="../../ActionDispatch/Flash/FlashHash.html">ActionDispatch::Flash::FlashHash</a></li>
+				
+					<li><a href="../../ActionDispatch/Head.html">ActionDispatch::Head</a></li>
+				
+					<li><a href="../../ActionDispatch/Http.html">ActionDispatch::Http</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Cache.html">ActionDispatch::Http::Cache</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Cache/Request.html">ActionDispatch::Http::Cache::Request</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Cache/Response.html">ActionDispatch::Http::Cache::Response</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/FilterParameters.html">ActionDispatch::Http::FilterParameters</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Headers.html">ActionDispatch::Http::Headers</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/MimeNegotiation.html">ActionDispatch::Http::MimeNegotiation</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/ParameterFilter.html">ActionDispatch::Http::ParameterFilter</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Parameters.html">ActionDispatch::Http::Parameters</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/URL.html">ActionDispatch::Http::URL</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/Upload.html">ActionDispatch::Http::Upload</a></li>
+				
+					<li><a href="../../ActionDispatch/Http/UploadedFile.html">ActionDispatch::Http::UploadedFile</a></li>
+				
+					<li><a href="../../ActionDispatch/Integration/RequestHelpers.html">ActionDispatch::Integration::RequestHelpers</a></li>
+				
+					<li><a href="../../ActionDispatch/Integration/Runner.html">ActionDispatch::Integration::Runner</a></li>
+				
+					<li><a href="../../ActionDispatch/Integration/Session.html">ActionDispatch::Integration::Session</a></li>
+				
+					<li><a href="../../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a></li>
+				
+					<li><a href="../../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a></li>
+				
+					<li><a href="../../ActionDispatch/MiddlewareStack.html">ActionDispatch::MiddlewareStack</a></li>
+				
+					<li><a href="../../ActionDispatch/MiddlewareStack/Middleware.html">ActionDispatch::MiddlewareStack::Middleware</a></li>
+				
+					<li><a href="../../ActionDispatch/ParamsParser.html">ActionDispatch::ParamsParser</a></li>
+				
+					<li><a href="../../ActionDispatch/PerformanceTest.html">ActionDispatch::PerformanceTest</a></li>
+				
+					<li><a href="../../ActionDispatch/PerformanceTest.html">ActionDispatch::PerformanceTest</a></li>
+				
+					<li><a href="../../ActionDispatch/Railtie.html">ActionDispatch::Railtie</a></li>
+				
+					<li><a href="../../ActionDispatch/RemoteIp.html">ActionDispatch::RemoteIp</a></li>
+				
+					<li><a href="../../ActionDispatch/RemoteIp/IpSpoofAttackError.html">ActionDispatch::RemoteIp::IpSpoofAttackError</a></li>
+				
+					<li><a href="../../ActionDispatch/RemoteIp/RemoteIpGetter.html">ActionDispatch::RemoteIp::RemoteIpGetter</a></li>
+				
+					<li><a href="../../ActionDispatch/Request.html">ActionDispatch::Request</a></li>
+				
+					<li><a href="../../ActionDispatch/Rescue.html">ActionDispatch::Rescue</a></li>
+				
+					<li><a href="../../ActionDispatch/Response.html">ActionDispatch::Response</a></li>
+				
+					<li><a href="../../ActionDispatch/Response/Setup.html">ActionDispatch::Response::Setup</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing.html">ActionDispatch::Routing</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing.html">ActionDispatch::Routing</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper.html">ActionDispatch::Routing::Mapper</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper/Base.html">ActionDispatch::Routing::Mapper::Base</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper/HttpHelpers.html">ActionDispatch::Routing::Mapper::HttpHelpers</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper/Resources.html">ActionDispatch::Routing::Mapper::Resources</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper/Scoping.html">ActionDispatch::Routing::Mapper::Scoping</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/Mapper/Shorthand.html">ActionDispatch::Routing::Mapper::Shorthand</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/PolymorphicRoutes.html">ActionDispatch::Routing::PolymorphicRoutes</a></li>
+				
+					<li><a href="../../ActionDispatch/Routing/UrlFor.html">ActionDispatch::Routing::UrlFor</a></li>
+				
+					<li><a href="../../ActionDispatch/Session.html">ActionDispatch::Session</a></li>
+				
+					<li><a href="../../ActionDispatch/Session/AbstractStore.html">ActionDispatch::Session::AbstractStore</a></li>
+				
+					<li><a href="../../ActionDispatch/Session/AbstractStore/OptionsHash.html">ActionDispatch::Session::AbstractStore::OptionsHash</a></li>
+				
+					<li><a href="../../ActionDispatch/Session/AbstractStore/SessionHash.html">ActionDispatch::Session::AbstractStore::SessionHash</a></li>
+				
+					<li><a href="../../ActionDispatch/Session/CookieStore.html">ActionDispatch::Session::CookieStore</a></li>
+				
+					<li><a href="../../ActionDispatch/Session/MemCacheStore.html">ActionDispatch::Session::MemCacheStore</a></li>
+				
+					<li><a href="../../ActionDispatch/ShowExceptions.html">ActionDispatch::ShowExceptions</a></li>
+				
+					<li><a href="../../ActionDispatch/Static.html">ActionDispatch::Static</a></li>
+				
+					<li><a href="../../ActionDispatch/TestProcess.html">ActionDispatch::TestProcess</a></li>
+				
+					<li><a href="../../ActionDispatch/TestRequest.html">ActionDispatch::TestRequest</a></li>
+				
+					<li><a href="../../ActionDispatch/TestResponse.html">ActionDispatch::TestResponse</a></li>
+				
+					<li><a href="../../ActionDispatch/TestResponse/DeprecatedHelpers.html">ActionDispatch::TestResponse::DeprecatedHelpers</a></li>
+				
+					<li><a href="../../ActionController/Base.html">ActionController::Base</a></li>
+				
+					<li><a href="../../ActionController/Caching.html">ActionController::Caching</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions.html">ActionController::Caching::Actions</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions/ActionCachePath.html">ActionController::Caching::Actions::ActionCachePath</a></li>
+				
+					<li><a href="../../ActionController/Caching/Actions/ClassMethods.html">ActionController::Caching::Actions::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/Pages.html">ActionController::Caching::Pages</a></li>
+				
+					<li><a href="../../ActionController/Caching/Pages/ClassMethods.html">ActionController::Caching::Pages::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Caching/Sweeping.html">ActionController::Caching::Sweeping</a></li>
+				
+					<li><a href="../../ActionController/Compatibility.html">ActionController::Compatibility</a></li>
+				
+					<li><a href="../../ActionController/Compatibility/ClassMethods.html">ActionController::Compatibility::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/ConditionalGet.html">ActionController::ConditionalGet</a></li>
+				
+					<li><a href="../../ActionController/Cookies.html">ActionController::Cookies</a></li>
+				
+					<li><a href="../../ActionController/Dispatcher.html">ActionController::Dispatcher</a></li>
+				
+					<li><a href="../../ActionController/Flash.html">ActionController::Flash</a></li>
+				
+					<li><a href="../../ActionController/Head.html">ActionController::Head</a></li>
+				
+					<li><a href="../../ActionController/Helpers.html">ActionController::Helpers</a></li>
+				
+					<li><a href="../../ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/HideActions.html">ActionController::HideActions</a></li>
+				
+					<li><a href="../../ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a></li>
+				
+					<li><a href="../../ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a></li>
+				
+					<li><a href="../../ActionController/ImplicitRender.html">ActionController::ImplicitRender</a></li>
+				
+					<li><a href="../../ActionController/Instrumentation.html">ActionController::Instrumentation</a></li>
+				
+					<li><a href="../../ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/LogSubscriber.html">ActionController::LogSubscriber</a></li>
+				
+					<li><a href="../../ActionController/Metal.html">ActionController::Metal</a></li>
+				
+					<li><a href="../../ActionController/Middleware.html">ActionController::Middleware</a></li>
+				
+					<li><a href="../../ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a></li>
+				
+					<li><a href="../../ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/RackDelegation.html">ActionController::RackDelegation</a></li>
+				
+					<li><a href="../../ActionController/Railtie.html">ActionController::Railtie</a></li>
+				
+					<li><a href="../../ActionController/Redirecting.html">ActionController::Redirecting</a></li>
+				
+					<li><a href="../../ActionController/Renderers.html">ActionController::Renderers</a></li>
+				
+					<li><a href="../../ActionController/Renderers/All.html">ActionController::Renderers::All</a></li>
+				
+					<li><a href="../../ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Rendering.html">ActionController::Rendering</a></li>
+				
+					<li><a href="../../ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a></li>
+				
+					<li><a href="../../ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Rescue.html">ActionController::Rescue</a></li>
+				
+					<li><a href="../../ActionController/Responder.html">ActionController::Responder</a></li>
+				
+					<li><a href="../../ActionController/SessionManagement/ClassMethods.html">ActionController::SessionManagement::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/Streaming.html">ActionController::Streaming</a></li>
+				
+					<li><a href="../../ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a></li>
+				
+					<li><a href="../../ActionController/TestCase.html">ActionController::TestCase</a></li>
+				
+					<li><a href="../../ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a></li>
+				
+					<li><a href="../../ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a></li>
+				
+					<li><a href="../../ActionController/TestResponse.html">ActionController::TestResponse</a></li>
+				
+					<li><a href="../../ActionController/Testing.html">ActionController::Testing</a></li>
+				
+					<li><a href="../../ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/UrlFor.html">ActionController::UrlFor</a></li>
+				
+					<li><a href="../../ActionController/UrlFor/ClassMethods.html">ActionController::UrlFor::ClassMethods</a></li>
+				
+					<li><a href="../../ActionController/UrlRewriter.html">ActionController::UrlRewriter</a></li>
+				
+					<li><a href="../../ActionController/UrlWriter.html">ActionController::UrlWriter</a></li>
+				
+					<li><a href="../../ActionView/Base.html">ActionView::Base</a></li>
+				
+					<li><a href="../../ActionView/Context.html">ActionView::Context</a></li>
+				
+					<li><a href="../../ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a></li>
+				
+					<li><a href="../../ActionView/FixtureResolver.html">ActionView::FixtureResolver</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelFormBuilder.html">ActionView::Helpers::ActiveModelFormBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper/AtomBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/AtomFeedHelper/AtomFeedBuilder.html">ActionView::Helpers::AtomFeedHelper::AtomFeedBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormBuilder.html">ActionView::Helpers::FormBuilder</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/InstanceTagMethods/ClassMethods.html">ActionView::Helpers::InstanceTagMethods::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a></li>
+				
+					<li><a href="../../ActionView/Helpers/PrototypeHelper.html">ActionView::Helpers::PrototypeHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html">ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</a></li>
+				
+					<li><a href="../../ActionView/Helpers/RawOutputHelper.html">ActionView::Helpers::RawOutputHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/TextHelper.html">ActionView::Helpers::TextHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a></li>
+				
+					<li><a href="../../ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a></li>
+				
+					<li><a href="../../ActionView/LogSubscriber.html">ActionView::LogSubscriber</a></li>
+				
+					<li><a href="../../ActionView/LookupContext/Details.html">ActionView::LookupContext::Details</a></li>
+				
+					<li><a href="../../ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a></li>
+				
+					<li><a href="../../ActionView/NullResolver.html">ActionView::NullResolver</a></li>
+				
+					<li><a href="../../ActionView/OutputBuffer.html">ActionView::OutputBuffer</a></li>
+				
+					<li><a href="../../ActionView/PathResolver.html">ActionView::PathResolver</a></li>
+				
+					<li><a href="../../ActionView/Railtie.html">ActionView::Railtie</a></li>
+				
+					<li><a href="../../ActionView/Rendering.html">ActionView::Rendering</a></li>
+				
+					<li><a href="../../ActionView/Resolver.html">ActionView::Resolver</a></li>
+				
+					<li><a href="../../ActionView/Template.html">ActionView::Template</a></li>
+				
+					<li><a href="../../ActionView/Template/Handler.html">ActionView::Template::Handler</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Compilable.html">ActionView::Template::Handlers::Compilable</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Compilable/ClassMethods.html">ActionView::Template::Handlers::Compilable::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a></li>
+				
+					<li><a href="../../ActionView/Template/Handlers/RJS.html">ActionView::Template::Handlers::RJS</a></li>
+				
+					<li><a href="../../ActionView/TestCase.html">ActionView::TestCase</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a></li>
+				
+					<li><a href="../../ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a></li>
+				
+					<li><a href="../../ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a></li>
+				
+					<li><a href="../../AbstractController.html">AbstractController</a></li>
+				
+					<li><a href="../../AbstractController/ActionNotFound.html">AbstractController::ActionNotFound</a></li>
+				
+					<li><a href="../../AbstractController/AssetPaths.html">AbstractController::AssetPaths</a></li>
+				
+					<li><a href="../../AbstractController/Base.html">AbstractController::Base</a></li>
+				
+					<li><a href="../../AbstractController/Callbacks.html">AbstractController::Callbacks</a></li>
+				
+					<li><a href="../../AbstractController/Callbacks/ClassMethods.html">AbstractController::Callbacks::ClassMethods</a></li>
+				
+					<li><a href="../../AbstractController/Collector.html">AbstractController::Collector</a></li>
+				
+					<li><a href="../../AbstractController/DoubleRenderError.html">AbstractController::DoubleRenderError</a></li>
+				
+					<li><a href="../../AbstractController/Error.html">AbstractController::Error</a></li>
+				
+					<li><a href="../../AbstractController/Helpers.html">AbstractController::Helpers</a></li>
+				
+					<li><a href="../../AbstractController/Helpers/ClassMethods.html">AbstractController::Helpers::ClassMethods</a></li>
+				
+					<li><a href="../../AbstractController/Logger.html">AbstractController::Logger</a></li>
+				
+					<li><a href="../../AbstractController/Rendering.html">AbstractController::Rendering</a></li>
+				
+					<li><a href="../../AbstractController/Rendering/ClassMethods.html">AbstractController::Rendering::ClassMethods</a></li>
+				
+					<li><a href="../../AbstractController/Translation.html">AbstractController::Translation</a></li>
+				
+					<li><a href="../../AbstractController/ViewPaths.html">AbstractController::ViewPaths</a></li>
+				
+					<li><a href="../../AbstractController/ViewPaths/ClassMethods.html">AbstractController::ViewPaths::ClassMethods</a></li>
+				
+					<li><a href="../../HTML/FullSanitizer.html">HTML::FullSanitizer</a></li>
+				
+					<li><a href="../../HTML/LinkSanitizer.html">HTML::LinkSanitizer</a></li>
+				
+					<li><a href="../../HTML/Sanitizer.html">HTML::Sanitizer</a></li>
+				
+					<li><a href="../../HTML/Selector.html">HTML::Selector</a></li>
+				
+					<li><a href="../../HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a></li>
+				
+					<li><a href="../../Mime.html">Mime</a></li>
+				
+					<li><a href="../../Mime/Mimes.html">Mime::Mimes</a></li>
+				
+					<li><a href="../../Mime/Type.html">Mime::Type</a></li>
+				
+					<li><a href="../../ActionPack.html">ActionPack</a></li>
+				
+					<li><a href="../../Rack.html">Rack</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">ActionView::Helpers::FormBuilder</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="object-name-attribute-method" class="method-detail">
+				<a name="object_name"></a>
+				
+				<a name="object_name="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">object_name</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="object-attribute-method" class="method-detail">
+				<a name="object"></a>
+				
+				<a name="object="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">object</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+			<div id="options-attribute-method" class="method-detail">
+				<a name="options"></a>
+				
+				<a name="options="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">options</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="model-name-method" class="method-detail ">
+				<a name="method-c-model_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">model_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="model-name-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1107</span>
+1107:       <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">model_name</span>
+1108:         <span class="ruby-ivar">@model_name</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Struct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:partial_path</span>).<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">demodulize</span>.<span class="ruby-identifier">underscore</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp re">/_builder$/</span>, <span class="ruby-value str">''</span>))
+1109:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(object_name, object, template, options, proc)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1115</span>
+1115:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">object</span>, <span class="ruby-identifier">template</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">proc</span>)
+1116:         <span class="ruby-ivar">@nested_child_index</span> = {}
+1117:         <span class="ruby-ivar">@object_name</span>, <span class="ruby-ivar">@object</span>, <span class="ruby-ivar">@template</span>, <span class="ruby-ivar">@options</span>, <span class="ruby-ivar">@proc</span> = <span class="ruby-identifier">object_name</span>, <span class="ruby-identifier">object</span>, <span class="ruby-identifier">template</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">proc</span>
+1118:         <span class="ruby-ivar">@default_options</span> = <span class="ruby-ivar">@options</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-value">:index</span>) <span class="ruby-operator">:</span> {}
+1119:         <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@object_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp re">/\[\]$/</span>)
+1120:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">object</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-node">&quot;@#{Regexp.last_match.pre_match}&quot;</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_param</span>)
+1121:             <span class="ruby-ivar">@auto_index</span> = <span class="ruby-identifier">object</span>.<span class="ruby-identifier">to_param</span>
+1122:           <span class="ruby-keyword kw">else</span>
+1123:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;object[] naming but object param and @object var don't exist or don't respond to to_param: #{object.inspect}&quot;</span>
+1124:           <span class="ruby-keyword kw">end</span>
+1125:         <span class="ruby-keyword kw">end</span>
+1126:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="check-box-method" class="method-detail ">
+				<a name="method-i-check_box"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">check_box</span><span
+						class="method-args">(method, options = {}, checked_value = "1", unchecked_value = "0")</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="check-box-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1179</span>
+1179:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">check_box</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">checked_value</span> = <span class="ruby-value str">&quot;1&quot;</span>, <span class="ruby-identifier">unchecked_value</span> = <span class="ruby-value str">&quot;0&quot;</span>)
+1180:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">check_box</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>), <span class="ruby-identifier">checked_value</span>, <span class="ruby-identifier">unchecked_value</span>)
+1181:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="collection-select-method" class="method-detail ">
+				<a name="method-i-collection_select"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">collection_select</span><span
+						class="method-args">(method, collection, value_method, text_method, options = {}, html_options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="collection-select-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/helpers/form_options_helper.rb, line 614</span>
+614:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">collection_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">value_method</span>, <span class="ruby-identifier">text_method</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
+615:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">collection_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">value_method</span>, <span class="ruby-identifier">text_method</span>, <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>), <span class="ruby-ivar">@default_options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">html_options</span>))
+616:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="date-select-method" class="method-detail ">
+				<a name="method-i-date_select"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">date_select</span><span
+						class="method-args">(method, options = {}, html_options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="date-select-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/helpers/date_helper.rb, line 968</span>
+968:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">date_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
+969:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">date_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>), <span class="ruby-identifier">html_options</span>)
+970:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="datetime-select-method" class="method-detail ">
+				<a name="method-i-datetime_select"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">datetime_select</span><span
+						class="method-args">(method, options = {}, html_options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="datetime-select-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/helpers/date_helper.rb, line 976</span>
+976:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">datetime_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
+977:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">datetime_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>), <span class="ruby-identifier">html_options</span>)
+978:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="emitted-hidden-id--method" class="method-detail ">
+				<a name="method-i-emitted_hidden_id%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">emitted_hidden_id?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="emitted-hidden-id--source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1225</span>
+1225:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">emitted_hidden_id?</span>
+1226:         <span class="ruby-ivar">@emitted_hidden_id</span>
+1227:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="fields-for-method" class="method-detail ">
+				<a name="method-i-fields_for"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">fields_for</span><span
+						class="method-args">(record_or_name_or_array, *args, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="fields-for-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1140</span>
+1140:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fields_for</span>(<span class="ruby-identifier">record_or_name_or_array</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+1141:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:index</span>)
+1142:           <span class="ruby-identifier">index</span> = <span class="ruby-node">&quot;[#{options[:index]}]&quot;</span>
+1143:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-ivar">@auto_index</span>)
+1144:           <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">object_name</span> = <span class="ruby-ivar">@object_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/\[\]$/</span>,<span class="ruby-value str">&quot;&quot;</span>)
+1145:           <span class="ruby-identifier">index</span> = <span class="ruby-node">&quot;[#{@auto_index}]&quot;</span>
+1146:         <span class="ruby-keyword kw">else</span>
+1147:           <span class="ruby-identifier">index</span> = <span class="ruby-value str">&quot;&quot;</span>
+1148:         <span class="ruby-keyword kw">end</span>
+1149: 
+1150:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:builder</span>]
+1151:           <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> {} <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+1152:           <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>[<span class="ruby-value">:builder</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:builder</span>]
+1153:         <span class="ruby-keyword kw">end</span>
+1154: 
+1155:         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">record_or_name_or_array</span>
+1156:         <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>, <span class="ruby-constant">Symbol</span>
+1157:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">nested_attributes_association?</span>(<span class="ruby-identifier">record_or_name_or_array</span>)
+1158:             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">fields_for_with_nested_attributes</span>(<span class="ruby-identifier">record_or_name_or_array</span>, <span class="ruby-identifier">args</span>, <span class="ruby-identifier">block</span>)
+1159:           <span class="ruby-keyword kw">else</span>
+1160:             <span class="ruby-identifier">name</span> = <span class="ruby-node">&quot;#{object_name}#{index}[#{record_or_name_or_array}]&quot;</span>
+1161:           <span class="ruby-keyword kw">end</span>
+1162:         <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
+1163:           <span class="ruby-identifier">object</span> = <span class="ruby-identifier">record_or_name_or_array</span>.<span class="ruby-identifier">last</span>
+1164:           <span class="ruby-identifier">name</span> = <span class="ruby-node">&quot;#{object_name}#{index}[#{ActiveModel::Naming.singular(object)}]&quot;</span>
+1165:           <span class="ruby-identifier">args</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">object</span>)
+1166:         <span class="ruby-keyword kw">else</span>
+1167:           <span class="ruby-identifier">object</span> = <span class="ruby-identifier">record_or_name_or_array</span>
+1168:           <span class="ruby-identifier">name</span> = <span class="ruby-node">&quot;#{object_name}#{index}[#{ActiveModel::Naming.singular(object)}]&quot;</span>
+1169:           <span class="ruby-identifier">args</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">object</span>)
+1170:         <span class="ruby-keyword kw">end</span>
+1171: 
+1172:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">fields_for</span>(<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+1173:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="grouped-collection-select-method" class="method-detail ">
+				<a name="method-i-grouped_collection_select"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">grouped_collection_select</span><span
+						class="method-args">(method, collection, group_method, group_label_method, option_key_method, option_value_method, options = {}, html_options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="grouped-collection-select-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/helpers/form_options_helper.rb, line 618</span>
+618:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">grouped_collection_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">group_method</span>, <span class="ruby-identifier">group_label_method</span>, <span class="ruby-identifier">option_key_method</span>, <span class="ruby-identifier">option_value_method</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
+619:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">grouped_collection_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">group_method</span>, <span class="ruby-identifier">group_label_method</span>, <span class="ruby-identifier">option_key_method</span>, <span class="ruby-identifier">option_value_method</span>, <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>), <span class="ruby-ivar">@default_options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">html_options</span>))
+620:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="hidden-field-method" class="method-detail ">
+				<a name="method-i-hidden_field"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">hidden_field</span><span
+						class="method-args">(method, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="hidden-field-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1187</span>
+1187:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hidden_field</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span> = {})
+1188:         <span class="ruby-ivar">@emitted_hidden_id</span> = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">==</span> <span class="ruby-value">:id</span>
+1189:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">hidden_field</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>))
+1190:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="label-method" class="method-detail ">
+				<a name="method-i-label"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">label</span><span
+						class="method-args">(method, text = nil, options = {}, &block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="label-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1175</span>
+1175:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">label</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">text</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">options</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+1176:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">label</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">text</span>, <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>), &amp;<span class="ruby-identifier">block</span>)
+1177:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="radio-button-method" class="method-detail ">
+				<a name="method-i-radio_button"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">radio_button</span><span
+						class="method-args">(method, tag_value, options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="radio-button-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1183</span>
+1183:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">radio_button</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">tag_value</span>, <span class="ruby-identifier">options</span> = {})
+1184:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">radio_button</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">tag_value</span>, <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>))
+1185:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="select-method" class="method-detail ">
+				<a name="method-i-select"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">select</span><span
+						class="method-args">(method, choices, options = {}, html_options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="select-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/helpers/form_options_helper.rb, line 610</span>
+610:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">choices</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
+611:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">choices</span>, <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>), <span class="ruby-ivar">@default_options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">html_options</span>))
+612:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="submit-method" class="method-detail ">
+				<a name="method-i-submit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">submit</span><span
+						class="method-args">(value=nil, options={})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Add the submit button for the given form. When no value is given, it checks
+if the object is a new resource or not to create the proper label:
+</p>
+<pre>
+  &lt;%= form_for @post do |f| %&gt;
+    &lt;%= f.submit %&gt;
+  &lt;% end %&gt;
+</pre>
+<p>
+In the example above, if @post is a new record, it will use &#8220;Create
+Post&#8221; as submit button label, otherwise, it uses &#8220;Update
+Post&#8221;.
+</p>
+<p>
+Those labels can be customized using I18n, under the helpers.submit key and
+accept the %{model} as translation interpolation:
+</p>
+<pre>
+  en:
+    helpers:
+      submit:
+        create: &quot;Create a %{model}&quot;
+        update: &quot;Confirm changes to %{model}&quot;
+</pre>
+<p>
+It also searches for a key specific for the given object:
+</p>
+<pre>
+  en:
+    helpers:
+      submit:
+        post:
+          create: &quot;Add %{model}&quot;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="submit-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1219</span>
+1219:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">submit</span>(<span class="ruby-identifier">value</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">options</span>={})
+1220:         <span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+1221:         <span class="ruby-identifier">value</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">submit_default_value</span>
+1222:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">submit_tag</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">reverse_merge</span>(<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{object_name}_submit&quot;</span>))
+1223:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="time-select-method" class="method-detail ">
+				<a name="method-i-time_select"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">time_select</span><span
+						class="method-args">(method, options = {}, html_options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="time-select-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/helpers/date_helper.rb, line 972</span>
+972:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">time_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
+973:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">time_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>), <span class="ruby-identifier">html_options</span>)
+974:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="time-zone-select-method" class="method-detail ">
+				<a name="method-i-time_zone_select"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">time_zone_select</span><span
+						class="method-args">(method, priority_zones = nil, options = {}, html_options = {})</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="time-zone-select-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/action_view/helpers/form_options_helper.rb, line 622</span>
+622:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">time_zone_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_zones</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
+623:         <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">time_zone_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_zones</span>, <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>), <span class="ruby-ivar">@default_options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">html_options</span>))
+624:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="to-model-method" class="method-detail ">
+				<a name="method-i-to_model"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">to_model</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="to-model-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1111</span>
+1111:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_model</span>
+1112:         <span class="ruby-keyword kw">self</span>
+1113:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="fields-for-nested-model-method" class="method-detail ">
+				<a name="method-i-fields_for_nested_model"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">fields_for_nested_model</span><span
+						class="method-args">(name, object, options, block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="fields-for-nested-model-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1280</span>
+1280:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fields_for_nested_model</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">object</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">block</span>)
+1281:           <span class="ruby-identifier">object</span> = <span class="ruby-identifier">object</span>.<span class="ruby-identifier">to_model</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_model</span>)
+1282: 
+1283:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">persisted?</span>
+1284:             <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">fields_for</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">object</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">builder</span><span class="ruby-operator">|</span>
+1285:               <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">builder</span>)
+1286:               <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">hidden_field</span>(<span class="ruby-value">:id</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">emitted_hidden_id?</span>
+1287:             <span class="ruby-keyword kw">end</span>
+1288:           <span class="ruby-keyword kw">else</span>
+1289:             <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">fields_for</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">object</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+1290:           <span class="ruby-keyword kw">end</span>
+1291:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="fields-for-with-nested-attributes-method" class="method-detail ">
+				<a name="method-i-fields_for_with_nested_attributes"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">fields_for_with_nested_attributes</span><span
+						class="method-args">(association_name, args, block)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="fields-for-with-nested-attributes-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1256</span>
+1256:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fields_for_with_nested_attributes</span>(<span class="ruby-identifier">association_name</span>, <span class="ruby-identifier">args</span>, <span class="ruby-identifier">block</span>)
+1257:           <span class="ruby-identifier">name</span> = <span class="ruby-node">&quot;#{object_name}[#{association_name}_attributes]&quot;</span>
+1258:           <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">extract_options!</span>
+1259:           <span class="ruby-identifier">association</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>
+1260:           <span class="ruby-identifier">association</span> = <span class="ruby-identifier">association</span>.<span class="ruby-identifier">to_model</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_model</span>)
+1261: 
+1262:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:persisted?</span>)
+1263:             <span class="ruby-identifier">association</span> = [<span class="ruby-identifier">association</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@object</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">association_name</span>).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+1264:           <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">association</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_ary</span>)
+1265:             <span class="ruby-identifier">association</span> = <span class="ruby-ivar">@object</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">association_name</span>)
+1266:           <span class="ruby-keyword kw">end</span>
+1267: 
+1268:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">association</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_ary</span>)
+1269:             <span class="ruby-identifier">explicit_child_index</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:child_index</span>]
+1270:             <span class="ruby-identifier">output</span> = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">SafeBuffer</span>.<span class="ruby-identifier">new</span>
+1271:             <span class="ruby-identifier">association</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span>
+1272:               <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">fields_for_nested_model</span>(<span class="ruby-node">&quot;#{name}[#{explicit_child_index || nested_child_index(name)}]&quot;</span>, <span class="ruby-identifier">child</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">block</span>)
+1273:             <span class="ruby-keyword kw">end</span>
+1274:             <span class="ruby-identifier">output</span>
+1275:           <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">association</span>
+1276:             <span class="ruby-identifier">fields_for_nested_model</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">association</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">block</span>)
+1277:           <span class="ruby-keyword kw">end</span>
+1278:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="nested-attributes-association--method" class="method-detail ">
+				<a name="method-i-nested_attributes_association%3F"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">nested_attributes_association?</span><span
+						class="method-args">(association_name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="nested-attributes-association--source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1252</span>
+1252:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">nested_attributes_association?</span>(<span class="ruby-identifier">association_name</span>)
+1253:           <span class="ruby-ivar">@object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-node">&quot;#{association_name}_attributes=&quot;</span>)
+1254:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="nested-child-index-method" class="method-detail ">
+				<a name="method-i-nested_child_index"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">nested_child_index</span><span
+						class="method-args">(name)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="nested-child-index-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1293</span>
+1293:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">nested_child_index</span>(<span class="ruby-identifier">name</span>)
+1294:           <span class="ruby-ivar">@nested_child_index</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||=</span> <span class="ruby-value">1</span>
+1295:           <span class="ruby-ivar">@nested_child_index</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+1296:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="objectify-options-method" class="method-detail ">
+				<a name="method-i-objectify_options"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">objectify_options</span><span
+						class="method-args">(options)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="objectify-options-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1230</span>
+1230:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">objectify_options</span>(<span class="ruby-identifier">options</span>)
+1231:           <span class="ruby-ivar">@default_options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>))
+1232:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="submit-default-value-method" class="method-detail ">
+				<a name="method-i-submit_default_value"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">submit_default_value</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="submit-default-value-source">
+<pre>
+      <span class="ruby-comment cmt"># File lib/action_view/helpers/form_helper.rb, line 1234</span>
+1234:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">submit_default_value</span>
+1235:           <span class="ruby-identifier">object</span> = <span class="ruby-ivar">@object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_model</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@object</span>.<span class="ruby-identifier">to_model</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@object</span>
+1236:           <span class="ruby-identifier">key</span>    = <span class="ruby-identifier">object</span> <span class="ruby-operator">?</span> (<span class="ruby-identifier">object</span>.<span class="ruby-identifier">persisted?</span> <span class="ruby-operator">?</span> <span class="ruby-value">:update</span> <span class="ruby-operator">:</span> <span class="ruby-value">:create</span>) <span class="ruby-operator">:</span> <span class="ruby-value">:submit</span>
+1237: 
+1238:           <span class="ruby-identifier">model</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:model_name</span>)
+1239:             <span class="ruby-identifier">object</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">model_name</span>.<span class="ruby-identifier">human</span>
+1240:           <span class="ruby-keyword kw">else</span>
+1241:             <span class="ruby-ivar">@object_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">humanize</span>
+1242:           <span class="ruby-keyword kw">end</span>
+1243: 
+1244:           <span class="ruby-identifier">defaults</span> = []
+1245:           <span class="ruby-identifier">defaults</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:&quot;helpers.submit.#{object_name}.#{key}&quot;</span>
+1246:           <span class="ruby-identifier">defaults</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:&quot;helpers.submit.#{key}&quot;</span>
+1247:           <span class="ruby-identifier">defaults</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{key.to_s.humanize} #{model}&quot;</span>
+1248: 
+1249:           <span class="ruby-constant">I18n</span>.<span class="ruby-identifier">t</span>(<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">shift</span>, <span class="ruby-value">:model</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">model</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">defaults</span>)
+1250:         <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

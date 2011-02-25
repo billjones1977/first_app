@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="nautilus-window-scroll-position" mtime="1298569048" type="string">
+		<stringvalue>x-nautilus-desktop:///VBOXADDITIONS_4.0.4_70112.volume</stringvalue>
+	</entry>
+	<entry name="nautilus-icon-view-layout-timestamp" mtime="1298569180" type="string">
+		<stringvalue>1298569180</stringvalue>
+	</entry>
+	<entry name="nautilus-icon-view-keep-aligned" mtime="1298569179" type="string">
+		<stringvalue>true</stringvalue>
+	</entry>
+</gconf>

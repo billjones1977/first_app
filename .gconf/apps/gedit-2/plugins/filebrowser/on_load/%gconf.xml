@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="virtual_root" mtime="1298660439" type="string">
+		<stringvalue>file:///home/billones1977/rails_projects/demo_app</stringvalue>
+	</entry>
+	<entry name="root" mtime="1298660439" type="string">
+		<stringvalue>file:///</stringvalue>
+	</entry>
+	<entry name="tree_view" mtime="1298660439" type="bool" value="true"/>
+</gconf>

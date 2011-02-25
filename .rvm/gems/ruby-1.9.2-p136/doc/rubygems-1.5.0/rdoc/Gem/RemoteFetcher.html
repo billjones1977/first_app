@@ -1,0 +1,1307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Gem::RemoteFetcher</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/rubygems/remote_fetcher_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/rubygems/remote_fetcher.rb">lib/rubygems/remote_fetcher.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="RemoteFetcher/FetchError.html">Gem::RemoteFetcher::FetchError</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-fetcher">::fetcher</a></li>
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-connection_for">#connection_for</a></li>
+					
+					<li><a href="#method-i-download">#download</a></li>
+					
+					<li><a href="#method-i-escape">#escape</a></li>
+					
+					<li><a href="#method-i-fetch_path">#fetch_path</a></li>
+					
+					<li><a href="#method-i-fetch_size">#fetch_size</a></li>
+					
+					<li><a href="#method-i-get_proxy_from_env">#get_proxy_from_env</a></li>
+					
+					<li><a href="#method-i-normalize_uri">#normalize_uri</a></li>
+					
+					<li><a href="#method-i-open_uri_or_path">#open_uri_or_path</a></li>
+					
+					<li><a href="#method-i-request">#request</a></li>
+					
+					<li><a href="#method-i-reset">#reset</a></li>
+					
+					<li><a href="#method-i-unescape">#unescape</a></li>
+					
+					<li><a href="#method-i-uri_escaper">#uri_escaper</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="UserInteraction.html">Gem::UserInteraction</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../GPL_txt.html">GPL.txt</a></li>
+				
+					<li class="file"><a href="../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="../UPGRADING_rdoc.html">UPGRADING.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Gem.html">Gem</a></li>
+				
+					<li><a href="../Gem/Builder.html">Gem::Builder</a></li>
+				
+					<li><a href="../Gem/Command.html">Gem::Command</a></li>
+				
+					<li><a href="../Gem/CommandLineError.html">Gem::CommandLineError</a></li>
+				
+					<li><a href="../Gem/CommandManager.html">Gem::CommandManager</a></li>
+				
+					<li><a href="../Gem/Commands.html">Gem::Commands</a></li>
+				
+					<li><a href="../Gem/Commands/BuildCommand.html">Gem::Commands::BuildCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CertCommand.html">Gem::Commands::CertCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CheckCommand.html">Gem::Commands::CheckCommand</a></li>
+				
+					<li><a href="../Gem/Commands/CleanupCommand.html">Gem::Commands::CleanupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ContentsCommand.html">Gem::Commands::ContentsCommand</a></li>
+				
+					<li><a href="../Gem/Commands/DependencyCommand.html">Gem::Commands::DependencyCommand</a></li>
+				
+					<li><a href="../Gem/Commands/EnvironmentCommand.html">Gem::Commands::EnvironmentCommand</a></li>
+				
+					<li><a href="../Gem/Commands/FetchCommand.html">Gem::Commands::FetchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/GenerateIndexCommand.html">Gem::Commands::GenerateIndexCommand</a></li>
+				
+					<li><a href="../Gem/Commands/HelpCommand.html">Gem::Commands::HelpCommand</a></li>
+				
+					<li><a href="../Gem/Commands/InstallCommand.html">Gem::Commands::InstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ListCommand.html">Gem::Commands::ListCommand</a></li>
+				
+					<li><a href="../Gem/Commands/LockCommand.html">Gem::Commands::LockCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OutdatedCommand.html">Gem::Commands::OutdatedCommand</a></li>
+				
+					<li><a href="../Gem/Commands/OwnerCommand.html">Gem::Commands::OwnerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PristineCommand.html">Gem::Commands::PristineCommand</a></li>
+				
+					<li><a href="../Gem/Commands/PushCommand.html">Gem::Commands::PushCommand</a></li>
+				
+					<li><a href="../Gem/Commands/QueryCommand.html">Gem::Commands::QueryCommand</a></li>
+				
+					<li><a href="../Gem/Commands/RdocCommand.html">Gem::Commands::RdocCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SearchCommand.html">Gem::Commands::SearchCommand</a></li>
+				
+					<li><a href="../Gem/Commands/ServerCommand.html">Gem::Commands::ServerCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SetupCommand.html">Gem::Commands::SetupCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SourcesCommand.html">Gem::Commands::SourcesCommand</a></li>
+				
+					<li><a href="../Gem/Commands/SpecificationCommand.html">Gem::Commands::SpecificationCommand</a></li>
+				
+					<li><a href="../Gem/Commands/StaleCommand.html">Gem::Commands::StaleCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UninstallCommand.html">Gem::Commands::UninstallCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UnpackCommand.html">Gem::Commands::UnpackCommand</a></li>
+				
+					<li><a href="../Gem/Commands/UpdateCommand.html">Gem::Commands::UpdateCommand</a></li>
+				
+					<li><a href="../Gem/Commands/WhichCommand.html">Gem::Commands::WhichCommand</a></li>
+				
+					<li><a href="../Gem/ConfigFile.html">Gem::ConfigFile</a></li>
+				
+					<li><a href="../Gem/ConsoleUI.html">Gem::ConsoleUI</a></li>
+				
+					<li><a href="../Gem/DefaultUserInteraction.html">Gem::DefaultUserInteraction</a></li>
+				
+					<li><a href="../Gem/Dependency.html">Gem::Dependency</a></li>
+				
+					<li><a href="../Gem/DependencyError.html">Gem::DependencyError</a></li>
+				
+					<li><a href="../Gem/DependencyInstaller.html">Gem::DependencyInstaller</a></li>
+				
+					<li><a href="../Gem/DependencyList.html">Gem::DependencyList</a></li>
+				
+					<li><a href="../Gem/DependencyRemovalException.html">Gem::DependencyRemovalException</a></li>
+				
+					<li><a href="../Gem/DocManager.html">Gem::DocManager</a></li>
+				
+					<li><a href="../Gem/DocumentError.html">Gem::DocumentError</a></li>
+				
+					<li><a href="../Gem/EndOfYAMLException.html">Gem::EndOfYAMLException</a></li>
+				
+					<li><a href="../Gem/ErrorReason.html">Gem::ErrorReason</a></li>
+				
+					<li><a href="../Gem/Exception.html">Gem::Exception</a></li>
+				
+					<li><a href="../Gem/Ext.html">Gem::Ext</a></li>
+				
+					<li><a href="../Gem/Ext/Builder.html">Gem::Ext::Builder</a></li>
+				
+					<li><a href="../Gem/Ext/ConfigureBuilder.html">Gem::Ext::ConfigureBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/ExtConfBuilder.html">Gem::Ext::ExtConfBuilder</a></li>
+				
+					<li><a href="../Gem/Ext/RakeBuilder.html">Gem::Ext::RakeBuilder</a></li>
+				
+					<li><a href="../Gem/FakeFetcher.html">Gem::FakeFetcher</a></li>
+				
+					<li><a href="../Gem/FileOperations.html">Gem::FileOperations</a></li>
+				
+					<li><a href="../Gem/FilePermissionError.html">Gem::FilePermissionError</a></li>
+				
+					<li><a href="../Gem/Format.html">Gem::Format</a></li>
+				
+					<li><a href="../Gem/FormatException.html">Gem::FormatException</a></li>
+				
+					<li><a href="../Gem/GemNotFoundException.html">Gem::GemNotFoundException</a></li>
+				
+					<li><a href="../Gem/GemNotInHomeException.html">Gem::GemNotInHomeException</a></li>
+				
+					<li><a href="../Gem/GemPathSearcher.html">Gem::GemPathSearcher</a></li>
+				
+					<li><a href="../Gem/GemRunner.html">Gem::GemRunner</a></li>
+				
+					<li><a href="../Gem/GemcutterUtilities.html">Gem::GemcutterUtilities</a></li>
+				
+					<li><a href="../Gem/Indexer.html">Gem::Indexer</a></li>
+				
+					<li><a href="../Gem/InstallError.html">Gem::InstallError</a></li>
+				
+					<li><a href="../Gem/InstallUpdateOptions.html">Gem::InstallUpdateOptions</a></li>
+				
+					<li><a href="../Gem/Installer.html">Gem::Installer</a></li>
+				
+					<li><a href="../Gem/Installer/ExtensionBuildError.html">Gem::Installer::ExtensionBuildError</a></li>
+				
+					<li><a href="../Gem/InstallerTestCase.html">Gem::InstallerTestCase</a></li>
+				
+					<li><a href="../Gem/InvalidSpecificationException.html">Gem::InvalidSpecificationException</a></li>
+				
+					<li><a href="../Gem/LoadError.html">Gem::LoadError</a></li>
+				
+					<li><a href="../Gem/LocalRemoteOptions.html">Gem::LocalRemoteOptions</a></li>
+				
+					<li><a href="../Gem/MockGemUi.html">Gem::MockGemUi</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TTY.html">Gem::MockGemUi::TTY</a></li>
+				
+					<li><a href="../Gem/MockGemUi/TermError.html">Gem::MockGemUi::TermError</a></li>
+				
+					<li><a href="../Gem/OldFormat.html">Gem::OldFormat</a></li>
+				
+					<li><a href="../Gem/OperationNotSupportedError.html">Gem::OperationNotSupportedError</a></li>
+				
+					<li><a href="../Gem/Package.html">Gem::Package</a></li>
+				
+					<li><a href="../Gem/Package/BadCheckSum.html">Gem::Package::BadCheckSum</a></li>
+				
+					<li><a href="../Gem/Package/ClosedIO.html">Gem::Package::ClosedIO</a></li>
+				
+					<li><a href="../Gem/Package/Error.html">Gem::Package::Error</a></li>
+				
+					<li><a href="../Gem/Package/FSyncDir.html">Gem::Package::FSyncDir</a></li>
+				
+					<li><a href="../Gem/Package/FormatError.html">Gem::Package::FormatError</a></li>
+				
+					<li><a href="../Gem/Package/NonSeekableIO.html">Gem::Package::NonSeekableIO</a></li>
+				
+					<li><a href="../Gem/Package/TarHeader.html">Gem::Package::TarHeader</a></li>
+				
+					<li><a href="../Gem/Package/TarInput.html">Gem::Package::TarInput</a></li>
+				
+					<li><a href="../Gem/Package/TarInvalidError.html">Gem::Package::TarInvalidError</a></li>
+				
+					<li><a href="../Gem/Package/TarOutput.html">Gem::Package::TarOutput</a></li>
+				
+					<li><a href="../Gem/Package/TarReader.html">Gem::Package::TarReader</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/Entry.html">Gem::Package::TarReader::Entry</a></li>
+				
+					<li><a href="../Gem/Package/TarReader/UnexpectedEOF.html">Gem::Package::TarReader::UnexpectedEOF</a></li>
+				
+					<li><a href="../Gem/Package/TarTestCase.html">Gem::Package::TarTestCase</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter.html">Gem::Package::TarWriter</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/BoundedStream.html">Gem::Package::TarWriter::BoundedStream</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/FileOverflow.html">Gem::Package::TarWriter::FileOverflow</a></li>
+				
+					<li><a href="../Gem/Package/TarWriter/RestrictedStream.html">Gem::Package::TarWriter::RestrictedStream</a></li>
+				
+					<li><a href="../Gem/Package/TooLongFileName.html">Gem::Package::TooLongFileName</a></li>
+				
+					<li><a href="../Gem/PackageTask.html">Gem::PackageTask</a></li>
+				
+					<li><a href="../Gem/Platform.html">Gem::Platform</a></li>
+				
+					<li><a href="../Gem/PlatformMismatch.html">Gem::PlatformMismatch</a></li>
+				
+					<li><a href="../Gem/RemoteError.html">Gem::RemoteError</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher.html">Gem::RemoteFetcher</a></li>
+				
+					<li><a href="../Gem/RemoteFetcher/FetchError.html">Gem::RemoteFetcher::FetchError</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationCancelled.html">Gem::RemoteInstallationCancelled</a></li>
+				
+					<li><a href="../Gem/RemoteInstallationSkipped.html">Gem::RemoteInstallationSkipped</a></li>
+				
+					<li><a href="../Gem/RemoteSourceException.html">Gem::RemoteSourceException</a></li>
+				
+					<li><a href="../Gem/RequirePathsBuilder.html">Gem::RequirePathsBuilder</a></li>
+				
+					<li><a href="../Gem/Requirement.html">Gem::Requirement</a></li>
+				
+					<li><a href="../Gem/Security/Exception.html">Gem::Security::Exception</a></li>
+				
+					<li><a href="../Gem/Security/Signer.html">Gem::Security::Signer</a></li>
+				
+					<li><a href="../Gem/Server.html">Gem::Server</a></li>
+				
+					<li><a href="../Gem/SilentUI.html">Gem::SilentUI</a></li>
+				
+					<li><a href="../Gem/SourceIndex.html">Gem::SourceIndex</a></li>
+				
+					<li><a href="../Gem/SpecFetcher.html">Gem::SpecFetcher</a></li>
+				
+					<li><a href="../Gem/Specification.html">Gem::Specification</a></li>
+				
+					<li><a href="../Gem/StreamUI.html">Gem::StreamUI</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentDownloadReporter.html">Gem::StreamUI::SilentDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SilentProgressReporter.html">Gem::StreamUI::SilentProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/SimpleProgressReporter.html">Gem::StreamUI::SimpleProgressReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseDownloadReporter.html">Gem::StreamUI::VerboseDownloadReporter</a></li>
+				
+					<li><a href="../Gem/StreamUI/VerboseProgressReporter.html">Gem::StreamUI::VerboseProgressReporter</a></li>
+				
+					<li><a href="../Gem/SystemExitException.html">Gem::SystemExitException</a></li>
+				
+					<li><a href="../Gem/TestCase.html">Gem::TestCase</a></li>
+				
+					<li><a href="../Gem/Text.html">Gem::Text</a></li>
+				
+					<li><a href="../Gem/Uninstaller.html">Gem::Uninstaller</a></li>
+				
+					<li><a href="../Gem/UserInteraction.html">Gem::UserInteraction</a></li>
+				
+					<li><a href="../Gem/Validator.html">Gem::Validator</a></li>
+				
+					<li><a href="../Gem/VerificationError.html">Gem::VerificationError</a></li>
+				
+					<li><a href="../Gem/Version.html">Gem::Version</a></li>
+				
+					<li><a href="../Gem/VersionOption.html">Gem::VersionOption</a></li>
+				
+					<li><a href="../OpenSSL.html">OpenSSL</a></li>
+				
+					<li><a href="../OpenSSL/X509.html">OpenSSL::X509</a></li>
+				
+					<li><a href="../GemGauntlet.html">GemGauntlet</a></li>
+				
+					<li><a href="../Kernel.html">Kernel</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+					<li><a href="../TempIO.html">TempIO</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Gem::RemoteFetcher</h1>
+
+		<div id="description">
+			<p>
+<a href="RemoteFetcher.html">RemoteFetcher</a> handles the details of
+fetching gems and gem information from a remote source.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="fetcher-method" class="method-detail ">
+				<a name="method-c-fetcher"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">fetcher</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Cached <a href="RemoteFetcher.html">RemoteFetcher</a> instance.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="fetcher-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 40</span>
+40:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">fetcher</span>
+41:     <span class="ruby-ivar">@fetcher</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>[<span class="ruby-value">:http_proxy</span>]
+42:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(proxy = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Initialize a remote fetcher using the source URI and possible proxy
+information.
+</p>
+<p>
+<tt>proxy</tt>
+</p>
+<ul>
+<li><p>
+[String]: explicit specification of proxy; overrides any environment
+</p>
+<pre>
+          variable setting
+</pre>
+</li>
+<li><p>
+nil: respect environment variables (HTTP_PROXY, HTTP_PROXY_USER,
+</p>
+<pre>
+     HTTP_PROXY_PASS)
+</pre>
+</li>
+<li><p>
+<tt>:no_proxy</tt>: ignore environment variables and _don&#8217;t_ use a
+proxy
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 55</span>
+55:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">proxy</span> = <span class="ruby-keyword kw">nil</span>)
+56:     <span class="ruby-identifier">require</span> <span class="ruby-value str">'net/http'</span>
+57:     <span class="ruby-identifier">require</span> <span class="ruby-value str">'stringio'</span>
+58:     <span class="ruby-identifier">require</span> <span class="ruby-value str">'time'</span>
+59:     <span class="ruby-identifier">require</span> <span class="ruby-value str">'uri'</span>
+60: 
+61:     <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">do_not_reverse_lookup</span> = <span class="ruby-keyword kw">true</span>
+62: 
+63:     <span class="ruby-ivar">@connections</span> = {}
+64:     <span class="ruby-ivar">@requests</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">0</span>
+65:     <span class="ruby-ivar">@proxy_uri</span> =
+66:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">proxy</span>
+67:       <span class="ruby-keyword kw">when</span> <span class="ruby-value">:no_proxy</span> <span class="ruby-keyword kw">then</span> <span class="ruby-keyword kw">nil</span>
+68:       <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">get_proxy_from_env</span>
+69:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">proxy</span>
+70:       <span class="ruby-keyword kw">else</span> <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">proxy</span>)
+71:       <span class="ruby-keyword kw">end</span>
+72:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="connection-for-method" class="method-detail ">
+				<a name="method-i-connection_for"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">connection_for</span><span
+						class="method-args">(uri)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Creates or an HTTP connection based on <tt>uri</tt>, or retrieves an
+existing connection, using a proxy if needed.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="connection-for-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 244</span>
+244:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">connection_for</span>(<span class="ruby-identifier">uri</span>)
+245:     <span class="ruby-identifier">net_http_args</span> = [<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">host</span>, <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">port</span>]
+246: 
+247:     <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@proxy_uri</span> <span class="ruby-keyword kw">then</span>
+248:       <span class="ruby-identifier">net_http_args</span> <span class="ruby-operator">+=</span> [
+249:         <span class="ruby-ivar">@proxy_uri</span>.<span class="ruby-identifier">host</span>,
+250:         <span class="ruby-ivar">@proxy_uri</span>.<span class="ruby-identifier">port</span>,
+251:         <span class="ruby-ivar">@proxy_uri</span>.<span class="ruby-identifier">user</span>,
+252:         <span class="ruby-ivar">@proxy_uri</span>.<span class="ruby-identifier">password</span>
+253:       ]
+254:     <span class="ruby-keyword kw">end</span>
+255: 
+256:     <span class="ruby-identifier">connection_id</span> = [<span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">object_id</span>, *<span class="ruby-identifier">net_http_args</span>].<span class="ruby-identifier">join</span> <span class="ruby-value str">':'</span>
+257:     <span class="ruby-ivar">@connections</span>[<span class="ruby-identifier">connection_id</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">net_http_args</span>)
+258:     <span class="ruby-identifier">connection</span> = <span class="ruby-ivar">@connections</span>[<span class="ruby-identifier">connection_id</span>]
+259: 
+260:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'https'</span> <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">started?</span> <span class="ruby-keyword kw">then</span>
+261:       <span class="ruby-identifier">require</span> <span class="ruby-value str">'net/https'</span>
+262:       <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">use_ssl</span> = <span class="ruby-keyword kw">true</span>
+263:       <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">verify_mode</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERIFY_NONE</span>
+264:     <span class="ruby-keyword kw">end</span>
+265: 
+266:     <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">start</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">started?</span>
+267: 
+268:     <span class="ruby-identifier">connection</span>
+269:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EHOSTDOWN</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+270:     <span class="ruby-identifier">raise</span> <span class="ruby-constant">FetchError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>, <span class="ruby-identifier">uri</span>)
+271:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="download-method" class="method-detail ">
+				<a name="method-i-download"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">download</span><span
+						class="method-args">(spec, source_uri, install_dir = Gem.dir)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Moves the gem <tt>spec</tt> from <tt>source_uri</tt> to the cache dir
+unless it is already there.  If the source_uri is local the gem cache dir
+copy is always replaced.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="download-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 79</span>
+ 79:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">download</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-identifier">source_uri</span>, <span class="ruby-identifier">install_dir</span> = <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">dir</span>)
+ 80:     <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">ensure_gem_subdirectories</span>(<span class="ruby-identifier">install_dir</span>) <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+ 81: 
+ 82:     <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">writable?</span>(<span class="ruby-identifier">install_dir</span>)
+ 83:       <span class="ruby-identifier">cache_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">install_dir</span>, <span class="ruby-value str">'cache'</span>
+ 84:     <span class="ruby-keyword kw">else</span>
+ 85:       <span class="ruby-identifier">cache_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">Gem</span>.<span class="ruby-identifier">user_dir</span>, <span class="ruby-value str">'cache'</span>)
+ 86:     <span class="ruby-keyword kw">end</span>
+ 87: 
+ 88:     <span class="ruby-identifier">gem_file_name</span> = <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">file_name</span>
+ 89:     <span class="ruby-identifier">local_gem_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">cache_dir</span>, <span class="ruby-identifier">gem_file_name</span>
+ 90: 
+ 91:     <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">cache_dir</span> <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">cache_dir</span>
+ 92: 
+ 93:    <span class="ruby-comment cmt"># Always escape URI's to deal with potential spaces and such</span>
+ 94:     <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">Generic</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">source_uri</span>
+ 95:       <span class="ruby-identifier">source_uri</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:DEFAULT_PARSER</span>) <span class="ruby-operator">?</span>
+ 96:                              <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_PARSER</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">source_uri</span>) <span class="ruby-operator">:</span>
+ 97:                              <span class="ruby-constant">URI</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">source_uri</span>))
+ 98:     <span class="ruby-keyword kw">end</span>
+ 99: 
+100:     <span class="ruby-identifier">scheme</span> = <span class="ruby-identifier">source_uri</span>.<span class="ruby-identifier">scheme</span>
+101: 
+102:     <span class="ruby-comment cmt"># URI.parse gets confused by MS Windows paths with forward slashes.</span>
+103:     <span class="ruby-identifier">scheme</span> = <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">scheme</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^[a-z]$/</span>
+104: 
+105:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">scheme</span>
+106:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'http'</span>, <span class="ruby-value str">'https'</span> <span class="ruby-keyword kw">then</span>
+107:       <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">local_gem_path</span> <span class="ruby-keyword kw">then</span>
+108:         <span class="ruby-keyword kw">begin</span>
+109:           <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Downloading gem #{gem_file_name}&quot;</span> <span class="ruby-keyword kw">if</span>
+110:             <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">really_verbose</span>
+111: 
+112:           <span class="ruby-identifier">remote_gem_path</span> = <span class="ruby-identifier">source_uri</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;gems/#{gem_file_name}&quot;</span>
+113: 
+114:           <span class="ruby-identifier">gem</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">fetch_path</span> <span class="ruby-identifier">remote_gem_path</span>
+115:         <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">RemoteFetcher</span><span class="ruby-operator">::</span><span class="ruby-constant">FetchError</span>
+116:           <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">original_platform</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">platform</span>
+117: 
+118:           <span class="ruby-identifier">alternate_name</span> = <span class="ruby-node">&quot;#{spec.original_name}.gem&quot;</span>
+119: 
+120:           <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Failed, downloading gem #{alternate_name}&quot;</span> <span class="ruby-keyword kw">if</span>
+121:             <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">really_verbose</span>
+122: 
+123:           <span class="ruby-identifier">remote_gem_path</span> = <span class="ruby-identifier">source_uri</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;gems/#{alternate_name}&quot;</span>
+124: 
+125:           <span class="ruby-identifier">gem</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">fetch_path</span> <span class="ruby-identifier">remote_gem_path</span>
+126:         <span class="ruby-keyword kw">end</span>
+127: 
+128:         <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span> <span class="ruby-identifier">local_gem_path</span>, <span class="ruby-value str">'wb'</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fp</span><span class="ruby-operator">|</span>
+129:           <span class="ruby-identifier">fp</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">gem</span>
+130:         <span class="ruby-keyword kw">end</span>
+131:       <span class="ruby-keyword kw">end</span>
+132:     <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'file'</span> <span class="ruby-keyword kw">then</span>
+133:       <span class="ruby-keyword kw">begin</span>
+134:         <span class="ruby-identifier">path</span> = <span class="ruby-identifier">source_uri</span>.<span class="ruby-identifier">path</span>
+135:         <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">path</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">path</span>) <span class="ruby-operator">==</span> <span class="ruby-value str">'.gem'</span>
+136: 
+137:         <span class="ruby-identifier">remote_gem_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value str">'gems'</span>, <span class="ruby-identifier">gem_file_name</span>)
+138: 
+139:         <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span>(<span class="ruby-identifier">remote_gem_path</span>, <span class="ruby-identifier">local_gem_path</span>)
+140:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span>
+141:         <span class="ruby-identifier">local_gem_path</span> = <span class="ruby-identifier">source_uri</span>.<span class="ruby-identifier">to_s</span>
+142:       <span class="ruby-keyword kw">end</span>
+143: 
+144:       <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Using local gem #{local_gem_path}&quot;</span> <span class="ruby-keyword kw">if</span>
+145:         <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">really_verbose</span>
+146:     <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">then</span> <span class="ruby-comment cmt"># TODO test for local overriding cache</span>
+147:       <span class="ruby-identifier">source_path</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">win_platform?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">source_uri</span>.<span class="ruby-identifier">scheme</span> <span class="ruby-operator">&amp;&amp;</span>
+148:                        <span class="ruby-operator">!</span><span class="ruby-identifier">source_uri</span>.<span class="ruby-identifier">path</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value str">':'</span>) <span class="ruby-keyword kw">then</span>
+149:                       <span class="ruby-node">&quot;#{source_uri.scheme}:#{source_uri.path}&quot;</span>
+150:                     <span class="ruby-keyword kw">else</span>
+151:                       <span class="ruby-identifier">source_uri</span>.<span class="ruby-identifier">path</span>
+152:                     <span class="ruby-keyword kw">end</span>
+153: 
+154:       <span class="ruby-identifier">source_path</span> = <span class="ruby-identifier">unescape</span> <span class="ruby-identifier">source_path</span>
+155: 
+156:       <span class="ruby-keyword kw">begin</span>
+157:         <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cp</span> <span class="ruby-identifier">source_path</span>, <span class="ruby-identifier">local_gem_path</span> <span class="ruby-keyword kw">unless</span>
+158:           <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">source_path</span>) <span class="ruby-operator">==</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">local_gem_path</span>)
+159:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span>
+160:         <span class="ruby-identifier">local_gem_path</span> = <span class="ruby-identifier">source_uri</span>.<span class="ruby-identifier">to_s</span>
+161:       <span class="ruby-keyword kw">end</span>
+162: 
+163:       <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;Using local gem #{local_gem_path}&quot;</span> <span class="ruby-keyword kw">if</span>
+164:         <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">really_verbose</span>
+165:     <span class="ruby-keyword kw">else</span>
+166:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">InstallError</span>, <span class="ruby-node">&quot;unsupported URI scheme #{source_uri.scheme}&quot;</span>
+167:     <span class="ruby-keyword kw">end</span>
+168: 
+169:     <span class="ruby-identifier">local_gem_path</span>
+170:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="escape-method" class="method-detail ">
+				<a name="method-i-escape"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">escape</span><span
+						class="method-args">(str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="escape-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 196</span>
+196:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">escape</span>(<span class="ruby-identifier">str</span>)
+197:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">str</span>
+198:     <span class="ruby-ivar">@uri_parser</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">uri_escaper</span>
+199:     <span class="ruby-ivar">@uri_parser</span>.<span class="ruby-identifier">escape</span> <span class="ruby-identifier">str</span>
+200:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="fetch-path-method" class="method-detail ">
+				<a name="method-i-fetch_path"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">fetch_path</span><span
+						class="method-args">(uri, mtime = nil, head = false)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Downloads <tt>uri</tt> and returns it as a String.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="fetch-path-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 175</span>
+175:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fetch_path</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">mtime</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">head</span> = <span class="ruby-keyword kw">false</span>)
+176:     <span class="ruby-identifier">data</span> = <span class="ruby-identifier">open_uri_or_path</span> <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">mtime</span>, <span class="ruby-identifier">head</span>
+177:     <span class="ruby-identifier">data</span> = <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">gunzip</span> <span class="ruby-identifier">data</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">data</span> <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">head</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/gz$/</span>
+178:     <span class="ruby-identifier">data</span>
+179:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">FetchError</span>
+180:     <span class="ruby-identifier">raise</span>
+181:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>
+182:     <span class="ruby-identifier">raise</span> <span class="ruby-constant">FetchError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'timed out'</span>, <span class="ruby-identifier">uri</span>)
+183:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">IOError</span>, <span class="ruby-constant">SocketError</span>, <span class="ruby-constant">SystemCallError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+184:     <span class="ruby-identifier">raise</span> <span class="ruby-constant">FetchError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{e.class}: #{e}&quot;</span>, <span class="ruby-identifier">uri</span>)
+185:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="fetch-size-method" class="method-detail ">
+				<a name="method-i-fetch_size"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">fetch_size</span><span
+						class="method-args">(uri)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the size of <tt>uri</tt> in bytes.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="fetch-size-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 190</span>
+190:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fetch_size</span>(<span class="ruby-identifier">uri</span>) <span class="ruby-comment cmt"># TODO: phase this out</span>
+191:     <span class="ruby-identifier">response</span> = <span class="ruby-identifier">fetch_path</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-keyword kw">nil</span>, <span class="ruby-keyword kw">true</span>)
+192: 
+193:     <span class="ruby-identifier">response</span>[<span class="ruby-value str">'content-length'</span>].<span class="ruby-identifier">to_i</span>
+194:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-proxy-from-env-method" class="method-detail ">
+				<a name="method-i-get_proxy_from_env"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_proxy_from_env</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns an HTTP proxy URI if one is set in the environment variables.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-proxy-from-env-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 217</span>
+217:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_proxy_from_env</span>
+218:     <span class="ruby-identifier">env_proxy</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'http_proxy'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'HTTP_PROXY'</span>]
+219: 
+220:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">env_proxy</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">env_proxy</span>.<span class="ruby-identifier">empty?</span>
+221: 
+222:     <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">normalize_uri</span>(<span class="ruby-identifier">env_proxy</span>))
+223: 
+224:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">uri</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">password</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword kw">then</span>
+225:       <span class="ruby-comment cmt"># Probably we have http_proxy_* variables?</span>
+226:       <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">user</span> = <span class="ruby-identifier">escape</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">'http_proxy_user'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'HTTP_PROXY_USER'</span>])
+227:       <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">password</span> = <span class="ruby-identifier">escape</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">'http_proxy_pass'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'HTTP_PROXY_PASS'</span>])
+228:     <span class="ruby-keyword kw">end</span>
+229: 
+230:     <span class="ruby-identifier">uri</span>
+231:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="normalize-uri-method" class="method-detail ">
+				<a name="method-i-normalize_uri"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">normalize_uri</span><span
+						class="method-args">(uri)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Normalize the URI by adding &#8220;http://&#8221; if it is missing.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="normalize-uri-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 236</span>
+236:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">normalize_uri</span>(<span class="ruby-identifier">uri</span>)
+237:     (<span class="ruby-identifier">uri</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^(https?|ftp|file):/</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">uri</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;http://#{uri}&quot;</span>
+238:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="open-uri-or-path-method" class="method-detail ">
+				<a name="method-i-open_uri_or_path"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">open_uri_or_path</span><span
+						class="method-args">(uri, last_modified = nil, head = false, depth = 0)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Read the data from the (source based) URI, but if it is a file:// URI, read
+from the filesystem instead.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="open-uri-or-path-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 277</span>
+277:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">open_uri_or_path</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">last_modified</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">head</span> = <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">depth</span> = <span class="ruby-value">0</span>)
+278:     <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;block is dead&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+279: 
+280:     <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span> <span class="ruby-identifier">uri</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">Generic</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">uri</span>
+281: 
+282:     <span class="ruby-comment cmt"># This check is redundant unless Gem::RemoteFetcher is likely</span>
+283:     <span class="ruby-comment cmt"># to be used directly, since the scheme is checked elsewhere.</span>
+284:     <span class="ruby-comment cmt"># - Daniel Berger</span>
+285:     <span class="ruby-keyword kw">unless</span> [<span class="ruby-value str">'http'</span>, <span class="ruby-value str">'https'</span>, <span class="ruby-value str">'file'</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">scheme</span>)
+286:      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">'uri scheme is invalid'</span>
+287:     <span class="ruby-keyword kw">end</span>
+288: 
+289:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'file'</span>
+290:       <span class="ruby-identifier">path</span> = <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">path</span>
+291: 
+292:       <span class="ruby-comment cmt"># Deal with leading slash on Windows paths</span>
+293:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">path</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">chr</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'/'</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">path</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">chr</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/[a-zA-Z]/</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">path</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">chr</span> <span class="ruby-operator">==</span> <span class="ruby-value str">':'</span>
+294:          <span class="ruby-identifier">path</span> = <span class="ruby-identifier">path</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>]
+295:       <span class="ruby-keyword kw">end</span>
+296: 
+297:       <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">read_binary</span>(<span class="ruby-identifier">path</span>)
+298:     <span class="ruby-keyword kw">end</span>
+299: 
+300:     <span class="ruby-identifier">fetch_type</span> = <span class="ruby-identifier">head</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span><span class="ruby-operator">::</span><span class="ruby-constant">Head</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span><span class="ruby-operator">::</span><span class="ruby-constant">Get</span>
+301:     <span class="ruby-identifier">response</span>   = <span class="ruby-identifier">request</span> <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">fetch_type</span>, <span class="ruby-identifier">last_modified</span>
+302: 
+303:     <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">response</span>
+304:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPOK</span>, <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPNotModified</span> <span class="ruby-keyword kw">then</span>
+305:       <span class="ruby-identifier">head</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">response</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>
+306:     <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPMovedPermanently</span>, <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPFound</span>, <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPSeeOther</span>,
+307:          <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPTemporaryRedirect</span> <span class="ruby-keyword kw">then</span>
+308:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">FetchError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'too many redirects'</span>, <span class="ruby-identifier">uri</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">depth</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>
+309: 
+310:       <span class="ruby-identifier">open_uri_or_path</span>(<span class="ruby-identifier">response</span>[<span class="ruby-value str">'Location'</span>], <span class="ruby-identifier">last_modified</span>, <span class="ruby-identifier">head</span>, <span class="ruby-identifier">depth</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+311:     <span class="ruby-keyword kw">else</span>
+312:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">FetchError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;bad response #{response.message} #{response.code}&quot;</span>, <span class="ruby-identifier">uri</span>)
+313:     <span class="ruby-keyword kw">end</span>
+314:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="request-method" class="method-detail ">
+				<a name="method-i-request"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">request</span><span
+						class="method-args">(uri, request_class, last_modified = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Performs a Net::HTTP request of type <tt>request_class</tt> on <tt>uri</tt>
+returning a Net::HTTP response object.  request maintains a table of
+persistent connections to reduce connect overhead.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="request-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 321</span>
+321:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">request</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">request_class</span>, <span class="ruby-identifier">last_modified</span> = <span class="ruby-keyword kw">nil</span>)
+322:     <span class="ruby-identifier">request</span> = <span class="ruby-identifier">request_class</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">request_uri</span>
+323: 
+324:     <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword kw">then</span>
+325:       <span class="ruby-identifier">request</span>.<span class="ruby-identifier">basic_auth</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">user</span>, <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">password</span>
+326:     <span class="ruby-keyword kw">end</span>
+327: 
+328:     <span class="ruby-identifier">ua</span> = <span class="ruby-node">&quot;RubyGems/#{Gem::VERSION} #{Gem::Platform.local}&quot;</span>
+329:     <span class="ruby-identifier">ua</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; Ruby/#{RUBY_VERSION} (#{RUBY_RELEASE_DATE}&quot;</span>
+330:     <span class="ruby-identifier">ua</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; patchlevel #{RUBY_PATCHLEVEL}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">RUBY_PATCHLEVEL</span>
+331:     <span class="ruby-identifier">ua</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;)&quot;</span>
+332: 
+333:     <span class="ruby-identifier">request</span>.<span class="ruby-identifier">add_field</span> <span class="ruby-value str">'User-Agent'</span>, <span class="ruby-identifier">ua</span>
+334:     <span class="ruby-identifier">request</span>.<span class="ruby-identifier">add_field</span> <span class="ruby-value str">'Connection'</span>, <span class="ruby-value str">'keep-alive'</span>
+335:     <span class="ruby-identifier">request</span>.<span class="ruby-identifier">add_field</span> <span class="ruby-value str">'Keep-Alive'</span>, <span class="ruby-value str">'30'</span>
+336: 
+337:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">last_modified</span> <span class="ruby-keyword kw">then</span>
+338:       <span class="ruby-identifier">last_modified</span> = <span class="ruby-identifier">last_modified</span>.<span class="ruby-identifier">utc</span>
+339:       <span class="ruby-identifier">request</span>.<span class="ruby-identifier">add_field</span> <span class="ruby-value str">'If-Modified-Since'</span>, <span class="ruby-identifier">last_modified</span>.<span class="ruby-identifier">rfc2822</span>
+340:     <span class="ruby-keyword kw">end</span>
+341: 
+342:     <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">request</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+343: 
+344:     <span class="ruby-identifier">connection</span> = <span class="ruby-identifier">connection_for</span> <span class="ruby-identifier">uri</span>
+345: 
+346:     <span class="ruby-identifier">retried</span> = <span class="ruby-keyword kw">false</span>
+347:     <span class="ruby-identifier">bad_response</span> = <span class="ruby-keyword kw">false</span>
+348: 
+349:     <span class="ruby-keyword kw">begin</span>
+350:       <span class="ruby-ivar">@requests</span>[<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">object_id</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+351: 
+352:       <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;#{request.method} #{uri}&quot;</span> <span class="ruby-keyword kw">if</span>
+353:         <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">really_verbose</span>
+354: 
+355:       <span class="ruby-identifier">file_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">path</span>)
+356:       <span class="ruby-comment cmt"># perform download progress reporter only for gems</span>
+357:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">response_body_permitted?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">file_name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\.gem$/</span>
+358:         <span class="ruby-identifier">reporter</span> = <span class="ruby-identifier">ui</span>.<span class="ruby-identifier">download_reporter</span>
+359:         <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">request</span>(<span class="ruby-identifier">request</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">incomplete_response</span><span class="ruby-operator">|</span>
+360:           <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPOK</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">incomplete_response</span>
+361:             <span class="ruby-identifier">reporter</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">file_name</span>, <span class="ruby-identifier">incomplete_response</span>.<span class="ruby-identifier">content_length</span>)
+362:             <span class="ruby-identifier">downloaded</span> = <span class="ruby-value">0</span>
+363:             <span class="ruby-identifier">data</span> = <span class="ruby-value str">''</span>
+364: 
+365:             <span class="ruby-identifier">incomplete_response</span>.<span class="ruby-identifier">read_body</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
+366:               <span class="ruby-identifier">data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">segment</span>
+367:               <span class="ruby-identifier">downloaded</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">length</span>
+368:               <span class="ruby-identifier">reporter</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">downloaded</span>)
+369:             <span class="ruby-keyword kw">end</span>
+370:             <span class="ruby-identifier">reporter</span>.<span class="ruby-identifier">done</span>
+371:             <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">incomplete_response</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:body=</span>
+372:               <span class="ruby-identifier">incomplete_response</span>.<span class="ruby-identifier">body</span> = <span class="ruby-identifier">data</span>
+373:             <span class="ruby-keyword kw">else</span>
+374:               <span class="ruby-identifier">incomplete_response</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@body</span>, <span class="ruby-identifier">data</span>)
+375:             <span class="ruby-keyword kw">end</span>
+376:           <span class="ruby-keyword kw">end</span>
+377:         <span class="ruby-keyword kw">end</span>
+378:       <span class="ruby-keyword kw">else</span>
+379:         <span class="ruby-identifier">response</span> = <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">request</span> <span class="ruby-identifier">request</span>
+380:       <span class="ruby-keyword kw">end</span>
+381: 
+382:       <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;#{response.code} #{response.message}&quot;</span> <span class="ruby-keyword kw">if</span>
+383:         <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">really_verbose</span>
+384: 
+385:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPBadResponse</span>
+386:       <span class="ruby-identifier">say</span> <span class="ruby-value str">&quot;bad response&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">really_verbose</span>
+387: 
+388:       <span class="ruby-identifier">reset</span> <span class="ruby-identifier">connection</span>
+389: 
+390:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">FetchError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'too many bad responses'</span>, <span class="ruby-identifier">uri</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">bad_response</span>
+391: 
+392:       <span class="ruby-identifier">bad_response</span> = <span class="ruby-keyword kw">true</span>
+393:       <span class="ruby-keyword kw">retry</span>
+394:     <span class="ruby-comment cmt"># HACK work around EOFError bug in Net::HTTP</span>
+395:     <span class="ruby-comment cmt"># NOTE Errno::ECONNABORTED raised a lot on Windows, and make impossible</span>
+396:     <span class="ruby-comment cmt"># to install gems.</span>
+397:     <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">EOFError</span>, <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>,
+398:            <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ECONNABORTED</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ECONNRESET</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EPIPE</span>
+399: 
+400:       <span class="ruby-identifier">requests</span> = <span class="ruby-ivar">@requests</span>[<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">object_id</span>]
+401:       <span class="ruby-identifier">say</span> <span class="ruby-node">&quot;connection reset after #{requests} requests, retrying&quot;</span> <span class="ruby-keyword kw">if</span>
+402:         <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">really_verbose</span>
+403: 
+404:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">FetchError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'too many connection resets'</span>, <span class="ruby-identifier">uri</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">retried</span>
+405: 
+406:       <span class="ruby-identifier">reset</span> <span class="ruby-identifier">connection</span>
+407: 
+408:       <span class="ruby-identifier">retried</span> = <span class="ruby-keyword kw">true</span>
+409:       <span class="ruby-keyword kw">retry</span>
+410:     <span class="ruby-keyword kw">end</span>
+411: 
+412:     <span class="ruby-identifier">response</span>
+413:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="reset-method" class="method-detail ">
+				<a name="method-i-reset"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">reset</span><span
+						class="method-args">(connection)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Resets HTTP connection <tt>connection</tt>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="reset-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 418</span>
+418:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>(<span class="ruby-identifier">connection</span>)
+419:     <span class="ruby-ivar">@requests</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">object_id</span>
+420: 
+421:     <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">finish</span>
+422:     <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">start</span>
+423:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="unescape-method" class="method-detail ">
+				<a name="method-i-unescape"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">unescape</span><span
+						class="method-args">(str)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="unescape-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 202</span>
+202:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">str</span>)
+203:     <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">str</span>
+204:     <span class="ruby-ivar">@uri_parser</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">uri_escaper</span>
+205:     <span class="ruby-ivar">@uri_parser</span>.<span class="ruby-identifier">unescape</span> <span class="ruby-identifier">str</span>
+206:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="uri-escaper-method" class="method-detail ">
+				<a name="method-i-uri_escaper"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">uri_escaper</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="uri-escaper-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/rubygems/remote_fetcher.rb, line 208</span>
+208:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">uri_escaper</span>
+209:     <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>
+210:   <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">NameError</span>
+211:     <span class="ruby-constant">URI</span>
+212:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

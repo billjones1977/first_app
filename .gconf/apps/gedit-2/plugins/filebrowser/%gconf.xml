@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="filter_pattern" mtime="1298660439" type="string">
+		<stringvalue>.gitignore</stringvalue>
+	</entry>
+</gconf>

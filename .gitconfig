@@ -1,0 +1,7 @@
+[user]
+	name = William
+	email = billjones1977@yahoo.com
+[alias]
+	co = checkout
+[core]
+	eitor = gedit

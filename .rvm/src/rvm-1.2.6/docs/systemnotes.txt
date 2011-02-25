@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+
+# cat notes_from_pairing_with_wayne_on_rvm
+#!/usr/bin/env bash
+
+# NOTE: There are three files we had to adjust in order
+#       to get a system install and a user install working in
+#       harmony.
+
+#
+# /etc/profile.d/rvm.sh
+#
+if [[ "root" != "${USER:-$(whoami)}" && -s "$HOME/.rvmrc" ]] ; then
+
+if [[ $(id | sed -e 's/(.*//' | awk -F= '{print $2}') -ne 0 && -s "$HOME/.rvmrc" ]] ; then
+  source "$HOME/.rvmrc"
+fi
+
+if [[ "$rvm_path" = "$HOME/.rvm" ]] ; then
+  if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+    source "$HOME/.rvm/scripts/rvm"
+  fi
+else
+  umask g+w
+  export rvm_selfcontained=0
+  export rvm_prefix="/usr/local/"
+  if [[ -s "/usr/local/rvm/scripts/rvm" ]] ; then
+    source "/usr/local/rvm/scripts/rvm"
+  fi
+fi
+
+#
+# /etc/rvmrc
+#
+
+# Setup default configuration for rvm.
+# If an rvm install exists in the home directory, don't load this.'
+
+# NOTE: The logic that would normally go in here currently
+#       resides in /etc/profile.d/rvm.sh for all login shells.
+
+
+#
+# $HOME/.rvmrc
+#
+# NOTE: We are setting the two below variables to override the system install.
+rvm_path=$HOME/.rvm
+rvm_bin_path=$HOME/.rvm/bin
+rvm_install_on_use_flag=1 # Automatically attempts to install a ruby on use if missing.
+rvm_trust_rvmrcs=1        # Optional, removes the prompt 'do you trust this'.
+
+#
+# Also
+#
+# For the application, we generated a new .rmvrc file which is optimized for 'speed'
+# Meaning that it will only run through the entire RVM CLI and Selector if the specified
+# Environment does not exist yet.
+

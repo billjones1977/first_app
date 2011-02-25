@@ -1,0 +1,1480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Arel::SelectManager</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/arel/select_manager_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/select_manager.rb">lib/arel/select_manager.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="TreeManager.html">Arel::TreeManager</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="SelectManager/Row.html">Arel::SelectManager::Row</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-collapse">#collapse</a></li>
+					
+					<li><a href="#method-i-constraints">#constraints</a></li>
+					
+					<li><a href="#method-i-except">#except</a></li>
+					
+					<li><a href="#method-i-exists">#exists</a></li>
+					
+					<li><a href="#method-i-from">#from</a></li>
+					
+					<li><a href="#method-i-group">#group</a></li>
+					
+					<li><a href="#method-i-having">#having</a></li>
+					
+					<li><a href="#method-i-insert">#insert</a></li>
+					
+					<li><a href="#method-i-intersect">#intersect</a></li>
+					
+					<li><a href="#method-i-join">#join</a></li>
+					
+					<li><a href="#method-i-join_sql">#join_sql</a></li>
+					
+					<li><a href="#method-i-joins">#joins</a></li>
+					
+					<li><a href="#method-i-lock">#lock</a></li>
+					
+					<li><a href="#method-i-locked">#locked</a></li>
+					
+					<li><a href="#method-i-minus">#minus</a></li>
+					
+					<li><a href="#method-i-on">#on</a></li>
+					
+					<li><a href="#method-i-order">#order</a></li>
+					
+					<li><a href="#method-i-order_clauses">#order_clauses</a></li>
+					
+					<li><a href="#method-i-orders">#orders</a></li>
+					
+					<li><a href="#method-i-project">#project</a></li>
+					
+					<li><a href="#method-i-skip">#skip</a></li>
+					
+					<li><a href="#method-i-take">#take</a></li>
+					
+					<li><a href="#method-i-taken">#taken</a></li>
+					
+					<li><a href="#method-i-union">#union</a></li>
+					
+					<li><a href="#method-i-where_clauses">#where_clauses</a></li>
+					
+					<li><a href="#method-i-where_sql">#where_sql</a></li>
+					
+					<li><a href="#method-i-wheres">#wheres</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="Crud.html">Arel::Crud</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../MIT-LICENSE_txt.html">MIT-LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../Manifest_txt.html">Manifest.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Arel.html">Arel</a></li>
+				
+					<li><a href="../Arel/Attributes.html">Arel::Attributes</a></li>
+				
+					<li><a href="../Arel/Attributes/Attribute.html">Arel::Attributes::Attribute</a></li>
+				
+					<li><a href="../Arel/Attributes/Boolean.html">Arel::Attributes::Boolean</a></li>
+				
+					<li><a href="../Arel/Attributes/Decimal.html">Arel::Attributes::Decimal</a></li>
+				
+					<li><a href="../Arel/Attributes/Float.html">Arel::Attributes::Float</a></li>
+				
+					<li><a href="../Arel/Attributes/Integer.html">Arel::Attributes::Integer</a></li>
+				
+					<li><a href="../Arel/Attributes/String.html">Arel::Attributes::String</a></li>
+				
+					<li><a href="../Arel/Attributes/Time.html">Arel::Attributes::Time</a></li>
+				
+					<li><a href="../Arel/Attributes/Undefined.html">Arel::Attributes::Undefined</a></li>
+				
+					<li><a href="../Arel/Crud.html">Arel::Crud</a></li>
+				
+					<li><a href="../Arel/DeleteManager.html">Arel::DeleteManager</a></li>
+				
+					<li><a href="../Arel/Expression.html">Arel::Expression</a></li>
+				
+					<li><a href="../Arel/Expressions.html">Arel::Expressions</a></li>
+				
+					<li><a href="../Arel/InsertManager.html">Arel::InsertManager</a></li>
+				
+					<li><a href="../Arel/Nodes.html">Arel::Nodes</a></li>
+				
+					<li><a href="../Arel/Nodes/And.html">Arel::Nodes::And</a></li>
+				
+					<li><a href="../Arel/Nodes/As.html">Arel::Nodes::As</a></li>
+				
+					<li><a href="../Arel/Nodes/Assignment.html">Arel::Nodes::Assignment</a></li>
+				
+					<li><a href="../Arel/Nodes/Avg.html">Arel::Nodes::Avg</a></li>
+				
+					<li><a href="../Arel/Nodes/Between.html">Arel::Nodes::Between</a></li>
+				
+					<li><a href="../Arel/Nodes/Binary.html">Arel::Nodes::Binary</a></li>
+				
+					<li><a href="../Arel/Nodes/Count.html">Arel::Nodes::Count</a></li>
+				
+					<li><a href="../Arel/Nodes/DeleteStatement.html">Arel::Nodes::DeleteStatement</a></li>
+				
+					<li><a href="../Arel/Nodes/DoesNotMatch.html">Arel::Nodes::DoesNotMatch</a></li>
+				
+					<li><a href="../Arel/Nodes/Equality.html">Arel::Nodes::Equality</a></li>
+				
+					<li><a href="../Arel/Nodes/Except.html">Arel::Nodes::Except</a></li>
+				
+					<li><a href="../Arel/Nodes/Exists.html">Arel::Nodes::Exists</a></li>
+				
+					<li><a href="../Arel/Nodes/Function.html">Arel::Nodes::Function</a></li>
+				
+					<li><a href="../Arel/Nodes/GreaterThan.html">Arel::Nodes::GreaterThan</a></li>
+				
+					<li><a href="../Arel/Nodes/GreaterThanOrEqual.html">Arel::Nodes::GreaterThanOrEqual</a></li>
+				
+					<li><a href="../Arel/Nodes/Group.html">Arel::Nodes::Group</a></li>
+				
+					<li><a href="../Arel/Nodes/Grouping.html">Arel::Nodes::Grouping</a></li>
+				
+					<li><a href="../Arel/Nodes/Having.html">Arel::Nodes::Having</a></li>
+				
+					<li><a href="../Arel/Nodes/In.html">Arel::Nodes::In</a></li>
+				
+					<li><a href="../Arel/Nodes/InnerJoin.html">Arel::Nodes::InnerJoin</a></li>
+				
+					<li><a href="../Arel/Nodes/InsertStatement.html">Arel::Nodes::InsertStatement</a></li>
+				
+					<li><a href="../Arel/Nodes/Intersect.html">Arel::Nodes::Intersect</a></li>
+				
+					<li><a href="../Arel/Nodes/Join.html">Arel::Nodes::Join</a></li>
+				
+					<li><a href="../Arel/Nodes/LessThan.html">Arel::Nodes::LessThan</a></li>
+				
+					<li><a href="../Arel/Nodes/LessThanOrEqual.html">Arel::Nodes::LessThanOrEqual</a></li>
+				
+					<li><a href="../Arel/Nodes/Limit.html">Arel::Nodes::Limit</a></li>
+				
+					<li><a href="../Arel/Nodes/Lock.html">Arel::Nodes::Lock</a></li>
+				
+					<li><a href="../Arel/Nodes/Matches.html">Arel::Nodes::Matches</a></li>
+				
+					<li><a href="../Arel/Nodes/Max.html">Arel::Nodes::Max</a></li>
+				
+					<li><a href="../Arel/Nodes/Min.html">Arel::Nodes::Min</a></li>
+				
+					<li><a href="../Arel/Nodes/Node.html">Arel::Nodes::Node</a></li>
+				
+					<li><a href="../Arel/Nodes/Node.html">Arel::Nodes::Node</a></li>
+				
+					<li><a href="../Arel/Nodes/Not.html">Arel::Nodes::Not</a></li>
+				
+					<li><a href="../Arel/Nodes/NotEqual.html">Arel::Nodes::NotEqual</a></li>
+				
+					<li><a href="../Arel/Nodes/NotIn.html">Arel::Nodes::NotIn</a></li>
+				
+					<li><a href="../Arel/Nodes/Offset.html">Arel::Nodes::Offset</a></li>
+				
+					<li><a href="../Arel/Nodes/On.html">Arel::Nodes::On</a></li>
+				
+					<li><a href="../Arel/Nodes/Or.html">Arel::Nodes::Or</a></li>
+				
+					<li><a href="../Arel/Nodes/Ordering.html">Arel::Nodes::Ordering</a></li>
+				
+					<li><a href="../Arel/Nodes/OuterJoin.html">Arel::Nodes::OuterJoin</a></li>
+				
+					<li><a href="../Arel/Nodes/SelectCore.html">Arel::Nodes::SelectCore</a></li>
+				
+					<li><a href="../Arel/Nodes/SelectStatement.html">Arel::Nodes::SelectStatement</a></li>
+				
+					<li><a href="../Arel/Nodes/SqlLiteral.html">Arel::Nodes::SqlLiteral</a></li>
+				
+					<li><a href="../Arel/Nodes/StringJoin.html">Arel::Nodes::StringJoin</a></li>
+				
+					<li><a href="../Arel/Nodes/Sum.html">Arel::Nodes::Sum</a></li>
+				
+					<li><a href="../Arel/Nodes/TableAlias.html">Arel::Nodes::TableAlias</a></li>
+				
+					<li><a href="../Arel/Nodes/Top.html">Arel::Nodes::Top</a></li>
+				
+					<li><a href="../Arel/Nodes/Unary.html">Arel::Nodes::Unary</a></li>
+				
+					<li><a href="../Arel/Nodes/Union.html">Arel::Nodes::Union</a></li>
+				
+					<li><a href="../Arel/Nodes/UnionAll.html">Arel::Nodes::UnionAll</a></li>
+				
+					<li><a href="../Arel/Nodes/UnqualifiedColumn.html">Arel::Nodes::UnqualifiedColumn</a></li>
+				
+					<li><a href="../Arel/Nodes/UpdateStatement.html">Arel::Nodes::UpdateStatement</a></li>
+				
+					<li><a href="../Arel/Nodes/Values.html">Arel::Nodes::Values</a></li>
+				
+					<li><a href="../Arel/Predications.html">Arel::Predications</a></li>
+				
+					<li><a href="../Arel/Relation.html">Arel::Relation</a></li>
+				
+					<li><a href="../Arel/SelectManager.html">Arel::SelectManager</a></li>
+				
+					<li><a href="../Arel/Sql.html">Arel::Sql</a></li>
+				
+					<li><a href="../Arel/Sql/Engine.html">Arel::Sql::Engine</a></li>
+				
+					<li><a href="../Arel/SqlLiteral.html">Arel::SqlLiteral</a></li>
+				
+					<li><a href="../Arel/Table.html">Arel::Table</a></li>
+				
+					<li><a href="../Arel/TreeManager.html">Arel::TreeManager</a></li>
+				
+					<li><a href="../Arel/UpdateManager.html">Arel::UpdateManager</a></li>
+				
+					<li><a href="../Arel/Visitors.html">Arel::Visitors</a></li>
+				
+					<li><a href="../Arel/Visitors/DepthFirst.html">Arel::Visitors::DepthFirst</a></li>
+				
+					<li><a href="../Arel/Visitors/Dot.html">Arel::Visitors::Dot</a></li>
+				
+					<li><a href="../Arel/Visitors/JoinSql.html">Arel::Visitors::JoinSql</a></li>
+				
+					<li><a href="../Arel/Visitors/MSSQL.html">Arel::Visitors::MSSQL</a></li>
+				
+					<li><a href="../Arel/Visitors/MySQL.html">Arel::Visitors::MySQL</a></li>
+				
+					<li><a href="../Arel/Visitors/Oracle.html">Arel::Visitors::Oracle</a></li>
+				
+					<li><a href="../Arel/Visitors/OrderClauses.html">Arel::Visitors::OrderClauses</a></li>
+				
+					<li><a href="../Arel/Visitors/PostgreSQL.html">Arel::Visitors::PostgreSQL</a></li>
+				
+					<li><a href="../Arel/Visitors/SQLite.html">Arel::Visitors::SQLite</a></li>
+				
+					<li><a href="../Arel/Visitors/ToSql.html">Arel::Visitors::ToSql</a></li>
+				
+					<li><a href="../Arel/Visitors/Visitor.html">Arel::Visitors::Visitor</a></li>
+				
+					<li><a href="../Arel/Visitors/WhereSql.html">Arel::Visitors::WhereSql</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Arel::SelectManager</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(engine, table = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 5</span>
+ 5:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">engine</span>, <span class="ruby-identifier">table</span> = <span class="ruby-keyword kw">nil</span>
+ 6:       <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">engine</span>)
+ 7:       <span class="ruby-ivar">@ast</span>   = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SelectStatement</span>.<span class="ruby-identifier">new</span>
+ 8:       <span class="ruby-ivar">@ctx</span>    = <span class="ruby-ivar">@ast</span>.<span class="ruby-identifier">cores</span>.<span class="ruby-identifier">last</span>
+ 9:       <span class="ruby-identifier">from</span> <span class="ruby-identifier">table</span>
+10:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="constraints-method" class="method-detail ">
+				<a name="method-i-constraints"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">constraints</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="constraints-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 16</span>
+16:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">constraints</span>
+17:       <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">wheres</span>
+18:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="except-method" class="method-detail ">
+				<a name="method-i-except"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">except</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="except-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 148</span>
+148:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">except</span> <span class="ruby-identifier">other</span>
+149:       <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Except</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">ast</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">ast</span>
+150:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="SelectManager.html#method-i-minus">minus</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="exists-method" class="method-detail ">
+				<a name="method-i-exists"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">exists</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<pre>
+ 
+</pre>
+<p>
+Produces an <a href="Nodes/Exists.html">Arel::Nodes::Exists</a> node
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="exists-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 27</span>
+27:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exists</span>
+28:       <span class="ruby-constant">Arel</span><span class="ruby-operator">::</span><span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Exists</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@ast</span>
+29:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="from-method" class="method-detail ">
+				<a name="method-i-from"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">from</span><span
+						class="method-args">(table)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="from-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 64</span>
+64:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">from</span> <span class="ruby-identifier">table</span>
+65:       <span class="ruby-identifier">table</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">table</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">table</span>
+66:       <span class="ruby-comment cmt"># FIXME: this is a hack to support</span>
+67:       <span class="ruby-comment cmt"># test_with_two_tables_in_from_without_getting_double_quoted</span>
+68:       <span class="ruby-comment cmt"># from the AR tests.</span>
+69:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">froms</span>
+70:         <span class="ruby-identifier">source</span> = <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">froms</span>
+71: 
+72:         <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">table</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Join</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">source</span>
+73:           <span class="ruby-identifier">source</span>.<span class="ruby-identifier">left</span> = <span class="ruby-identifier">table</span>
+74:           <span class="ruby-identifier">table</span> = <span class="ruby-identifier">source</span>
+75:         <span class="ruby-keyword kw">end</span>
+76:       <span class="ruby-keyword kw">end</span>
+77: 
+78:       <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">froms</span> = <span class="ruby-identifier">table</span>
+79:       <span class="ruby-keyword kw">self</span>
+80:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="group-method" class="method-detail ">
+				<a name="method-i-group"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">group</span><span
+						class="method-args">(*columns)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="group-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 53</span>
+53:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">group</span> *<span class="ruby-identifier">columns</span>
+54:       <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">column</span><span class="ruby-operator">|</span>
+55:         <span class="ruby-comment cmt"># FIXME: backwards compat</span>
+56:         <span class="ruby-identifier">column</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">column</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">column</span>
+57:         <span class="ruby-identifier">column</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">column</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">column</span>
+58: 
+59:         <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">groups</span>.<span class="ruby-identifier">push</span> <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Group</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">column</span>
+60:       <span class="ruby-keyword kw">end</span>
+61:       <span class="ruby-keyword kw">self</span>
+62:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="having-method" class="method-detail ">
+				<a name="method-i-having"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">having</span><span
+						class="method-args">(expr)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="having-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 94</span>
+94:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">having</span> <span class="ruby-identifier">expr</span>
+95:       <span class="ruby-identifier">expr</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">expr</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">expr</span>
+96: 
+97:       <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">having</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Having</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">expr</span>)
+98:       <span class="ruby-keyword kw">self</span>
+99:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="insert-method" class="method-detail ">
+				<a name="method-i-insert"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">insert</span><span
+						class="method-args">(values)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+FIXME: this method should go away
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="insert-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 199</span>
+199:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">insert</span> <span class="ruby-identifier">values</span>
+200:       <span class="ruby-identifier">im</span> = <span class="ruby-constant">InsertManager</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@engine</span>
+201:       <span class="ruby-identifier">table</span> = <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">froms</span>
+202:       <span class="ruby-identifier">primary_key_name</span> = (<span class="ruby-identifier">primary_key</span> = <span class="ruby-identifier">table</span>.<span class="ruby-identifier">primary_key</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">primary_key</span>.<span class="ruby-identifier">name</span>
+203:       <span class="ruby-comment cmt"># FIXME: in AR tests values sometimes were Array and not Hash therefore is_a?(Hash) check is added</span>
+204:       <span class="ruby-identifier">primary_key_value</span> = <span class="ruby-identifier">primary_key</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">values</span>[<span class="ruby-identifier">primary_key</span>]
+205:       <span class="ruby-identifier">im</span>.<span class="ruby-identifier">into</span> <span class="ruby-identifier">table</span>
+206:       <span class="ruby-identifier">im</span>.<span class="ruby-identifier">insert</span> <span class="ruby-identifier">values</span>
+207:       <span class="ruby-comment cmt"># Oracle adapter needs primary key name to generate RETURNING ... INTO ... clause</span>
+208:       <span class="ruby-comment cmt"># for tables which assign primary key value using trigger.</span>
+209:       <span class="ruby-comment cmt"># RETURNING ... INTO ... clause will be added only if primary_key_value is nil</span>
+210:       <span class="ruby-comment cmt"># therefore it is necessary to pass primary key value as well</span>
+211:       <span class="ruby-ivar">@engine</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">insert</span> <span class="ruby-identifier">im</span>.<span class="ruby-identifier">to_sql</span>, <span class="ruby-value str">'AREL'</span>, <span class="ruby-identifier">primary_key_name</span>, <span class="ruby-identifier">primary_key_value</span>
+212:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="intersect-method" class="method-detail ">
+				<a name="method-i-intersect"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">intersect</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="intersect-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 144</span>
+144:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">intersect</span> <span class="ruby-identifier">other</span>
+145:       <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Intersect</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">ast</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">ast</span>
+146:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="join-method" class="method-detail ">
+				<a name="method-i-join"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">join</span><span
+						class="method-args">(relation, klass = Nodes::InnerJoin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="join-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 82</span>
+82:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">join</span> <span class="ruby-identifier">relation</span>, <span class="ruby-identifier">klass</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">InnerJoin</span>
+83:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">relation</span>
+84: 
+85:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">relation</span>
+86:       <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span>, <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span>
+87:         <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">relation</span>.<span class="ruby-identifier">blank?</span>
+88:         <span class="ruby-identifier">from</span> <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">StringJoin</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">froms</span>, <span class="ruby-identifier">relation</span>)
+89:       <span class="ruby-keyword kw">else</span>
+90:         <span class="ruby-identifier">from</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">froms</span>, <span class="ruby-identifier">relation</span>, <span class="ruby-keyword kw">nil</span>)
+91:       <span class="ruby-keyword kw">end</span>
+92:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="join-sql-method" class="method-detail ">
+				<a name="method-i-join_sql"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">join_sql</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="join-sql-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 159</span>
+159:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">join_sql</span>
+160:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">froms</span>
+161: 
+162:       <span class="ruby-identifier">viz</span> = <span class="ruby-constant">Visitors</span><span class="ruby-operator">::</span><span class="ruby-constant">JoinSql</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@engine</span>
+163:       <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">viz</span>.<span class="ruby-identifier">accept</span> <span class="ruby-ivar">@ctx</span>
+164:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="joins-method" class="method-detail ">
+				<a name="method-i-joins"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">joins</span><span
+						class="method-args">(manager)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="joins-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 172</span>
+172:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">joins</span> <span class="ruby-identifier">manager</span>
+173:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$VERBOSE</span>
+174:         <span class="ruby-identifier">warn</span> <span class="ruby-value str">&quot;joins is deprecated and will be removed in 2.2&quot;</span>
+175:         <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;please remove your call to joins from #{caller.first}&quot;</span>
+176:       <span class="ruby-keyword kw">end</span>
+177:       <span class="ruby-identifier">manager</span>.<span class="ruby-identifier">join_sql</span>
+178:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="lock-method" class="method-detail ">
+				<a name="method-i-lock"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">lock</span><span
+						class="method-args">(locking = true)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="lock-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 37</span>
+37:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">lock</span> <span class="ruby-identifier">locking</span> = <span class="ruby-keyword kw">true</span>
+38:       <span class="ruby-comment cmt"># FIXME: do we even need to store this?  If locking is +false+ shouldn't</span>
+39:       <span class="ruby-comment cmt"># we just remove the node from the AST?</span>
+40:       <span class="ruby-ivar">@ast</span>.<span class="ruby-identifier">lock</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Lock</span>.<span class="ruby-identifier">new</span>
+41:       <span class="ruby-keyword kw">self</span>
+42:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="locked-method" class="method-detail ">
+				<a name="method-i-locked"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">locked</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="locked-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 44</span>
+44:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">locked</span>
+45:       <span class="ruby-ivar">@ast</span>.<span class="ruby-identifier">lock</span>
+46:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="minus-method" class="method-detail method-alias">
+				<a name="method-i-minus"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">minus</span><span
+						class="method-args">(other)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="SelectManager.html#method-i-except">except</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="on-method" class="method-detail ">
+				<a name="method-i-on"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">on</span><span
+						class="method-args">(*exprs)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="on-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 48</span>
+48:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on</span> *<span class="ruby-identifier">exprs</span>
+49:       <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">froms</span>.<span class="ruby-identifier">constraint</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">On</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">collapse</span>(<span class="ruby-identifier">exprs</span>))
+50:       <span class="ruby-keyword kw">self</span>
+51:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="order-method" class="method-detail ">
+				<a name="method-i-order"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">order</span><span
+						class="method-args">(*expr)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="order-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 110</span>
+110:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">order</span> *<span class="ruby-identifier">expr</span>
+111:       <span class="ruby-comment cmt"># FIXME: We SHOULD NOT be converting these to SqlLiteral automatically</span>
+112:       <span class="ruby-ivar">@ast</span>.<span class="ruby-identifier">orders</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">expr</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+113:         <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">x</span>
+114:       }
+115:       <span class="ruby-keyword kw">self</span>
+116:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="order-clauses-method" class="method-detail ">
+				<a name="method-i-order_clauses"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">order_clauses</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="order-clauses-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 166</span>
+166:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">order_clauses</span>
+167:       <span class="ruby-constant">Visitors</span><span class="ruby-operator">::</span><span class="ruby-constant">OrderClauses</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@engine</span>).<span class="ruby-identifier">accept</span>(<span class="ruby-ivar">@ast</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+168:         <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">x</span>
+169:       }
+170:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="orders-method" class="method-detail ">
+				<a name="method-i-orders"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">orders</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="orders-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 118</span>
+118:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">orders</span>
+119:       <span class="ruby-ivar">@ast</span>.<span class="ruby-identifier">orders</span>
+120:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="project-method" class="method-detail ">
+				<a name="method-i-project"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">project</span><span
+						class="method-args">(*projections)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="project-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 101</span>
+101:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">project</span> *<span class="ruby-identifier">projections</span>
+102:       <span class="ruby-comment cmt"># FIXME: converting these to SQLLiterals is probably not good, but</span>
+103:       <span class="ruby-comment cmt"># rails tests require it.</span>
+104:       <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">projections</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">projections</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+105:         [<span class="ruby-constant">Symbol</span>, <span class="ruby-constant">String</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">class</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">SqlLiteral</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">x</span>
+106:       }
+107:       <span class="ruby-keyword kw">self</span>
+108:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="skip-method" class="method-detail ">
+				<a name="method-i-skip"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">skip</span><span
+						class="method-args">(amount)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="skip-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 20</span>
+20:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">skip</span> <span class="ruby-identifier">amount</span>
+21:       <span class="ruby-ivar">@ast</span>.<span class="ruby-identifier">offset</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Offset</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">amount</span>)
+22:       <span class="ruby-keyword kw">self</span>
+23:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="take-method" class="method-detail ">
+				<a name="method-i-take"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">take</span><span
+						class="method-args">(limit)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="take-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 153</span>
+153:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">take</span> <span class="ruby-identifier">limit</span>
+154:       <span class="ruby-ivar">@ast</span>.<span class="ruby-identifier">limit</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Limit</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">limit</span>)
+155:       <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">top</span>   = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Top</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">limit</span>)
+156:       <span class="ruby-keyword kw">self</span>
+157:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="taken-method" class="method-detail ">
+				<a name="method-i-taken"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">taken</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="taken-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 12</span>
+12:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">taken</span>
+13:       <span class="ruby-ivar">@ast</span>.<span class="ruby-identifier">limit</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@ast</span>.<span class="ruby-identifier">limit</span>.<span class="ruby-identifier">expr</span>
+14:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="union-method" class="method-detail ">
+				<a name="method-i-union"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">union</span><span
+						class="method-args">(operation, other = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="union-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 133</span>
+133:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">union</span> <span class="ruby-identifier">operation</span>, <span class="ruby-identifier">other</span> = <span class="ruby-keyword kw">nil</span>
+134:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">other</span>
+135:         <span class="ruby-identifier">node_class</span> = <span class="ruby-constant">Nodes</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-node">&quot;Union#{operation.to_s.capitalize}&quot;</span>)
+136:       <span class="ruby-keyword kw">else</span>
+137:         <span class="ruby-identifier">other</span> = <span class="ruby-identifier">operation</span>
+138:         <span class="ruby-identifier">node_class</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">Union</span>
+139:       <span class="ruby-keyword kw">end</span>
+140: 
+141:       <span class="ruby-identifier">node_class</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">ast</span>, <span class="ruby-identifier">other</span>.<span class="ruby-identifier">ast</span>
+142:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="where-clauses-method" class="method-detail ">
+				<a name="method-i-where_clauses"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">where_clauses</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="where-clauses-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 31</span>
+31:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">where_clauses</span>
+32:       <span class="ruby-comment cmt">#warn &quot;where_clauses is deprecated&quot; if $VERBOSE</span>
+33:       <span class="ruby-identifier">to_sql</span> = <span class="ruby-constant">Visitors</span><span class="ruby-operator">::</span><span class="ruby-constant">ToSql</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@engine</span>
+34:       <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">wheres</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">to_sql</span>.<span class="ruby-identifier">accept</span> <span class="ruby-identifier">c</span> }
+35:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="where-sql-method" class="method-detail ">
+				<a name="method-i-where_sql"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">where_sql</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="where-sql-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 126</span>
+126:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">where_sql</span>
+127:       <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">wheres</span>.<span class="ruby-identifier">empty?</span>
+128: 
+129:       <span class="ruby-identifier">viz</span> = <span class="ruby-constant">Visitors</span><span class="ruby-operator">::</span><span class="ruby-constant">WhereSql</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@engine</span>
+130:       <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">viz</span>.<span class="ruby-identifier">accept</span> <span class="ruby-ivar">@ctx</span>
+131:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="wheres-method" class="method-detail ">
+				<a name="method-i-wheres"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">wheres</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="wheres-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 122</span>
+122:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wheres</span>
+123:       <span class="ruby-constant">Compatibility</span><span class="ruby-operator">::</span><span class="ruby-constant">Wheres</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@engine</span>, <span class="ruby-ivar">@ctx</span>.<span class="ruby-identifier">wheres</span>
+124:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="collapse-method" class="method-detail ">
+				<a name="method-i-collapse"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">collapse</span><span
+						class="method-args">(exprs)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="collapse-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/select_manager.rb, line 215</span>
+215:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">collapse</span> <span class="ruby-identifier">exprs</span>
+216:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">exprs</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exprs</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+217: 
+218:       <span class="ruby-identifier">right</span> = <span class="ruby-identifier">exprs</span>.<span class="ruby-identifier">pop</span>
+219:       <span class="ruby-identifier">left</span>  = <span class="ruby-identifier">exprs</span>.<span class="ruby-identifier">pop</span>
+220: 
+221:       <span class="ruby-identifier">right</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SqlLiteral</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">right</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">right</span>
+222: 
+223:       <span class="ruby-identifier">right</span> = <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">And</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">left</span>, <span class="ruby-identifier">right</span>
+224:       <span class="ruby-identifier">exprs</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-identifier">right</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">memo</span>,<span class="ruby-identifier">expr</span><span class="ruby-operator">|</span>
+225:         <span class="ruby-constant">Nodes</span><span class="ruby-operator">::</span><span class="ruby-constant">And</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">expr</span>, <span class="ruby-identifier">memo</span>)
+226:       }
+227:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

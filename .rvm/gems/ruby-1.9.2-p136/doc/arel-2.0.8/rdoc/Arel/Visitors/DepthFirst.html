@@ -1,0 +1,2890 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Arel::Visitors::DepthFirst</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/arel/visitors/depth_first_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/arel/visitors/depth_first.rb">lib/arel/visitors/depth_first.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="Visitor.html">Arel::Visitors::Visitor</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-binary">#binary</a></li>
+					
+					<li><a href="#method-i-function">#function</a></li>
+					
+					<li><a href="#method-i-join">#join</a></li>
+					
+					<li><a href="#method-i-terminal">#terminal</a></li>
+					
+					<li><a href="#method-i-unary">#unary</a></li>
+					
+					<li><a href="#method-i-visit">#visit</a></li>
+					
+					<li><a href="#method-i-visit_ActiveSupport_Multibyte_Chars">#visit_ActiveSupport_Multibyte_Chars</a></li>
+					
+					<li><a href="#method-i-visit_ActiveSupport_StringInquirer">#visit_ActiveSupport_StringInquirer</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attribute">#visit_Arel_Attribute</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_Attribute">#visit_Arel_Attributes_Attribute</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_Boolean">#visit_Arel_Attributes_Boolean</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_Decimal">#visit_Arel_Attributes_Decimal</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_Float">#visit_Arel_Attributes_Float</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_Integer">#visit_Arel_Attributes_Integer</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_String">#visit_Arel_Attributes_String</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Attributes_Time">#visit_Arel_Attributes_Time</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_And">#visit_Arel_Nodes_And</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_As">#visit_Arel_Nodes_As</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Assignment">#visit_Arel_Nodes_Assignment</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Avg">#visit_Arel_Nodes_Avg</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Between">#visit_Arel_Nodes_Between</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Count">#visit_Arel_Nodes_Count</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_DeleteStatement">#visit_Arel_Nodes_DeleteStatement</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_DoesNotMatch">#visit_Arel_Nodes_DoesNotMatch</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Equality">#visit_Arel_Nodes_Equality</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Exists">#visit_Arel_Nodes_Exists</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_GreaterThan">#visit_Arel_Nodes_GreaterThan</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_GreaterThanOrEqual">#visit_Arel_Nodes_GreaterThanOrEqual</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Group">#visit_Arel_Nodes_Group</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Grouping">#visit_Arel_Nodes_Grouping</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Having">#visit_Arel_Nodes_Having</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_In">#visit_Arel_Nodes_In</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_InnerJoin">#visit_Arel_Nodes_InnerJoin</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_InsertStatement">#visit_Arel_Nodes_InsertStatement</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_LessThan">#visit_Arel_Nodes_LessThan</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_LessThanOrEqual">#visit_Arel_Nodes_LessThanOrEqual</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Limit">#visit_Arel_Nodes_Limit</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Lock">#visit_Arel_Nodes_Lock</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Matches">#visit_Arel_Nodes_Matches</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Max">#visit_Arel_Nodes_Max</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Min">#visit_Arel_Nodes_Min</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Node">#visit_Arel_Nodes_Node</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Not">#visit_Arel_Nodes_Not</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_NotEqual">#visit_Arel_Nodes_NotEqual</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_NotIn">#visit_Arel_Nodes_NotIn</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Offset">#visit_Arel_Nodes_Offset</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_On">#visit_Arel_Nodes_On</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Or">#visit_Arel_Nodes_Or</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Ordering">#visit_Arel_Nodes_Ordering</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_OuterJoin">#visit_Arel_Nodes_OuterJoin</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_SelectCore">#visit_Arel_Nodes_SelectCore</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_SelectStatement">#visit_Arel_Nodes_SelectStatement</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_SqlLiteral">#visit_Arel_Nodes_SqlLiteral</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_StringJoin">#visit_Arel_Nodes_StringJoin</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Sum">#visit_Arel_Nodes_Sum</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_TableAlias">#visit_Arel_Nodes_TableAlias</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Top">#visit_Arel_Nodes_Top</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_UnqualifiedColumn">#visit_Arel_Nodes_UnqualifiedColumn</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_UpdateStatement">#visit_Arel_Nodes_UpdateStatement</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Nodes_Values">#visit_Arel_Nodes_Values</a></li>
+					
+					<li><a href="#method-i-visit_Arel_SqlLiteral">#visit_Arel_SqlLiteral</a></li>
+					
+					<li><a href="#method-i-visit_Arel_Table">#visit_Arel_Table</a></li>
+					
+					<li><a href="#method-i-visit_Array">#visit_Array</a></li>
+					
+					<li><a href="#method-i-visit_BigDecimal">#visit_BigDecimal</a></li>
+					
+					<li><a href="#method-i-visit_Bignum">#visit_Bignum</a></li>
+					
+					<li><a href="#method-i-visit_Class">#visit_Class</a></li>
+					
+					<li><a href="#method-i-visit_Date">#visit_Date</a></li>
+					
+					<li><a href="#method-i-visit_DateTime">#visit_DateTime</a></li>
+					
+					<li><a href="#method-i-visit_FalseClass">#visit_FalseClass</a></li>
+					
+					<li><a href="#method-i-visit_Fixnum">#visit_Fixnum</a></li>
+					
+					<li><a href="#method-i-visit_Float">#visit_Float</a></li>
+					
+					<li><a href="#method-i-visit_Hash">#visit_Hash</a></li>
+					
+					<li><a href="#method-i-visit_NilClass">#visit_NilClass</a></li>
+					
+					<li><a href="#method-i-visit_String">#visit_String</a></li>
+					
+					<li><a href="#method-i-visit_Symbol">#visit_Symbol</a></li>
+					
+					<li><a href="#method-i-visit_Time">#visit_Time</a></li>
+					
+					<li><a href="#method-i-visit_TrueClass">#visit_TrueClass</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../History_txt.html">History.txt</a></li>
+				
+					<li class="file"><a href="../../MIT-LICENSE_txt.html">MIT-LICENSE.txt</a></li>
+				
+					<li class="file"><a href="../../Manifest_txt.html">Manifest.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../Arel.html">Arel</a></li>
+				
+					<li><a href="../../Arel/Attributes.html">Arel::Attributes</a></li>
+				
+					<li><a href="../../Arel/Attributes/Attribute.html">Arel::Attributes::Attribute</a></li>
+				
+					<li><a href="../../Arel/Attributes/Boolean.html">Arel::Attributes::Boolean</a></li>
+				
+					<li><a href="../../Arel/Attributes/Decimal.html">Arel::Attributes::Decimal</a></li>
+				
+					<li><a href="../../Arel/Attributes/Float.html">Arel::Attributes::Float</a></li>
+				
+					<li><a href="../../Arel/Attributes/Integer.html">Arel::Attributes::Integer</a></li>
+				
+					<li><a href="../../Arel/Attributes/String.html">Arel::Attributes::String</a></li>
+				
+					<li><a href="../../Arel/Attributes/Time.html">Arel::Attributes::Time</a></li>
+				
+					<li><a href="../../Arel/Attributes/Undefined.html">Arel::Attributes::Undefined</a></li>
+				
+					<li><a href="../../Arel/Crud.html">Arel::Crud</a></li>
+				
+					<li><a href="../../Arel/DeleteManager.html">Arel::DeleteManager</a></li>
+				
+					<li><a href="../../Arel/Expression.html">Arel::Expression</a></li>
+				
+					<li><a href="../../Arel/Expressions.html">Arel::Expressions</a></li>
+				
+					<li><a href="../../Arel/InsertManager.html">Arel::InsertManager</a></li>
+				
+					<li><a href="../../Arel/Nodes.html">Arel::Nodes</a></li>
+				
+					<li><a href="../../Arel/Nodes/And.html">Arel::Nodes::And</a></li>
+				
+					<li><a href="../../Arel/Nodes/As.html">Arel::Nodes::As</a></li>
+				
+					<li><a href="../../Arel/Nodes/Assignment.html">Arel::Nodes::Assignment</a></li>
+				
+					<li><a href="../../Arel/Nodes/Avg.html">Arel::Nodes::Avg</a></li>
+				
+					<li><a href="../../Arel/Nodes/Between.html">Arel::Nodes::Between</a></li>
+				
+					<li><a href="../../Arel/Nodes/Binary.html">Arel::Nodes::Binary</a></li>
+				
+					<li><a href="../../Arel/Nodes/Count.html">Arel::Nodes::Count</a></li>
+				
+					<li><a href="../../Arel/Nodes/DeleteStatement.html">Arel::Nodes::DeleteStatement</a></li>
+				
+					<li><a href="../../Arel/Nodes/DoesNotMatch.html">Arel::Nodes::DoesNotMatch</a></li>
+				
+					<li><a href="../../Arel/Nodes/Equality.html">Arel::Nodes::Equality</a></li>
+				
+					<li><a href="../../Arel/Nodes/Except.html">Arel::Nodes::Except</a></li>
+				
+					<li><a href="../../Arel/Nodes/Exists.html">Arel::Nodes::Exists</a></li>
+				
+					<li><a href="../../Arel/Nodes/Function.html">Arel::Nodes::Function</a></li>
+				
+					<li><a href="../../Arel/Nodes/GreaterThan.html">Arel::Nodes::GreaterThan</a></li>
+				
+					<li><a href="../../Arel/Nodes/GreaterThanOrEqual.html">Arel::Nodes::GreaterThanOrEqual</a></li>
+				
+					<li><a href="../../Arel/Nodes/Group.html">Arel::Nodes::Group</a></li>
+				
+					<li><a href="../../Arel/Nodes/Grouping.html">Arel::Nodes::Grouping</a></li>
+				
+					<li><a href="../../Arel/Nodes/Having.html">Arel::Nodes::Having</a></li>
+				
+					<li><a href="../../Arel/Nodes/In.html">Arel::Nodes::In</a></li>
+				
+					<li><a href="../../Arel/Nodes/InnerJoin.html">Arel::Nodes::InnerJoin</a></li>
+				
+					<li><a href="../../Arel/Nodes/InsertStatement.html">Arel::Nodes::InsertStatement</a></li>
+				
+					<li><a href="../../Arel/Nodes/Intersect.html">Arel::Nodes::Intersect</a></li>
+				
+					<li><a href="../../Arel/Nodes/Join.html">Arel::Nodes::Join</a></li>
+				
+					<li><a href="../../Arel/Nodes/LessThan.html">Arel::Nodes::LessThan</a></li>
+				
+					<li><a href="../../Arel/Nodes/LessThanOrEqual.html">Arel::Nodes::LessThanOrEqual</a></li>
+				
+					<li><a href="../../Arel/Nodes/Limit.html">Arel::Nodes::Limit</a></li>
+				
+					<li><a href="../../Arel/Nodes/Lock.html">Arel::Nodes::Lock</a></li>
+				
+					<li><a href="../../Arel/Nodes/Matches.html">Arel::Nodes::Matches</a></li>
+				
+					<li><a href="../../Arel/Nodes/Max.html">Arel::Nodes::Max</a></li>
+				
+					<li><a href="../../Arel/Nodes/Min.html">Arel::Nodes::Min</a></li>
+				
+					<li><a href="../../Arel/Nodes/Node.html">Arel::Nodes::Node</a></li>
+				
+					<li><a href="../../Arel/Nodes/Node.html">Arel::Nodes::Node</a></li>
+				
+					<li><a href="../../Arel/Nodes/Not.html">Arel::Nodes::Not</a></li>
+				
+					<li><a href="../../Arel/Nodes/NotEqual.html">Arel::Nodes::NotEqual</a></li>
+				
+					<li><a href="../../Arel/Nodes/NotIn.html">Arel::Nodes::NotIn</a></li>
+				
+					<li><a href="../../Arel/Nodes/Offset.html">Arel::Nodes::Offset</a></li>
+				
+					<li><a href="../../Arel/Nodes/On.html">Arel::Nodes::On</a></li>
+				
+					<li><a href="../../Arel/Nodes/Or.html">Arel::Nodes::Or</a></li>
+				
+					<li><a href="../../Arel/Nodes/Ordering.html">Arel::Nodes::Ordering</a></li>
+				
+					<li><a href="../../Arel/Nodes/OuterJoin.html">Arel::Nodes::OuterJoin</a></li>
+				
+					<li><a href="../../Arel/Nodes/SelectCore.html">Arel::Nodes::SelectCore</a></li>
+				
+					<li><a href="../../Arel/Nodes/SelectStatement.html">Arel::Nodes::SelectStatement</a></li>
+				
+					<li><a href="../../Arel/Nodes/SqlLiteral.html">Arel::Nodes::SqlLiteral</a></li>
+				
+					<li><a href="../../Arel/Nodes/StringJoin.html">Arel::Nodes::StringJoin</a></li>
+				
+					<li><a href="../../Arel/Nodes/Sum.html">Arel::Nodes::Sum</a></li>
+				
+					<li><a href="../../Arel/Nodes/TableAlias.html">Arel::Nodes::TableAlias</a></li>
+				
+					<li><a href="../../Arel/Nodes/Top.html">Arel::Nodes::Top</a></li>
+				
+					<li><a href="../../Arel/Nodes/Unary.html">Arel::Nodes::Unary</a></li>
+				
+					<li><a href="../../Arel/Nodes/Union.html">Arel::Nodes::Union</a></li>
+				
+					<li><a href="../../Arel/Nodes/UnionAll.html">Arel::Nodes::UnionAll</a></li>
+				
+					<li><a href="../../Arel/Nodes/UnqualifiedColumn.html">Arel::Nodes::UnqualifiedColumn</a></li>
+				
+					<li><a href="../../Arel/Nodes/UpdateStatement.html">Arel::Nodes::UpdateStatement</a></li>
+				
+					<li><a href="../../Arel/Nodes/Values.html">Arel::Nodes::Values</a></li>
+				
+					<li><a href="../../Arel/Predications.html">Arel::Predications</a></li>
+				
+					<li><a href="../../Arel/Relation.html">Arel::Relation</a></li>
+				
+					<li><a href="../../Arel/SelectManager.html">Arel::SelectManager</a></li>
+				
+					<li><a href="../../Arel/Sql.html">Arel::Sql</a></li>
+				
+					<li><a href="../../Arel/Sql/Engine.html">Arel::Sql::Engine</a></li>
+				
+					<li><a href="../../Arel/SqlLiteral.html">Arel::SqlLiteral</a></li>
+				
+					<li><a href="../../Arel/Table.html">Arel::Table</a></li>
+				
+					<li><a href="../../Arel/TreeManager.html">Arel::TreeManager</a></li>
+				
+					<li><a href="../../Arel/UpdateManager.html">Arel::UpdateManager</a></li>
+				
+					<li><a href="../../Arel/Visitors.html">Arel::Visitors</a></li>
+				
+					<li><a href="../../Arel/Visitors/DepthFirst.html">Arel::Visitors::DepthFirst</a></li>
+				
+					<li><a href="../../Arel/Visitors/Dot.html">Arel::Visitors::Dot</a></li>
+				
+					<li><a href="../../Arel/Visitors/JoinSql.html">Arel::Visitors::JoinSql</a></li>
+				
+					<li><a href="../../Arel/Visitors/MSSQL.html">Arel::Visitors::MSSQL</a></li>
+				
+					<li><a href="../../Arel/Visitors/MySQL.html">Arel::Visitors::MySQL</a></li>
+				
+					<li><a href="../../Arel/Visitors/Oracle.html">Arel::Visitors::Oracle</a></li>
+				
+					<li><a href="../../Arel/Visitors/OrderClauses.html">Arel::Visitors::OrderClauses</a></li>
+				
+					<li><a href="../../Arel/Visitors/PostgreSQL.html">Arel::Visitors::PostgreSQL</a></li>
+				
+					<li><a href="../../Arel/Visitors/SQLite.html">Arel::Visitors::SQLite</a></li>
+				
+					<li><a href="../../Arel/Visitors/ToSql.html">Arel::Visitors::ToSql</a></li>
+				
+					<li><a href="../../Arel/Visitors/Visitor.html">Arel::Visitors::Visitor</a></li>
+				
+					<li><a href="../../Arel/Visitors/WhereSql.html">Arel::Visitors::WhereSql</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Arel::Visitors::DepthFirst</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(block = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+   <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 4</span>
+4:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">block</span> = <span class="ruby-keyword kw">nil</span>
+5:         <span class="ruby-ivar">@block</span> = <span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span>
+6:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="binary-method" class="method-detail ">
+				<a name="method-i-binary"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">binary</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="binary-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 52</span>
+52:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">binary</span> <span class="ruby-identifier">o</span>
+53:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">left</span>
+54:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">right</span>
+55:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="DepthFirst.html#method-i-visit_Arel_Nodes_And">visit_Arel_Nodes_And</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_As">visit_Arel_Nodes_As</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Assignment">visit_Arel_Nodes_Assignment</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Between">visit_Arel_Nodes_Between</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_DeleteStatement">visit_Arel_Nodes_DeleteStatement</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_DoesNotMatch">visit_Arel_Nodes_DoesNotMatch</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Equality">visit_Arel_Nodes_Equality</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_GreaterThan">visit_Arel_Nodes_GreaterThan</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_GreaterThanOrEqual">visit_Arel_Nodes_GreaterThanOrEqual</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_In">visit_Arel_Nodes_In</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_LessThan">visit_Arel_Nodes_LessThan</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_LessThanOrEqual">visit_Arel_Nodes_LessThanOrEqual</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Matches">visit_Arel_Nodes_Matches</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_NotEqual">visit_Arel_Nodes_NotEqual</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_NotIn">visit_Arel_Nodes_NotIn</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Or">visit_Arel_Nodes_Or</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Ordering">visit_Arel_Nodes_Ordering</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_StringJoin">visit_Arel_Nodes_StringJoin</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_TableAlias">visit_Arel_Nodes_TableAlias</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Values">visit_Arel_Nodes_Values</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="function-method" class="method-detail ">
+				<a name="method-i-function"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">function</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="function-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 28</span>
+28:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">function</span> <span class="ruby-identifier">o</span>
+29:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">expressions</span>
+30:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">alias</span>
+31:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Avg">visit_Arel_Nodes_Avg</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Exists">visit_Arel_Nodes_Exists</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Max">visit_Arel_Nodes_Max</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Min">visit_Arel_Nodes_Min</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Sum">visit_Arel_Nodes_Sum</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="join-method" class="method-detail ">
+				<a name="method-i-join"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">join</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="join-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 44</span>
+44:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">join</span> <span class="ruby-identifier">o</span>
+45:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">left</span>
+46:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">right</span>
+47:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">constraint</span>
+48:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="DepthFirst.html#method-i-visit_Arel_Nodes_InnerJoin">visit_Arel_Nodes_InnerJoin</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_OuterJoin">visit_Arel_Nodes_OuterJoin</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="terminal-method" class="method-detail ">
+				<a name="method-i-terminal"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">terminal</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="terminal-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 93</span>
+93:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">terminal</span> <span class="ruby-identifier">o</span>
+94:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="DepthFirst.html#method-i-visit_ActiveSupport_Multibyte_Chars">visit_ActiveSupport_Multibyte_Chars</a>, <a href="DepthFirst.html#method-i-visit_ActiveSupport_StringInquirer">visit_ActiveSupport_StringInquirer</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Lock">visit_Arel_Nodes_Lock</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Node">visit_Arel_Nodes_Node</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_SqlLiteral">visit_Arel_Nodes_SqlLiteral</a>, <a href="DepthFirst.html#method-i-visit_Arel_SqlLiteral">visit_Arel_SqlLiteral</a>, <a href="DepthFirst.html#method-i-visit_BigDecimal">visit_BigDecimal</a>, <a href="DepthFirst.html#method-i-visit_Bignum">visit_Bignum</a>, <a href="DepthFirst.html#method-i-visit_Class">visit_Class</a>, <a href="DepthFirst.html#method-i-visit_Date">visit_Date</a>, <a href="DepthFirst.html#method-i-visit_DateTime">visit_DateTime</a>, <a href="DepthFirst.html#method-i-visit_FalseClass">visit_FalseClass</a>, <a href="DepthFirst.html#method-i-visit_Fixnum">visit_Fixnum</a>, <a href="DepthFirst.html#method-i-visit_Float">visit_Float</a>, <a href="DepthFirst.html#method-i-visit_NilClass">visit_NilClass</a>, <a href="DepthFirst.html#method-i-visit_String">visit_String</a>, <a href="DepthFirst.html#method-i-visit_Symbol">visit_Symbol</a>, <a href="DepthFirst.html#method-i-visit_Time">visit_Time</a>, <a href="DepthFirst.html#method-i-visit_TrueClass">visit_TrueClass</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="unary-method" class="method-detail ">
+				<a name="method-i-unary"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">unary</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="unary-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 15</span>
+15:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">unary</span> <span class="ruby-identifier">o</span>
+16:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">expr</span>
+17:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Group">visit_Arel_Nodes_Group</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Grouping">visit_Arel_Nodes_Grouping</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Having">visit_Arel_Nodes_Having</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Limit">visit_Arel_Nodes_Limit</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Not">visit_Arel_Nodes_Not</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Offset">visit_Arel_Nodes_Offset</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_On">visit_Arel_Nodes_On</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_Top">visit_Arel_Nodes_Top</a>, <a href="DepthFirst.html#method-i-visit_Arel_Nodes_UnqualifiedColumn">visit_Arel_Nodes_UnqualifiedColumn</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="visit-method" class="method-detail ">
+				<a name="method-i-visit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 10</span>
+10:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>
+11:         <span class="ruby-keyword kw">super</span>
+12:         <span class="ruby-ivar">@block</span>.<span class="ruby-identifier">call</span> <span class="ruby-identifier">o</span>
+13:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-ctive-upport-ultibyte-hars-method" class="method-detail method-alias">
+				<a name="method-i-visit_ActiveSupport_Multibyte_Chars"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_ActiveSupport_Multibyte_Chars</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ctive-upport-tring-nquirer-method" class="method-detail method-alias">
+				<a name="method-i-visit_ActiveSupport_StringInquirer"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_ActiveSupport_StringInquirer</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttribute-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Attribute"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attribute</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-ttribute-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 77</span>
+77:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Attribute</span> <span class="ruby-identifier">o</span>
+78:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">relation</span>
+79:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">name</span>
+80:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="DepthFirst.html#method-i-visit_Arel_Attributes_Integer">visit_Arel_Attributes_Integer</a>, <a href="DepthFirst.html#method-i-visit_Arel_Attributes_Float">visit_Arel_Attributes_Float</a>, <a href="DepthFirst.html#method-i-visit_Arel_Attributes_String">visit_Arel_Attributes_String</a>, <a href="DepthFirst.html#method-i-visit_Arel_Attributes_Time">visit_Arel_Attributes_Time</a>, <a href="DepthFirst.html#method-i-visit_Arel_Attributes_Boolean">visit_Arel_Attributes_Boolean</a>, <a href="DepthFirst.html#method-i-visit_Arel_Attributes_Attribute">visit_Arel_Attributes_Attribute</a>, <a href="DepthFirst.html#method-i-visit_Arel_Attributes_Decimal">visit_Arel_Attributes_Decimal</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-ttribute-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_Attribute"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_Attribute</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-oolean-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_Boolean"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_Boolean</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-ecimal-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_Decimal"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_Decimal</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-loat-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_Float"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_Float</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-nteger-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_Integer"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_Integer</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-tring-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_String"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_String</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ttributes-ime-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Attributes_Time"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Attributes_Time</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-visit_Arel_Attribute">visit_Arel_Attribute</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-nd-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_And"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_And</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-s-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_As"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_As</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ssignment-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Assignment"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Assignment</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-vg-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Avg"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Avg</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-function">function</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-etween-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Between"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Between</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ount-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_Count"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Count</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-ount-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 38</span>
+38:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_Count</span> <span class="ruby-identifier">o</span>
+39:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">expressions</span>
+40:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">alias</span>
+41:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">distinct</span>
+42:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-elete-tatement-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_DeleteStatement"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_DeleteStatement</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-oes-ot-atch-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_DoesNotMatch"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_DoesNotMatch</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-quality-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Equality"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Equality</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-xists-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Exists"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Exists</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-function">function</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-reater-han-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_GreaterThan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_GreaterThan</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-reater-han-r-qual-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_GreaterThanOrEqual"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_GreaterThanOrEqual</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-roup-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Group"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Group</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-rouping-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Grouping"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Grouping</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-aving-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Having"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Having</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-n-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_In"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_In</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-nner-oin-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_InnerJoin"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_InnerJoin</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-join">join</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-nsert-tatement-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_InsertStatement"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_InsertStatement</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-nsert-tatement-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 115</span>
+115:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_InsertStatement</span> <span class="ruby-identifier">o</span>
+116:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">relation</span>
+117:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">columns</span>
+118:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">values</span>
+119:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ess-han-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_LessThan"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_LessThan</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ess-han-r-qual-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_LessThanOrEqual"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_LessThanOrEqual</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-imit-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Limit"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Limit</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ock-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Lock"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Lock</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-atches-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Matches"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Matches</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ax-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Max"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Max</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-function">function</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-in-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Min"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Min</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-function">function</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ode-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Node"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Node</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ot-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Not"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Not</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ot-qual-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_NotEqual"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_NotEqual</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ot-n-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_NotIn"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_NotIn</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ffset-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Offset"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Offset</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-n-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_On"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_On</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-r-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Or"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Or</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-rdering-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Ordering"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Ordering</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-uter-oin-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_OuterJoin"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_OuterJoin</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-join">join</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-elect-ore-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_SelectCore"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_SelectCore</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-elect-ore-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 121</span>
+121:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_SelectCore</span> <span class="ruby-identifier">o</span>
+122:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">projections</span>
+123:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">froms</span>
+124:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">wheres</span>
+125:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">groups</span>
+126:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">having</span>
+127:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-elect-tatement-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_SelectStatement"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_SelectStatement</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-elect-tatement-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 129</span>
+129:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_SelectStatement</span> <span class="ruby-identifier">o</span>
+130:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">cores</span>
+131:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">orders</span>
+132:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">limit</span>
+133:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">lock</span>
+134:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">offset</span>
+135:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-ql-iteral-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_SqlLiteral"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_SqlLiteral</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-tring-oin-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_StringJoin"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_StringJoin</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-um-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Sum"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Sum</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-function">function</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-able-lias-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_TableAlias"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_TableAlias</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-op-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Top"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Top</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-nqualified-olumn-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_UnqualifiedColumn"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_UnqualifiedColumn</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-unary">unary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-pdate-tatement-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Nodes_UpdateStatement"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_UpdateStatement</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-odes-pdate-tatement-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 137</span>
+137:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Nodes_UpdateStatement</span> <span class="ruby-identifier">o</span>
+138:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">relation</span>
+139:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">values</span>
+140:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">wheres</span>
+141:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">orders</span>
+142:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">limit</span>
+143:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rel-odes-alues-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_Nodes_Values"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Nodes_Values</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-binary">binary</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-ql-iteral-method" class="method-detail method-alias">
+				<a name="method-i-visit_Arel_SqlLiteral"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_SqlLiteral</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rel-able-method" class="method-detail ">
+				<a name="method-i-visit_Arel_Table"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Arel_Table</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rel-able-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 89</span>
+89:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Arel_Table</span> <span class="ruby-identifier">o</span>
+90:         <span class="ruby-identifier">visit</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">name</span>
+91:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-rray-method" class="method-detail ">
+				<a name="method-i-visit_Array"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Array</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-rray-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 145</span>
+145:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Array</span> <span class="ruby-identifier">o</span>
+146:         <span class="ruby-identifier">o</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span> <span class="ruby-identifier">i</span> }
+147:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-ig-ecimal-method" class="method-detail method-alias">
+				<a name="method-i-visit_BigDecimal"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_BigDecimal</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ignum-method" class="method-detail method-alias">
+				<a name="method-i-visit_Bignum"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Bignum</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-lass-method" class="method-detail method-alias">
+				<a name="method-i-visit_Class"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Class</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ate-method" class="method-detail method-alias">
+				<a name="method-i-visit_Date"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Date</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ate-ime-method" class="method-detail method-alias">
+				<a name="method-i-visit_DateTime"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_DateTime</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-alse-lass-method" class="method-detail method-alias">
+				<a name="method-i-visit_FalseClass"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_FalseClass</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ixnum-method" class="method-detail method-alias">
+				<a name="method-i-visit_Fixnum"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Fixnum</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-loat-method" class="method-detail method-alias">
+				<a name="method-i-visit_Float"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Float</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ash-method" class="method-detail ">
+				<a name="method-i-visit_Hash"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Hash</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="visit-ash-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/arel/visitors/depth_first.rb, line 149</span>
+149:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_Hash</span> <span class="ruby-identifier">o</span>
+150:         <span class="ruby-identifier">o</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">k</span>); <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">v</span>) }
+151:       <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="visit-il-lass-method" class="method-detail method-alias">
+				<a name="method-i-visit_NilClass"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_NilClass</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-tring-method" class="method-detail method-alias">
+				<a name="method-i-visit_String"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_String</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ymbol-method" class="method-detail method-alias">
+				<a name="method-i-visit_Symbol"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Symbol</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-ime-method" class="method-detail method-alias">
+				<a name="method-i-visit_Time"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_Time</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="visit-rue-lass-method" class="method-detail method-alias">
+				<a name="method-i-visit_TrueClass"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">visit_TrueClass</span><span
+						class="method-args">(o)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="DepthFirst.html#method-i-terminal">terminal</a>
+				</div>
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
